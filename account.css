@@ -1,0 +1,19 @@
+.account {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template: auto 1fr auto/auto 1fr;
+}
+.account sidebar {
+  grid-row: 1/-1;
+}
+.account sidebar > div {
+  position: sticky;
+  top: 0;
+}
+.account header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=account.css.map */

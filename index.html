@@ -2,16 +2,41 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<title>Account</title>
-	<link rel="icon" href="./favicon.ico">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover" />
+	<link rel="icon" href="./favicon.svg">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
+	<link href="account.css" rel="styleSheet">
 </head>
 
-<body>
-	<nav></nav>
-	<header></header>
+<body class="account">
+	<sidebar>
+		<div>
+			<input type="checkbox" aria-hidden="true" aria-label="Show mobile menu">
+			<input type="checkbox" aria-hidden="true" aria-label="Expand menu" checked>
+			<a href="#">Home</a>
+			<nav>
+				<ul>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+				</ul>
+			</nav>
+		</div>
+	</sidebar>
+	<header>
+		<p>John Doe's balance: <span>11</span></p><button>Logout</button>
+	</header>
 	<main>
+		<h1>Account overview</h1>
 	</main>
-	<footer></footer>
+	<footer>
+		<nav>
+			<ul>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+			</ul>
+		</nav>
+	</footer>
 </body>
