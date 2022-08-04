@@ -4,16 +4,36 @@
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
 }
+.account .skip-link {
+  position: absolute;
+  background: white;
+  white-space: nowrap;
+}
+.account .skip-link:not(:focus) {
+  z-index: -1;
+  opacity: 0;
+}
 .account sidebar {
   grid-row: 1/-1;
+}
+.account sidebar ul {
+  list-style-type: none;
 }
 .account sidebar > div {
   position: sticky;
   top: 0;
 }
+@media (min-width: 600px) {
+  .account sidebar #mobile-menu-trigger {
+    display: none;
+  }
+}
 .account header {
   display: flex;
   justify-content: flex-end;
+}
+.account footer li {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=account.css.map */
