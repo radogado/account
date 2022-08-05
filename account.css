@@ -31,30 +31,40 @@
     display: none;
   }
 }
+.account sidebar nav li {
+  display: flex;
+}
+.account sidebar nav li:before {
+  content: "";
+  width: 0.375em;
+  background: transparent;
+  border-radius: 0.125rem;
+  margin-inline-start: -0.125em;
+}
+.account sidebar nav li[aria-current] a {
+  color: #70215e;
+}
+.account sidebar nav li[aria-current]:before,
+.account sidebar nav li[aria-current] a:before {
+  background-color: #70215e;
+}
 .account sidebar nav a {
   display: flex;
   text-decoration: none;
   text-transform: uppercase;
   color: inherit;
+  padding-inline-end: 1.5em;
 }
 .account sidebar nav a:before {
   content: "";
   width: 1.5em;
   height: 1.5em;
-  margin: 0 1em 0 1.5em;
+  margin: 0 1em 0 1em;
   background-color: #000000a3;
   -webkit-mask: url(favicon.svg) center no-repeat;
   -webkit-mask-size: contain;
   mask: url(favicon.svg) center no-repeat;
   mask-size: contain;
-}
-.account sidebar nav [aria-current] a {
-  color: #70215e;
-  background: linear-gradient(#70215e, #70215e) 0 0 no-repeat;
-  background-size: 3px 100%;
-}
-.account sidebar nav [aria-current] a:before {
-  background-color: #70215e;
 }
 .account header {
   display: flex;
