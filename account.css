@@ -10,8 +10,8 @@
   background: white;
   white-space: nowrap;
 }
-.account .skip-link:not(:focus) {
-  z-index: -1;
+.account .skip-link:not(:focus), .account .skip-link:not(:focus-visible) {
+  z-index: -9;
   opacity: 0;
 }
 .account sidebar {
