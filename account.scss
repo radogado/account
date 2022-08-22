@@ -10,7 +10,8 @@
 		background: white;
 		white-space: nowrap;
 
-		&:not(:focus), &:not(:focus-visible) {
+		&:not(:focus),
+		&:not(:focus-visible) {
 			z-index: -9;
 			opacity: 0;
 		}
@@ -28,15 +29,40 @@
 		> div {
 			position: sticky;
 			top: 0;
+			display: flex;
+			flex-direction: column;
+		}
+
+		@media not screen and (min-width: 600px) {
+			#expand-desktop-menu {
+				display: none;
+			}
+			
+			#mobile-menu-trigger:not(:checked) ~ nav {
+				
+				display: none;
+			
+			}
 		}
 
 		@media (min-width: 600px) {
 			#mobile-menu-trigger {
 				display: none;
 			}
+
+			#expand-desktop-menu:checked ~ nav {
+				max-width: 15rem;
+
+			}
+
+			nav {
+				max-width: 3rem;
+			}
 		}
 
 		nav {
+			overflow: hidden;
+			transition: max-width .2s ease-in-out;
 
 			li {
 				display: flex;

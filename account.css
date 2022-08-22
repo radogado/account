@@ -25,11 +25,31 @@
 .account sidebar > div {
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media not screen and (min-width: 600px) {
+  .account sidebar #expand-desktop-menu {
+    display: none;
+  }
+  .account sidebar #mobile-menu-trigger:not(:checked) ~ nav {
+    display: none;
+  }
 }
 @media (min-width: 600px) {
   .account sidebar #mobile-menu-trigger {
     display: none;
   }
+  .account sidebar #expand-desktop-menu:checked ~ nav {
+    max-width: 15rem;
+  }
+  .account sidebar nav {
+    max-width: 3rem;
+  }
+}
+.account sidebar nav {
+  overflow: hidden;
+  transition: max-width 0.2s ease-in-out;
 }
 .account sidebar nav li {
   display: flex;
