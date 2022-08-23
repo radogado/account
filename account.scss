@@ -52,6 +52,9 @@
 
 			#expand-desktop-menu:checked ~ nav {
 				max-width: 15rem;
+				a {
+					color: rgba(0, 0, 0, 1);
+				}
 
 			}
 
@@ -94,6 +97,9 @@
 				text-transform: uppercase;
 				color: inherit;
 				padding-inline-end: 1.5em;
+				min-width: 13rem;
+				transition: color .2s ease-in-out;
+				color: rgba(0, 0, 0, 0);
 
 				&:before {
 					content: "";

@@ -43,6 +43,9 @@
   .account sidebar #expand-desktop-menu:checked ~ nav {
     max-width: 15rem;
   }
+  .account sidebar #expand-desktop-menu:checked ~ nav a {
+    color: black;
+  }
   .account sidebar nav {
     max-width: 3rem;
   }
@@ -74,6 +77,9 @@
   text-transform: uppercase;
   color: inherit;
   padding-inline-end: 1.5em;
+  min-width: 13rem;
+  transition: color 0.2s ease-in-out;
+  color: rgba(0, 0, 0, 0);
 }
 .account sidebar nav a:before {
   content: "";
