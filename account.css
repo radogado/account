@@ -9,10 +9,12 @@
   position: absolute;
   background: white;
   white-space: nowrap;
-}
-.account .skip-link:not(:focus), .account .skip-link:not(:focus-visible) {
   z-index: -9;
   opacity: 0;
+}
+.account .skip-link:focus-visible {
+  z-index: 9;
+  opacity: 1;
 }
 .account sidebar {
   grid-row: 1/-1;
@@ -27,6 +29,14 @@
   top: 0;
   display: flex;
   flex-direction: column;
+}
+.account sidebar #expand-desktop-menu {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  height: 3rem;
+  background: red;
+  cursor: pointer;
 }
 @media not screen and (min-width: 600px) {
   .account sidebar #expand-desktop-menu {
@@ -44,18 +54,25 @@
     max-width: 15rem;
   }
   .account sidebar #expand-desktop-menu:checked ~ nav a {
-    color: black;
+    color: rgba(0, 0, 0, 0.64);
+    text-indent: 0;
+  }
+  .account sidebar #expand-desktop-menu:checked ~ nav [aria-current] a {
+    color: #70215e;
   }
   .account sidebar nav {
-    max-width: 3rem;
+    max-width: 4rem;
   }
 }
 .account sidebar nav {
   overflow: hidden;
   transition: max-width 0.2s ease-in-out;
+  font-weight: 600;
 }
 .account sidebar nav li {
   display: flex;
+  align-items: center;
+  transition: background-color 0.17s ease-in-out;
 }
 .account sidebar nav li:before {
   content: "";
@@ -63,28 +80,37 @@
   background: transparent;
   border-radius: 0.125rem;
   margin-inline-start: -0.125em;
+  flex-shrink: 0;
+  height: 3rem;
 }
-.account sidebar nav li[aria-current] a {
-  color: #70215e;
+.account sidebar nav li[aria-current] {
+  line-height: 1.5rem;
 }
 .account sidebar nav li[aria-current]:before,
 .account sidebar nav li[aria-current] a:before {
   background-color: #70215e;
 }
+.account sidebar nav li:hover, .account sidebar nav li[aria-current] {
+  background-color: #0000000a;
+}
 .account sidebar nav a {
   display: flex;
+  line-height: 1.5;
+  padding: 1rem 0;
   text-decoration: none;
   text-transform: uppercase;
   color: inherit;
   padding-inline-end: 1.5em;
   min-width: 13rem;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, text-indent 0.2s ease-in-out;
+  text-indent: 10px;
   color: rgba(0, 0, 0, 0);
 }
 .account sidebar nav a:before {
   content: "";
   width: 1.5em;
   height: 1.5em;
+  flex-shrink: 0;
   margin: 0 1em 0 1em;
   background-color: #000000a3;
   -webkit-mask: url(favicon.svg) center no-repeat;
@@ -92,14 +118,52 @@
   mask: url(favicon.svg) center no-repeat;
   mask-size: contain;
 }
+.account sidebar nav [aria-current] a {
+  color: rgba(112, 33, 94, 0);
+}
 .account header {
   display: flex;
   justify-content: flex-end;
   position: sticky;
   top: 0;
   background: white;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.account header button {
+  height: 2.5rem;
+}
+.account main {
+  width: 100%;
+  justify-self: center;
+  max-width: 70ch;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.account footer {
+  padding: 1rem;
+}
+.account footer nav {
+  overflow: hidden;
+}
+.account footer ul {
+  padding: 1rem;
+  margin: 0;
+  line-height: 1.5;
+  margin-inline-start: -1ch;
+  padding: 0;
 }
 .account footer li {
+  display: inline-block;
+}
+.account footer li:before {
+  content: "|";
+  width: 1ch;
+  display: inline-block;
+  margin-inline-start: 0.25ch;
+}
+.account footer a {
   display: inline-block;
 }
 
