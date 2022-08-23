@@ -19,6 +19,7 @@
 .account sidebar {
   grid-row: 1/-1;
   background-color: #0000000a;
+  --transition-duration: .2s;
 }
 .account sidebar ul {
   list-style-type: none;
@@ -55,7 +56,9 @@
   }
   .account sidebar #expand-desktop-menu:checked ~ nav a {
     color: rgba(0, 0, 0, 0.64);
-    text-indent: 0;
+  }
+  .account sidebar #expand-desktop-menu:checked ~ nav a:before {
+    margin-inline-end: 1em;
   }
   .account sidebar #expand-desktop-menu:checked ~ nav [aria-current] a {
     color: #70215e;
@@ -66,7 +69,7 @@
 }
 .account sidebar nav {
   overflow: hidden;
-  transition: max-width 0.2s ease-in-out;
+  transition: max-width var(--transition-duration, 0.2s) ease-in-out;
   font-weight: 600;
 }
 .account sidebar nav li {
@@ -101,9 +104,8 @@
   text-transform: uppercase;
   color: inherit;
   padding-inline-end: 1.5em;
-  min-width: 13rem;
-  transition: color 0.2s ease-in-out, text-indent 0.2s ease-in-out;
-  text-indent: 10px;
+  min-width: 14rem;
+  transition: color var(--transition-duration, 0.2s) ease-in-out;
   color: rgba(0, 0, 0, 0);
 }
 .account sidebar nav a:before {
@@ -117,6 +119,8 @@
   -webkit-mask-size: contain;
   mask: url(favicon.svg) center no-repeat;
   mask-size: contain;
+  margin-inline-end: 2em;
+  transition: margin-inline-end var(--transition-duration, 0.2s) ease-in-out;
 }
 .account sidebar nav [aria-current] a {
   color: rgba(112, 33, 94, 0);

@@ -65,7 +65,9 @@
 
 				a {
 					color: rgb(0 0 0 / 64%);
-					text-indent: 0;
+					&:before {
+						margin-inline-end: 1em;
+					}
 				}
 
 				[aria-current] a {
@@ -79,10 +81,12 @@
 				max-width: 4rem;
 			}
 		}
+		
+		--transition-duration: .2s;
 
 		nav {
 			overflow: hidden;
-			transition: max-width .2s ease-in-out;
+			transition: max-width var(--transition-duration, .2s) ease-in-out;
 			font-weight: 600;
 
 			li {
@@ -124,9 +128,8 @@
 				text-transform: uppercase;
 				color: inherit;
 				padding-inline-end: 1.5em;
-				min-width: 13rem;
-				transition: color .2s ease-in-out, text-indent .2s ease-in-out;
-				text-indent: 10px;
+				min-width: 14rem;
+				transition: color var(--transition-duration, .2s) ease-in-out;
 
 				color: rgba(0, 0, 0, 0);
 
@@ -141,6 +144,9 @@
 					-webkit-mask-size: contain;
 					mask: url(favicon.svg) center no-repeat;
 					mask-size: contain;
+					margin-inline-end: 2em;
+					transition: margin-inline-end var(--transition-duration, .2s) ease-in-out;
+
 				}
 			}
 
