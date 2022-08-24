@@ -19,6 +19,7 @@
   opacity: 1;
 }
 .account sidebar {
+  font-size: 0.875rem;
   grid-row: 1/-1;
   background-color: #0000000a;
 }
@@ -37,12 +38,12 @@
   appearance: none;
   margin: 0;
   height: 3rem;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .account sidebar #expand-desktop-menu:before {
+  cursor: pointer;
   content: "≪";
   width: 2.5rem;
   height: 2.5rem;
@@ -163,6 +164,28 @@
 }
 .account header button {
   height: 2.5rem;
+}
+.account header dl {
+  display: grid;
+  grid-template: 1fr 1fr/auto auto auto auto;
+}
+.account header dt {
+  font-size: 0.75rem;
+  display: contents;
+}
+.account header dt:before {
+  content: "";
+  grid-row: 1/-1;
+  width: 1.375rem;
+  height: 1.375rem;
+  background: url("favicon.svg") no-repeat;
+  display: inline-block;
+  background-size: contain;
+}
+.account header dd {
+  font-weight: bold;
+  grid-row: 2/3;
+  margin: 0;
 }
 .account main {
   width: 100%;

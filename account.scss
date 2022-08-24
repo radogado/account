@@ -20,6 +20,7 @@
 	}
 
 	sidebar {
+		font-size: .875rem;
 		grid-row: 1/-1;
 		background-color: #0000000a;
 		// max-height: 100vh;
@@ -44,12 +45,12 @@
 			margin: 0;
 			height: 3rem;
 			// background: red;
-			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
 			&:before {
+				cursor: pointer;
 				content: "≪";
 				width: 2.5rem;
 				height: 2.5rem;
@@ -66,7 +67,7 @@
 			&:hover:before {
 				background-color: #0000000a;
 			}
-			
+
 			&:not(:checked):before {
 				transform: rotateZ(180deg);
 			}
@@ -203,6 +204,33 @@
 		button {
 			height: 2.5rem;
 		}
+		
+		dl {
+			display: grid;
+			grid-template: 1fr 1fr / auto auto auto auto;
+		}
+		
+		dt {
+			font-size: .75rem;
+			display: contents;
+			&:before {
+				content: "";
+				grid-row: 1/-1;
+
+				width: 1.375rem;
+				height: 1.375rem;
+				background: url("favicon.svg") no-repeat;
+				display: inline-block;
+				background-size: contain;
+			}
+		}
+		
+		dd {
+			font-weight: bold;
+			grid-row: 2/3;
+			margin: 0;
+		}
+		
 	}
 
 	main {
