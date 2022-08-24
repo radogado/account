@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .account {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   margin: 0;
@@ -32,12 +33,32 @@
   flex-direction: column;
 }
 .account sidebar #expand-desktop-menu {
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
   height: 3rem;
-  background: red;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account sidebar #expand-desktop-menu:before {
+  content: "≪";
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  color: inherit;
+  border-radius: 50%;
+  text-align: center;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: background-color, transform;
+  line-height: 3;
+}
+.account sidebar #expand-desktop-menu:hover:before {
+  background-color: #0000000a;
+}
+.account sidebar #expand-desktop-menu:not(:checked):before {
+  transform: rotateZ(180deg);
 }
 @media not screen and (min-width: 600px) {
   .account sidebar #expand-desktop-menu {
@@ -80,7 +101,7 @@
 .account sidebar nav li {
   display: flex;
   align-items: center;
-  transition: background-color 0.17s ease-in-out;
+  transition: background-color var(--transition-duration, 0) ease-in-out;
 }
 .account sidebar nav li:before {
   content: "";
