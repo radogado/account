@@ -19,6 +19,10 @@
 		}
 	}
 
+	@media (prefers-reduced-motion: no-preference) {
+		--transition-duration: .2s;
+	}
+
 	sidebar {
 		font-size: .875rem;
 		grid-row: 1/-1;
@@ -114,10 +118,6 @@
 			}
 		}
 
-		@media (prefers-reduced-motion: no-preference) {
-			--transition-duration: .2s;
-		}
-
 		nav {
 			overflow: hidden;
 			transition: max-width var(--transition-duration, 0) ease-in-out;
@@ -166,21 +166,6 @@
 
 				color: rgba(0, 0, 0, 0);
 
-				&:before {
-					content: "";
-					width: 1.5em;
-					height: 1.5em;
-					flex-shrink: 0;
-					margin: 0 1em 0 1em;
-					background-color: #000000a3;
-					-webkit-mask: url(favicon.svg) center no-repeat;
-					-webkit-mask-size: contain;
-					mask: url(favicon.svg) center no-repeat;
-					mask-size: contain;
-					margin-inline-end: 2em;
-					transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
-
-				}
 			}
 
 			[aria-current] a {
@@ -189,6 +174,23 @@
 
 
 		}
+	}
+
+	sidebar nav a:before,
+	header dl div:before {
+		content: "";
+		width: 1.5em;
+		height: 1.5em;
+		flex-shrink: 0;
+		margin: 0 1em 0 1em;
+		background-color: #000000a3;
+		-webkit-mask: url(favicon.svg) center no-repeat;
+		-webkit-mask-size: contain;
+		mask: url(favicon.svg) center no-repeat;
+		mask-size: contain;
+		margin-inline-end: 2em;
+		transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+
 	}
 
 	header {
@@ -212,28 +214,44 @@
 			div {
 				display: grid;
 				align-items: center;
-				
+				padding: 0.5rem 0.5rem 0.5rem 0;
+				transition: var(--transition-duration, 0) ease-in-out;
+				transition-property: background-color;
+
 				&:before {
 					content: "";
-					grid-row: 1/-1;
+					grid-row: 1/3;
+					margin-inline-end: 1rem;
+					transition: var(--transition-duration, 0) ease-in-out;
+					transition-property: margin-block-start;
+					// margin: 0.5rem 1rem;
+					// width: 1.375rem;
+					// height: 1.375rem;
+					// background: url("favicon.svg") no-repeat;
+					// display: inline-block;
+					// background-size: contain;
+				}
 
-					width: 1.375rem;
-					height: 1.375rem;
-					background: url("favicon.svg") no-repeat;
-					display: inline-block;
-					background-size: contain;
+				&:hover {
+					background-color: #0000000a;
+					&:before {
+						margin-block-start: -0.25rem;
+					}
 				}
 			}
 		}
 
 		dt {
 			font-size: .75rem;
+			align-self: end;
+			color: #000000a3;
 		}
 
 		dd {
-			font-weight: bold;
+			font-weight: 600;
 			grid-column: 2/3;
 			margin: 0;
+			color: #000000e0;
 		}
 
 	}
@@ -275,6 +293,15 @@
 		a {
 			display: inline-block;
 		}
+	}
+
+	.btn {
+		-webkit-appearance: none;
+		appearance: none;
+		border: none;
+		background: none;
+		font: inherit;
+		cursor: pointer;
 	}
 
 }

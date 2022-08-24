@@ -18,6 +18,11 @@
   z-index: 9;
   opacity: 1;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .account {
+    --transition-duration: .2s;
+  }
+}
 .account sidebar {
   font-size: 0.875rem;
   grid-row: 1/-1;
@@ -89,11 +94,6 @@
     max-width: 4rem;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .account sidebar {
-    --transition-duration: .2s;
-  }
-}
 .account sidebar nav {
   overflow: hidden;
   transition: max-width var(--transition-duration, 0) ease-in-out;
@@ -135,7 +135,11 @@
   transition: color var(--transition-duration, 0) ease-in-out;
   color: rgba(0, 0, 0, 0);
 }
-.account sidebar nav a:before {
+.account sidebar nav [aria-current] a {
+  color: rgba(112, 33, 94, 0);
+}
+.account sidebar nav a:before,
+.account header dl div:before {
   content: "";
   width: 1.5em;
   height: 1.5em;
@@ -148,9 +152,6 @@
   mask-size: contain;
   margin-inline-end: 2em;
   transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
-}
-.account sidebar nav [aria-current] a {
-  color: rgba(112, 33, 94, 0);
 }
 .account header {
   display: flex;
@@ -172,23 +173,33 @@
 .account header dl div {
   display: grid;
   align-items: center;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: background-color;
 }
 .account header dl div:before {
   content: "";
-  grid-row: 1/-1;
-  width: 1.375rem;
-  height: 1.375rem;
-  background: url("favicon.svg") no-repeat;
-  display: inline-block;
-  background-size: contain;
+  grid-row: 1/3;
+  margin-inline-end: 1rem;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: margin-block-start;
+}
+.account header dl div:hover {
+  background-color: #0000000a;
+}
+.account header dl div:hover:before {
+  margin-block-start: -0.25rem;
 }
 .account header dt {
   font-size: 0.75rem;
+  align-self: end;
+  color: #000000a3;
 }
 .account header dd {
-  font-weight: bold;
+  font-weight: 600;
   grid-column: 2/3;
   margin: 0;
+  color: #000000e0;
 }
 .account main {
   width: 100%;
@@ -221,6 +232,14 @@
 }
 .account footer a {
   display: inline-block;
+}
+.account .btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=account.css.map */
