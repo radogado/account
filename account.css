@@ -166,14 +166,14 @@
   height: 2.5rem;
 }
 .account header dl {
+  display: flex;
+  margin: 0;
+}
+.account header dl div {
   display: grid;
-  grid-template: 1fr 1fr/auto auto auto auto;
+  align-items: center;
 }
-.account header dt {
-  font-size: 0.75rem;
-  display: contents;
-}
-.account header dt:before {
+.account header dl div:before {
   content: "";
   grid-row: 1/-1;
   width: 1.375rem;
@@ -182,9 +182,12 @@
   display: inline-block;
   background-size: contain;
 }
+.account header dt {
+  font-size: 0.75rem;
+}
 .account header dd {
   font-weight: bold;
-  grid-row: 2/3;
+  grid-column: 2/3;
   margin: 0;
 }
 .account main {
