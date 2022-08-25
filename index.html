@@ -1,86 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<title>My Account</title>
-	<link rel="icon" href="./favicon.svg">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
-	<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
-	<link href="account.css" rel="styleSheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>My Account</title>
+		<link rel="icon" href="./favicon.svg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
+		<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
+		<link href="account.css" rel="styleSheet">
+	</head>
 
-<body class="account">
-	<sidebar>
-		<div>
-			<a href="#main" class="skip-link">Skip to main content</a>
-			<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger">
-			<a href="#" title="Back to My Account">
-				<img src="favicon.svg" alt="The i letter in a circle">
+	<body class="account">
+		<a href="#main" class="skip-link">Skip to main content</a>
+		<sidebar>
+			<div>
+				<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger">
+				<a href="#" title="Back to My Account">
+					<img src="favicon.svg" alt="The i letter in a circle">
+				</a>
+				<input type="checkbox" aria-hidden="true" aria-label="Expand menu" checked id="expand-desktop-menu">
+				<nav>
+					<ul>
+						<li aria-current="page"><a href="#">My account</a></li>
+						<li><a href="#">Deposit</a></li>
+						<li><a href="#">Withdraw</a></li>
+						<li><a href="#">Prepaid card</a></li>
+						<li><a href="#">Promotions</a></li>
+						<li><a href="#">Transactions</a></li>
+						<li><a href="#">Exchange</a></li>
+						<li><a href="#">Get an account statement</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Help centre</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</sidebar>
+		<header>
+			<a href="#">
+				<dl>
+					<dt>Loyalty points</dt>
+					<dd>4959</dd>
+				</dl>
 			</a>
-			<input type="checkbox" aria-hidden="true" aria-label="Expand menu" checked id="expand-desktop-menu">
+
+			<a href="#">
+
+				<dl>
+
+					<dt>John Doe</dt>
+					<dd>Beginner Level</dd>
+
+				</dl>
+			</a>
+
+			<button class="btn">Logout</button>
+
+		</header>
+		<main id="main">
+			<h1>Account overview</h1>
+			<p><a href="#">Demo link</a></p>
+		</main>
+		<footer>
 			<nav>
 				<ul>
-					<li aria-current="page"><a href="#">My account</a></li>
-					<li><a href="#">Deposit</a></li>
-					<li><a href="#">Withdraw</a></li>
-					<li><a href="#">Prepaid card</a></li>
-					<li><a href="#">Promotions</a></li>
-					<li><a href="#">Transactions</a></li>
-					<li><a href="#">Exchange</a></li>
-					<li><a href="#">Get an account statement</a></li>
-					<li><a href="#">Settings</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Help centre</a></li>
-					<li><a href="#">Contact us</a></li>
+					<li><a href="/en/siteinformation/fees/" rel="noopener"> Fees </a></li>
+					<li><a href="/en/support/" rel="noopener"> Support </a></li>
+					<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener"> Terms &amp; conditions </a></li>
+					<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener"> Privacy Policy </a></li>
+					<li><a href="/en/footer/apis/" target=_top rel="noopener"> API </a></li>
+					<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener"> Modern slavery act transparency statement </a></li>
+					<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener"> Cookies notice </a></li>
+					<li><a href="/en/footer/careers/" target=_blank rel="noopener"> Careers </a></li>
+					<li><a href="/en/footer/card/" target=_blank rel="noopener"> Prepaid Card </a></li>
+					<li><a href="/en/footer/affiliates/" target=_blank rel="noopener"> Affiliates </a></li>
+					<li><a href="/en/footer/laundering/" target=_blank rel="noopener"> Money Laundering </a></li>
+					<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener"> eCommerce </a></li>
+					<li><a href="/en/footer/consumer/" target=_blank rel="noopener"> Consumer Protection </a></li>
 				</ul>
 			</nav>
-		</div>
-	</sidebar>
-	<header>
-		<a href="#">
-			<dl>
-				<dt>Loyalty points</dt>
-				<dd>4959</dd>
-			</dl>
-		</a>
-
-		<a href="#">
-
-			<dl>
-
-				<dt>John Doe</dt>
-				<dd>Beginner Level</dd>
-
-			</dl>
-		</a>
-
-		<button class="btn">Logout</button>
-
-	</header>
-	<main id="main">
-		<h1>Account overview</h1>
-		<p><a href="#">Demo link</a></p>
-	</main>
-	<footer>
-		<nav>
-			<ul>
-				<li><a href="/en/siteinformation/fees/" rel="noopener"> Fees </a></li>
-				<li><a href="/en/support/" rel="noopener"> Support </a></li>
-				<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener"> Terms &amp; conditions </a></li>
-				<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener"> Privacy Policy </a></li>
-				<li><a href="/en/footer/apis/" target=_top rel="noopener"> API </a></li>
-				<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener"> Modern slavery act transparency statement </a></li>
-				<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener"> Cookies notice </a></li>
-				<li><a href="/en/footer/careers/" target=_blank rel="noopener"> Careers </a></li>
-				<li><a href="/en/footer/card/" target=_blank rel="noopener"> Prepaid Card </a></li>
-				<li><a href="/en/footer/affiliates/" target=_blank rel="noopener"> Affiliates </a></li>
-				<li><a href="/en/footer/laundering/" target=_blank rel="noopener"> Money Laundering </a></li>
-				<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener"> eCommerce </a></li>
-				<li><a href="/en/footer/consumer/" target=_blank rel="noopener"> Consumer Protection </a></li>
-			</ul>
-		</nav>
-	</footer>
-</body>
+		</footer>
+	</body>
 
 </html>

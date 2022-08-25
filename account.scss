@@ -14,6 +14,7 @@
 		white-space: nowrap;
 		z-index: -9;
 		opacity: 0;
+		padding: 0.5rem 0.25rem;
 
 		&:focus-visible {
 			z-index: 9;
@@ -73,6 +74,16 @@
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: background-color, transform;
 				line-height: 3;
+
+				font-family: "Icons";
+				font-weight: 400;
+				font-size: 1.5rem;
+				content: "\e93a";
+				line-height: 1.7;
+				color: rgb(0 0 0 / 64%);
+				-webkit-font-smoothing: antialiased;
+				transform: rotateZ(-180deg);
+
 			}
 
 			&:hover:before {
@@ -80,7 +91,7 @@
 			}
 
 			&:not(:checked):before {
-				transform: rotateZ(180deg);
+				transform: none;
 			}
 
 		}
@@ -299,10 +310,16 @@
 			display: inline-block;
 
 			&:before {
-				content: "|";
-				width: 1ch;
+				content: "\a";
 				display: inline-block;
-				margin-inline-start: 0.25ch;
+				width: 0.25rem;
+				height: 0.25rem;
+				border-radius: 50%;
+				background: #872166;
+				margin: 0 0.25rem;
+				margin-block-start: -0.25rem;
+				margin-inline-end: 0.4rem;
+				vertical-align: middle;
 			}
 		}
 
