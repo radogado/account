@@ -260,6 +260,7 @@
   font-weight: 600;
   padding: 0 0.9375rem;
   min-width: 7.5rem;
+  outline-offset: 0.25rem;
 }
 .account .btn:hover {
   background-color: #f5c9e8;
