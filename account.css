@@ -145,16 +145,18 @@
 .account sidebar nav a {
   display: flex;
   line-height: 1.5;
-  padding: 1rem 0;
   text-transform: uppercase;
   color: inherit;
   padding-inline-end: 1.5em;
   min-width: 12.25rem;
   transition: color var(--transition-duration, 0) ease-in-out;
+  min-height: 3.5rem;
+  align-items: center;
   color: rgba(0, 0, 0, 0);
 }
 .account sidebar nav a[href] {
   font-weight: 600;
+  width: calc(100% - 2rem);
 }
 .account sidebar nav [aria-current] a {
   color: rgba(112, 33, 94, 0);
@@ -192,9 +194,11 @@
   height: 2.5rem;
 }
 .account header dl {
-  display: flex;
   margin: 0;
   display: grid;
+  grid-template: 1fr 1fr/auto;
+  line-height: 1.25;
+  row-gap: 0.25rem;
   align-items: center;
   padding: 0.5rem 0.5rem;
   transition: var(--transition-duration, 0) ease-in-out;
@@ -208,11 +212,11 @@
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: margin-block-start;
 }
-.account header dl:hover {
-  background-color: #0000000a;
-}
 .account header dl:hover:before {
   margin-block-start: -0.25rem;
+}
+.account header a[href] dl:hover {
+  background-color: #0000000a;
 }
 .account header dt {
   font-size: 0.875rem;
@@ -222,6 +226,7 @@
 .account header dd {
   font-weight: 600;
   grid-column: 2/3;
+  align-self: normal;
   margin: 0;
   color: #000000e0;
 }
@@ -237,6 +242,7 @@
 }
 .account footer {
   padding: 1rem;
+  padding-bottom: 0;
   margin-top: 1.5rem;
   font-size: 0.75rem;
 }
@@ -253,7 +259,7 @@
   padding: 1rem;
   margin: 0;
   line-height: 1.5;
-  margin-inline-start: -0.75rem;
+  margin-inline-start: -1rem;
   padding: 0;
 }
 .account footer li {
@@ -268,7 +274,7 @@
   background: #872166;
   margin: 0 0.25rem;
   margin-block-start: -0.125rem;
-  margin-inline-end: 0.4rem;
+  margin-inline-end: 0.5rem;
   vertical-align: middle;
 }
 .account footer p {
