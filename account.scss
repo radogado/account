@@ -1,6 +1,6 @@
 .account {
 	line-height: 1.5;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	// font-family: "Source Sans Pro";
 	color: rgb(0 0 0 / 64%);
 	margin: 0;
@@ -26,6 +26,7 @@
 	a {
 		text-decoration: none;
 		color: inherit;
+
 		&[href] {
 			font-weight: 500;
 		}
@@ -118,7 +119,7 @@
 			}
 
 			#expand-desktop-menu:checked ~ nav {
-				max-width: 15rem;
+				max-width: 14rem;
 
 				a {
 					color: rgb(0 0 0 / 64%);
@@ -186,6 +187,10 @@
 				transition: color var(--transition-duration, 0) ease-in-out;
 
 				color: rgba(0, 0, 0, 0);
+
+				&[href] {
+					font-weight: 600;
+				}
 
 			}
 
@@ -334,7 +339,7 @@
 				vertical-align: middle;
 			}
 		}
-		
+
 		p {
 			margin: 1.5rem 0;
 		}

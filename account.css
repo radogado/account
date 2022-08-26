@@ -97,7 +97,7 @@
     display: none;
   }
   .account sidebar #expand-desktop-menu:checked ~ nav {
-    max-width: 15rem;
+    max-width: 14rem;
   }
   .account sidebar #expand-desktop-menu:checked ~ nav a {
     color: rgba(0, 0, 0, 0.64);
@@ -151,6 +151,9 @@
   min-width: 14rem;
   transition: color var(--transition-duration, 0) ease-in-out;
   color: rgba(0, 0, 0, 0);
+}
+.account sidebar nav a[href] {
+  font-weight: 600;
 }
 .account sidebar nav [aria-current] a {
   color: rgba(112, 33, 94, 0);
