@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .account {
+  line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: rgba(0, 0, 0, 0.64);
   margin: 0;
@@ -23,6 +24,9 @@
 .account a {
   text-decoration: none;
   color: inherit;
+}
+.account a[href] {
+  font-weight: 500;
 }
 @media (prefers-reduced-motion: no-preference) {
   .account {
@@ -229,16 +233,23 @@
 }
 .account footer {
   padding: 1rem;
-  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
 }
 .account footer nav {
   overflow: hidden;
+}
+.account footer nav a {
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1.5rem;
+  margin: 0.33rem 0;
 }
 .account footer ul {
   padding: 1rem;
   margin: 0;
   line-height: 1.5;
-  margin-inline-start: -1ch;
+  margin-inline-start: -0.75rem;
   padding: 0;
 }
 .account footer li {
@@ -252,14 +263,12 @@
   border-radius: 50%;
   background: #872166;
   margin: 0 0.25rem;
-  margin-block-start: -0.25rem;
+  margin-block-start: -0.125rem;
   margin-inline-end: 0.4rem;
   vertical-align: middle;
 }
-.account footer a {
-  display: inline-block;
-  line-height: 1.5rem;
-  margin: 0.33rem 0;
+.account footer p {
+  margin: 1.5rem 0;
 }
 .account .btn {
   -webkit-appearance: none;

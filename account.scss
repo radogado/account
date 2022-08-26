@@ -1,5 +1,6 @@
 .account {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	line-height: 1.5;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	// font-family: "Source Sans Pro";
 	color: rgb(0 0 0 / 64%);
 	margin: 0;
@@ -25,6 +26,9 @@
 	a {
 		text-decoration: none;
 		color: inherit;
+		&[href] {
+			font-weight: 500;
+		}
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -292,17 +296,25 @@
 
 	footer {
 		padding: 1rem;
-		font-size: .875rem;
+		margin-top: 1.5rem;
+		font-size: .75rem;
 
 		nav {
 			overflow: hidden;
+
+			a {
+				text-transform: uppercase;
+				display: inline-block;
+				line-height: 1.5rem;
+				margin: 0.33rem 0;
+			}
 		}
 
 		ul {
 			padding: 1rem;
 			margin: 0;
 			line-height: 1.5;
-			margin-inline-start: -1ch;
+			margin-inline-start: -.75rem;
 			padding: 0;
 		}
 
@@ -317,17 +329,16 @@
 				border-radius: 50%;
 				background: #872166;
 				margin: 0 0.25rem;
-				margin-block-start: -0.25rem;
+				margin-block-start: -0.125rem;
 				margin-inline-end: 0.4rem;
 				vertical-align: middle;
 			}
 		}
-
-		a {
-			display: inline-block;
-			line-height: 1.5rem;
-			margin: 0.33rem 0;
+		
+		p {
+			margin: 1.5rem 0;
 		}
+
 	}
 
 	.btn {
