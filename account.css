@@ -103,13 +103,13 @@
     color: rgba(0, 0, 0, 0.64);
   }
   .account sidebar #expand-desktop-menu:checked ~ nav a:before {
-    margin-inline-end: 1em;
+    margin-inline-end: 1rem;
   }
   .account sidebar #expand-desktop-menu:checked ~ nav [aria-current] a {
     color: #70215e;
   }
   .account sidebar nav {
-    max-width: 4rem;
+    max-width: 3.5rem;
   }
 }
 .account sidebar nav {
