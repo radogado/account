@@ -34,7 +34,7 @@
     --transition-duration: .2s;
   }
 }
-.account sidebar {
+.account aside {
   font-size: 0.875rem;
   grid-row: 1/-1;
   background-color: #0000000a;
@@ -44,15 +44,15 @@
   top: 0;
   position: sticky;
 }
-.account sidebar .logo {
+.account aside .logo {
   text-align: center;
   display: block;
 }
-.account sidebar ul {
+.account aside ul {
   list-style-type: none;
   padding: 0;
 }
-.account sidebar #expand-desktop-menu {
+.account aside #expand-desktop-menu {
   -webkit-appearance: none;
   appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -64,7 +64,7 @@
   width: calc(100% - 0.5rem);
   margin: 0 0.25rem;
 }
-.account sidebar #expand-desktop-menu:before {
+.account aside #expand-desktop-menu:before {
   cursor: pointer;
   content: "≪";
   width: 2.5rem;
@@ -79,63 +79,63 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
+  content: "";
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
   transform: rotateZ(-180deg);
 }
-.account sidebar #expand-desktop-menu:hover:before {
+.account aside #expand-desktop-menu:hover:before {
   background-color: #0000000a;
 }
-.account sidebar #expand-desktop-menu:not(:checked):before {
+.account aside #expand-desktop-menu:not(:checked):before {
   transform: none;
 }
 @media not screen and (min-width: 800px) {
-  .account sidebar #expand-desktop-menu {
+  .account aside #expand-desktop-menu {
     display: none;
   }
-  .account sidebar #mobile-menu-trigger:not(:checked) ~ nav {
+  .account aside #mobile-menu-trigger:not(:checked) ~ nav {
     display: none;
   }
 }
 @media (min-width: 800px) {
-  .account sidebar #mobile-menu-trigger {
+  .account aside #mobile-menu-trigger {
     display: none;
   }
-  .account sidebar #expand-desktop-menu:checked ~ nav {
+  .account aside #expand-desktop-menu:checked ~ nav {
     max-width: 14rem;
   }
-  .account sidebar #expand-desktop-menu:checked ~ nav a {
+  .account aside #expand-desktop-menu:checked ~ nav a {
     color: rgba(0, 0, 0, 0.64);
   }
-  .account sidebar #expand-desktop-menu:checked ~ nav a:before {
+  .account aside #expand-desktop-menu:checked ~ nav a:before {
     margin-inline-end: 1rem;
   }
-  .account sidebar #expand-desktop-menu:checked ~ nav [aria-current] a {
+  .account aside #expand-desktop-menu:checked ~ nav [aria-current] a {
     color: #70215e;
   }
-  .account sidebar nav {
+  .account aside nav {
     max-width: 3.5rem;
   }
-  .account sidebar nav a {
+  .account aside nav a {
     color: rgba(0, 0, 0, 0);
   }
-  .account sidebar nav [aria-current] a {
+  .account aside nav [aria-current] a {
     color: rgba(112, 33, 94, 0);
   }
 }
-.account sidebar nav {
+.account aside nav {
   overflow: hidden;
   transition: max-width var(--transition-duration, 0) ease-in-out;
   font-weight: 600;
 }
-.account sidebar nav li {
+.account aside nav li {
   display: flex;
   align-items: center;
   transition: background-color var(--transition-duration, 0) ease-in-out;
 }
-.account sidebar nav li:before {
+.account aside nav li:before {
   content: "";
   width: 0.375em;
   background: transparent;
@@ -144,17 +144,17 @@
   flex-shrink: 0;
   height: 3rem;
 }
-.account sidebar nav li[aria-current] {
+.account aside nav li[aria-current] {
   line-height: 1.5rem;
 }
-.account sidebar nav li[aria-current]:before,
-.account sidebar nav li[aria-current] a:before {
+.account aside nav li[aria-current]:before,
+.account aside nav li[aria-current] a:before {
   background-color: #70215e;
 }
-.account sidebar nav li:hover, .account sidebar nav li[aria-current] {
+.account aside nav li:hover, .account aside nav li[aria-current] {
   background-color: #0000000a;
 }
-.account sidebar nav a {
+.account aside nav a {
   display: flex;
   line-height: 1.5;
   text-transform: uppercase;
@@ -165,14 +165,14 @@
   min-height: 3.5rem;
   align-items: center;
 }
-.account sidebar nav a[href] {
+.account aside nav a[href] {
   font-weight: 600;
   width: calc(100% - 2rem);
 }
-.account sidebar nav [aria-current] a {
+.account aside nav [aria-current] a {
   color: #70215e;
 }
-.account sidebar nav a:before,
+.account aside nav a:before,
 .account header dl:before {
   content: "";
   width: 1.5em;

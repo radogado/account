@@ -39,7 +39,7 @@ $mobile_breakpoint: 800px;
 		--transition-duration: .2s;
 	}
 
-	sidebar {
+	aside {
 		font-size: .875rem;
 		grid-row: 1/-1;
 		background-color: #0000000a;
@@ -218,7 +218,7 @@ $mobile_breakpoint: 800px;
 		}
 	}
 
-	sidebar nav a:before,
+	aside nav a:before,
 	header dl:before {
 		content: "";
 		width: 1.5em;
