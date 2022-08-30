@@ -1,4 +1,5 @@
 $mobile_breakpoint: 800px;
+@import "fonts";
 
 .account {
 	line-height: 1.5;
@@ -116,9 +117,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
-
 				display: none;
-
 			}
 		}
 
@@ -130,7 +129,8 @@ $mobile_breakpoint: 800px;
 			#expand-desktop-menu:checked ~ nav {
 				max-width: 14rem;
 
-				a {
+				a,
+				button {
 					color: rgb(0 0 0 / 64%);
 
 					&:before {
@@ -147,12 +147,17 @@ $mobile_breakpoint: 800px;
 			nav {
 				max-width: 3.5rem;
 
-				a {
+				a,
+				button {
 					color: rgba(0, 0, 0, 0);
 				}
 
-				[aria-current] a {
-					color: rgba(112, 33, 94, 0)
+				[aria-current] {
+
+					a,
+					button {
+						color: rgba(112, 33, 94, 0)
+					}
 				}
 
 
@@ -194,17 +199,29 @@ $mobile_breakpoint: 800px;
 				}
 			}
 
-			a {
+			a,
+			button {
 				display: flex;
+				width: 100%;
 				line-height: 1.5;
 				text-transform: uppercase;
-				color: inherit;
+				cursor: pointer;
+				font: inherit;
+				-webkit-appearance: none;
+				appearance: none;
+				border: none;
+				background: none;
+				box-sizing: content-box;
+
+				padding: 0;
 				padding-inline-end: 1.5em;
 				min-width: 12.25rem;
 				transition: color var(--transition-duration, 0) ease-in-out;
 				min-height: 3.5rem;
 				align-items: center;
+				text-align: start;
 
+				&,
 				&[href] {
 					font-weight: 600;
 					width: calc(100% - 2rem);
@@ -212,14 +229,19 @@ $mobile_breakpoint: 800px;
 
 			}
 
-			[aria-current] a {
-				color: rgba(112, 33, 94, 1)
+			[aria-current] {
+
+				a,
+				button {
+					color: rgba(112, 33, 94, 1)
+				}
 			}
 
 		}
 	}
 
 	aside nav a:before,
+	aside nav button:before,
 	header dl:before {
 		content: "";
 		width: 1.5em;
@@ -425,5 +447,3 @@ $mobile_breakpoint: 800px;
 
 	}
 }
-
-@import "fonts";
