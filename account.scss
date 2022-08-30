@@ -54,8 +54,12 @@ $mobile_breakpoint: 800px;
 		.logo {
 			text-align: center;
 			display: block;
+			overflow: hidden;
 			// top: 0;
 			// position: sticky;
+			img {
+				height: 3rem;
+			}
 		}
 
 		ul {

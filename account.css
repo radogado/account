@@ -307,6 +307,10 @@
 .account aside .logo {
   text-align: center;
   display: block;
+  overflow: hidden;
+}
+.account aside .logo img {
+  height: 3rem;
 }
 .account aside ul {
   list-style-type: none;
