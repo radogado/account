@@ -40,7 +40,7 @@
   background-color: #0000000a;
   overflow: auto;
   max-height: 100vh;
-  max-height: 100svh;
+  max-height: 100dvh;
   top: 0;
   position: sticky;
 }
@@ -79,7 +79,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
