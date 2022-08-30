@@ -8,6 +8,7 @@
   min-height: 100svh;
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
+  -webkit-text-size-adjust: none;
 }
 .account .skip-link {
   margin: 0.25rem;
@@ -273,7 +274,8 @@
   padding: 0;
 }
 .account footer li {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 .account footer li:before {
   content: "\a";
