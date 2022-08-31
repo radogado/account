@@ -2,10 +2,10 @@ $mobile_breakpoint: 800px;
 @import "fonts";
 
 .account {
-	
+
 	--accent-color: #70215e;
 	--accent-color: #253b80;
-	
+
 	line-height: 1.5;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	// font-family: "Source Sans Pro";
@@ -54,19 +54,28 @@ $mobile_breakpoint: 800px;
 		max-height: 100dvh;
 		top: 0;
 		position: sticky;
+		padding-top: 1rem;
 
 		.logo {
 			text-align: center;
 			display: block;
 			overflow: hidden;
 			height: 3rem;
-			background: url(PayPal-2.svg) no-repeat 0 center;
-			margin-inline-start: 1.26rem;
+			background: url(PayPal-2.svg) no-repeat .25rem center;
+			transition: background-position-x calc(var(--transition-duration, 0) / 2) linear;
+			margin: 0 .75rem;
 
 			// top: 0;
 			// position: sticky;
 			img {
 				height: 3rem;
+			}
+		}
+
+		&:has(#expand-desktop-menu:checked) {
+			.logo {
+				background-position-x: center;
+				transition-delay: calc(var(--transition-duration, 0) / 2);
 			}
 		}
 

@@ -305,17 +305,23 @@
   max-height: 100dvh;
   top: 0;
   position: sticky;
+  padding-top: 1rem;
 }
 .account aside .logo {
   text-align: center;
   display: block;
   overflow: hidden;
   height: 3rem;
-  background: url(PayPal-2.svg) no-repeat 0 center;
-  margin-inline-start: 1.26rem;
+  background: url(PayPal-2.svg) no-repeat 0.25rem center;
+  transition: background-position-x calc(var(--transition-duration, 0) / 2) linear;
+  margin: 0 0.75rem;
 }
 .account aside .logo img {
   height: 3rem;
+}
+.account aside:has(#expand-desktop-menu:checked) .logo {
+  background-position-x: center;
+  transition-delay: calc(var(--transition-duration, 0) / 2);
 }
 .account aside ul {
   list-style-type: none;
@@ -348,7 +354,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
