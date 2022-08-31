@@ -62,7 +62,7 @@ $mobile_breakpoint: 800px;
 			overflow: hidden;
 			height: 3rem;
 			background: url(PayPal-2.svg) no-repeat .25rem center;
-			transition: background-position-x calc(var(--transition-duration, 0) / 2) linear;
+			transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
 			margin: 0 .75rem;
 
 			// top: 0;
@@ -404,7 +404,7 @@ $mobile_breakpoint: 800px;
 		-webkit-appearance: none;
 		appearance: none;
 		border: none;
-		background: none;
+		background-color: transparent;
 		font: inherit;
 		cursor: pointer;
 		color: var(--accent-color, #333);
@@ -416,11 +416,41 @@ $mobile_breakpoint: 800px;
 		min-width: 7.5rem;
 		outline-offset: .25rem;
 
-		&:hover {
+		&:hover,
+		&:active {
 			background-color: #f5c9e8;
 			border-color: var(--accent-color, #333);
 			color: var(--accent-color, #333);
 		}
+	}
+
+	button,
+	aside nav li {
+
+		background-image: radial-gradient(circle, rgb(0 0 0 / 5%) 70%, rgba(0, 0, 0, 0) 0);
+		background-size: 0 0;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: background-size .2s ease-out;
+
+		&:active {
+			background-size: 15rem 15rem;
+		}
+
+	}
+
+	aside #expand-desktop-menu:before {
+
+		background-image: radial-gradient(circle, rgb(0 0 0 / 5%) 70%, rgba(0, 0, 0, 0) 0);
+		background-size: 0 0;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: background-size .2s ease-out;
+
+	}
+
+	aside #expand-desktop-menu:active:before {
+		background-size: 3rem 3rem;
 	}
 
 }
