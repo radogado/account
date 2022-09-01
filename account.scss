@@ -155,7 +155,7 @@ $mobile_breakpoint: 800px;
 					color: rgb(0 0 0 / 64%);
 
 					&:before {
-						margin-inline-end: 1rem;
+						margin-inline-end: 3rem;
 					}
 				}
 
@@ -166,18 +166,21 @@ $mobile_breakpoint: 800px;
 			}
 
 			nav {
-				max-width: 3.5rem;
+				max-width: 4rem;
 
 				a,
 				button {
 					color: rgba(0, 0, 0, 0);
+					&:before {
+						color: initial;
+					}
 				}
 
 				[aria-current] {
 
 					a,
 					button {
-						color: rgba(0, 0, 0, 0)
+						color: rgba(0, 0, 0, 0);
 					}
 				}
 
@@ -208,10 +211,10 @@ $mobile_breakpoint: 800px;
 				&[aria-current] {
 					line-height: 1.5rem;
 
-					&:before,
-					a:before {
-						background-color: var(--accent-color, #333);
-					}
+					// &:before,
+					// a:before {
+					// 	background-color: var(--accent-color, #333);
+					// }
 				}
 
 				&:hover,
@@ -256,16 +259,22 @@ $mobile_breakpoint: 800px;
 	aside nav a:before,
 	aside nav button:before,
 	header dl:before {
-		content: "";
+		font-family: "Icons";
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+		content: "\e932";
 		width: 1.5em;
 		height: 1.5em;
 		flex-shrink: 0;
-		margin: 0 1em 0 1em;
-		background-color: #000000a3;
-		-webkit-mask: url(favicon.svg) center no-repeat;
-		-webkit-mask-size: contain;
-		mask: url(favicon.svg) center no-repeat;
-		mask-size: contain;
+		margin: 0 1rem;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		width: 0;
+		// background-color: #000000a3;
+		// -webkit-mask: url(favicon.svg) center no-repeat;
+		// -webkit-mask-size: contain;
+		// mask: url(favicon.svg) center no-repeat;
+		// mask-size: contain;
 		margin-inline-end: 2em;
 		transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
 
@@ -302,12 +311,14 @@ $mobile_breakpoint: 800px;
 			transition-property: background-color;
 
 			&:before {
-				content: "";
+				// content: "";
 				grid-row: 1/3;
 				margin-inline-end: 1rem;
 				margin-inline-start: 0;
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: margin-block-start;
+				color: #000000a3;
+				text-align: center;
 			}
 
 			&:hover {

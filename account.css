@@ -354,7 +354,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
+  content: "";
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
@@ -387,17 +387,21 @@
   }
   .account aside #expand-desktop-menu:checked ~ nav a:before,
 .account aside #expand-desktop-menu:checked ~ nav button:before {
-    margin-inline-end: 1rem;
+    margin-inline-end: 3rem;
   }
   .account aside #expand-desktop-menu:checked ~ nav [aria-current] a {
     color: var(--accent-color, #333);
   }
   .account aside nav {
-    max-width: 3.5rem;
+    max-width: 4rem;
   }
   .account aside nav a,
 .account aside nav button {
     color: rgba(0, 0, 0, 0);
+  }
+  .account aside nav a:before,
+.account aside nav button:before {
+    color: initial;
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] button {
@@ -425,10 +429,6 @@
 }
 .account aside nav li[aria-current] {
   line-height: 1.5rem;
-}
-.account aside nav li[aria-current]:before,
-.account aside nav li[aria-current] a:before {
-  background-color: var(--accent-color, #333);
 }
 .account aside nav li:hover, .account aside nav li[aria-current] {
   background-color: #0000000a;
@@ -463,16 +463,17 @@
 .account aside nav a:before,
 .account aside nav button:before,
 .account header dl:before {
-  content: "";
+  font-family: "Icons";
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  content: "";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
-  margin: 0 1em 0 1em;
-  background-color: #000000a3;
-  -webkit-mask: url(favicon.svg) center no-repeat;
-  -webkit-mask-size: contain;
-  mask: url(favicon.svg) center no-repeat;
-  mask-size: contain;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  width: 0;
   margin-inline-end: 2em;
   transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
 }
@@ -503,12 +504,13 @@
   transition-property: background-color;
 }
 .account header dl:before {
-  content: "";
   grid-row: 1/3;
   margin-inline-end: 1rem;
   margin-inline-start: 0;
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: margin-block-start;
+  color: #000000a3;
+  text-align: center;
 }
 .account header dl:hover:before {
   margin-block-start: -0.25rem;
