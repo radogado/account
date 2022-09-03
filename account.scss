@@ -84,7 +84,8 @@ $mobile_breakpoint: 800px;
 			padding: 0;
 		}
 
-		#expand-desktop-menu {
+		#expand-desktop-menu,
+		#mobile-menu-trigger {
 			-webkit-appearance: none;
 			appearance: none;
 			-webkit-tap-highlight-color: transparent;
@@ -107,10 +108,7 @@ $mobile_breakpoint: 800px;
 				color: inherit;
 				border-radius: 50%;
 				text-align: center;
-				transition: var(--transition-duration, 0) ease-in-out;
-				transition-property: background-color, transform;
 				line-height: 3;
-
 				font-family: "Icons";
 				font-weight: 400;
 				font-size: 1.5rem;
@@ -118,7 +116,6 @@ $mobile_breakpoint: 800px;
 				line-height: 1.7;
 				color: rgb(0 0 0 / 64%);
 				-webkit-font-smoothing: antialiased;
-				transform: rotateZ(-180deg);
 
 			}
 
@@ -132,6 +129,27 @@ $mobile_breakpoint: 800px;
 
 		}
 
+		#expand-desktop-menu {
+			transition: var(--transition-duration, 0) ease-in-out;
+			transition-property: background-color, transform;
+			transform: rotateZ(-180deg);
+
+		}
+
+
+		#mobile-menu-trigger {
+			grid-row: 1;
+			grid-column: 1;
+
+			&:before {
+				content: "menu";
+			}
+
+			&:checked:before {
+				content: "close";
+			}
+		}
+
 		@media not screen and (min-width: $mobile_breakpoint) {
 			#expand-desktop-menu {
 				display: none;
@@ -143,7 +161,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		@media (min-width: $mobile_breakpoint) {
-			#mobile-menu-trigger {
+			#mobile-menu-trigger, input[type="reset"] {
 				display: none;
 			}
 
@@ -263,6 +281,11 @@ $mobile_breakpoint: 800px;
 			}
 
 		}
+		
+		#nav-reset-form {
+			display: none;
+		}
+		
 	}
 
 	aside nav a:before,
@@ -302,7 +325,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		.account__nav-button {
-		
+
 			a,
 			button {
 				&:before {
@@ -310,9 +333,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-withdraw {
-		
+
 			a,
 			button {
 				&:before {
@@ -320,9 +343,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-prepaid-card {
-		
+
 			a,
 			button {
 				&:before {
@@ -330,9 +353,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-promotions {
-		
+
 			a,
 			button {
 				&:before {
@@ -340,9 +363,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-transactions {
-		
+
 			a,
 			button {
 				&:before {
@@ -350,9 +373,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-exchange {
-		
+
 			a,
 			button {
 				&:before {
@@ -360,9 +383,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-statement {
-		
+
 			a,
 			button {
 				&:before {
@@ -370,9 +393,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-settings {
-		
+
 			a,
 			button {
 				&:before {
@@ -380,9 +403,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-faq {
-		
+
 			a,
 			button {
 				&:before {
@@ -390,9 +413,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-help {
-		
+
 			a,
 			button {
 				&:before {
@@ -400,9 +423,9 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.account__nav-contact {
-		
+
 			a,
 			button {
 				&:before {
@@ -410,7 +433,7 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 	}
 
 
@@ -463,7 +486,7 @@ $mobile_breakpoint: 800px;
 				}
 			}
 		}
-		
+
 		.header__loyalty dl:before {
 			content: "loyalty";
 		}
@@ -471,7 +494,7 @@ $mobile_breakpoint: 800px;
 		.header__balance dl:before {
 			content: "multicurrency";
 		}
-		
+
 		a[href] dl:hover {
 			background-color: #0000000a;
 
@@ -610,37 +633,91 @@ $mobile_breakpoint: 800px;
 }
 
 @media not screen and (min-width: $mobile_breakpoint) {
-	.account header {
-		a dl {
+	.account {
+
+		grid-template-columns: auto auto 1fr;
+
+		aside {
+			display: contents;
+
+			.logo {
+				width: 10rem;
+				grid-row: 1;
+				grid-column: 2;
+			}
+
+			nav {
+				grid-column: 1/3;
+				grid-row: 2/-1;
+				z-index: 0;
+				background-color: #F4F5F6;
+			}
+
+			#mobile-menu-trigger:not(:checked) ~ input[type="reset"] {
+				display: none;
+			}
+
+			input[type="reset"] {
+				grid-column: 1/-1;
+				grid-row: 2/-1;
+				background: rgba(0, 0, 0, .5);
+				z-index: 0;
+				appearance: none;
+				-webkit-appearance: none;
+				border: none;
+				font-size: 0;
+			}
+		}
+
+		header {
+			a dl {
+				&:before {
+					margin-inline-end: 0;
+				}
+
+				> * {
+					display: none;
+				}
+			}
+
+			div > dl {
+				display: block;
+
+				&:before,
+				dt {
+					display: none;
+				}
+			}
+
 			&:before {
-				margin-inline-end: 0;
+				order: -2;
 			}
 
-			> * {
+			> div {
+				order: -1;
+
+				dd {
+					white-space: nowrap;
+				}
+			}
+
+			.btn {
 				display: none;
 			}
+
 		}
 
-		div > dl {
-			display: block;
-
-			&:before,
-			dt {
-				display: none;
-			}
+		main,
+		footer {
+			grid-column: 1/-1;
 		}
 
-		&:before {
-			order: -2;
+		main {
+			grid-row: -3/-2;
 		}
 
-		> div {
-			order: -1;
-
-			dd {
-				white-space: nowrap;
-			}
+		footer {
+			grid-row: -2/-1;
 		}
-
 	}
 }
