@@ -263,6 +263,7 @@
   --accent-color: #253b80;
   line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Source Sans Pro";
   color: rgba(0, 0, 0, 0.64);
   margin: 0;
   min-height: 100vh;
@@ -270,6 +271,11 @@
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
   -webkit-text-size-adjust: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .account {
+    --transition-duration: .2s;
+  }
 }
 .account .skip-link {
   margin: 0.25rem;
@@ -287,16 +293,17 @@
 .account a,
 .account aside nav li button {
   text-decoration: none;
-  color: inherit;
 }
 .account a[href],
 .account aside nav li button[href] {
   font-weight: 500;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .account {
-    --transition-duration: .2s;
-  }
+.account a,
+.account aside nav li button {
+  color: rgba(0, 0, 0, 0.64);
+}
+.account aside #expand-desktop-menu:not(:checked) ~ nav li button {
+  color: rgba(0, 0, 0, 0);
 }
 .account aside {
   font-size: 0.875rem;
@@ -354,7 +361,7 @@
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
 }
-.account aside input[type=checkbox]:hover:before {
+.account aside input[type=checkbox]:hover:before, .account aside input[type=checkbox]:focus-visible:before {
   background-color: #0000000a;
 }
 .account aside input[type=checkbox]:not(:checked):before {
@@ -410,7 +417,7 @@
     margin-inline-end: 3rem;
   }
   .account aside input[type=checkbox]:checked ~ nav [aria-current] a,
-.account aside input[type=checkbox]:checked ~ nav [aria-current] a:before {
+.account aside input[type=checkbox]:checked ~ nav [aria-current] button {
     color: var(--accent-color, #333);
   }
   .account aside nav {
@@ -487,6 +494,9 @@
 .account aside nav button[href] {
   font-weight: 600;
   width: calc(100% - 2rem);
+}
+.account aside input[type=checkbox]:checked ~ nav [aria-current] button {
+  color: var(--accent-color, #333);
 }
 .account aside #nav-reset-form {
   display: none;
@@ -734,6 +744,10 @@
     background-color: #F4F5F6;
     max-width: 14rem;
   }
+  .account aside nav [aria-current] a,
+.account aside nav [aria-current] a:before {
+    color: var(--accent-color, #333);
+  }
   .account aside ul {
     margin: 0;
   }
@@ -796,7 +810,7 @@
     grid-row: -3/-2;
   }
   .account footer {
-    grid-row: -2/-1;
+    display: none;
   }
 }
 

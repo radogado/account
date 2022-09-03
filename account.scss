@@ -8,7 +8,7 @@ $mobile_breakpoint: 800px;
 
 	line-height: 1.5;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	// font-family: "Source Sans Pro";
+	font-family: "Source Sans Pro";
 	color: rgb(0 0 0 / 64%);
 	margin: 0;
 	min-height: 100vh;
@@ -17,6 +17,10 @@ $mobile_breakpoint: 800px;
 	grid-template: auto 1fr auto / auto 1fr;
 	-webkit-text-size-adjust: none; // Landscape iPhone text size
 
+	@media (prefers-reduced-motion: no-preference) {
+		--transition-duration: .2s;
+	}
+	
 	.skip-link {
 		margin: .25rem;
 		position: fixed;
@@ -35,15 +39,19 @@ $mobile_breakpoint: 800px;
 	a,
 	aside nav li button {
 		text-decoration: none;
-		color: inherit;
 
 		&[href] {
 			font-weight: 500;
 		}
 	}
 
-	@media (prefers-reduced-motion: no-preference) {
-		--transition-duration: .2s;
+	a,
+	aside nav li button {
+		color: rgb(0 0 0 / 64%);
+	}
+
+	aside #expand-desktop-menu:not(:checked) ~ nav li button {
+		color: rgba(0, 0, 0, 0);
 	}
 
 	aside {
@@ -111,7 +119,8 @@ $mobile_breakpoint: 800px;
 
 			}
 
-			&:hover:before {
+			&:hover:before,
+			&:focus-visible:before {
 				background-color: #0000000a;
 			}
 
@@ -188,7 +197,7 @@ $mobile_breakpoint: 800px;
 				[aria-current] {
 
 					a,
-					a:before {
+					button {
 						color: var(--accent-color, #333);
 					}
 				}
@@ -288,6 +297,10 @@ $mobile_breakpoint: 800px;
 
 			}
 
+		}
+
+		input[type="checkbox"]:checked ~ nav [aria-current] button {
+			color: var(--accent-color, #333);
 		}
 
 		#nav-reset-form {
@@ -663,6 +676,15 @@ $mobile_breakpoint: 800px;
 				z-index: 0;
 				background-color: #F4F5F6;
 				max-width: 14rem;
+
+				[aria-current] {
+
+					a,
+					a:before {
+						color: var(--accent-color, #333);
+					}
+				}
+
 			}
 
 			ul {
@@ -747,7 +769,8 @@ $mobile_breakpoint: 800px;
 		}
 
 		footer {
-			grid-row: -2/-1;
+			// grid-row: -2/-1;
+			display: none;
 		}
 	}
 }
