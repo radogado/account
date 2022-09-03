@@ -32,7 +32,8 @@ $mobile_breakpoint: 800px;
 		}
 	}
 
-	a {
+	a,
+	aside nav li button {
 		text-decoration: none;
 		color: inherit;
 
@@ -62,7 +63,6 @@ $mobile_breakpoint: 800px;
 			overflow: hidden;
 			height: 3rem;
 			background: url(PayPal-2.svg) no-repeat .25rem center;
-			transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
 			margin: 0 .8rem;
 
 			// top: 0;
@@ -72,20 +72,12 @@ $mobile_breakpoint: 800px;
 			}
 		}
 
-		&:has(#expand-desktop-menu:checked) {
-			.logo {
-				background-position-x: center;
-				transition-delay: calc(var(--transition-duration, 0) / 2);
-			}
-		}
-
 		ul {
 			list-style-type: none;
 			padding: 0;
 		}
 
-		#expand-desktop-menu,
-		#mobile-menu-trigger {
+		input[type="checkbox"] {
 			-webkit-appearance: none;
 			appearance: none;
 			-webkit-tap-highlight-color: transparent;
@@ -138,8 +130,10 @@ $mobile_breakpoint: 800px;
 
 
 		#mobile-menu-trigger {
+			align-self: center;
 			grid-row: 1;
 			grid-column: 1;
+			margin-inline-start: 0.56rem;
 
 			&:before {
 				content: "menu";
@@ -156,16 +150,30 @@ $mobile_breakpoint: 800px;
 			}
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
-				display: none;
+				visibility: hidden;
+				max-width: 0;
 			}
 		}
 
 		@media (min-width: $mobile_breakpoint) {
-			#mobile-menu-trigger, input[type="reset"] {
+			.logo {
+				transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
+
+			}
+
+			&:has(#expand-desktop-menu:checked) {
+				.logo {
+					background-position-x: center;
+					transition-delay: calc(var(--transition-duration, 0) / 2);
+				}
+			}
+
+			#mobile-menu-trigger,
+			input[type="reset"] {
 				display: none;
 			}
 
-			#expand-desktop-menu:checked ~ nav {
+			input[type="checkbox"]:checked ~ nav {
 				max-width: 14rem;
 
 				a,
@@ -238,10 +246,10 @@ $mobile_breakpoint: 800px;
 				&[aria-current] {
 					line-height: 1.5rem;
 
-					// &:before,
-					// a:before {
-					// 	background-color: var(--accent-color, #333);
-					// }
+					&:before,
+					a:before {
+						background-color: var(--accent-color, #333);
+					}
 				}
 
 				&:hover,
@@ -281,11 +289,11 @@ $mobile_breakpoint: 800px;
 			}
 
 		}
-		
+
 		#nav-reset-form {
 			display: none;
 		}
-		
+
 	}
 
 	aside nav a:before,
@@ -516,8 +524,10 @@ $mobile_breakpoint: 800px;
 
 	}
 
-	h1 {
-		margin-top: 2.333rem;
+	@media (min-width: $mobile_breakpoint) {
+		h1 {
+			margin-top: 2.333rem;
+		}
 	}
 
 	main {
@@ -616,7 +626,7 @@ $mobile_breakpoint: 800px;
 
 	}
 
-	aside #expand-desktop-menu:before {
+	aside input[type="checkbox"]:before {
 
 		background-image: radial-gradient(circle, rgb(0 0 0 / 5%) 70%, rgba(0, 0, 0, 0) 0);
 		background-size: 0 0;
@@ -626,7 +636,7 @@ $mobile_breakpoint: 800px;
 
 	}
 
-	aside #expand-desktop-menu:active:before {
+	aside input[type="checkbox"]:active:before {
 		background-size: 3rem 3rem;
 	}
 
@@ -644,6 +654,7 @@ $mobile_breakpoint: 800px;
 				width: 10rem;
 				grid-row: 1;
 				grid-column: 2;
+				align-self: center;
 			}
 
 			nav {
@@ -651,10 +662,17 @@ $mobile_breakpoint: 800px;
 				grid-row: 2/-1;
 				z-index: 0;
 				background-color: #F4F5F6;
+				max-width: 14rem;
+			}
+
+			ul {
+				margin: 0;
 			}
 
 			#mobile-menu-trigger:not(:checked) ~ input[type="reset"] {
-				display: none;
+				// display: none;
+				visibility: hidden;
+				background: transparent;
 			}
 
 			input[type="reset"] {
@@ -662,17 +680,24 @@ $mobile_breakpoint: 800px;
 				grid-row: 2/-1;
 				background: rgba(0, 0, 0, .5);
 				z-index: 0;
+				padding: 0;
 				appearance: none;
 				-webkit-appearance: none;
 				border: none;
 				font-size: 0;
+				transition: background-color var(--transition-duration, 0) ease-in-out;
 			}
 		}
 
 		header {
+			gap: 0;
+			padding: 0.25rem;
+
 			a dl {
 				&:before {
 					margin-inline-end: 0;
+					width: 2.5rem;
+					margin: 0;
 				}
 
 				> * {
@@ -690,7 +715,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			&:before {
-				order: -2;
+				display: none;
 			}
 
 			> div {
@@ -703,6 +728,11 @@ $mobile_breakpoint: 800px;
 
 			.btn {
 				display: none;
+			}
+
+			.header__balance {
+				flex-grow: 1;
+				text-align: center;
 			}
 
 		}

@@ -284,11 +284,13 @@
   z-index: 9;
   opacity: 1;
 }
-.account a {
+.account a,
+.account aside nav li button {
   text-decoration: none;
   color: inherit;
 }
-.account a[href] {
+.account a[href],
+.account aside nav li button[href] {
   font-weight: 500;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -313,22 +315,16 @@
   overflow: hidden;
   height: 3rem;
   background: url(PayPal-2.svg) no-repeat 0.25rem center;
-  transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
   margin: 0 0.8rem;
 }
 .account aside .logo img {
   height: 3rem;
 }
-.account aside:has(#expand-desktop-menu:checked) .logo {
-  background-position-x: center;
-  transition-delay: calc(var(--transition-duration, 0) / 2);
-}
 .account aside ul {
   list-style-type: none;
   padding: 0;
 }
-.account aside #expand-desktop-menu,
-.account aside #mobile-menu-trigger {
+.account aside input[type=checkbox] {
   -webkit-appearance: none;
   appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -340,8 +336,7 @@
   width: calc(100% - 0.5rem);
   margin: 0 0.25rem;
 }
-.account aside #expand-desktop-menu:before,
-.account aside #mobile-menu-trigger:before {
+.account aside input[type=checkbox]:before {
   cursor: pointer;
   content: "≪";
   width: 2.5rem;
@@ -359,12 +354,10 @@
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
 }
-.account aside #expand-desktop-menu:hover:before,
-.account aside #mobile-menu-trigger:hover:before {
+.account aside input[type=checkbox]:hover:before {
   background-color: #0000000a;
 }
-.account aside #expand-desktop-menu:not(:checked):before,
-.account aside #mobile-menu-trigger:not(:checked):before {
+.account aside input[type=checkbox]:not(:checked):before {
   transform: none;
 }
 .account aside #expand-desktop-menu {
@@ -373,8 +366,10 @@
   transform: rotateZ(-180deg);
 }
 .account aside #mobile-menu-trigger {
+  align-self: center;
   grid-row: 1;
   grid-column: 1;
+  margin-inline-start: 0.56rem;
 }
 .account aside #mobile-menu-trigger:before {
   content: "menu";
@@ -387,26 +382,35 @@
     display: none;
   }
   .account aside #mobile-menu-trigger:not(:checked) ~ nav {
-    display: none;
+    visibility: hidden;
+    max-width: 0;
   }
 }
 @media (min-width: 800px) {
-  .account aside #mobile-menu-trigger, .account aside input[type=reset] {
+  .account aside .logo {
+    transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
+  }
+  .account aside:has(#expand-desktop-menu:checked) .logo {
+    background-position-x: center;
+    transition-delay: calc(var(--transition-duration, 0) / 2);
+  }
+  .account aside #mobile-menu-trigger,
+.account aside input[type=reset] {
     display: none;
   }
-  .account aside #expand-desktop-menu:checked ~ nav {
+  .account aside input[type=checkbox]:checked ~ nav {
     max-width: 14rem;
   }
-  .account aside #expand-desktop-menu:checked ~ nav a,
-.account aside #expand-desktop-menu:checked ~ nav button {
+  .account aside input[type=checkbox]:checked ~ nav a,
+.account aside input[type=checkbox]:checked ~ nav button {
     color: rgba(0, 0, 0, 0.64);
   }
-  .account aside #expand-desktop-menu:checked ~ nav a:before,
-.account aside #expand-desktop-menu:checked ~ nav button:before {
+  .account aside input[type=checkbox]:checked ~ nav a:before,
+.account aside input[type=checkbox]:checked ~ nav button:before {
     margin-inline-end: 3rem;
   }
-  .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
-.account aside #expand-desktop-menu:checked ~ nav [aria-current] a:before {
+  .account aside input[type=checkbox]:checked ~ nav [aria-current] a,
+.account aside input[type=checkbox]:checked ~ nav [aria-current] a:before {
     color: var(--accent-color, #333);
   }
   .account aside nav {
@@ -450,6 +454,10 @@
 }
 .account aside nav li[aria-current] {
   line-height: 1.5rem;
+}
+.account aside nav li[aria-current]:before,
+.account aside nav li[aria-current] a:before {
+  background-color: var(--accent-color, #333);
 }
 .account aside nav li:hover, .account aside nav li[aria-current] {
   background-color: #0000000a;
@@ -609,8 +617,10 @@
   margin: 0;
   color: #000000e0;
 }
-.account h1 {
-  margin-top: 2.333rem;
+@media (min-width: 800px) {
+  .account h1 {
+    margin-top: 2.333rem;
+  }
 }
 .account main {
   width: 100%;
@@ -693,14 +703,14 @@
 .account aside nav li:active {
   background-size: 15rem 15rem;
 }
-.account aside #expand-desktop-menu:before {
+.account aside input[type=checkbox]:before {
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0);
   background-size: 0 0;
   background-repeat: no-repeat;
   background-position: center center;
   transition: background-size 0.2s ease-out;
 }
-.account aside #expand-desktop-menu:active:before {
+.account aside input[type=checkbox]:active:before {
   background-size: 3rem 3rem;
 }
 
@@ -715,28 +725,42 @@
     width: 10rem;
     grid-row: 1;
     grid-column: 2;
+    align-self: center;
   }
   .account aside nav {
     grid-column: 1/3;
     grid-row: 2/-1;
     z-index: 0;
     background-color: #F4F5F6;
+    max-width: 14rem;
+  }
+  .account aside ul {
+    margin: 0;
   }
   .account aside #mobile-menu-trigger:not(:checked) ~ input[type=reset] {
-    display: none;
+    visibility: hidden;
+    background: transparent;
   }
   .account aside input[type=reset] {
     grid-column: 1/-1;
     grid-row: 2/-1;
     background: rgba(0, 0, 0, 0.5);
     z-index: 0;
+    padding: 0;
     appearance: none;
     -webkit-appearance: none;
     border: none;
     font-size: 0;
+    transition: background-color var(--transition-duration, 0) ease-in-out;
+  }
+  .account header {
+    gap: 0;
+    padding: 0.25rem;
   }
   .account header a dl:before {
     margin-inline-end: 0;
+    width: 2.5rem;
+    margin: 0;
   }
   .account header a dl > * {
     display: none;
@@ -749,7 +773,7 @@
     display: none;
   }
   .account header:before {
-    order: -2;
+    display: none;
   }
   .account header > div {
     order: -1;
@@ -759,6 +783,10 @@
   }
   .account header .btn {
     display: none;
+  }
+  .account header .header__balance {
+    flex-grow: 1;
+    text-align: center;
   }
   .account main,
 .account footer {
