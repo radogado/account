@@ -13,11 +13,13 @@
 	<body class="account">
 		<a href="#main" class="skip-link">Skip to main content</a>
 		<aside>
+			<form id="form"></form>
 			<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger">
 			<span class="logo">
 				<!-- <img src="PayPal-2.svg" alt="The i letter in a circle"> -->
 			</span>
-			<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu">
+			<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu" form="form">
+			<input type="reset" form="form" aria-label="Close menu" style="display: none;">
 			<nav title="Main navigation">
 				<ul>
 					<li aria-current="page" class="account__nav-dashboard"><a href="#">Dashboard</a></li>
