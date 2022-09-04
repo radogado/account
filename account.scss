@@ -50,10 +50,6 @@ $mobile_breakpoint: 800px;
 		color: rgb(0 0 0 / 64%);
 	}
 
-	aside #expand-desktop-menu:not(:checked) ~ nav li button {
-		color: rgba(0, 0, 0, 0);
-	}
-
 	aside {
 		font-size: .875rem;
 		grid-row: 1/-1;
@@ -158,12 +154,33 @@ $mobile_breakpoint: 800px;
 			}
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
-				visibility: hidden;
+				// visibility: hidden;
 				max-width: 0;
+
+				li button, li a {
+					color: rgba(0, 0, 0, 0);
+				}
+
 			}
+
+			#mobile-menu-trigger:checked ~ nav {
+
+				a,
+				button {
+
+					&:before {
+						margin-inline-end: 3rem;
+					}
+				}
+			}
+
 		}
 
 		@media (min-width: $mobile_breakpoint) {
+			#expand-desktop-menu:not(:checked) ~ nav li button {
+				color: rgba(0, 0, 0, 0);
+			}
+
 			.logo {
 				transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
 			}
@@ -182,8 +199,16 @@ $mobile_breakpoint: 800px;
 
 			#expand-desktop-menu:checked ~ nav {
 				max-width: 14rem;
+
+				a,
+				button {
+
+					&:before {
+						margin-inline-end: 3rem;
+					}
+				}
 			}
-			
+
 			input[type="checkbox"]:checked ~ nav {
 
 				a,
@@ -191,7 +216,7 @@ $mobile_breakpoint: 800px;
 					color: rgb(0 0 0 / 64%);
 
 					&:before {
-						margin-inline-end: 3rem;
+						margin-inline-end: 3.5rem;
 					}
 				}
 
@@ -677,6 +702,8 @@ $mobile_breakpoint: 800px;
 				z-index: 0;
 				background-color: #F4F5F6;
 				max-width: 14rem;
+				box-shadow: 0 0.25rem 1.25rem #0000003d;
+				clip-path: inset(0px -1.5rem 0 0);
 
 				[aria-current] {
 
@@ -708,7 +735,8 @@ $mobile_breakpoint: 800px;
 				-webkit-appearance: none;
 				border: none;
 				font-size: 0;
-				transition: background-color var(--transition-duration, 0) ease-in-out;
+				transition: var(--transition-duration, 0) ease-in-out;
+				transition-property: background-color, visibility;
 			}
 		}
 

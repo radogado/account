@@ -302,9 +302,6 @@
 .account aside nav li button {
   color: rgba(0, 0, 0, 0.64);
 }
-.account aside #expand-desktop-menu:not(:checked) ~ nav li button {
-  color: rgba(0, 0, 0, 0);
-}
 .account aside {
   font-size: 0.875rem;
   grid-row: 1/-1;
@@ -389,11 +386,20 @@
     display: none;
   }
   .account aside #mobile-menu-trigger:not(:checked) ~ nav {
-    visibility: hidden;
     max-width: 0;
+  }
+  .account aside #mobile-menu-trigger:not(:checked) ~ nav li button, .account aside #mobile-menu-trigger:not(:checked) ~ nav li a {
+    color: rgba(0, 0, 0, 0);
+  }
+  .account aside #mobile-menu-trigger:checked ~ nav a:before,
+.account aside #mobile-menu-trigger:checked ~ nav button:before {
+    margin-inline-end: 3rem;
   }
 }
 @media (min-width: 800px) {
+  .account aside #expand-desktop-menu:not(:checked) ~ nav li button {
+    color: rgba(0, 0, 0, 0);
+  }
   .account aside .logo {
     transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
   }
@@ -408,13 +414,17 @@
   .account aside #expand-desktop-menu:checked ~ nav {
     max-width: 14rem;
   }
+  .account aside #expand-desktop-menu:checked ~ nav a:before,
+.account aside #expand-desktop-menu:checked ~ nav button:before {
+    margin-inline-end: 3rem;
+  }
   .account aside input[type=checkbox]:checked ~ nav a,
 .account aside input[type=checkbox]:checked ~ nav button {
     color: rgba(0, 0, 0, 0.64);
   }
   .account aside input[type=checkbox]:checked ~ nav a:before,
 .account aside input[type=checkbox]:checked ~ nav button:before {
-    margin-inline-end: 3rem;
+    margin-inline-end: 3.5rem;
   }
   .account aside input[type=checkbox]:checked ~ nav [aria-current] a,
 .account aside input[type=checkbox]:checked ~ nav [aria-current] button {
@@ -743,6 +753,8 @@
     z-index: 0;
     background-color: #F4F5F6;
     max-width: 14rem;
+    box-shadow: 0 0.25rem 1.25rem #0000003d;
+    clip-path: inset(0px -1.5rem 0 0);
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] a:before {
@@ -765,7 +777,8 @@
     -webkit-appearance: none;
     border: none;
     font-size: 0;
-    transition: background-color var(--transition-duration, 0) ease-in-out;
+    transition: var(--transition-duration, 0) ease-in-out;
+    transition-property: background-color, visibility;
   }
   .account header {
     gap: 0;
