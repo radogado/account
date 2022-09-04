@@ -364,12 +364,12 @@
 .account aside input[type=checkbox]:hover:before, .account aside input[type=checkbox]:focus-visible:before {
   background-color: #0000000a;
 }
-.account aside input[type=checkbox]:not(:checked):before {
-  transform: none;
-}
 .account aside #expand-desktop-menu {
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color, transform;
+  transform: none;
+}
+.account aside #expand-desktop-menu:checked:before {
   transform: rotateZ(-180deg);
 }
 .account aside #mobile-menu-trigger {
@@ -405,7 +405,7 @@
 .account aside input[type=reset] {
     display: none;
   }
-  .account aside input[type=checkbox]:checked ~ nav {
+  .account aside #expand-desktop-menu:checked ~ nav {
     max-width: 14rem;
   }
   .account aside input[type=checkbox]:checked ~ nav a,

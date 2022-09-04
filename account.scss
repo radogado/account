@@ -20,7 +20,7 @@ $mobile_breakpoint: 800px;
 	@media (prefers-reduced-motion: no-preference) {
 		--transition-duration: .2s;
 	}
-	
+
 	.skip-link {
 		margin: .25rem;
 		position: fixed;
@@ -124,19 +124,18 @@ $mobile_breakpoint: 800px;
 				background-color: #0000000a;
 			}
 
-			&:not(:checked):before {
-				transform: none;
-			}
-
 		}
 
 		#expand-desktop-menu {
 			transition: var(--transition-duration, 0) ease-in-out;
 			transition-property: background-color, transform;
-			transform: rotateZ(-180deg);
+			transform: none;
+
+			&:checked:before {
+				transform: rotateZ(-180deg);
+			}
 
 		}
-
 
 		#mobile-menu-trigger {
 			align-self: center;
@@ -167,7 +166,6 @@ $mobile_breakpoint: 800px;
 		@media (min-width: $mobile_breakpoint) {
 			.logo {
 				transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
-
 			}
 
 			&:has(#expand-desktop-menu:checked) {
@@ -182,8 +180,11 @@ $mobile_breakpoint: 800px;
 				display: none;
 			}
 
-			input[type="checkbox"]:checked ~ nav {
+			#expand-desktop-menu:checked ~ nav {
 				max-width: 14rem;
+			}
+			
+			input[type="checkbox"]:checked ~ nav {
 
 				a,
 				button {
