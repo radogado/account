@@ -157,7 +157,8 @@ $mobile_breakpoint: 800px;
 				// visibility: hidden;
 				max-width: 0;
 
-				li button, li a {
+				li button,
+				li a {
 					color: rgba(0, 0, 0, 0);
 				}
 
@@ -319,6 +320,7 @@ $mobile_breakpoint: 800px;
 				&[href] {
 					font-weight: 600;
 					width: calc(100% - 2rem);
+					outline-offset: -2px;
 				}
 
 			}
@@ -801,5 +803,15 @@ $mobile_breakpoint: 800px;
 			// grid-row: -2/-1;
 			display: none;
 		}
+	}
+}
+
+[dir="rtl"] {
+	.account aside #expand-desktop-menu:before {
+		transform: rotateZ(-180deg);
+	}
+
+	.account aside #expand-desktop-menu:checked:before {
+		transform: none;
 	}
 }

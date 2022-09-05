@@ -388,7 +388,8 @@
   .account aside #mobile-menu-trigger:not(:checked) ~ nav {
     max-width: 0;
   }
-  .account aside #mobile-menu-trigger:not(:checked) ~ nav li button, .account aside #mobile-menu-trigger:not(:checked) ~ nav li a {
+  .account aside #mobile-menu-trigger:not(:checked) ~ nav li button,
+.account aside #mobile-menu-trigger:not(:checked) ~ nav li a {
     color: rgba(0, 0, 0, 0);
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
@@ -504,6 +505,7 @@
 .account aside nav button[href] {
   font-weight: 600;
   width: calc(100% - 2rem);
+  outline-offset: -2px;
 }
 .account aside input[type=checkbox]:checked ~ nav [aria-current] button {
   color: var(--accent-color, #333);
@@ -825,6 +827,12 @@
   .account footer {
     display: none;
   }
+}
+[dir=rtl] .account aside #expand-desktop-menu:before {
+  transform: rotateZ(-180deg);
+}
+[dir=rtl] .account aside #expand-desktop-menu:checked:before {
+  transform: none;
 }
 
 /*# sourceMappingURL=account.css.map */
