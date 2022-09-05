@@ -386,7 +386,8 @@
     display: none;
   }
   .account aside #mobile-menu-trigger:not(:checked) ~ nav {
-    max-width: 0;
+    clip-path: inset(0 100% 0 0);
+    visibility: hidden;
   }
   .account aside #mobile-menu-trigger:not(:checked) ~ nav li button,
 .account aside #mobile-menu-trigger:not(:checked) ~ nav li a {
@@ -757,6 +758,9 @@
     max-width: 14rem;
     box-shadow: 0 0.25rem 1.25rem #0000003d;
     clip-path: inset(0px -1.5rem 0 0);
+    transition: var(--transition-duration, 0) ease-in-out;
+    transition-property: clip-path, visibility;
+    visibility: visible;
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] a:before {

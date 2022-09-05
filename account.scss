@@ -155,7 +155,10 @@ $mobile_breakpoint: 800px;
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
 				// visibility: hidden;
-				max-width: 0;
+				// max-width: 0;
+				// margin-inline-start: -100%;
+				clip-path: inset(0 100% 0 0);
+				visibility: hidden;
 
 				li button,
 				li a {
@@ -706,6 +709,9 @@ $mobile_breakpoint: 800px;
 				max-width: 14rem;
 				box-shadow: 0 0.25rem 1.25rem #0000003d;
 				clip-path: inset(0px -1.5rem 0 0);
+				transition: var(--transition-duration, 0) ease-in-out;
+				transition-property: clip-path, visibility;
+				visibility: visible;
 
 				[aria-current] {
 
