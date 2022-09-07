@@ -22,7 +22,9 @@ document.querySelector('aside input[type="reset"]')?.addEventListener('click', e
 	document.querySelector('main')?.removeAttribute('inert');
 });
 window.addEventListener('resize', e => {
-	if (getComputedStyle(document.querySelector('#mobile-menu-trigger')).display === 'none') {
+	let toggle = document.querySelector('#mobile-menu-trigger');
+	if (toggle && !toggle.clientWidth) {
 		document.querySelector('main')?.removeAttribute('inert');
+		toggle.checked = false;
 	}
 }, { passive: true });
