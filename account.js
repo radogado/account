@@ -22,7 +22,7 @@ document.querySelector('aside input[type="reset"]')?.addEventListener('click', e
 	document.querySelector('main')?.removeAttribute('inert');
 });
 window.addEventListener('resize', e => {
-	if (matchMedia('(min-width: 800px)').matches) {
+	if (getComputedStyle(document.querySelector('#mobile-menu-trigger')).display === 'none') {
 		document.querySelector('main')?.removeAttribute('inert');
 	}
 }, { passive: true });
