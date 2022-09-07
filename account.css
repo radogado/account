@@ -719,12 +719,12 @@
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0);
   background-size: 0 0;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: var(--ripple-x, center) var(--ripple-y, center);
   transition: background-size 0.2s ease-out;
 }
 .account button:active,
 .account aside nav li:active {
-  background-size: 15rem 15rem;
+  background-size: var(--ripple-diameter, 15rem) var(--ripple-diameter, 15rem);
 }
 .account aside input[type=checkbox]:before {
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0);
