@@ -714,27 +714,22 @@
   border-color: var(--accent-color, #333);
   color: var(--accent-color, #333);
 }
-.account button,
+.account .btn,
 .account aside nav li {
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0);
-  background-size: 0 0;
-  background-repeat: no-repeat;
-  background-position: var(--ripple-x, center) var(--ripple-y, center);
-  transition: background-size 0.2s ease-out;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat var(--ripple-x) var(--ripple-y)/0 0;
+  transition: all 0.15s ease-out;
 }
-.account button:active,
+.account .btn:active,
 .account aside nav li:active {
-  background-size: var(--ripple-diameter, 15rem) var(--ripple-diameter, 15rem);
+  background-position: calc(var(--ripple-x) - var(--ripple-radius)) calc(var(--ripple-y) - var(--ripple-radius));
+  background-size: calc(2 * var(--ripple-radius)) calc(2 * var(--ripple-radius));
 }
 .account aside input[type=checkbox]:before {
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0);
-  background-size: 0 0;
-  background-repeat: no-repeat;
-  background-position: center center;
-  transition: background-size 0.2s ease-out;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat center/0 0;
+  transition: background-size 0.15s ease-out;
 }
 .account aside input[type=checkbox]:active:before {
-  background-size: 3rem 3rem;
+  background-size: 100% 100%;
 }
 
 @media not screen and (min-width: 800px) {
