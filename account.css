@@ -392,11 +392,18 @@
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before {
     margin-inline-end: 3rem;
+    padding-inline-end: 0;
+  }
+  .account aside a:before,
+.account aside button:before {
+    padding-inline-end: 0.5rem;
+    transition: padding-inline-end var(--transition-duration, 0) ease-out;
   }
 }
 .account aside #expand-desktop-menu:checked ~ nav a:before,
 .account aside #expand-desktop-menu:checked ~ nav button:before {
   margin-inline-end: 3rem;
+  background: none;
 }
 @media (min-width: 800px) {
   .account aside #expand-desktop-menu:not(:checked) ~ nav li button {

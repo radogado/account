@@ -174,7 +174,16 @@ $mobile_breakpoint: 800px;
 
 					&:before {
 						margin-inline-end: 3rem;
+						padding-inline-end: 0;
 					}
+				}
+			}
+
+			a,
+			button {
+				&:before {
+					padding-inline-end: .5rem;
+					transition: padding-inline-end var(--transition-duration, 0) ease-out;
 				}
 			}
 
@@ -186,6 +195,7 @@ $mobile_breakpoint: 800px;
 			button {
 				&:before {
 					margin-inline-end: 3rem;
+					background: none;
 				}
 			}
 		}
