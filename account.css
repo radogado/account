@@ -389,14 +389,14 @@
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
-  .account aside #mobile-menu-trigger:not(:checked) ~ nav li button,
-.account aside #mobile-menu-trigger:not(:checked) ~ nav li a {
-    color: rgba(0, 0, 0, 0);
-  }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before {
     margin-inline-end: 3rem;
   }
+}
+.account aside #expand-desktop-menu:checked ~ nav a:before,
+.account aside #expand-desktop-menu:checked ~ nav button:before {
+  margin-inline-end: 3rem;
 }
 @media (min-width: 800px) {
   .account aside #expand-desktop-menu:not(:checked) ~ nav li button {
@@ -416,20 +416,12 @@
   .account aside #expand-desktop-menu:checked ~ nav {
     max-width: 14rem;
   }
-  .account aside #expand-desktop-menu:checked ~ nav a:before,
-.account aside #expand-desktop-menu:checked ~ nav button:before {
-    margin-inline-end: 3rem;
-  }
-  .account aside input[type=checkbox]:checked ~ nav a,
-.account aside input[type=checkbox]:checked ~ nav button {
+  .account aside #expand-desktop-menu:checked ~ nav a,
+.account aside #expand-desktop-menu:checked ~ nav button {
     color: rgba(0, 0, 0, 0.64);
   }
-  .account aside input[type=checkbox]:checked ~ nav a:before,
-.account aside input[type=checkbox]:checked ~ nav button:before {
-    margin-inline-end: 3.5rem;
-  }
-  .account aside input[type=checkbox]:checked ~ nav [aria-current] a,
-.account aside input[type=checkbox]:checked ~ nav [aria-current] button {
+  .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
+.account aside #expand-desktop-menu:checked ~ nav [aria-current] button {
     color: var(--accent-color, #333);
   }
   .account aside nav {
@@ -442,6 +434,7 @@
   .account aside nav a:before,
 .account aside nav button:before {
     color: initial;
+    margin-inline-end: 3rem;
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] button {
@@ -530,7 +523,13 @@
   width: 0;
   color: #000000a3;
   margin-inline-end: 3.5rem;
-  transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+}
+@media (min-width: 800px) {
+  .account aside nav a:before,
+.account aside nav button:before,
+.account header dl:before {
+    transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+  }
 }
 .account aside nav .account__nav-deposit a:before,
 .account aside nav .account__nav-deposit button:before {

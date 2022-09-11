@@ -162,7 +162,7 @@ $mobile_breakpoint: 800px;
 
 				li button,
 				li a {
-					color: rgba(0, 0, 0, 0);
+					// color: rgba(0, 0, 0, 0); // Replace by another property
 				}
 
 			}
@@ -178,6 +178,16 @@ $mobile_breakpoint: 800px;
 				}
 			}
 
+		}
+
+		#expand-desktop-menu:checked ~ nav {
+
+			a,
+			button {
+				&:before {
+					margin-inline-end: 3rem;
+				}
+			}
 		}
 
 		@media (min-width: $mobile_breakpoint) {
@@ -204,24 +214,14 @@ $mobile_breakpoint: 800px;
 			#expand-desktop-menu:checked ~ nav {
 				max-width: 14rem;
 
-				a,
-				button {
-
-					&:before {
-						margin-inline-end: 3rem;
-					}
-				}
 			}
 
-			input[type="checkbox"]:checked ~ nav {
+			#expand-desktop-menu:checked ~ nav {
 
 				a,
 				button {
 					color: rgb(0 0 0 / 64%);
 
-					&:before {
-						margin-inline-end: 3.5rem;
-					}
 				}
 
 				[aria-current] {
@@ -243,6 +243,7 @@ $mobile_breakpoint: 800px;
 
 					&:before {
 						color: initial;
+						margin-inline-end: 3rem;
 					}
 				}
 
@@ -361,7 +362,10 @@ $mobile_breakpoint: 800px;
 		// mask: url(favicon.svg) center no-repeat;
 		// mask-size: contain;
 		margin-inline-end: 3.5rem;
-		transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+
+		@media (min-width: $mobile_breakpoint) {
+			transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+		}
 	}
 
 	aside nav {
