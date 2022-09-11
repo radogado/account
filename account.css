@@ -389,10 +389,24 @@
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
+  .account aside nav a:after,
+.account aside nav button:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    inset-inline-start: 3rem;
+    background-color: #F4F5F6;
+    opacity: 1;
+    transition: opacity var(--transition-duration, 0) ease-out;
+  }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before {
     margin-inline-end: 3rem;
     padding-inline-end: 0;
+  }
+  .account aside #mobile-menu-trigger:checked ~ nav a:after,
+.account aside #mobile-menu-trigger:checked ~ nav button:after {
+    opacity: 0;
   }
   .account aside a:before,
 .account aside button:before {
@@ -479,10 +493,11 @@
   background-color: var(--accent-color, #333);
 }
 .account aside nav li:hover, .account aside nav li[aria-current] {
-  background-color: #0000000a;
+  background-color: #EAEBEC;
 }
 .account aside nav a,
 .account aside nav button {
+  position: relative;
   display: flex;
   width: 100%;
   line-height: 1.5;

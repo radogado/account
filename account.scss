@@ -167,6 +167,28 @@ $mobile_breakpoint: 800px;
 
 			}
 
+			nav {
+
+				a,
+				button {
+					&:after {
+						content: "";
+						position: absolute;
+						inset: 0;
+						inset-inline-start: 3rem;
+						background-color: #F4F5F6;
+						opacity: 1;
+						transition: opacity var(--transition-duration, 0) ease-out;
+					}
+				}
+				
+				[aria-current] {
+					a, button {
+						// background-color: #0000000a;
+					}
+				}
+			}
+
 			#mobile-menu-trigger:checked ~ nav {
 
 				a,
@@ -175,6 +197,10 @@ $mobile_breakpoint: 800px;
 					&:before {
 						margin-inline-end: 3rem;
 						padding-inline-end: 0;
+					}
+
+					&:after {
+						opacity: 0;
 					}
 				}
 			}
@@ -304,12 +330,13 @@ $mobile_breakpoint: 800px;
 
 				&:hover,
 				&[aria-current] {
-					background-color: #0000000a;
+					background-color: #EAEBEC;
 				}
 			}
 
 			a,
 			button {
+				position: relative;
 				display: flex;
 				width: 100%;
 				line-height: 1.5;
