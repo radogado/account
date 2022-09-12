@@ -677,8 +677,10 @@ $mobile_breakpoint: 800px;
 	}
 
 	.btn {
+		-webkit-tap-highlight-color: transparent;
 		-webkit-appearance: none;
 		appearance: none;
+		user-select: none;
 		border: none;
 		background-color: transparent;
 		font: inherit;

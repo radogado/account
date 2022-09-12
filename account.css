@@ -719,8 +719,10 @@
   margin: 1.5rem 0;
 }
 .account .btn {
+  -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
   appearance: none;
+  user-select: none;
   border: none;
   background-color: transparent;
   font: inherit;
