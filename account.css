@@ -403,6 +403,10 @@
 .account aside nav [aria-current] button:after {
     background-color: #EAEBEC;
   }
+  .account aside nav li a:before,
+.account aside nav li button:before {
+    margin-inline-end: 3rem;
+  }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before {
     margin-inline-end: 3rem;
@@ -492,8 +496,7 @@
 .account aside nav li[aria-current] {
   line-height: 1.5rem;
 }
-.account aside nav li[aria-current]:before,
-.account aside nav li[aria-current] a:before {
+.account aside nav li[aria-current]:before {
   background-color: var(--accent-color, #333);
 }
 .account aside nav li:hover, .account aside nav li[aria-current] {

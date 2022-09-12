@@ -171,6 +171,7 @@ $mobile_breakpoint: 800px;
 
 				a,
 				button {
+
 					&:after {
 						content: "";
 						position: absolute;
@@ -188,6 +189,17 @@ $mobile_breakpoint: 800px;
 					button {
 						&:after {
 							background-color: #EAEBEC;
+						}
+					}
+				}
+
+				li {
+
+					a,
+					button {
+						&:before {
+							margin-inline-end: 3rem;
+
 						}
 					}
 				}
@@ -326,8 +338,7 @@ $mobile_breakpoint: 800px;
 				&[aria-current] {
 					line-height: 1.5rem;
 
-					&:before,
-					a:before {
+					&:before {
 						background-color: var(--accent-color, #333);
 					}
 				}
