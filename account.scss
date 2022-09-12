@@ -746,16 +746,17 @@ $mobile_breakpoint: 800px;
 @media not screen and (min-width: $mobile_breakpoint) {
 	.account {
 
-		grid-template-columns: auto auto 1fr;
+		grid-template-columns: 3.5rem auto 1fr;
 
 		aside {
 			display: contents;
 
 			.logo {
-				width: 10rem;
+				width: 8rem;
 				grid-row: 1;
 				grid-column: 2;
 				align-self: center;
+				background-position-x: center;
 			}
 
 			nav {

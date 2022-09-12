@@ -764,16 +764,17 @@
 
 @media not screen and (min-width: 800px) {
   .account {
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: 3.5rem auto 1fr;
   }
   .account aside {
     display: contents;
   }
   .account aside .logo {
-    width: 10rem;
+    width: 8rem;
     grid-row: 1;
     grid-column: 2;
     align-self: center;
+    background-position-x: center;
   }
   .account aside nav {
     grid-column: 1/3;
