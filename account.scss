@@ -181,10 +181,14 @@ $mobile_breakpoint: 800px;
 						transition: opacity var(--transition-duration, 0) ease-out;
 					}
 				}
-				
+
 				[aria-current] {
-					a, button {
-						// background-color: #0000000a;
+
+					a,
+					button {
+						&:after {
+							background-color: #EAEBEC;
+						}
 					}
 				}
 			}
