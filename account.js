@@ -17,9 +17,9 @@
 			el.style.setProperty('--ripple-radius', `${radius}px`);
 			console.log(x, y, radius * 2);
 		}
-		document.querySelectorAll('.btn, aside nav li').forEach(el => { 
+		document.querySelectorAll('.btn, aside nav li').forEach(el => {
 			el.addEventListener('pointerdown', ripple);
-			el.addEventListener('keydown', ripple); 
+			el.addEventListener('keydown', ripple);
 		});
 		document.querySelector('#mobile-menu-trigger')?.addEventListener('change', e => {
 			let main = document.querySelector('main');
@@ -36,9 +36,14 @@
 		});
 		window.addEventListener('resize', e => {
 			let toggle = document.querySelector('#mobile-menu-trigger');
-			if (toggle && !toggle.clientWidth) {
+			if (toggle && !toggle.clientWidth) { // Switching to desktop while mobile menu is closed
 				document.querySelector('main')?.removeAttribute('inert');
 				toggle.checked = false;
+				let nav = document.querySelector('aside nav');
+				nav.style.transition = 'none';
+				setTimeout(() => {
+					nav.style.transition = '';
+				}, 1);
 			}
 		}, { passive: true });
 	};
