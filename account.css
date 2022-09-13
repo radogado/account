@@ -774,6 +774,8 @@
     grid-row: 1;
     grid-column: 2;
     align-self: center;
+  }
+  .account aside:has(#expand-desktop-menu:checked) .logo {
     background-position-x: center;
   }
   .account aside nav {

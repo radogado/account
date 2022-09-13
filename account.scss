@@ -756,7 +756,13 @@ $mobile_breakpoint: 800px;
 				grid-row: 1;
 				grid-column: 2;
 				align-self: center;
-				background-position-x: center;
+			}
+
+			&:has(#expand-desktop-menu:checked) {
+				.logo {
+					background-position-x: center;
+				}
+
 			}
 
 			nav {
