@@ -307,8 +307,6 @@
   grid-row: 1/-1;
   background-color: #0000000a;
   overflow: auto;
-  max-height: 100vh;
-  max-height: 100dvh;
   top: 0;
   position: sticky;
   padding-top: 1rem;
@@ -353,7 +351,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
+  content: "";
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.64);
   -webkit-font-smoothing: antialiased;
@@ -516,6 +514,7 @@
   border: none;
   background: none;
   box-sizing: content-box;
+  user-select: none;
   padding: 0;
   min-width: 13.25rem;
   transition: color var(--transition-duration, 0) ease-in-out;
@@ -527,7 +526,6 @@
 .account aside nav button,
 .account aside nav button[href] {
   font-weight: 600;
-  width: calc(100% - 2rem);
   outline-offset: -2px;
 }
 .account aside input[type=checkbox]:checked ~ nav [aria-current] button {
@@ -542,7 +540,7 @@
   font-family: "Icons";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  content: "\e932";
+  content: "";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
@@ -562,51 +560,51 @@
 }
 .account aside nav .account__nav-deposit a:before,
 .account aside nav .account__nav-deposit button:before {
-  content: "\e941";
+  content: "";
 }
 .account aside nav .account__nav-button a:before,
 .account aside nav .account__nav-button button:before {
-  content: "\e941";
+  content: "";
 }
 .account aside nav .account__nav-withdraw a:before,
 .account aside nav .account__nav-withdraw button:before {
-  content: "\e946";
+  content: "";
 }
 .account aside nav .account__nav-prepaid-card a:before,
 .account aside nav .account__nav-prepaid-card button:before {
-  content: "\e93c";
+  content: "";
 }
 .account aside nav .account__nav-promotions a:before,
 .account aside nav .account__nav-promotions button:before {
-  content: "\e959";
+  content: "";
 }
 .account aside nav .account__nav-transactions a:before,
 .account aside nav .account__nav-transactions button:before {
-  content: "\e962";
+  content: "";
 }
 .account aside nav .account__nav-exchange a:before,
 .account aside nav .account__nav-exchange button:before {
-  content: "\e939";
+  content: "";
 }
 .account aside nav .account__nav-statement a:before,
 .account aside nav .account__nav-statement button:before {
-  content: "\e93c";
+  content: "";
 }
 .account aside nav .account__nav-settings a:before,
 .account aside nav .account__nav-settings button:before {
-  content: "\e961";
+  content: "";
 }
 .account aside nav .account__nav-faq a:before,
 .account aside nav .account__nav-faq button:before {
-  content: "\e95a";
+  content: "";
 }
 .account aside nav .account__nav-help a:before,
 .account aside nav .account__nav-help button:before {
-  content: "\e95a";
+  content: "";
 }
 .account aside nav .account__nav-contact a:before,
 .account aside nav .account__nav-contact button:before {
-  content: "\e92b";
+  content: "";
 }
 .account header {
   display: flex;
@@ -868,6 +866,11 @@
 }
 [dir=rtl] .account aside #expand-desktop-menu:checked:before {
   transform: none;
+}
+@media not screen and (min-width: 800px) {
+  [dir=rtl] .account aside #mobile-menu-trigger:not(:checked) ~ nav {
+    clip-path: inset(0 0 0 100%);
+  }
 }
 
 /*# sourceMappingURL=account.css.map */

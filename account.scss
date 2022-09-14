@@ -57,8 +57,8 @@ $mobile_breakpoint: 800px;
 		grid-row: 1/-1;
 		background-color: #0000000a;
 		overflow: auto;
-		max-height: 100vh;
-		max-height: 100dvh;
+		// max-height: 100vh;
+		// max-height: 100dvh;
 		top: 0;
 		position: sticky;
 		padding-top: 1rem;
@@ -365,7 +365,7 @@ $mobile_breakpoint: 800px;
 				border: none;
 				background: none;
 				box-sizing: content-box;
-
+				user-select: none;
 				padding: 0;
 				// padding-inline-end: 1.5em;
 				min-width: 13.25rem;
@@ -377,7 +377,7 @@ $mobile_breakpoint: 800px;
 				&,
 				&[href] {
 					font-weight: 600;
-					width: calc(100% - 2rem);
+					// width: calc(100% - .5rem);
 					outline-offset: -2px;
 				}
 
@@ -888,5 +888,11 @@ $mobile_breakpoint: 800px;
 
 	.account aside #expand-desktop-menu:checked:before {
 		transform: none;
+	}
+
+	@media not screen and (min-width: 800px) {
+		.account aside #mobile-menu-trigger:not(:checked) ~ nav {
+			clip-path: inset(0 0 0 100%);
+		}
 	}
 }
