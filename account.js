@@ -51,6 +51,7 @@
 				}, 1);
 			}
 		}, { passive: true });
+		document.querySelector('.account')?.setAttribute('data-ready', true);
 	};
 	if (document.readyState !== "loading") {
 		init();

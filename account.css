@@ -273,7 +273,7 @@
   -webkit-text-size-adjust: none;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .account {
+  .account[data-ready] {
     --transition-duration: .2s;
   }
 }
@@ -758,7 +758,8 @@
 }
 .account aside input[type=checkbox]:before {
   background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat center/0 0;
-  transition: background-size 0.15s ease-out;
+  transition: var(--transition-duration, 0) ease-out;
+  transition-property: background-size, transform;
 }
 .account aside input[type=checkbox]:active:before {
   background-size: 100% 100%;

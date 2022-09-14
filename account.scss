@@ -18,7 +18,9 @@ $mobile_breakpoint: 800px;
 	-webkit-text-size-adjust: none; // Landscape iPhone text size
 
 	@media (prefers-reduced-motion: no-preference) {
-		--transition-duration: .2s;
+		&[data-ready] {
+			--transition-duration: .2s;
+		}
 	}
 
 	.skip-link {
@@ -733,7 +735,8 @@ $mobile_breakpoint: 800px;
 		&:before {
 
 			background: radial-gradient(circle, rgb(0 0 0 / 5%) 70%, rgba(0, 0, 0, 0) 0) no-repeat center / 0 0;
-			transition: background-size .15s ease-out;
+			transition: var(--transition-duration, 0) ease-out;
+			transition-property: background-size, transform;
 
 		}
 
