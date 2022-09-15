@@ -310,6 +310,7 @@
   top: 0;
   position: sticky;
   padding-top: 1rem;
+  border-inline-start: env(safe-area-inset-left) solid transparent;
 }
 .account aside .logo {
   text-align: center;
@@ -612,6 +613,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.25rem 1rem;
+  border-inline-end: env(safe-area-inset-right) solid transparent;
   overflow: auto;
 }
 .account header:before {
