@@ -259,18 +259,23 @@
   font-display: block;
 }
 .account {
-  --accent-color: #70215e;
-  --accent-color: #253b80;
+  --theme-color: #222;
+  --theme-color-light: #555;
+  --theme-link-color: #000;
+  --theme-accent-color: #253b80;
   line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-family: "Source Sans Pro";
-  color: rgba(0, 0, 0, 0.64);
+  color: var(--theme-color);
   margin: 0;
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
   -webkit-text-size-adjust: none;
+}
+.account.theme-purple {
+  --theme-accent-color: #70215e;
 }
 @media (prefers-reduced-motion: no-preference) {
   .account[data-ready] {
@@ -298,14 +303,17 @@
 .account aside nav li button[href] {
   font-weight: 500;
 }
-.account a,
-.account aside nav li button {
-  color: rgba(0, 0, 0, 0.64);
+.account a {
+  color: var(--theme-link-color);
+}
+.account aside nav li button,
+.account aside nav li a {
+  color: var(--theme-color-light);
 }
 .account aside {
   font-size: 0.875rem;
   grid-row: 1/-1;
-  background-color: #0000000a;
+  background-color: #F4F5F6;
   overflow: auto;
   top: 0;
   position: sticky;
@@ -319,6 +327,16 @@
   height: 3rem;
   background: url(PayPal-2.svg) no-repeat 0.25rem center;
   margin: 0 0.8rem;
+  position: relative;
+}
+.account aside .logo:after {
+  content: "";
+  background: #F4F5F6;
+  position: absolute;
+  inset: 0;
+  inset-inline-start: 4rem;
+  opacity: 0;
+  transition: opacity var(--transition-duration, 0) ease-out;
 }
 .account aside .logo img {
   height: 3rem;
@@ -352,13 +370,13 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
   line-height: 1.7;
-  color: rgba(0, 0, 0, 0.64);
+  color: var(--theme-color-light);
   -webkit-font-smoothing: antialiased;
 }
 .account aside input[type=checkbox]:hover:before, .account aside input[type=checkbox]:focus-visible:before {
-  background-color: #0000000a;
+  background-color: #EAEBEC;
 }
 .account aside #expand-desktop-menu {
   transition: var(--transition-duration, 0) ease-in-out;
@@ -428,7 +446,7 @@
 }
 @media (min-width: 800px) {
   .account aside #expand-desktop-menu:not(:checked) ~ nav li button {
-    color: rgba(0, 0, 0, 0);
+    color: transparent;
   }
   .account aside .logo {
     transition: background-position-x calc(var(--transition-duration, 0) / 2) ease-out;
@@ -436,6 +454,9 @@
   .account aside:has(#expand-desktop-menu:checked) .logo {
     background-position-x: center;
     transition-delay: calc(var(--transition-duration, 0) / 2);
+  }
+  .account aside:has(#expand-desktop-menu:checked) .logo:after {
+    opacity: 0;
   }
   .account aside #mobile-menu-trigger,
 .account aside input[type=reset] {
@@ -446,18 +467,18 @@
   }
   .account aside #expand-desktop-menu:checked ~ nav a,
 .account aside #expand-desktop-menu:checked ~ nav button {
-    color: rgba(0, 0, 0, 0.64);
+    color: var(--theme-color-light);
   }
   .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
 .account aside #expand-desktop-menu:checked ~ nav [aria-current] button {
-    color: var(--accent-color, #333);
+    color: var(--theme-accent-color, #333);
   }
   .account aside nav {
     max-width: 4rem;
   }
   .account aside nav a,
 .account aside nav button {
-    color: rgba(0, 0, 0, 0);
+    color: transparent;
   }
   .account aside nav a:before,
 .account aside nav button:before {
@@ -466,11 +487,11 @@
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] button {
-    color: rgba(0, 0, 0, 0);
+    color: transparent;
   }
   .account aside nav [aria-current] a:before,
 .account aside nav [aria-current] button:before {
-    color: var(--accent-color, #333);
+    color: var(--theme-accent-color, #333);
   }
 }
 .account aside nav {
@@ -496,7 +517,7 @@
   line-height: 1.5rem;
 }
 .account aside nav li[aria-current]:before {
-  background-color: var(--accent-color, #333);
+  background-color: var(--theme-accent-color, #333);
 }
 .account aside nav li:hover, .account aside nav li[aria-current] {
   background-color: #EAEBEC;
@@ -530,7 +551,7 @@
   outline-offset: -2px;
 }
 .account aside input[type=checkbox]:checked ~ nav [aria-current] button {
-  color: var(--accent-color, #333);
+  color: var(--theme-accent-color, #333);
 }
 .account aside #nav-reset-form {
   display: none;
@@ -541,7 +562,7 @@
   font-family: "Icons";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "\e932";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
@@ -549,7 +570,7 @@
   font-size: 1.5rem;
   line-height: 1.5;
   width: 0;
-  color: #000000a3;
+  color: var(--theme-color);
   margin-inline-end: 3.5rem;
 }
 @media (min-width: 800px) {
@@ -561,51 +582,51 @@
 }
 .account aside nav .account__nav-deposit a:before,
 .account aside nav .account__nav-deposit button:before {
-  content: "";
+  content: "\e941";
 }
 .account aside nav .account__nav-button a:before,
 .account aside nav .account__nav-button button:before {
-  content: "";
+  content: "\e941";
 }
 .account aside nav .account__nav-withdraw a:before,
 .account aside nav .account__nav-withdraw button:before {
-  content: "";
+  content: "\e946";
 }
 .account aside nav .account__nav-prepaid-card a:before,
 .account aside nav .account__nav-prepaid-card button:before {
-  content: "";
+  content: "\e93c";
 }
 .account aside nav .account__nav-promotions a:before,
 .account aside nav .account__nav-promotions button:before {
-  content: "";
+  content: "\e959";
 }
 .account aside nav .account__nav-transactions a:before,
 .account aside nav .account__nav-transactions button:before {
-  content: "";
+  content: "\e962";
 }
 .account aside nav .account__nav-exchange a:before,
 .account aside nav .account__nav-exchange button:before {
-  content: "";
+  content: "\e939";
 }
 .account aside nav .account__nav-statement a:before,
 .account aside nav .account__nav-statement button:before {
-  content: "";
+  content: "\e93c";
 }
 .account aside nav .account__nav-settings a:before,
 .account aside nav .account__nav-settings button:before {
-  content: "";
+  content: "\e961";
 }
 .account aside nav .account__nav-faq a:before,
 .account aside nav .account__nav-faq button:before {
-  content: "";
+  content: "\e95a";
 }
 .account aside nav .account__nav-help a:before,
 .account aside nav .account__nav-help button:before {
-  content: "";
+  content: "\e95a";
 }
 .account aside nav .account__nav-contact a:before,
 .account aside nav .account__nav-contact button:before {
-  content: "";
+  content: "\e92b";
 }
 .account header {
   display: flex;
@@ -641,7 +662,7 @@
   margin-inline-start: 0.5rem;
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: margin-block-start;
-  color: #000000e0;
+  color: var(--theme-color);
   text-align: center;
 }
 .account header dl:hover:before {
@@ -654,7 +675,7 @@
   content: "multicurrency";
 }
 .account header a[href] dl:hover {
-  background-color: #0000000a;
+  background-color: #F4F5F6;
 }
 .account header dt {
   font-size: 0.875rem;
@@ -666,7 +687,7 @@
   grid-column: 2/3;
   align-self: normal;
   margin: 0;
-  color: #000000e0;
+  color: var(--theme-color);
 }
 @media (min-width: 800px) {
   .account h1 {
@@ -679,7 +700,7 @@
   max-width: 45rem;
   padding: 1rem;
   box-sizing: border-box;
-  color: #000000e0;
+  color: var(--theme-color);
 }
 .account footer {
   padding: 1rem;
@@ -713,7 +734,7 @@
   width: 0.25rem;
   height: 0.25rem;
   border-radius: 50%;
-  background: var(--accent-color, #333);
+  background: var(--theme-accent-color, #333);
   margin: 0 0.25rem;
   margin-inline-end: 0.5rem;
   vertical-align: middle;
@@ -730,8 +751,8 @@
   background-color: transparent;
   font: inherit;
   cursor: pointer;
-  color: var(--accent-color, #333);
-  border: 2px solid var(--accent-color, #333);
+  color: var(--theme-accent-color, #333);
+  border: 2px solid var(--theme-accent-color, #333);
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
@@ -742,8 +763,8 @@
 }
 .account .btn:hover, .account .btn:active {
   background-color: #f5c9e8;
-  border-color: var(--accent-color, #333);
-  color: var(--accent-color, #333);
+  border-color: var(--theme-accent-color, #333);
+  color: var(--theme-accent-color, #333);
 }
 .account .btn,
 .account aside nav li {
@@ -795,7 +816,7 @@
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] a:before {
-    color: var(--accent-color, #333);
+    color: var(--theme-accent-color, #333);
   }
   .account aside ul {
     margin: 0;

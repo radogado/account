@@ -3,13 +3,31 @@ $mobile_breakpoint: 800px;
 
 .account {
 
-	--accent-color: #70215e;
-	--accent-color: #253b80;
+	--theme-color: #222;
+	--theme-color-light: #555;
+	--theme-link-color: #000;
+	--theme-accent-color: #253b80;
+
+	&.theme-purple {
+		--theme-accent-color: #70215e;
+
+	}
 
 	line-height: 1.5;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: system-ui,
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Oxygen,
+	Ubuntu,
+	Cantarell,
+	"Fira Sans",
+	"Droid Sans",
+	"Helvetica Neue",
+	sans-serif;
 	font-family: "Source Sans Pro";
-	color: rgb(0 0 0 / 64%);
+	color: var(--theme-color);
 	margin: 0;
 	min-height: 100vh;
 	min-height: 100svh;
@@ -47,15 +65,19 @@ $mobile_breakpoint: 800px;
 		}
 	}
 
-	a,
-	aside nav li button {
-		color: rgb(0 0 0 / 64%);
+	a {
+		color: var(--theme-link-color);
+	}
+
+	aside nav li button,
+	aside nav li a {
+		color: var(--theme-color-light);
 	}
 
 	aside {
 		font-size: .875rem;
 		grid-row: 1/-1;
-		background-color: #0000000a;
+		background-color: #F4F5F6;
 		overflow: auto;
 		// max-height: 100vh;
 		// max-height: 100dvh;
@@ -71,6 +93,17 @@ $mobile_breakpoint: 800px;
 			height: 3rem;
 			background: url(PayPal-2.svg) no-repeat .25rem center;
 			margin: 0 .8rem;
+			position: relative;
+
+			&:after {
+				content: "";
+				background: #F4F5F6;
+				position: absolute;
+				inset: 0;
+				inset-inline-start: 4rem;
+				opacity: 0;
+				transition: opacity var(--transition-duration, 0) ease-out;
+			}
 
 			// top: 0;
 			// position: sticky;
@@ -113,14 +146,14 @@ $mobile_breakpoint: 800px;
 				font-size: 1.5rem;
 				content: "\e93a";
 				line-height: 1.7;
-				color: rgb(0 0 0 / 64%);
+				color: var(--theme-color-light);
 				-webkit-font-smoothing: antialiased;
 
 			}
 
 			&:hover:before,
 			&:focus-visible:before {
-				background-color: #0000000a;
+				background-color: #EAEBEC;
 			}
 
 		}
@@ -157,16 +190,8 @@ $mobile_breakpoint: 800px;
 			}
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
-				// visibility: hidden;
-				// max-width: 0;
-				// margin-inline-start: -100%;
 				clip-path: inset(0 100% 0 0);
 				visibility: hidden;
-
-				li button,
-				li a {
-					// color: rgba(0, 0, 0, 0); // Replace by another property
-				}
 
 			}
 
@@ -247,7 +272,7 @@ $mobile_breakpoint: 800px;
 
 		@media (min-width: $mobile_breakpoint) {
 			#expand-desktop-menu:not(:checked) ~ nav li button {
-				color: rgba(0, 0, 0, 0);
+				color: transparent;
 			}
 
 			.logo {
@@ -258,6 +283,10 @@ $mobile_breakpoint: 800px;
 				.logo {
 					background-position-x: center;
 					transition-delay: calc(var(--transition-duration, 0) / 2);
+
+					&:after {
+						opacity: 0;
+					}
 				}
 			}
 
@@ -275,7 +304,7 @@ $mobile_breakpoint: 800px;
 
 				a,
 				button {
-					color: rgb(0 0 0 / 64%);
+					color: var(--theme-color-light);
 
 				}
 
@@ -283,7 +312,7 @@ $mobile_breakpoint: 800px;
 
 					a,
 					button {
-						color: var(--accent-color, #333);
+						color: var(--theme-accent-color, #333);
 					}
 				}
 
@@ -294,7 +323,7 @@ $mobile_breakpoint: 800px;
 
 				a,
 				button {
-					color: rgba(0, 0, 0, 0);
+					color: transparent;
 
 					&:before {
 						color: initial;
@@ -306,10 +335,10 @@ $mobile_breakpoint: 800px;
 
 					a,
 					button {
-						color: rgba(0, 0, 0, 0);
+						color: transparent;
 
 						&:before {
-							color: var(--accent-color, #333);
+							color: var(--theme-accent-color, #333);
 						}
 					}
 				}
@@ -342,7 +371,7 @@ $mobile_breakpoint: 800px;
 					line-height: 1.5rem;
 
 					&:before {
-						background-color: var(--accent-color, #333);
+						background-color: var(--theme-accent-color, #333);
 					}
 				}
 
@@ -387,7 +416,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		input[type="checkbox"]:checked ~ nav [aria-current] button {
-			color: var(--accent-color, #333);
+			color: var(--theme-accent-color, #333);
 		}
 
 		#nav-reset-form {
@@ -410,7 +439,7 @@ $mobile_breakpoint: 800px;
 		font-size: 1.5rem;
 		line-height: 1.5;
 		width: 0;
-		color: #000000a3;
+		color: var(--theme-color);
 		// background-color: #000000a3;
 		// -webkit-mask: url(favicon.svg) center no-repeat;
 		// -webkit-mask-size: contain;
@@ -586,8 +615,7 @@ $mobile_breakpoint: 800px;
 				margin-inline-start: .5rem;
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: margin-block-start;
-				// color: #000000a3;
-				color: #000000e0;
+				color: var(--theme-color);
 				text-align: center;
 			}
 
@@ -608,7 +636,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		a[href] dl:hover {
-			background-color: #0000000a;
+			background-color: #F4F5F6;
 
 		}
 
@@ -623,7 +651,7 @@ $mobile_breakpoint: 800px;
 			grid-column: 2/3;
 			align-self: normal;
 			margin: 0;
-			color: #000000e0;
+			color: var(--theme-color);
 		}
 
 	}
@@ -640,7 +668,7 @@ $mobile_breakpoint: 800px;
 		max-width: 45rem;
 		padding: 1rem;
 		box-sizing: border-box;
-		color: #000000e0;
+		color: var(--theme-color);
 	}
 
 	footer {
@@ -678,7 +706,7 @@ $mobile_breakpoint: 800px;
 				width: 0.25rem;
 				height: 0.25rem;
 				border-radius: 50%;
-				background: var(--accent-color, #333);
+				background: var(--theme-accent-color, #333);
 				margin: 0 0.25rem;
 				margin-inline-end: 0.5rem;
 				vertical-align: middle;
@@ -700,8 +728,8 @@ $mobile_breakpoint: 800px;
 		background-color: transparent;
 		font: inherit;
 		cursor: pointer;
-		color: var(--accent-color, #333);
-		border: 2px solid var(--accent-color, #333);
+		color: var(--theme-accent-color, #333);
+		border: 2px solid var(--theme-accent-color, #333);
 		border-radius: 0.5rem;
 		font-size: .875rem;
 		font-weight: 600;
@@ -713,8 +741,8 @@ $mobile_breakpoint: 800px;
 		&:hover,
 		&:active {
 			background-color: #f5c9e8;
-			border-color: var(--accent-color, #333);
-			color: var(--accent-color, #333);
+			border-color: var(--theme-accent-color, #333);
+			color: var(--theme-accent-color, #333);
 		}
 	}
 
@@ -788,7 +816,7 @@ $mobile_breakpoint: 800px;
 
 					a,
 					a:before {
-						color: var(--accent-color, #333);
+						color: var(--theme-accent-color, #333);
 					}
 				}
 
