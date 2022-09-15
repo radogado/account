@@ -1,100 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>My Account</title>
-		<link rel="icon" href="./favicon.svg">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
-		<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
-		
-		<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
-		
-		<link href="account.css" rel="styleSheet">
-		<script src="account.js" type="module"></script>
-	</head>
+<head>
+	<meta name="robots" content="noindex">
+	<meta charset="utf-8">
+	<title>My Account</title>
+	<link rel="icon" href="./favicon.svg">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
+	<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
 
-	<body class="account">
-		<a href="#main" class="skip-link">Skip to main content</a>
-		<aside>
-			<form id="nav-reset-form"></form>
-			<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form">
-			<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
-			<span class="logo"></span>
-			<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu">
-			<nav title="Main navigation">
-				<ul>
-					<li aria-current="page" class="account__nav-dashboard"><a href="#">Dashboard</a></li>
-					<li class="account__nav-deposit"><a href="/deposit/">Deposit</a></li>
-					<li class="account__nav-button"><button>Item as button with long text</button></li>
-					<li aria-current="page" class="account__nav-button"><button>Active button</button></li>
-					<li class="account__nav-withdraw"><a href="/withdraw/">Withdraw</a></li>
-					<li class="account__nav-prepaid-card"><a href="/prepaid-card/">Prepaid card</a></li>
-					<li class="account__nav-promotions"><a href="/promotions/">Promotions</a></li>
-					<li class="account__nav-transactions"><a href="/transactions/">Transactions</a></li>
-					<li class="account__nav-exchange"><a href="/exchange/">Exchange</a></li>
-					<li class="account__nav-statement"><a href="/statement/">Get an account statement</a></li>
-					<li class="account__nav-settings"><a href="/settings/">Settings</a></li>
-					<li class="account__nav-faq"><a href="/faq/">FAQ</a></li>
-					<li class="account__nav-help"><a href="/help/">Help centre</a></li>
-					<li class="account__nav-contact"><a href="/contact/">Contact us</a></li>
-				</ul>
-			</nav>
-		</aside>
-		<header>
-			<a href="/loyalty" title="Loyalty" class="header__loyalty">
-				<dl>
-					<dt>Loyalty points</dt>
-					<dd>4959</dd>
-				</dl>
-			</a>
+	<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
 
-			<div class="header__balance">
-				<dl>
-					<dt>Main balance</dt>
-					<dd>EUR 1.43</dd>
-				</dl>
-			</div>
+	<link href="account.css" rel="styleSheet">
+	<script src="account.js" type="module"></script>
+</head>
 
-			<a href="/profile"" title="Profile" class="header__profile">
-				<dl>
-					<dt>John Davidson</dt>
-					<dd>Beginner Level</dd>
-				</dl>
-			</a>
+<body class="account">
+	<a href="#main" class="skip-link">Skip to main content</a>
+	<aside>
+		<form id="nav-reset-form"></form>
+		<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form">
+		<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
+		<span class="logo"></span>
+		<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu">
+		<nav title="Main navigation">
+			<ul>
+				<li aria-current="page" class="account__nav-dashboard"><a href="#">Dashboard</a></li>
+				<li class="account__nav-deposit"><a href="/deposit/">Deposit</a></li>
+				<li class="account__nav-button"><button>Item as button with long text</button></li>
+				<li aria-current="page" class="account__nav-button"><button>Active button</button></li>
+				<li class="account__nav-withdraw"><a href="/withdraw/">Withdraw</a></li>
+				<li class="account__nav-prepaid-card"><a href="/prepaid-card/">Prepaid card</a></li>
+				<li class="account__nav-promotions"><a href="/promotions/">Promotions</a></li>
+				<li class="account__nav-transactions"><a href="/transactions/">Transactions</a></li>
+				<li class="account__nav-exchange"><a href="/exchange/">Exchange</a></li>
+				<li class="account__nav-statement"><a href="/statement/">Get an account statement</a></li>
+				<li class="account__nav-settings"><a href="/settings/">Settings</a></li>
+				<li class="account__nav-faq"><a href="/faq/">FAQ</a></li>
+				<li class="account__nav-help"><a href="/help/">Help centre</a></li>
+				<li class="account__nav-contact"><a href="/contact/">Contact us</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<header>
+		<a href="/loyalty" title="Loyalty" class="header__loyalty">
+			<dl>
+				<dt>Loyalty points</dt>
+				<dd>4959</dd>
+			</dl>
+		</a>
 
-			<button class="btn">Logout</button>
+		<div class="header__balance">
+			<dl>
+				<dt>Main balance</dt>
+				<dd>EUR 1.43</dd>
+			</dl>
+		</div>
 
-		</header>
-		<main id="main">
-			<h1>Account overview</h1>
-			<p>Text paragraph with a <a href="#">demo link</a>.</p>
-			<p><button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Toggle RTL</button></p>
-			<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
-		</main>
-		<footer>
-			<nav title="Footer navigation">
-				<ul>
-					<li><a href="/en/siteinformation/fees/" rel="noopener"> Fees </a></li>
-					<li><a href="/en/support/" rel="noopener"> Support </a></li>
-					<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener"> Terms &amp; conditions </a></li>
-					<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener"> Privacy Policy </a></li>
-					<li><a href="/en/footer/apis/" target=_top rel="noopener"> API </a></li>
-					<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener"> Modern slavery act transparency statement </a></li>
-					<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener"> Cookies notice </a></li>
-					<li><a href="/en/footer/careers/" target=_blank rel="noopener"> Careers </a></li>
-					<li><a href="/en/footer/prepaid-card/" target=_blank rel="noopener"> My Prepaid Card </a></li>
-					<li><a href="/en/footer/affiliates/" target=_blank rel="noopener"> Affiliates </a></li>
-					<li><a href="/en/footer/laundering/" target=_blank rel="noopener"> Money Laundering </a></li>
-					<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener"> eCommerce </a></li>
-					<li><a href="/en/footer/consumer/" target=_blank rel="noopener"> Consumer Protection </a></li>
-				</ul>
-			</nav>
+		<a href="/profile"" title=" Profile" class="header__profile">
+			<dl>
+				<dt>John Davidson</dt>
+				<dd>Beginner Level</dd>
+			</dl>
+		</a>
 
-			<p>This Agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this Agreement contain hyperlinks to further information. For "Money Transfer" transactions, this Agreement applies individually to each transaction and is not a Framework Contract. Additionally, when paying for a Money Transfer transaction in a currency other than the Great Britain pound (GBP), you may be doing business with a <a href="/different">different entity</a>. In those cases, your money will be held in accordance with the regulations and <a href="/licenses">licenses applicable to such entity</a>.</p>
-		</footer>
-	</body>
+		<button class="btn">Logout</button>
+
+	</header>
+	<main id="main">
+		<h1>Account overview</h1>
+		<p>Text paragraph with a <a href="#">demo link</a>.</p>
+		<p><button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Toggle RTL</button></p>
+		<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
+	</main>
+	<footer>
+		<nav title="Footer navigation">
+			<ul>
+				<li><a href="/en/siteinformation/fees/" rel="noopener"> Fees </a></li>
+				<li><a href="/en/support/" rel="noopener"> Support </a></li>
+				<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener"> Terms &amp; conditions </a></li>
+				<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener"> Privacy Policy </a></li>
+				<li><a href="/en/footer/apis/" target=_top rel="noopener"> API </a></li>
+				<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener"> Modern slavery act transparency statement </a></li>
+				<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener"> Cookies notice </a></li>
+				<li><a href="/en/footer/careers/" target=_blank rel="noopener"> Careers </a></li>
+				<li><a href="/en/footer/prepaid-card/" target=_blank rel="noopener"> My Prepaid Card </a></li>
+				<li><a href="/en/footer/affiliates/" target=_blank rel="noopener"> Affiliates </a></li>
+				<li><a href="/en/footer/laundering/" target=_blank rel="noopener"> Money Laundering </a></li>
+				<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener"> eCommerce </a></li>
+				<li><a href="/en/footer/consumer/" target=_blank rel="noopener"> Consumer Protection </a></li>
+			</ul>
+		</nav>
+
+		<p>This Agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this Agreement contain hyperlinks to further information. For "Money Transfer" transactions, this Agreement applies individually to each transaction and is not a Framework Contract. Additionally, when paying for a Money Transfer transaction in a currency other than the Great Britain pound (GBP), you may be doing business with a <a href="/different">different entity</a>. In those cases, your money will be held in accordance with the regulations and <a href="/licenses">licenses applicable to such entity</a>.</p>
+	</footer>
+</body>
 
 </html>
