@@ -664,6 +664,9 @@ $mobile_breakpoint: 800px;
 		h1 {
 			margin-top: 2.333rem;
 		}
+		main {
+			border-inline-end: env(safe-area-inset-right) solid transparent;
+		}
 	}
 
 	main {

@@ -373,7 +373,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
+  content: "";
   line-height: 1.7;
   color: var(--theme-color-light);
   -webkit-font-smoothing: antialiased;
@@ -565,7 +565,7 @@
   font-family: "Icons";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  content: "\e932";
+  content: "";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
@@ -585,51 +585,51 @@
 }
 .account aside nav .account__nav-deposit a:before,
 .account aside nav .account__nav-deposit button:before {
-  content: "\e941";
+  content: "";
 }
 .account aside nav .account__nav-button a:before,
 .account aside nav .account__nav-button button:before {
-  content: "\e941";
+  content: "";
 }
 .account aside nav .account__nav-withdraw a:before,
 .account aside nav .account__nav-withdraw button:before {
-  content: "\e946";
+  content: "";
 }
 .account aside nav .account__nav-prepaid-card a:before,
 .account aside nav .account__nav-prepaid-card button:before {
-  content: "\e93c";
+  content: "";
 }
 .account aside nav .account__nav-promotions a:before,
 .account aside nav .account__nav-promotions button:before {
-  content: "\e959";
+  content: "";
 }
 .account aside nav .account__nav-transactions a:before,
 .account aside nav .account__nav-transactions button:before {
-  content: "\e962";
+  content: "";
 }
 .account aside nav .account__nav-exchange a:before,
 .account aside nav .account__nav-exchange button:before {
-  content: "\e939";
+  content: "";
 }
 .account aside nav .account__nav-statement a:before,
 .account aside nav .account__nav-statement button:before {
-  content: "\e93c";
+  content: "";
 }
 .account aside nav .account__nav-settings a:before,
 .account aside nav .account__nav-settings button:before {
-  content: "\e961";
+  content: "";
 }
 .account aside nav .account__nav-faq a:before,
 .account aside nav .account__nav-faq button:before {
-  content: "\e95a";
+  content: "";
 }
 .account aside nav .account__nav-help a:before,
 .account aside nav .account__nav-help button:before {
-  content: "\e95a";
+  content: "";
 }
 .account aside nav .account__nav-contact a:before,
 .account aside nav .account__nav-contact button:before {
-  content: "\e92b";
+  content: "";
 }
 .account header {
   display: flex;
@@ -695,6 +695,9 @@
 @media (min-width: 800px) {
   .account h1 {
     margin-top: 2.333rem;
+  }
+  .account main {
+    border-inline-end: env(safe-area-inset-right) solid transparent;
   }
 }
 .account main {

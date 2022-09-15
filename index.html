@@ -71,7 +71,7 @@
 		<main id="main">
 			<h1>Account overview</h1>
 			<p>Text paragraph with a <a href="#">demo link</a>.</p>
-			<p><button class="btn" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? '' : 'rtl';">Toggle RTL</button></p>
+			<p><button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Toggle RTL</button></p>
 			<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
 		</main>
 		<footer>
