@@ -13,6 +13,10 @@ $mobile_breakpoint: 800px;
 
 	}
 
+	&.theme-green {
+		--theme-accent-color: #00a841ff;
+	}
+	
 	line-height: 1.5;
 	font-family: system-ui,
 	-apple-system,

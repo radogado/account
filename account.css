@@ -277,6 +277,9 @@
 .account.theme-purple {
   --theme-accent-color: #70215e;
 }
+.account.theme-green {
+  --theme-accent-color: #00a841ff;
+}
 @media (prefers-reduced-motion: no-preference) {
   .account[data-ready] {
     --transition-duration: .2s;
