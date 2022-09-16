@@ -1,6 +1,5 @@
 (function() {
 	const init = () => {
-		
 		// Buttons ripple effect
 		const ripple = e => {
 			let el = e.target.closest('li') || e.target.closest('.btn');
@@ -24,7 +23,6 @@
 			el.addEventListener('pointerdown', ripple);
 			el.addEventListener('keydown', ripple);
 		});
-		
 		// Mobile/Desktop menu switching enhancement
 		document.querySelector('#mobile-menu-trigger')?.addEventListener('change', e => {
 			let main = document.querySelector('main');
@@ -50,6 +48,11 @@
 					nav.style.transition = '';
 				}, 1);
 			}
+			let logo = document.querySelector('aside .logo');
+			logo.style.transition = 'none';
+			setTimeout(() => {
+				logo.style.transition = '';
+			}, 1);
 		}, { passive: true });
 		document.querySelector('.account')?.setAttribute('data-ready', true);
 	};
