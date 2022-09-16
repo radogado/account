@@ -7,14 +7,20 @@ $mobile_breakpoint: 800px;
 	--theme-color-light: #555;
 	--theme-link-color: #000;
 	--theme-accent-color: #253b80;
+	--logo-width: 8rem;
+	--logo-height: 2rem;
+	--logo-width-shrunk: 2.1rem;
+	--logo-url: url(PayPal-2.svg);
 
 	&.theme-purple {
 		--theme-accent-color: #70215e;
+		--logo-url: url(Skrill-Logo.svg);
 
 	}
 
 	&.theme-green {
 		--theme-accent-color: #00a841ff;
+		--logo-url: url(Neteller.svg);
 	}
 	
 	line-height: 1.5;
@@ -95,7 +101,7 @@ $mobile_breakpoint: 800px;
 			display: block;
 			overflow: hidden;
 			height: 3rem;
-			background: url(PayPal-2.svg) no-repeat .25rem center;
+			background: var(--logo-url) no-repeat .25rem center / auto var(--logo-height);
 			margin: 0 .8rem;
 			position: relative;
 
