@@ -23,8 +23,8 @@
 		<form id="nav-reset-form"></form>
 		<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form">
 		<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
-		<span class="logo"></span>
 		<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu">
+		<span class="logo"></span>
 		<nav title="Main navigation">
 			<ul>
 				<li aria-current="page" class="account__nav-dashboard"><a href="#">Dashboard</a></li>
@@ -73,6 +73,14 @@
 		<h1>Account overview</h1>
 		<p>Text paragraph with a <a href="#">demo link</a>.</p>
 		<p><button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Toggle RTL</button></p>
+		<form>
+			<fieldset>
+				<legend>Theme</legend>
+				<label><input type="radio" name="theme" checked id="theme-blue"> Blue</label>
+				<label><input type="radio" name="theme" id="theme-purple"> Purple</label>
+				<label><input type="radio" name="theme" id="theme-green"> Green</label>
+			</fieldset>
+		</form>
 		<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
 	</main>
 	<footer>
