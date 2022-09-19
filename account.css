@@ -365,6 +365,7 @@
 .account aside ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 .account aside input[type=checkbox] {
   -webkit-appearance: none;
@@ -403,6 +404,7 @@
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color, transform;
   transform: none;
+  margin: 0.5rem 0;
 }
 .account aside #expand-desktop-menu:checked:before {
   transform: rotateZ(-180deg);
