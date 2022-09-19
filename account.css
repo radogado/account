@@ -786,6 +786,10 @@
   min-width: 7.5rem;
   outline-offset: 0.25rem;
   min-height: 2.5rem;
+  height: auto;
+}
+.account .btn + .btn {
+  margin-inline-start: 1rem;
 }
 .account .btn:hover, .account .btn:active {
   background-color: var(--theme-button-hover-background);

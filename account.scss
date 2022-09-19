@@ -781,6 +781,11 @@ $mobile_breakpoint: 800px;
 		min-width: 7.5rem;
 		outline-offset: .25rem;
 		min-height: 2.5rem;
+		height: auto;
+		
+		+ .btn {
+			margin-inline-start: 1rem;
+		}
 
 		&:hover,
 		&:active {
