@@ -160,6 +160,7 @@ $mobile_breakpoint: 800px;
 			appearance: none;
 			-webkit-tap-highlight-color: transparent;
 			margin: 0;
+			width: 3rem;
 			height: 3rem;
 			display: flex;
 			justify-content: center;
@@ -189,9 +190,16 @@ $mobile_breakpoint: 800px;
 
 			}
 
-			&:hover:before,
 			&:focus-visible:before {
 				background-color: #EAEBEC;
+			}
+
+			@media (hover: hover) {
+
+				&:hover:before {
+					background-color: #EAEBEC;
+				}
+
 			}
 
 		}
@@ -200,7 +208,8 @@ $mobile_breakpoint: 800px;
 			transition: var(--transition-duration, 0) ease-in-out;
 			transition-property: background-color, transform;
 			transform: none;
-			margin: .5rem .25rem;
+			margin: .5rem 0;
+			width: 100%;
 
 			&:checked:before {
 				transform: rotateZ(-180deg);
@@ -209,7 +218,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		#mobile-menu-trigger {
-			align-self: center;
+			place-self: center;
 			grid-row: 1;
 			grid-column: 1;
 			// margin-inline-start: 0.56rem;
@@ -228,10 +237,10 @@ $mobile_breakpoint: 800px;
 				display: none;
 			}
 
-// 			#mobile-menu-trigger {
-// 				margin-inline-start: 0.05rem;
-// 
-// 			}
+			// 			#mobile-menu-trigger {
+			// 				margin-inline-start: 0.05rem;
+			// 
+			// 			}
 
 			#mobile-menu-trigger:not(:checked) ~ nav {
 				clip-path: inset(0 100% 0 0);
@@ -403,6 +412,7 @@ $mobile_breakpoint: 800px;
 				display: flex;
 				align-items: center;
 				transition: background-color var(--transition-duration, 0) ease-in-out;
+				user-select: none;
 
 				&:before {
 					content: "";
@@ -422,10 +432,18 @@ $mobile_breakpoint: 800px;
 					}
 				}
 
-				&:hover,
 				&[aria-current] {
 					background-color: #EAEBEC;
 				}
+
+				@media (hover: hover) {
+
+					&:hover {
+						background-color: #EAEBEC;
+					}
+
+				}
+
 			}
 
 			a,
@@ -681,7 +699,7 @@ $mobile_breakpoint: 800px;
 		.header__balance dl:before {
 			content: "multicurrency";
 		}
-		
+
 		.header__profile dl {
 			padding-inline-end: .5rem;
 		}
@@ -837,6 +855,20 @@ $mobile_breakpoint: 800px;
 
 	}
 
+	fieldset {
+		border-radius: 0.5rem;
+		border: 2px solid var(--theme-accent-color);
+		margin: 0;
+	}
+	
+	legend {
+		color: var(--theme-accent-color);
+		padding: 0 0.5ch;
+		margin-bottom: -0.25rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+	
 }
 
 @media not screen and (min-width: $mobile_breakpoint) {
@@ -967,6 +999,7 @@ $mobile_breakpoint: 800px;
 			display: none;
 		}
 	}
+
 }
 
 [dir="rtl"] {

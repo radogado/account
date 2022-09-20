@@ -372,6 +372,7 @@
   appearance: none;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
+  width: 3rem;
   height: 3rem;
   display: flex;
   justify-content: center;
@@ -396,20 +397,26 @@
   color: var(--theme-color-light);
   -webkit-font-smoothing: antialiased;
 }
-.account aside input[type=checkbox]:hover:before, .account aside input[type=checkbox]:focus-visible:before {
+.account aside input[type=checkbox]:focus-visible:before {
   background-color: #EAEBEC;
+}
+@media (hover: hover) {
+  .account aside input[type=checkbox]:hover:before {
+    background-color: #EAEBEC;
+  }
 }
 .account aside #expand-desktop-menu {
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color, transform;
   transform: none;
-  margin: 0.5rem 0.25rem;
+  margin: 0.5rem 0;
+  width: 100%;
 }
 .account aside #expand-desktop-menu:checked:before {
   transform: rotateZ(-180deg);
 }
 .account aside #mobile-menu-trigger {
-  align-self: center;
+  place-self: center;
   grid-row: 1;
   grid-column: 1;
 }
@@ -526,6 +533,7 @@
   display: flex;
   align-items: center;
   transition: background-color var(--transition-duration, 0) ease-in-out;
+  user-select: none;
 }
 .account aside nav li:before {
   content: "";
@@ -542,8 +550,13 @@
 .account aside nav li[aria-current]:before {
   background-color: var(--theme-accent-color, #333);
 }
-.account aside nav li:hover, .account aside nav li[aria-current] {
+.account aside nav li[aria-current] {
   background-color: #EAEBEC;
+}
+@media (hover: hover) {
+  .account aside nav li:hover {
+    background-color: #EAEBEC;
+  }
 }
 .account aside nav a,
 .account aside nav button {
@@ -818,6 +831,18 @@
 }
 .account aside input[type=checkbox]:active:before {
   background-size: 100% 100%;
+}
+.account fieldset {
+  border-radius: 0.5rem;
+  border: 2px solid var(--theme-accent-color);
+  margin: 0;
+}
+.account legend {
+  color: var(--theme-accent-color);
+  padding: 0 0.5ch;
+  margin-bottom: -0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 @media not screen and (min-width: 800px) {
