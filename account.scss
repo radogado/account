@@ -153,6 +153,7 @@ $mobile_breakpoint: 800px;
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
+			width: 13.75rem;
 		}
 
 		input[type="checkbox"] {
@@ -279,7 +280,7 @@ $mobile_breakpoint: 800px;
 					a,
 					button {
 						&:before {
-							margin-inline-end: 3rem;
+							margin-inline-end: 2.75rem;
 
 						}
 					}
@@ -292,7 +293,7 @@ $mobile_breakpoint: 800px;
 				button {
 
 					&:before {
-						margin-inline-end: 3rem;
+						margin-inline-end: 2.75rem;
 						padding-inline-end: 0;
 					}
 
@@ -317,7 +318,7 @@ $mobile_breakpoint: 800px;
 			a,
 			button {
 				&:before {
-					margin-inline-end: 3rem;
+					margin-inline-end: 2.75rem;
 					background: none;
 				}
 			}
@@ -352,7 +353,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			#expand-desktop-menu:checked ~ nav {
-				max-width: 14rem;
+				max-width: 13.75rem;
 
 			}
 
@@ -510,7 +511,7 @@ $mobile_breakpoint: 800px;
 		// -webkit-mask-size: contain;
 		// mask: url(favicon.svg) center no-repeat;
 		// mask-size: contain;
-		margin-inline-end: 3.5rem;
+		margin-inline-end: 3.25rem;
 
 		@media (min-width: $mobile_breakpoint) {
 			transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
@@ -812,6 +813,7 @@ $mobile_breakpoint: 800px;
 		min-height: 2.5rem;
 		height: auto;
 		margin: .5rem 0;
+		line-height: 1;
 
 		&:has(+ .btn) {
 			margin-inline-end: .75rem;
@@ -859,6 +861,10 @@ $mobile_breakpoint: 800px;
 		border-radius: 0.5rem;
 		border: 2px solid var(--theme-accent-color);
 		margin: 0;
+		
+		label {
+			margin-inline-end: 0.5rem;
+		}
 	}
 	
 	legend {
@@ -894,7 +900,7 @@ $mobile_breakpoint: 800px;
 				grid-row: 2/-1;
 				z-index: 0;
 				background-color: #F4F5F6;
-				max-width: 14rem;
+				max-width: 13.75rem;
 				box-shadow: 0 0.25rem 1.25rem #0000003d;
 				clip-path: inset(0px -1.5rem 0 0);
 				transition: var(--transition-duration, 0) ease-in-out;

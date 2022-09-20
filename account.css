@@ -366,6 +366,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 13.75rem;
 }
 .account aside input[type=checkbox] {
   -webkit-appearance: none;
@@ -450,11 +451,11 @@
   }
   .account aside nav li a:before,
 .account aside nav li button:before {
-    margin-inline-end: 3rem;
+    margin-inline-end: 2.75rem;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before {
-    margin-inline-end: 3rem;
+    margin-inline-end: 2.75rem;
     padding-inline-end: 0;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:after,
@@ -469,7 +470,7 @@
 }
 .account aside #expand-desktop-menu:checked ~ nav a:before,
 .account aside #expand-desktop-menu:checked ~ nav button:before {
-  margin-inline-end: 3rem;
+  margin-inline-end: 2.75rem;
   background: none;
 }
 @media (min-width: 800px) {
@@ -493,7 +494,7 @@
     display: none;
   }
   .account aside #expand-desktop-menu:checked ~ nav {
-    max-width: 14rem;
+    max-width: 13.75rem;
   }
   .account aside #expand-desktop-menu:checked ~ nav a,
 .account aside #expand-desktop-menu:checked ~ nav button {
@@ -607,7 +608,7 @@
   line-height: 1.5;
   width: 0;
   color: var(--theme-color);
-  margin-inline-end: 3.5rem;
+  margin-inline-end: 3.25rem;
 }
 @media (min-width: 800px) {
   .account aside nav a:before,
@@ -804,6 +805,7 @@
   min-height: 2.5rem;
   height: auto;
   margin: 0.5rem 0;
+  line-height: 1;
 }
 .account .btn:has(+ .btn) {
   margin-inline-end: 0.75rem;
@@ -837,6 +839,9 @@
   border: 2px solid var(--theme-accent-color);
   margin: 0;
 }
+.account fieldset label {
+  margin-inline-end: 0.5rem;
+}
 .account legend {
   color: var(--theme-accent-color);
   padding: 0 0.5ch;
@@ -865,7 +870,7 @@
     grid-row: 2/-1;
     z-index: 0;
     background-color: #F4F5F6;
-    max-width: 14rem;
+    max-width: 13.75rem;
     box-shadow: 0 0.25rem 1.25rem #0000003d;
     clip-path: inset(0px -1.5rem 0 0);
     transition: var(--transition-duration, 0) ease-in-out;
