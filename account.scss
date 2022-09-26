@@ -652,7 +652,7 @@ $mobile_breakpoint: 800px;
 		gap: 1rem;
 		padding: 0.25rem 1rem;
 		border-inline-end: env(safe-area-inset-right) solid transparent;
-		overflow: auto;
+		// overflow: auto;
 
 		&:before {
 			content: "";
@@ -668,7 +668,7 @@ $mobile_breakpoint: 800px;
 			display: grid;
 			grid-template: 1fr 1fr / auto;
 			line-height: 1.25;
-			row-gap: 0.25rem;
+			// row-gap: 0.25rem;
 			align-items: center;
 			padding: 0.5rem 0;
 			transition: var(--transition-duration, 0) ease-in-out;
@@ -743,6 +743,7 @@ $mobile_breakpoint: 800px;
 		padding: 1rem;
 		box-sizing: border-box;
 		color: var(--theme-color);
+		justify-self: auto;
 	}
 
 	footer {
@@ -814,6 +815,7 @@ $mobile_breakpoint: 800px;
 		height: auto;
 		margin: .5rem 0;
 		line-height: 1;
+		word-break: break-word;
 
 		&:has(+ .btn) {
 			margin-inline-end: .75rem;
