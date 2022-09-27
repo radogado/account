@@ -410,8 +410,10 @@
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color, transform;
   transform: none;
-  margin: 0.5rem 0;
-  width: 100%;
+  margin: 0.5rem 0.25rem;
+  padding: 0.25rem 0;
+  box-sizing: content-box;
+  width: calc(100% - 0.5rem);
 }
 .account aside #expand-desktop-menu:checked:before {
   transform: rotateZ(-180deg);

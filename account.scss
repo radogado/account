@@ -209,8 +209,10 @@ $mobile_breakpoint: 800px;
 			transition: var(--transition-duration, 0) ease-in-out;
 			transition-property: background-color, transform;
 			transform: none;
-			margin: .5rem 0;
-			width: 100%;
+			margin: .5rem .25rem;
+			padding: 0.25rem 0;
+			box-sizing: content-box;
+			width: calc(100% - .5rem);
 
 			&:checked:before {
 				transform: rotateZ(-180deg);
