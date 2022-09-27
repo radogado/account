@@ -772,7 +772,7 @@ $mobile_breakpoint: 800px;
 			margin-top: 2.333rem;
 		}
 
-		main {
+		main, footer {
 			border-inline-end: env(safe-area-inset-right) solid transparent;
 		}
 	}
