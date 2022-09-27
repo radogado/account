@@ -2,7 +2,7 @@
 <html lang="en">
 
 	<head>
-		<meta name="robots" content="noindex">
+		<!-- <meta name="robots" content="noindex"> -->
 		<meta charset="utf-8">
 		<title>My Account</title>
 		<link rel="icon" href="./favicon.svg">
@@ -59,14 +59,31 @@
 				</dl>
 			</div>
 
-			<a href="/profile"" title=" Profile" class="header__profile">
-				<dl>
-					<dt>John Davidson</dt>
-					<dd data-text="profile-level">Beginner Level</dd>
-				</dl>
-			</a>
+			<details class="header__profile">
+				<summary>
+					<!-- <a href="/profile"" title=" Profile" class="header__profile"> -->
+						<dl>
+							<dt>John Davidson</dt>
+							<dd data-text="profile-level">Beginner Level</dd>
+						</dl>
+					<!-- </a> -->
+				</summary>
+				<div>
+					
+					<p>rado@me.com</p>
+					<p>Customer ID: 2931541</p>
+					
+					<p><a href="/profile" class="btn">Go to profile details</a></p>
+					
+					<p><b>Become VIP</b></p>
+					
+					<p><a href="/levels" class="btn">Explore account levels levels</a></p>
+					
+				</div>
 
-			<button class="btn" data-text="logout">Logout</button>
+			</details>
+
+			<button class="btn btn--logout" data-text="logout">Logout</button>
 
 		</header>
 		<main id="main">
@@ -84,7 +101,8 @@
 			<p>
 				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['en'][el.dataset.text]; }); document.documentElement.dir = 'ltr'; document.documentElement.lang = 'en'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">English</button>
 				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['fr'][el.dataset.text]; }); document.documentElement.dir = 'ltr'; document.documentElement.lang = 'fr'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Français</button>
-				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['ar'][el.dataset.text]; }); document.documentElement.dir = 'rtl'; document.documentElement.lang = 'ar'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Arabic</button></p>
+				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['ar'][el.dataset.text]; }); document.documentElement.dir = 'rtl'; document.documentElement.lang = 'ar'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Arabic</button>
+			</p>
 			<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
 		</main>
 		<footer>
