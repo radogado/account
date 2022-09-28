@@ -467,7 +467,7 @@
   .account aside a:before,
 .account aside button:before {
     padding-inline-end: 0.5rem;
-    transition: padding-inline-end var(--transition-duration, 0) ease-out;
+    transition: padding var(--transition-duration, 0) ease-out;
   }
 }
 .account aside #expand-desktop-menu:checked ~ nav a:before,
@@ -617,7 +617,7 @@
   .account aside nav a:before,
 .account aside nav button:before,
 .account header dl:before {
-    transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+    transition: margin var(--transition-duration, 0) ease-in-out;
   }
 }
 .account aside nav .account__nav-deposit a:before,
@@ -700,7 +700,7 @@
   margin-inline-end: 2.5rem;
   margin-inline-start: 0.5rem;
   transition: var(--transition-duration, 0) ease-in-out;
-  transition-property: margin-block-start;
+  transition-property: margin;
   color: var(--theme-color);
   text-align: center;
 }

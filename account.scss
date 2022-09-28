@@ -309,7 +309,7 @@ $mobile_breakpoint: 800px;
 			button {
 				&:before {
 					padding-inline-end: .5rem;
-					transition: padding-inline-end var(--transition-duration, 0) ease-out;
+					transition: padding var(--transition-duration, 0) ease-out;
 				}
 			}
 
@@ -517,7 +517,7 @@ $mobile_breakpoint: 800px;
 		margin-inline-end: 3.25rem;
 
 		@media (min-width: $mobile_breakpoint) {
-			transition: margin-inline-end var(--transition-duration, 0) ease-in-out;
+			transition: margin var(--transition-duration, 0) ease-in-out;
 		}
 	}
 
@@ -684,7 +684,7 @@ $mobile_breakpoint: 800px;
 				margin-inline-end: 2.5rem;
 				margin-inline-start: .5rem;
 				transition: var(--transition-duration, 0) ease-in-out;
-				transition-property: margin-block-start;
+				transition-property: margin;
 				color: var(--theme-color);
 				text-align: center;
 			}
