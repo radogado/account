@@ -775,6 +775,7 @@
   padding: 1rem;
   box-sizing: border-box;
   color: var(--theme-color);
+  scroll-margin-top: 10rem;
 }
 .account footer {
   padding: 1rem;
