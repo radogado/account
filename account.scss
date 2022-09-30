@@ -157,7 +157,7 @@ $mobile_breakpoint: 800px;
 			width: 13.75rem;
 		}
 
-		input[type="checkbox"] {
+		.account__trigger {
 			-webkit-appearance: none;
 			appearance: none;
 			-webkit-tap-highlight-color: transparent;
@@ -215,7 +215,8 @@ $mobile_breakpoint: 800px;
 			box-sizing: content-box;
 			width: calc(100% - .5rem);
 
-			&:checked:before {
+			&:checked:before,
+			&[aria-expanded]:before {
 				transform: rotateZ(-180deg);
 			}
 
@@ -232,7 +233,8 @@ $mobile_breakpoint: 800px;
 				content: "menu";
 			}
 
-			&:checked:before {
+			&:checked:before,
+			&[aria-expanded]:before {
 				content: "close";
 			}
 		}
@@ -242,15 +244,13 @@ $mobile_breakpoint: 800px;
 				display: none;
 			}
 
-			// 			#mobile-menu-trigger {
-			// 				margin-inline-start: 0.05rem;
-			// 
-			// 			}
+			input#mobile-menu-trigger:not(:checked),
+			button#mobile-menu-trigger:not([aria-expanded]) {
+				~ nav {
+					clip-path: inset(0 100% 0 0);
+					visibility: hidden;
 
-			#mobile-menu-trigger:not(:checked) ~ nav {
-				clip-path: inset(0 100% 0 0);
-				visibility: hidden;
-
+				}
 			}
 
 			nav {
@@ -291,18 +291,21 @@ $mobile_breakpoint: 800px;
 				}
 			}
 
-			#mobile-menu-trigger:checked ~ nav {
+			#mobile-menu-trigger:checked,
+			#mobile-menu-trigger[aria-expanded] {
+				~ nav {
 
-				a,
-				button {
+					a,
+					button {
 
-					&:before {
-						margin-inline-end: 2.75rem;
-						padding-inline-end: 0;
-					}
+						&:before {
+							margin-inline-end: 2.75rem;
+							padding-inline-end: 0;
+						}
 
-					&:after {
-						opacity: 0;
+						&:after {
+							opacity: 0;
+						}
 					}
 				}
 			}
@@ -317,20 +320,31 @@ $mobile_breakpoint: 800px;
 
 		}
 
-		#expand-desktop-menu:checked ~ nav {
+		#expand-desktop-menu:checked,
+		#expand-desktop-menu[aria-expanded] {
+			~ nav {
 
-			a,
-			button {
-				&:before {
-					margin-inline-end: 2.75rem;
-					background: none;
+				a,
+				button {
+					&:before {
+						margin-inline-end: 2.75rem;
+						background: none;
+					}
 				}
 			}
 		}
 
 		@media (min-width: $mobile_breakpoint) {
-			#expand-desktop-menu:not(:checked) ~ nav li button {
-				color: transparent;
+
+			input#expand-desktop-menu:not(:checked),
+			button#expand-desktop-menu:not([aria-expanded]) {
+				~ nav li {
+
+					button,
+					a {
+						color: transparent;
+					}
+				}
 			}
 
 			.logo {
@@ -340,8 +354,9 @@ $mobile_breakpoint: 800px;
 				height: var(--logo-height-shrunk);
 			}
 
-			#expand-desktop-menu:checked ~ {
-				.logo {
+			#expand-desktop-menu:checked,
+			#expand-desktop-menu[aria-expanded] {
+				~ .logo {
 
 					width: var(--logo-width);
 					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -356,27 +371,26 @@ $mobile_breakpoint: 800px;
 				display: none;
 			}
 
-			#expand-desktop-menu:checked ~ nav {
-				max-width: 13.75rem;
-
-			}
-
-			#expand-desktop-menu:checked ~ nav {
-
-				a,
-				button {
-					color: var(--theme-color-light);
-
-				}
-
-				[aria-current] {
+			#expand-desktop-menu:checked,
+			#expand-desktop-menu[aria-expanded] {
+				~ nav {
+					max-width: 13.75rem;
 
 					a,
 					button {
-						color: var(--theme-accent-color, #333);
-					}
-				}
+						color: var(--theme-color-light);
 
+					}
+
+					[aria-current] {
+
+						a,
+						button {
+							color: var(--theme-accent-color, #333);
+						}
+					}
+
+				}
 			}
 
 			nav {
@@ -486,8 +500,11 @@ $mobile_breakpoint: 800px;
 
 		}
 
-		input[type="checkbox"]:checked ~ nav [aria-current] button {
-			color: var(--theme-accent-color, #333);
+		.account__trigger:checked,
+		.account__trigger[aria-expanded] {
+			~ nav [aria-current] button {
+				color: var(--theme-accent-color, #333);
+			}
 		}
 
 		#nav-reset-form {
@@ -771,7 +788,8 @@ $mobile_breakpoint: 800px;
 			margin-top: 2.333rem;
 		}
 
-		main, footer {
+		main,
+		footer {
 			border-inline-end: env(safe-area-inset-right) solid transparent;
 		}
 	}
@@ -888,7 +906,7 @@ $mobile_breakpoint: 800px;
 
 	}
 
-	aside input[type="checkbox"] {
+	aside .account__trigger {
 
 		&:before {
 
@@ -968,10 +986,13 @@ $mobile_breakpoint: 800px;
 				margin: 0;
 			}
 
-			#mobile-menu-trigger:not(:checked) ~ input[type="reset"] {
-				// display: none;
-				visibility: hidden;
-				background: transparent;
+			input#mobile-menu-trigger:not(:checked),
+			button#mobile-menu-trigger:not([aria-expanded]) {
+				~ input[type="reset"] {
+					// display: none;
+					visibility: hidden;
+					background: transparent;
+				}
 			}
 
 			input[type="reset"] {
@@ -1044,7 +1065,7 @@ $mobile_breakpoint: 800px;
 				flex-grow: 1;
 				text-align: center;
 			}
-			
+
 			:focus-visible {
 				outline-offset: -3px;
 			}
@@ -1069,17 +1090,30 @@ $mobile_breakpoint: 800px;
 }
 
 [dir="rtl"] {
-	.account aside #expand-desktop-menu:before {
-		transform: rotateZ(-180deg);
-	}
+	.account aside {
 
-	.account aside #expand-desktop-menu:checked:before {
-		transform: none;
-	}
+		#expand-desktop-menu {
+			&:before {
+				transform: rotateZ(-180deg);
+			}
 
-	@media not screen and (min-width: 800px) {
-		.account aside #mobile-menu-trigger:not(:checked) ~ nav {
-			clip-path: inset(0 0 0 100%);
+			&:checked,
+			&[aria-expanded] {
+				&:before {
+					transform: none;
+				}
+			}
+		}
+
+		@media not screen and (min-width: 800px) {
+
+			input#mobile-menu-trigger:not(:checked),
+			button#mobile-menu-trigger:not([aria-expanded]) {
+				~ nav {
+					clip-path: inset(0 0 0 100%);
+				}
+			}
 		}
 	}
+
 }
