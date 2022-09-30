@@ -382,9 +382,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 0.25rem;
+  padding: 0;
 }
 .account aside .account__trigger:before {
   cursor: pointer;
+  padding: 0;
   content: "≪";
   width: 2.5rem;
   height: 2.5rem;
