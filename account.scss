@@ -32,7 +32,7 @@ $mobile_breakpoint: 800px;
 	color: var(--theme-color);
 	margin: 0;
 	min-height: 100vh;
-	min-height: -webkit-fill-available;
+	// min-height: -webkit-fill-available; // iOS <16
 	min-height: 100svh;
 	display: grid;
 	grid-template: auto 1fr auto / auto 1fr;
@@ -675,7 +675,7 @@ $mobile_breakpoint: 800px;
 		// top: 0;
 		background: white;
 		align-items: center;
-		gap: 1rem;
+		// gap: 1rem;
 		padding: 0.25rem 1rem;
 		border-inline-end: env(safe-area-inset-right) solid transparent;
 		justify-content: flex-end;
@@ -685,7 +685,7 @@ $mobile_breakpoint: 800px;
 		// 	content: "";
 		// 	flex-grow: 1;
 		// }
-
+		
 		button {
 			height: 2.5rem;
 		}
@@ -758,6 +758,8 @@ $mobile_breakpoint: 800px;
 				border-radius: 1rem;
 				padding: 1rem;
 				margin-top: 0.25rem; // Don't cover the summary focus ring
+				max-width: calc(100vw - 4rem);
+				overflow-wrap: break-word;
 
 				p:first-of-type {
 					margin-top: 0;
@@ -773,6 +775,14 @@ $mobile_breakpoint: 800px;
 				width: 100%;
 				margin: 0;
 				font-weight: 600;
+			}
+			input[type="range"] {
+				width: 100%;
+				margin: 0;
+			}
+			p {
+				display: flex;
+				justify-content: space-between;
 			}
 		}
 
@@ -796,6 +806,12 @@ $mobile_breakpoint: 800px;
 		footer {
 			border-inline-end: env(safe-area-inset-right) solid transparent;
 		}
+		
+		header > :not(:last-child) {
+			margin-inline-end: 1rem;
+		}
+		
+
 	}
 
 	main {
@@ -894,6 +910,11 @@ $mobile_breakpoint: 800px;
 			border-color: var(--theme-accent-color, #333);
 			color: var(--theme-accent-color, #333);
 		}
+		
+		&--secondary {
+			// color: white;
+			// background-color: var(--theme-accent-color, #333);
+		}
 	}
 
 	.btn,
@@ -975,6 +996,9 @@ $mobile_breakpoint: 800px;
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: clip-path, visibility;
 				visibility: visible;
+				max-height: calc(100vh - 3.25rem);
+				max-height: calc(100svh - 3.25rem);
+				overflow: auto;
 
 				[aria-current] {
 
@@ -1037,7 +1061,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			details > :not(summary) {
-				inset-inline-end: 1rem;
+				inset-inline-end: .6rem;
 			}
 
 			div > dl {
@@ -1051,7 +1075,7 @@ $mobile_breakpoint: 800px;
 
 			&:before {
 				content: "";
-				flex-basis: min(var(--logo-width), 4rem);
+				flex-basis: min(var(--logo-width), 3rem);
 			}
 
 			> div {

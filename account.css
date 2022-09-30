@@ -276,7 +276,6 @@
   color: var(--theme-color);
   margin: 0;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   min-height: 100svh;
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
@@ -695,7 +694,6 @@
   display: flex;
   background: white;
   align-items: center;
-  gap: 1rem;
   padding: 0.25rem 1rem;
   border-inline-end: env(safe-area-inset-right) solid transparent;
   justify-content: flex-end;
@@ -758,6 +756,8 @@
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 0.25rem;
+  max-width: calc(100vw - 4rem);
+  overflow-wrap: break-word;
 }
 .account header details > :not(summary) p:first-of-type {
   margin-top: 0;
@@ -770,6 +770,14 @@
   width: 100%;
   margin: 0;
   font-weight: 600;
+}
+.account header details input[type=range] {
+  width: 100%;
+  margin: 0;
+}
+.account header details p {
+  display: flex;
+  justify-content: space-between;
 }
 .account header summary {
   list-style: none;
@@ -784,6 +792,9 @@
   .account main,
 .account footer {
     border-inline-end: env(safe-area-inset-right) solid transparent;
+  }
+  .account header > :not(:last-child) {
+    margin-inline-end: 1rem;
   }
 }
 .account main {
@@ -931,6 +942,9 @@
     transition: var(--transition-duration, 0) ease-in-out;
     transition-property: clip-path, visibility;
     visibility: visible;
+    max-height: calc(100vh - 3.25rem);
+    max-height: calc(100svh - 3.25rem);
+    overflow: auto;
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] a:before {
@@ -973,7 +987,7 @@
     display: none;
   }
   .account header details > :not(summary) {
-    inset-inline-end: 1rem;
+    inset-inline-end: 0.6rem;
   }
   .account header div > dl {
     display: block;
@@ -984,7 +998,7 @@
   }
   .account header:before {
     content: "";
-    flex-basis: min(var(--logo-width), 4rem);
+    flex-basis: min(var(--logo-width), 3rem);
   }
   .account header > div {
     order: -1;
