@@ -328,7 +328,7 @@
 }
 .account a[href],
 .account aside nav li button[href] {
-  font-weight: 500;
+  font-weight: 600;
 }
 .account a {
   color: var(--theme-link-color);
@@ -983,7 +983,8 @@
     display: none;
   }
   .account header:before {
-    display: none;
+    content: "";
+    flex-basis: min(var(--logo-width), 4rem);
   }
   .account header > div {
     order: -1;

@@ -91,7 +91,7 @@ $mobile_breakpoint: 800px;
 		text-decoration: none;
 
 		&[href] {
-			font-weight: 500;
+			font-weight: 600;
 		}
 	}
 
@@ -1050,7 +1050,8 @@ $mobile_breakpoint: 800px;
 			}
 
 			&:before {
-				display: none;
+				content: "";
+				flex-basis: min(var(--logo-width), 4rem);
 			}
 
 			> div {
