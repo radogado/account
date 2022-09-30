@@ -180,7 +180,8 @@
 				}
 			}
 		});
-		document.querySelector('aside input[type="reset"]')?.addEventListener('click', e => {
+		document.querySelector('.account aside input[type="reset"]')?.addEventListener('click', e => {
+			document.querySelector(`button[form="${e.target.getAttribute('form')}"]`)?.click();
 			document.querySelector('main')?.removeAttribute('inert');
 		});
 		let transition_timeout;
