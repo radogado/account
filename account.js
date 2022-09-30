@@ -169,22 +169,21 @@
 		document.querySelector('aside input[type="reset"]')?.addEventListener('click', e => {
 			document.querySelector('main')?.removeAttribute('inert');
 		});
+		let transition_timeout;
 		window.addEventListener('resize', e => {
 			let toggle = document.querySelector('#mobile-menu-trigger');
 			if (toggle && !toggle.clientWidth) { // Switching to desktop while mobile menu is closed
 				document.querySelector('main')?.removeAttribute('inert');
 				toggle.checked = false;
-				let nav = document.querySelector('aside nav');
-				nav.style.transition = 'none';
-				setTimeout(() => {
-					nav.style.transition = '';
-				}, 1);
 			}
-			let logo = document.querySelector('aside .logo');
-			logo.style.transition = 'none';
-			setTimeout(() => {
-				logo.style.transition = '';
-			}, 1);
+			let account = document.querySelector('.account');
+			account.style.setProperty('--transition-duration', 0);
+			getComputedStyle(account);
+			clearTimeout(transition_timeout);
+			transition_timeout = setTimeout(() => {
+				account.style.removeProperty('--transition-duration', 0);
+			}, 100);
+			
 		}, { passive: true });
 		document.querySelector('.account')?.setAttribute('data-ready', true);
 	};

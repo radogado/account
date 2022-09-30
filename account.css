@@ -276,6 +276,7 @@
   color: var(--theme-color);
   margin: 0;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   min-height: 100svh;
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
@@ -422,6 +423,7 @@
   place-self: center;
   grid-row: 1;
   grid-column: 1;
+  outline-offset: -1px;
 }
 .account aside #mobile-menu-trigger:before {
   content: "menu";
@@ -675,10 +677,7 @@
   gap: 1rem;
   padding: 0.25rem 1rem;
   border-inline-end: env(safe-area-inset-right) solid transparent;
-}
-.account header:before {
-  content: "";
-  flex-grow: 1;
+  justify-content: flex-end;
 }
 .account header button {
   height: 2.5rem;
@@ -712,9 +711,6 @@
 }
 .account header .header__balance dl:before {
   content: "multicurrency";
-}
-.account header .header__profile dl {
-  padding-inline-end: 0.5rem;
 }
 .account header a[href] dl:hover {
   background-color: #F4F5F6;
@@ -784,7 +780,7 @@
   font-size: 0.75rem;
 }
 .account footer nav {
-  overflow: hidden;
+  clip-path: inset(0 0 0 -0.25rem);
 }
 .account footer nav a {
   text-transform: uppercase;
@@ -909,7 +905,7 @@
     background-color: #F4F5F6;
     max-width: 13.75rem;
     box-shadow: 0 0.25rem 1.25rem #0000003d;
-    clip-path: inset(0px -1.5rem 0 0);
+    clip-path: inset(0 -1.5rem 0 0);
     transition: var(--transition-duration, 0) ease-in-out;
     transition-property: clip-path, visibility;
     visibility: visible;
@@ -942,6 +938,7 @@
   .account header {
     gap: 0;
     padding: 0;
+    padding-inline-end: 0.4rem;
   }
   .account header dl:before {
     margin-inline-end: 0;
@@ -977,6 +974,9 @@
   .account header .header__balance {
     flex-grow: 1;
     text-align: center;
+  }
+  .account header :focus-visible {
+    outline-offset: -3px;
   }
   .account main,
 .account footer {

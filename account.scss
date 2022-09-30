@@ -32,6 +32,7 @@ $mobile_breakpoint: 800px;
 	color: var(--theme-color);
 	margin: 0;
 	min-height: 100vh;
+	min-height: -webkit-fill-available;
 	min-height: 100svh;
 	display: grid;
 	grid-template: auto 1fr auto / auto 1fr;
@@ -224,6 +225,7 @@ $mobile_breakpoint: 800px;
 			place-self: center;
 			grid-row: 1;
 			grid-column: 1;
+			outline-offset: -1px;
 			// margin-inline-start: 0.56rem;
 
 			&:before {
@@ -655,12 +657,13 @@ $mobile_breakpoint: 800px;
 		gap: 1rem;
 		padding: 0.25rem 1rem;
 		border-inline-end: env(safe-area-inset-right) solid transparent;
+		justify-content: flex-end;
 		// overflow: auto;
 
-		&:before {
-			content: "";
-			flex-grow: 1;
-		}
+		// &:before {
+		// 	content: "";
+		// 	flex-grow: 1;
+		// }
 
 		button {
 			height: 2.5rem;
@@ -703,10 +706,6 @@ $mobile_breakpoint: 800px;
 
 		.header__balance dl:before {
 			content: "multicurrency";
-		}
-
-		.header__profile dl {
-			padding-inline-end: .5rem;
 		}
 
 		a[href] dl:hover {
@@ -795,7 +794,7 @@ $mobile_breakpoint: 800px;
 		font-size: .75rem;
 
 		nav {
-			overflow: hidden;
+			clip-path: inset(0 0 0 -0.25rem); // Hide initial bullets, but show the full focus outline
 
 			a {
 				text-transform: uppercase;
@@ -950,7 +949,7 @@ $mobile_breakpoint: 800px;
 				background-color: #F4F5F6;
 				max-width: 13.75rem;
 				box-shadow: 0 0.25rem 1.25rem #0000003d;
-				clip-path: inset(0px -1.5rem 0 0);
+				clip-path: inset(0 -1.5rem 0 0);
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: clip-path, visibility;
 				visibility: visible;
@@ -994,6 +993,7 @@ $mobile_breakpoint: 800px;
 		header {
 			gap: 0;
 			padding: 0;
+			padding-inline-end: 0.4rem;
 
 			dl {
 				&:before {
@@ -1043,6 +1043,10 @@ $mobile_breakpoint: 800px;
 			.header__balance {
 				flex-grow: 1;
 				text-align: center;
+			}
+			
+			:focus-visible {
+				outline-offset: -3px;
 			}
 
 		}
