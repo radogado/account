@@ -130,7 +130,6 @@
 			"footer": "تحتوي هذه الاتفاقية على 29 قسمًا. يمكنك الذهاب مباشرة إلى أي قسم عن طريق اختيار الرابط المناسب المقدم. العناوين هي للإشارة فقط. تحتوي بعض المصطلحات المكتوبة بحروف كبيرة على تعريفات محددة في القسم 3. تحتوي الكلمات التي تحتها خط في هذه الاتفاقية على ارتباطات تشعبية لمزيد من المعلومات. بالنسبة إلى معاملات تحويل الأموال ، تنطبق هذه الاتفاقية بشكل فردي على كل معاملة وليست عقدًا إطاريًا. بالإضافة إلى ذلك ، عند الدفع مقابل معاملة تحويل الأموال بعملة أخرى غير الجنيه الإسترليني (GBP) ، قد تقوم بأعمال تجارية مع كيان مختلف. في هذه الحالات ، سيتم الاحتفاظ بأموالك وفقًا للوائح والتراخيص المطبقة على هذا الكيان."
 		}
 	};
-	
 	const init = () => {
 		// Buttons ripple effect
 		const ripple = e => {
@@ -156,10 +155,25 @@
 			el.addEventListener('keydown', ripple);
 		});
 		// Mobile/Desktop menu switching enhancement
-		document.querySelector('#mobile-menu-trigger')?.addEventListener('change', e => {
+		document.querySelectorAll('.account__trigger').forEach(el => {
+			let checked = !!el.checked;
+			if (checked) {
+				el.removeAttribute('checked');
+				el.setAttribute('aria-expanded', true);
+			}
+			el.outerHTML = el.outerHTML.replace('input', 'button').replace('checkbox', 'button');
+		});
+		document.querySelectorAll('.account__trigger').forEach(el => {
+			// Add aria-expanded toggle event on click
+			el.addEventListener('click', e => {
+				let el = e.target.closest('button');
+				el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+			});
+		});
+		document.querySelector('#mobile-menu-trigger')?.addEventListener('click', e => {
 			let main = document.querySelector('main');
 			if (main) {
-				if (e.target.checked) {
+				if (e.target.getAttribute('aria-expanded') === 'true') {
 					main.inert = true;
 				} else {
 					main.inert = false;
@@ -174,7 +188,7 @@
 			let toggle = document.querySelector('#mobile-menu-trigger');
 			if (toggle && !toggle.clientWidth) { // Switching to desktop while mobile menu is closed
 				document.querySelector('main')?.removeAttribute('inert');
-				toggle.checked = false;
+				toggle.removeAttribute('aria-expanded');
 			}
 			let account = document.querySelector('.account');
 			account.style.setProperty('--transition-duration', 0);
@@ -183,7 +197,6 @@
 			transition_timeout = setTimeout(() => {
 				account.style.removeProperty('--transition-duration', 0);
 			}, 100);
-			
 		}, { passive: true });
 		document.querySelector('.account')?.setAttribute('data-ready', true);
 	};

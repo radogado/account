@@ -372,6 +372,8 @@
 .account aside .account__trigger {
   -webkit-appearance: none;
   appearance: none;
+  border: none;
+  background: none;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   width: 3rem;
@@ -416,7 +418,7 @@
   box-sizing: content-box;
   width: calc(100% - 0.5rem);
 }
-.account aside #expand-desktop-menu:checked:before, .account aside #expand-desktop-menu[aria-expanded]:before {
+.account aside #expand-desktop-menu:checked:before, .account aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: rotateZ(-180deg);
 }
 .account aside #mobile-menu-trigger {
@@ -428,7 +430,7 @@
 .account aside #mobile-menu-trigger:before {
   content: "menu";
 }
-.account aside #mobile-menu-trigger:checked:before, .account aside #mobile-menu-trigger[aria-expanded]:before {
+.account aside #mobile-menu-trigger:checked:before, .account aside #mobile-menu-trigger[aria-expanded=true]:before {
   content: "close";
 }
 @media not screen and (min-width: 800px) {
@@ -436,7 +438,7 @@
     display: none;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ nav,
-.account aside button#mobile-menu-trigger:not([aria-expanded]) ~ nav {
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
@@ -460,15 +462,15 @@
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before,
-.account aside #mobile-menu-trigger[aria-expanded] ~ nav a:before,
-.account aside #mobile-menu-trigger[aria-expanded] ~ nav button:before {
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
     margin-inline-end: 2.75rem;
     padding-inline-end: 0;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:after,
 .account aside #mobile-menu-trigger:checked ~ nav button:after,
-.account aside #mobile-menu-trigger[aria-expanded] ~ nav a:after,
-.account aside #mobile-menu-trigger[aria-expanded] ~ nav button:after {
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:after,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:after {
     opacity: 0;
   }
   .account aside a:before,
@@ -479,16 +481,16 @@
 }
 .account aside #expand-desktop-menu:checked ~ nav a:before,
 .account aside #expand-desktop-menu:checked ~ nav button:before,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav a:before,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav button:before {
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
   margin-inline-end: 2.75rem;
   background: none;
 }
 @media (min-width: 800px) {
   .account aside input#expand-desktop-menu:not(:checked) ~ nav li button,
 .account aside input#expand-desktop-menu:not(:checked) ~ nav li a,
-.account aside button#expand-desktop-menu:not([aria-expanded]) ~ nav li button,
-.account aside button#expand-desktop-menu:not([aria-expanded]) ~ nav li a {
+.account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li button,
+.account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li a {
     color: transparent;
   }
   .account aside .logo {
@@ -498,7 +500,7 @@
     height: var(--logo-height-shrunk);
   }
   .account aside #expand-desktop-menu:checked ~ .logo,
-.account aside #expand-desktop-menu[aria-expanded] ~ .logo {
+.account aside #expand-desktop-menu[aria-expanded=true] ~ .logo {
     width: var(--logo-width);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
@@ -509,19 +511,19 @@
     display: none;
   }
   .account aside #expand-desktop-menu:checked ~ nav,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav {
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav {
     max-width: 13.75rem;
   }
   .account aside #expand-desktop-menu:checked ~ nav a,
 .account aside #expand-desktop-menu:checked ~ nav button,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav a,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav button {
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
     color: var(--theme-color-light);
   }
   .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
 .account aside #expand-desktop-menu:checked ~ nav [aria-current] button,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav [aria-current] a,
-.account aside #expand-desktop-menu[aria-expanded] ~ nav [aria-current] button {
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
     color: var(--theme-accent-color, #333);
   }
   .account aside nav {
@@ -609,7 +611,7 @@
   outline-offset: -2px;
 }
 .account aside .account__trigger:checked ~ nav [aria-current] button,
-.account aside .account__trigger[aria-expanded] ~ nav [aria-current] button {
+.account aside .account__trigger[aria-expanded=true] ~ nav [aria-current] button {
   color: var(--theme-accent-color, #333);
 }
 .account aside #nav-reset-form {
@@ -936,7 +938,7 @@
     margin: 0;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ input[type=reset],
-.account aside button#mobile-menu-trigger:not([aria-expanded]) ~ input[type=reset] {
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ input[type=reset] {
     visibility: hidden;
     background: transparent;
   }
@@ -1011,12 +1013,12 @@
 [dir=rtl] .account aside #expand-desktop-menu:before {
   transform: rotateZ(-180deg);
 }
-[dir=rtl] .account aside #expand-desktop-menu:checked:before, [dir=rtl] .account aside #expand-desktop-menu[aria-expanded]:before {
+[dir=rtl] .account aside #expand-desktop-menu:checked:before, [dir=rtl] .account aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: none;
 }
 @media not screen and (min-width: 800px) {
   [dir=rtl] .account aside input#mobile-menu-trigger:not(:checked) ~ nav,
-[dir=rtl] .account aside button#mobile-menu-trigger:not([aria-expanded]) ~ nav {
+[dir=rtl] .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
     clip-path: inset(0 0 0 100%);
   }
 }

@@ -160,6 +160,8 @@ $mobile_breakpoint: 800px;
 		.account__trigger {
 			-webkit-appearance: none;
 			appearance: none;
+			border: none;
+			background: none;
 			-webkit-tap-highlight-color: transparent;
 			margin: 0;
 			width: 3rem;
@@ -216,7 +218,7 @@ $mobile_breakpoint: 800px;
 			width: calc(100% - .5rem);
 
 			&:checked:before,
-			&[aria-expanded]:before {
+			&[aria-expanded="true"]:before {
 				transform: rotateZ(-180deg);
 			}
 
@@ -234,7 +236,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			&:checked:before,
-			&[aria-expanded]:before {
+			&[aria-expanded="true"]:before {
 				content: "close";
 			}
 		}
@@ -245,7 +247,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			input#mobile-menu-trigger:not(:checked),
-			button#mobile-menu-trigger:not([aria-expanded]) {
+			button#mobile-menu-trigger:not([aria-expanded="true"]) {
 				~ nav {
 					clip-path: inset(0 100% 0 0);
 					visibility: hidden;
@@ -292,7 +294,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			#mobile-menu-trigger:checked,
-			#mobile-menu-trigger[aria-expanded] {
+			#mobile-menu-trigger[aria-expanded="true"] {
 				~ nav {
 
 					a,
@@ -321,7 +323,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		#expand-desktop-menu:checked,
-		#expand-desktop-menu[aria-expanded] {
+		#expand-desktop-menu[aria-expanded="true"] {
 			~ nav {
 
 				a,
@@ -337,7 +339,7 @@ $mobile_breakpoint: 800px;
 		@media (min-width: $mobile_breakpoint) {
 
 			input#expand-desktop-menu:not(:checked),
-			button#expand-desktop-menu:not([aria-expanded]) {
+			button#expand-desktop-menu:not([aria-expanded="true"]) {
 				~ nav li {
 
 					button,
@@ -355,7 +357,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			#expand-desktop-menu:checked,
-			#expand-desktop-menu[aria-expanded] {
+			#expand-desktop-menu[aria-expanded="true"] {
 				~ .logo {
 
 					width: var(--logo-width);
@@ -372,7 +374,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			#expand-desktop-menu:checked,
-			#expand-desktop-menu[aria-expanded] {
+			#expand-desktop-menu[aria-expanded="true"] {
 				~ nav {
 					max-width: 13.75rem;
 
@@ -501,7 +503,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		.account__trigger:checked,
-		.account__trigger[aria-expanded] {
+		.account__trigger[aria-expanded="true"] {
 			~ nav [aria-current] button {
 				color: var(--theme-accent-color, #333);
 			}
@@ -987,7 +989,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			input#mobile-menu-trigger:not(:checked),
-			button#mobile-menu-trigger:not([aria-expanded]) {
+			button#mobile-menu-trigger:not([aria-expanded="true"]) {
 				~ input[type="reset"] {
 					// display: none;
 					visibility: hidden;
@@ -1098,7 +1100,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			&:checked,
-			&[aria-expanded] {
+			&[aria-expanded="true"] {
 				&:before {
 					transform: none;
 				}
@@ -1108,7 +1110,7 @@ $mobile_breakpoint: 800px;
 		@media not screen and (min-width: 800px) {
 
 			input#mobile-menu-trigger:not(:checked),
-			button#mobile-menu-trigger:not([aria-expanded]) {
+			button#mobile-menu-trigger:not([aria-expanded="true"]) {
 				~ nav {
 					clip-path: inset(0 0 0 100%);
 				}
