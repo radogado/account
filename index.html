@@ -113,9 +113,9 @@
 				</fieldset>
 			</form>
 			<p>
-				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['en'][el.dataset.text]; }); document.documentElement.dir = 'ltr'; document.documentElement.lang = 'en'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">English</button>
-				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['fr'][el.dataset.text]; }); document.documentElement.dir = 'ltr'; document.documentElement.lang = 'fr'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">Français</button>
-				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.querySelectorAll('[data-text]').forEach(el => { el.innerText = text['ar'][el.dataset.text]; }); document.documentElement.dir = 'rtl'; document.documentElement.lang = 'ar'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));">عربي</button>
+				<button class="btn" data-translate-to="en">English</button>
+				<button class="btn" data-translate-to="fr">Français</button>
+				<button class="btn" data-translate-to="ar">عربي</button>
 			</p>
 			<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
 		</main>
