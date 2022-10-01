@@ -780,6 +780,9 @@
   display: flex;
   justify-content: space-between;
 }
+.account header details hr {
+  opacity: 0;
+}
 .account header summary {
   list-style: none;
 }

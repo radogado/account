@@ -785,6 +785,9 @@ $mobile_breakpoint: 800px;
 				display: flex;
 				justify-content: space-between;
 			}
+			hr {
+				opacity: 0;
+			}
 		}
 
 		summary {
