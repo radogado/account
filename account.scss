@@ -288,8 +288,8 @@ $mobile_breakpoint: 800px;
 					a,
 					button {
 						&:before {
-							margin-inline-end: 2.75rem;
-
+							margin: 0 0.6rem;
+							margin-inline-end: 2.333rem !important;
 						}
 					}
 				}
@@ -303,7 +303,7 @@ $mobile_breakpoint: 800px;
 					button {
 
 						&:before {
-							margin-inline-end: 2.75rem;
+							margin-inline-end: 2.333rem !important;
 							padding-inline-end: 0;
 						}
 

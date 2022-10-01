@@ -459,13 +459,14 @@
   }
   .account aside nav li a:before,
 .account aside nav li button:before {
-    margin-inline-end: 2.75rem;
+    margin: 0 0.6rem;
+    margin-inline-end: 2.333rem !important;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before,
 .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
 .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
-    margin-inline-end: 2.75rem;
+    margin-inline-end: 2.333rem !important;
     padding-inline-end: 0;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:after,
