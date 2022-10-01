@@ -763,10 +763,17 @@
 .account header details > :not(summary) p:last-of-type {
   margin-bottom: 0;
 }
+.account header details > :not(summary) .header__profile--level {
+  font-size: 0.8rem;
+  background: lightcyan;
+  border-radius: 0.75rem;
+  padding: 0 0.75rem;
+  line-height: 1.8;
+}
 .account header details .btn {
   white-space: nowrap;
   width: 100%;
-  margin: 0;
+  margin-bottom: 0;
   font-weight: 600;
 }
 .account header details input[type=range] {
@@ -776,9 +783,12 @@
 .account header details p {
   display: flex;
   justify-content: space-between;
+  margin: 0.5rem 0;
+  word-break: break-word;
 }
 .account header details hr {
   opacity: 0;
+  margin: 0.25rem 0;
 }
 .account header summary {
   list-style: none;

@@ -763,12 +763,21 @@ $mobile_breakpoint: 800px;
 				p:last-of-type {
 					margin-bottom: 0;
 				}
+				
+				.header__profile--level {
+					font-size: .8rem;
+						background: lightcyan;
+						border-radius: 0.75rem;
+						padding: 0 0.75rem;
+						line-height: 1.8;
+				}
 			}
 
 			.btn {
 				white-space: nowrap;
 				width: 100%;
-				margin: 0;
+				// margin: 0;
+				margin-bottom: 0;
 				font-weight: 600;
 			}
 
@@ -780,10 +789,13 @@ $mobile_breakpoint: 800px;
 			p {
 				display: flex;
 				justify-content: space-between;
+				margin: 0.5rem 0;
+				word-break: break-word;
 			}
 
 			hr {
 				opacity: 0;
+				margin: 0.25rem 0;
 			}
 		}
 
