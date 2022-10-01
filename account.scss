@@ -8,11 +8,12 @@ $mobile_breakpoint: 800px;
 	--theme-link-color: #000;
 	--theme-accent-color: #253b80;
 	--theme-button-hover-background: #d7def8;
-	--logo-width: 8rem;
-	--logo-height: 2rem;
+	--logo-width: 124px;
+	--logo-height: 33px;
 	--logo-height-shrunk: 2rem;
 	--logo-width-shrunk: 1.6rem;
-	--logo-url: url(PayPal-2.svg);
+	// --logo-url: url(PayPal-2.svg);
+	--logo-url: url(PayPal-2@2x.png); // iOS flicker bug
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 
 	line-height: 1.5;
