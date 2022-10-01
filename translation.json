@@ -102,6 +102,7 @@
 	 "explore-account-levels":"Explorer les niveaux de compte"
   },
   "ar":{
+	 "_direction": "rtl",
 	 "dashboard":"لوحة القيادة",
 	 "deposit":"إيداع",
 	 "button-long-text":"عنصر كزر مع نص طويل",

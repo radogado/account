@@ -79,7 +79,7 @@
 				document.querySelectorAll('[data-text]').forEach(el => {
 					el.innerText = translation[button.dataset.translateTo][el.dataset.text] || el.innerText;
 				});
-				document.documentElement.dir = button.dataset.translateTo === 'ar' ? 'rtl' : 'ltr';
+				document.documentElement.dir = translation[button.dataset.translateTo]._direction || 'ltr';
 				document.documentElement.lang = button.dataset.translateTo;
 				setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));
 			});
