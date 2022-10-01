@@ -758,6 +758,7 @@
   margin-top: 0.25rem;
   max-width: calc(100vw - 4rem);
   overflow-wrap: break-word;
+  min-width: 14rem;
 }
 .account header details > :not(summary) p:first-of-type {
   margin-top: 0;

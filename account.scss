@@ -760,6 +760,7 @@ $mobile_breakpoint: 800px;
 				margin-top: 0.25rem; // Don't cover the summary focus ring
 				max-width: calc(100vw - 4rem);
 				overflow-wrap: break-word;
+				min-width: 14rem;
 
 				p:first-of-type {
 					margin-top: 0;

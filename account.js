@@ -41,7 +41,15 @@
 			"blue": "Blue",
 			"purple": "Purple",
 			"green": "Green",
-			"footer": "This agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this agreement contain hyperlinks to further information. For \"money transfer\" transactions, this agreement applies individually to each transaction and is not a framework contract. Additionally, when paying for a money transfer transaction in a currency other than the great britain pound (GBP), you may be doing business with a different entity. In those cases, your money will be held in accordance with the regulations and licenses applicable to such entity."
+			"footer": "This agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this agreement contain hyperlinks to further information. For \"money transfer\" transactions, this agreement applies individually to each transaction and is not a framework contract. Additionally, when paying for a money transfer transaction in a currency other than the great britain pound (GBP), you may be doing business with a different entity. In those cases, your money will be held in accordance with the regulations and licenses applicable to such entity.",
+			"customer-id": "Customer ID",
+			"go-profile-details": "Go to profile details",
+			"become-vip": "Become VIP",
+			"silver": "Silver",
+			"one-day-left": "1 day left",
+			"spent": "spent",
+			"left": "left",
+			"explore-account-levels": "Explore account levels"
 		},
 		'fr': {
 			"dashboard": "Tableau de bord",
@@ -60,7 +68,7 @@
 			"contact-us": "Contactez-nous",
 			"loyalty-points": "Points de fidélité",
 			"main-balance": "Moyenne principale",
-			"profile-level": "Niveau DEBUTANT",
+			"profile-level": "Niveau debutant",
 			"logout": "Se déconnecter",
 			"fees": "Frais",
 			"support": "Soutien",
@@ -84,7 +92,16 @@
 			"blue": "Bleu",
 			"purple": "Violet",
 			"green": "Vert",
-			"footer": "Cet accord contient 29 sections. Vous pouvez accéder directement à n'importe quelle section en sélectionnant le lien approprié fourni. Les titres sont à titre indicatif seulement. Certains termes en majuscules ont des définitions spécifiques dans la section 3. Les mots soulignés dans cet accord contiennent des hyperliens vers des informations supplémentaires. Pour les opérations de \"transfert d'argent\", cet accord s'applique individuellement à chaque opération et n'est pas un contrat-cadre. De plus, lorsque vous payez pour une transaction de transfert d'argent dans une devise autre que la livre britannique (GBP), vous pouvez faire affaire avec une entité différente. Dans ces cas, votre argent sera détenu conformément aux réglementations et licences applicables à cette entité."
+			"footer": "Cet accord contient 29 sections. Vous pouvez accéder directement à n'importe quelle section en sélectionnant le lien approprié fourni. Les titres sont à titre indicatif seulement. Certains termes en majuscules ont des définitions spécifiques dans la section 3. Les mots soulignés dans cet accord contiennent des hyperliens vers des informations supplémentaires. Pour les opérations de \"transfert d'argent\", cet accord s'applique individuellement à chaque opération et n'est pas un contrat-cadre. De plus, lorsque vous payez pour une transaction de transfert d'argent dans une devise autre que la livre britannique (GBP), vous pouvez faire affaire avec une entité différente. Dans ces cas, votre argent sera détenu conformément aux réglementations et licences applicables à cette entité.",
+			"customer-id": "N° de client",
+			"go-profile-details": "Accéder aux détails du profil",
+			"become-vip": "Devenez VIP",
+			"silver": "Argent",
+			"one-day-left": "1 jour restant",
+			"spent": "dépensé",
+			"left": "restant",
+			"explore-account-levels": "Explorer les niveaux de compte"
+
 		},
 		'ar': {
 			"dashboard": "لوحة القيادة",
@@ -127,7 +144,17 @@
 			"blue": "أزرق",
 			"purple": "أرجواني",
 			"green": "لون أخضر",
-			"footer": "تحتوي هذه الاتفاقية على 29 قسمًا. يمكنك الذهاب مباشرة إلى أي قسم عن طريق اختيار الرابط المناسب المقدم. العناوين هي للإشارة فقط. تحتوي بعض المصطلحات المكتوبة بحروف كبيرة على تعريفات محددة في القسم 3. تحتوي الكلمات التي تحتها خط في هذه الاتفاقية على ارتباطات تشعبية لمزيد من المعلومات. بالنسبة إلى معاملات تحويل الأموال ، تنطبق هذه الاتفاقية بشكل فردي على كل معاملة وليست عقدًا إطاريًا. بالإضافة إلى ذلك ، عند الدفع مقابل معاملة تحويل الأموال بعملة أخرى غير الجنيه الإسترليني (GBP) ، قد تقوم بأعمال تجارية مع كيان مختلف. في هذه الحالات ، سيتم الاحتفاظ بأموالك وفقًا للوائح والتراخيص المطبقة على هذا الكيان."
+			"footer": "تحتوي هذه الاتفاقية على 29 قسمًا. يمكنك الذهاب مباشرة إلى أي قسم عن طريق اختيار الرابط المناسب المقدم. العناوين هي للإشارة فقط. تحتوي بعض المصطلحات المكتوبة بحروف كبيرة على تعريفات محددة في القسم 3. تحتوي الكلمات التي تحتها خط في هذه الاتفاقية على ارتباطات تشعبية لمزيد من المعلومات. بالنسبة إلى معاملات تحويل الأموال ، تنطبق هذه الاتفاقية بشكل فردي على كل معاملة وليست عقدًا إطاريًا. بالإضافة إلى ذلك ، عند الدفع مقابل معاملة تحويل الأموال بعملة أخرى غير الجنيه الإسترليني (GBP) ، قد تقوم بأعمال تجارية مع كيان مختلف. في هذه الحالات ، سيتم الاحتفاظ بأموالك وفقًا للوائح والتراخيص المطبقة على هذا الكيان.",
+			"customer-id": "هوية الزبون",
+			"go-profile-details": "انتقل إلى تفاصيل الملف الشخصي",
+			"become-vip": "كن VIP",
+			"silver": "فضة",
+			"one-day-left": "1 يوم غادر",
+			"spent": "أنفق",
+			"left": "متبقي",
+			"explore-account-levels": "اكتشف مستويات الحساب"
+
+
 		}
 	};
 	const init = () => {
