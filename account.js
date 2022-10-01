@@ -69,7 +69,11 @@
 			}, 100);
 		}, { passive: true });
 		document.querySelector('.account')?.setAttribute('data-ready', true);
-
+		document.querySelector('.account')?.addEventListener('click', e => {
+			if (!e.target.closest('details')) {
+				document.querySelectorAll('details[open]').forEach(el => el.open = false);
+			}
+		});
 		let translation;
 		fetch('translation.json').then(response => response.json()).then(response => { translation = response; });
 		document.querySelectorAll('button[data-translate-to]').forEach(el => {
@@ -84,7 +88,6 @@
 				setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));
 			});
 		});
-
 	};
 	if (document.readyState !== "loading") {
 		init();

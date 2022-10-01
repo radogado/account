@@ -746,13 +746,13 @@ $mobile_breakpoint: 800px;
 				p:last-of-type {
 					margin-bottom: 0;
 				}
-				
+
 				.header__profile--level {
 					font-size: .8rem;
-						background: lightcyan;
-						border-radius: 0.75rem;
-						padding: 0 0.75rem;
-						line-height: 1.8;
+					background: lightcyan;
+					border-radius: 0.75rem;
+					padding: 0 0.75rem;
+					line-height: 1.8;
 				}
 			}
 
@@ -767,6 +767,50 @@ $mobile_breakpoint: 800px;
 			input[type="range"] {
 				width: 100%;
 				margin: 0;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				pointer-events: none;
+				overflow: hidden;
+				border-radius: 0.5rem;
+				height: 0.333em;
+
+				&::-webkit-slider-runnable-track {
+					width: 100%;
+					height: 0.333em;
+					cursor: pointer;
+					background: var(--nui-control-bg, rgba(0, 0, 0, 0.1));
+					border-radius: .333rem;
+				}
+
+				&::-webkit-slider-thumb {
+					height: .333em;
+					width: .333em;
+					border-radius: .333rem;
+					background: var(--theme-accent-color, #000);
+					cursor: pointer;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					// margin-top: -0.45625em;
+					box-shadow: calc(-.166rem - 100vw) 0 0 100vw var(--theme-accent-color, #000);
+				}
+
+				&::-moz-range-track {
+					width: 100%;
+					height: 0.333rem;
+					background: var(--nui-control-bg, rgba(0, 0, 0, 0.1));
+				}
+
+				&::-moz-range-thumb {
+					border: 0px solid rgba(0, 0, 0, 0);
+					height: .333em;
+					width: .333em;
+					border-radius: .333rem;
+					background: var(--theme-accent-color, #000);
+					box-shadow: calc(-.166rem - 100vw) 0 0 100vw var(--theme-accent-color, #000);
+				}
+
 			}
 
 			p {
@@ -784,6 +828,7 @@ $mobile_breakpoint: 800px;
 
 		summary {
 			list-style: none;
+			padding-inline-end: 0.5rem;
 
 			&::marker,
 			&::-webkit-details-marker {
@@ -804,7 +849,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		header > :not(:last-child) {
-			margin-inline-end: 1rem;
+			padding-inline-end: 0.5rem;
 		}
 
 		header dl:hover {
@@ -946,9 +991,9 @@ $mobile_breakpoint: 800px;
 			color: var(--theme-accent-color, #333);
 		}
 
-		&--secondary {
-			// color: white;
-			// background-color: var(--theme-accent-color, #333);
+		&.btn--secondary {
+			background-color: var(--theme-accent-color, #333);
+			color: white;
 		}
 	}
 
