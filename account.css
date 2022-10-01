@@ -722,9 +722,6 @@
   color: var(--theme-color);
   text-align: center;
 }
-.account header dl:hover:before {
-  margin-block-start: -0.25rem;
-}
 .account header .header__loyalty dl:before {
   content: "loyalty";
 }
@@ -799,6 +796,26 @@
   }
   .account header > :not(:last-child) {
     margin-inline-end: 1rem;
+  }
+  .account header dl:hover:before {
+    margin-block-start: -0.25rem;
+  }
+  .account header details.header__profile:not([open]) [data-text=my-profile] {
+    display: none;
+  }
+  .account header details.header__profile[open] summary span,
+.account header details.header__profile[open] summary dd {
+    opacity: 0;
+  }
+  .account header details.header__profile[open] [data-text=my-profile] {
+    opacity: 1;
+  }
+  .account header details.header__profile[open] dt {
+    display: grid;
+  }
+  .account header details.header__profile[open] dt span {
+    grid-row: 1;
+    grid-column: 1;
   }
 }
 .account main {
@@ -975,6 +992,7 @@
     font-size: 0;
     transition: var(--transition-duration, 0) ease-in-out;
     transition-property: background-color, visibility;
+    border-radius: 0;
   }
   .account header {
     gap: 0;
