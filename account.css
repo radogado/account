@@ -778,47 +778,23 @@
   margin-bottom: 0;
   font-weight: 600;
 }
-.account header details input[type=range] {
-  width: 100%;
-  margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  pointer-events: none;
-  overflow: hidden;
+.account header details .header__profile-status {
   border-radius: 0.5rem;
-  height: 0.333em;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
 }
-.account header details input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 0.333em;
-  cursor: pointer;
-  background: var(--nui-control-bg, rgba(0, 0, 0, 0.1));
-  border-radius: 0.333rem;
-}
-.account header details input[type=range]::-webkit-slider-thumb {
-  height: 0.333em;
-  width: 0.333em;
-  border-radius: 0.333rem;
+.account header details .header__profile-status:before {
+  content: "";
+  display: block;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  width: calc(var(--status-sum) / var(--status-sum-max) * 100%);
+  min-width: 0.3rem;
   background: var(--theme-accent-color, #000);
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: calc(-0.166rem - 100vw) 0 0 100vw var(--theme-accent-color, #000);
+  transition: width var(--transition-duration, 0) ease-out;
 }
-.account header details input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 0.333rem;
-  background: var(--nui-control-bg, rgba(0, 0, 0, 0.1));
-}
-.account header details input[type=range]::-moz-range-thumb {
-  border: 0px solid rgba(0, 0, 0, 0);
-  height: 0.333em;
-  width: 0.333em;
-  border-radius: 0.333rem;
-  background: var(--theme-accent-color, #000);
-  box-shadow: calc(-0.166rem - 100vw) 0 0 100vw var(--theme-accent-color, #000);
+.account header details:not([open]) .header__profile-status:before {
+  width: 0.3rem;
 }
 .account header details p {
   display: flex;

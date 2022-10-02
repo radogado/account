@@ -77,12 +77,27 @@
 					<p><a href="/profile" class="btn" data-text="go-profile-details">Go to profile details</a></p>
 					<hr>
 					<p><b data-text="become-vip">Become VIP</b></p>
-					
+
 					<p><b data-text="silver">Silver</b><span data-text="one-day-left">1 day left</span></p>
 
-					<p><input type="range" min="0" max="15000" value="4000" disabled aria-label="Status progress"></p>
+					<div class="header__profile-status" style="--status-sum: 7000; --status-sum-max: 15000;"></div>
+					
+					<!-- The above single line replaces the following 13 lines from the current site:
+					<section class="ps-progress-bar" mode="determinate">
+						<svg width="100%" height="4" focusable="false" class="ps-progress-bar-background ps-progress-bar-element">
+							<defs>
+								<pattern x="4" y="0" width="8" height="4" patternUnits="userSpaceOnUse" id="ps-progress-bar-rect-0">
+									<circle cx="2" cy="2" r="2"></circle>
+								</pattern>
+							</defs>
+							<rect width="100%" height="100%" fill="url('/wallet/ng/dashboard#ps-progress-bar-rect-0')"></rect>
+						</svg>
+						<div class="ps-progress-bar-buffer ps-progress-bar-element"></div>
+						<div class="ps-progress-bar-primary ps-progress-bar-fill ps-progress-bar-element" style="width: 4px;"></div>
+						<div class="ps-progress-bar-secondary ps-progress-bar-fill ps-progress-bar-element"></div>
+					</section> -->
 
-					<p><small>4000.00 EUR <span data-text="spent">spent</span></small><small>15,000.00 EUR <span data-text="left">left</span></small></p>
+					<p><small>7000 EUR <span data-text="spent">spent</span></small><small>15,000 EUR <span data-text="left">left</span></small></p>
 					<hr>
 					<a href="/levels" class="btn btn--secondary" data-text="explore-account-levels">Explore account levels</a>
 
