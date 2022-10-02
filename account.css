@@ -461,13 +461,13 @@
   .account aside nav li a:before,
 .account aside nav li button:before {
     margin: 0 0.6rem;
-    margin-inline-end: 2.333rem !important;
+    margin-inline-end: 2.333rem;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
 .account aside #mobile-menu-trigger:checked ~ nav button:before,
 .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
 .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
-    margin-inline-end: 2.333rem !important;
+    margin-inline-end: 2.333rem;
     padding-inline-end: 0;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:after,
@@ -486,8 +486,15 @@
 .account aside #expand-desktop-menu:checked ~ nav button:before,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
-  margin-inline-end: 2.75rem;
   background: none;
+}
+@media (min-width: 800px) {
+  .account aside #expand-desktop-menu:checked ~ nav a:before,
+.account aside #expand-desktop-menu:checked ~ nav button:before,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
+    margin-inline-end: 2.75rem;
+  }
 }
 @media (min-width: 800px) {
   .account aside input#expand-desktop-menu:not(:checked) ~ nav li button,

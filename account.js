@@ -3,12 +3,11 @@
 		// Buttons ripple effect
 		const ripple = e => {
 			let el = e.target.closest('li') || e.target.closest('.btn');
-			let x = e.clientX ? (e.clientX - el.offsetLeft) : el.clientWidth / 2;
-			let y = e.clientY ? (e.clientY - el.offsetTop) : el.clientHeight / 2;
+			let x = e.offsetX || el.clientWidth / 2;
+			let y = e.offsetY || el.clientHeight / 2;
 			let max_x = Math.max(x, el.clientWidth - x);
 			let max_y = Math.max(y, el.clientHeight - y);
 			let radius = Math.sqrt(max_x * max_x + max_y * max_y);
-			// console.log(e.clientX - el.offsetLeft, e.clientY - el.offsetTop);
 			el.style.transitionProperty = 'none';
 			el.style.setProperty('--ripple-x', `${x}px`);
 			el.style.setProperty('--ripple-y', `${y}px`);
@@ -16,7 +15,6 @@
 			window.requestAnimationFrame(() => {
 				el.style.transitionProperty = '';
 				el.style.setProperty('--ripple-radius', `${radius}px`);
-				// console.log(x, y, radius * 2);
 			});
 		}
 		document.querySelectorAll('.btn, aside nav li').forEach(el => {
