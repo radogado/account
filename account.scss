@@ -29,6 +29,7 @@ $mobile_breakpoint: 800px;
 		"Helvetica Neue",
 		sans-serif;
 	font-family: "Source Sans Pro";
+	font-size: 16px;
 	color: var(--theme-color);
 	margin: 0;
 	min-height: 100vh;
@@ -120,18 +121,18 @@ $mobile_breakpoint: 800px;
 
 		.logo {
 			order: -1;
-			text-align: center;
+			// text-align: center;
 			// display: block;
-			overflow: hidden;
-			height: 3rem;
+			// display: grid;
+			// overflow: hidden;
 			// transform: translate3d(0, 0, 0);
-			transform: translateZ(0);
-			will-change: background-image;
+			// transform: translateZ(0);
+			// will-change: background-image;
 			background: var(--logo-url) no-repeat 0 0 / auto var(--logo-height);
-			margin: 0 .8rem;
-			position: relative;
+			// margin: 0 .8rem;
+			// position: relative;
 
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			// clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 			width: var(--logo-width-shrunk);
 			height: var(--logo-height);
 			margin: auto;
