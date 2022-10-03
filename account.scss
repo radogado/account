@@ -12,7 +12,7 @@ $mobile_breakpoint: 800px;
 	--logo-height: 33px;
 	--logo-height-shrunk: 2rem;
 	--logo-width-shrunk: 1.6rem;
-	--logo-url: url(PayPal-2.svg);
+	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 
 	line-height: 1.5;
@@ -341,7 +341,7 @@ $mobile_breakpoint: 800px;
 			}
 
 			.logo {
-				// clip-path: var(--logo-clip-path);
+				clip-path: var(--logo-clip-path);
 				transition: all calc(var(--transition-duration, 0) / 2) ease-out;
 				background: var(--logo-url) no-repeat 0 0/auto var(--logo-height-shrunk);
 				height: var(--logo-height-shrunk);
@@ -352,7 +352,7 @@ $mobile_breakpoint: 800px;
 				~ .logo {
 
 					width: var(--logo-width);
-					// clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 					height: var(--logo-height-shrunk);
 					background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
 					transition-delay: calc(var(--transition-duration, .2s) / 2);
