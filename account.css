@@ -497,7 +497,6 @@
     color: transparent;
   }
   .account aside .logo {
-    clip-path: var(--logo-clip-path);
     transition: all calc(var(--transition-duration, 0) / 2) ease-out;
     background: var(--logo-url) no-repeat 0 0/auto var(--logo-height-shrunk);
     height: var(--logo-height-shrunk);
@@ -505,7 +504,6 @@
   .account aside #expand-desktop-menu:checked ~ .logo,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ .logo {
     width: var(--logo-width);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
     background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
     transition-delay: calc(var(--transition-duration, 0.2s) / 2);
