@@ -124,7 +124,7 @@ $mobile_breakpoint: 800px;
 			display: block;
 			overflow: hidden;
 			height: 3rem;
-			transform: translate3d(0, 0, 0);
+			// transform: translate3d(0, 0, 0);
 			background: var(--logo-url) no-repeat 0 0 / auto var(--logo-height);
 			margin: 0 .8rem;
 			position: relative;
@@ -352,6 +352,7 @@ $mobile_breakpoint: 800px;
 					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 					height: var(--logo-height-shrunk);
 					background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
+					transition-delay: calc(var(--transition-duration, .2s) / 2);
 
 				}
 			}
@@ -1206,3 +1207,10 @@ $mobile_breakpoint: 800px;
 	}
 
 }
+
+// Disable logo transition on mobile Safari, because it flickers with PayPal
+// @media (min-width: 800px) {
+// 	.account aside .logo {
+// 		--transition-duration: 0;
+// 	}
+// }
