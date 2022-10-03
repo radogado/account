@@ -351,9 +351,10 @@
 .account aside .logo {
   order: -1;
   text-align: center;
-  display: block;
   overflow: hidden;
   height: 3rem;
+  transform: translateZ(0);
+  will-change: background-image;
   background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
   margin: 0 0.8rem;
   position: relative;

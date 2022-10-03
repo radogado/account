@@ -121,10 +121,12 @@ $mobile_breakpoint: 800px;
 		.logo {
 			order: -1;
 			text-align: center;
-			display: block;
+			// display: block;
 			overflow: hidden;
 			height: 3rem;
 			// transform: translate3d(0, 0, 0);
+			transform: translateZ(0);
+			will-change: background-image;
 			background: var(--logo-url) no-repeat 0 0 / auto var(--logo-height);
 			margin: 0 .8rem;
 			position: relative;
