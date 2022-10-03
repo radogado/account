@@ -832,6 +832,10 @@ $mobile_breakpoint: 800px;
 		header > :not(:last-child) {
 			padding-inline-end: 0.5rem;
 		}
+		
+		header > .header__profile {
+			padding-inline-end: 1rem;
+		}
 
 		header dl:hover {
 
