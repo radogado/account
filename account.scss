@@ -15,6 +15,12 @@ $mobile_breakpoint: 800px;
 	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 
+	@media (prefers-reduced-motion: no-preference) {
+		&[data-ready] {
+			--transition-duration: .2s;
+		}
+	}
+	
 	line-height: 1.5;
 	font-family: system-ui,
 		-apple-system,
@@ -64,12 +70,6 @@ $mobile_breakpoint: 800px;
 		--logo-width-shrunk: 2.3rem;
 		--logo-clip-path: polygon(0 0, calc(var(--logo-width-shrunk) + .00625rem) 0, calc(var(--logo-width-shrunk) - .3125rem) 100%, 0% 100%);
 		--theme-button-hover-background: #c6ffbf;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		&[data-ready] {
-			--transition-duration: .2s;
-		}
 	}
 
 	.skip-link {
@@ -343,7 +343,7 @@ $mobile_breakpoint: 800px;
 			.logo {
 				clip-path: var(--logo-clip-path);
 				transition: all calc(var(--transition-duration, 0) / 2) ease-out;
-				background: var(--logo-url) no-repeat 0 0/auto var(--logo-height-shrunk);
+				background: var(--logo-url) no-repeat 0 center/auto var(--logo-height-shrunk);
 				height: var(--logo-height-shrunk);
 			}
 
@@ -354,7 +354,7 @@ $mobile_breakpoint: 800px;
 					width: var(--logo-width);
 					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 					height: var(--logo-height-shrunk);
-					background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
+					background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
 					transition-delay: calc(var(--transition-duration, .2s) / 2);
 
 				}
@@ -810,7 +810,6 @@ $mobile_breakpoint: 800px;
 
 		summary {
 			list-style: none;
-			padding-inline-end: 0.5rem;
 
 			&::marker,
 			&::-webkit-details-marker {

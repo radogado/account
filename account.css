@@ -282,6 +282,11 @@
   grid-template: auto 1fr auto/auto 1fr;
   -webkit-text-size-adjust: none;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .account[data-ready] {
+    --transition-duration: .2s;
+  }
+}
 .account input {
   accent-color: var(--theme-accent-color);
 }
@@ -303,11 +308,6 @@
   --logo-width-shrunk: 2.3rem;
   --logo-clip-path: polygon(0 0, calc(var(--logo-width-shrunk) + .00625rem) 0, calc(var(--logo-width-shrunk) - .3125rem) 100%, 0% 100%);
   --theme-button-hover-background: #c6ffbf;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .account[data-ready] {
-    --transition-duration: .2s;
-  }
 }
 .account .skip-link {
   margin: 0.25rem;
@@ -499,7 +499,7 @@
   .account aside .logo {
     clip-path: var(--logo-clip-path);
     transition: all calc(var(--transition-duration, 0) / 2) ease-out;
-    background: var(--logo-url) no-repeat 0 0/auto var(--logo-height-shrunk);
+    background: var(--logo-url) no-repeat 0 center/auto var(--logo-height-shrunk);
     height: var(--logo-height-shrunk);
   }
   .account aside #expand-desktop-menu:checked ~ .logo,
@@ -507,7 +507,7 @@
     width: var(--logo-width);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
-    background: var(--logo-url) no-repeat 0 0/auto var(--logo-height);
+    background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
     transition-delay: calc(var(--transition-duration, 0.2s) / 2);
   }
   .account aside #mobile-menu-trigger,
@@ -809,7 +809,6 @@
 }
 .account header summary {
   list-style: none;
-  padding-inline-end: 0.5rem;
 }
 .account header summary::marker, .account header summary::-webkit-details-marker {
   display: none;
