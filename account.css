@@ -391,7 +391,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
   line-height: 1.7;
   color: var(--theme-color-light);
   -webkit-font-smoothing: antialiased;
@@ -411,7 +411,7 @@
   margin: 0.5rem 0.25rem;
   padding: 0.25rem 0;
   box-sizing: content-box;
-  width: calc(100% - .5rem);
+  width: calc(100% - 0.5rem);
 }
 .account aside #expand-desktop-menu:checked:before, .account aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: rotateZ(-180deg);
@@ -508,7 +508,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
     background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
-    transition-delay: calc(var(--transition-duration, .2s) / 2);
+    transition-delay: calc(var(--transition-duration, 0.2s) / 2);
   }
   .account aside #mobile-menu-trigger,
 .account aside input[type=reset] {
@@ -627,7 +627,7 @@
   font-family: "Icons";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "\e932";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
@@ -647,51 +647,51 @@
 }
 .account aside nav .account__nav-deposit a:before,
 .account aside nav .account__nav-deposit button:before {
-  content: "";
+  content: "\e941";
 }
 .account aside nav .account__nav-button a:before,
 .account aside nav .account__nav-button button:before {
-  content: "";
+  content: "\e941";
 }
 .account aside nav .account__nav-withdraw a:before,
 .account aside nav .account__nav-withdraw button:before {
-  content: "";
+  content: "\e946";
 }
 .account aside nav .account__nav-prepaid-card a:before,
 .account aside nav .account__nav-prepaid-card button:before {
-  content: "";
+  content: "\e93c";
 }
 .account aside nav .account__nav-promotions a:before,
 .account aside nav .account__nav-promotions button:before {
-  content: "";
+  content: "\e959";
 }
 .account aside nav .account__nav-transactions a:before,
 .account aside nav .account__nav-transactions button:before {
-  content: "";
+  content: "\e962";
 }
 .account aside nav .account__nav-exchange a:before,
 .account aside nav .account__nav-exchange button:before {
-  content: "";
+  content: "\e939";
 }
 .account aside nav .account__nav-statement a:before,
 .account aside nav .account__nav-statement button:before {
-  content: "";
+  content: "\e93c";
 }
 .account aside nav .account__nav-settings a:before,
 .account aside nav .account__nav-settings button:before {
-  content: "";
+  content: "\e961";
 }
 .account aside nav .account__nav-faq a:before,
 .account aside nav .account__nav-faq button:before {
-  content: "";
+  content: "\e95a";
 }
 .account aside nav .account__nav-help a:before,
 .account aside nav .account__nav-help button:before {
-  content: "";
+  content: "\e95a";
 }
 .account aside nav .account__nav-contact a:before,
 .account aside nav .account__nav-contact button:before {
-  content: "";
+  content: "\e92b";
 }
 .account header {
   display: flex;
@@ -737,7 +737,7 @@
 .account header dt {
   font-size: 0.875rem;
   align-self: end;
-  color: #000000a3;
+  color: rgba(0, 0, 0, 0.6392156863);
 }
 .account header dd {
   font-weight: 600;
@@ -754,7 +754,7 @@
   background: white;
   box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
   margin-top: 0.25rem;
   max-width: calc(100vw - 4rem);
   overflow-wrap: break-word;
@@ -779,23 +779,30 @@
   margin-bottom: 0;
   font-weight: 600;
 }
-.account header details .header__profile-status {
-  border-radius: 0.5rem;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 0.3rem;
-}
-.account header details .header__profile-status:before {
-  content: "";
+.account header details progress {
+  appearance: none;
+  width: 100%;
+  height: 0.25rem;
   display: block;
-  height: 0.3rem;
-  border-radius: 0.3rem;
-  width: calc((var(--status-sum) / var(--status-sum-max)) * 100%);
-  min-width: 0.3rem;
-  background: var(--theme-accent-color, #000);
-  transition: width var(--transition-duration, 0) ease-out;
+  border: none;
+  border-radius: 0.25rem;
 }
-.account header details:not([open]) .header__profile-status:before {
-  width: 0.3rem;
+.account header details ::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+.account header details ::-moz-progress-bar {
+  background: var(--theme-accent-color, #000);
+  border-radius: 0.25rem;
+}
+.account header details ::-webkit-progress-value {
+  border-radius: 0.25rem;
+  background: transparent linear-gradient(var(--theme-accent-color, #000), var(--theme-accent-color, #000)) no-repeat;
+  background-size: 0;
+  transition: all var(--transition-duration, 0) ease-out;
+}
+.account header details[open] ::-webkit-progress-value {
+  background-size: 100%;
 }
 .account header details p {
   display: flex;
@@ -824,8 +831,8 @@
   .account header > :not(:last-child) {
     padding-inline-end: 0.5rem;
   }
-  .account header > .header__profile {
-    padding-inline-end: 1rem;
+  .account header > .header__profile summary {
+    padding-inline-end: 0.5rem;
   }
   .account header dl:hover:before {
     margin-block-start: -0.25rem;
@@ -992,7 +999,7 @@
     z-index: 0;
     background-color: #F4F5F6;
     max-width: 13.75rem;
-    box-shadow: 0 0.25rem 1.25rem #0000003d;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2392156863);
     clip-path: inset(0 -1.5rem -1.5rem 0);
     transition: var(--transition-duration, 0) ease-in-out;
     transition-property: clip-path, visibility;
@@ -1096,5 +1103,3 @@
     clip-path: inset(0 0 0 100%);
   }
 }
-
-/*# sourceMappingURL=account.css.map */

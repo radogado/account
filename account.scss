@@ -20,26 +20,25 @@ $mobile_breakpoint: 800px;
 			--transition-duration: .2s;
 		}
 	}
-	
+
 	line-height: 1.5;
 	font-family: system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		"Segoe UI",
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		"Fira Sans",
-		"Droid Sans",
-		"Helvetica Neue",
-		sans-serif;
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Oxygen,
+	Ubuntu,
+	Cantarell,
+	"Fira Sans",
+	"Droid Sans",
+	"Helvetica Neue",
+	sans-serif;
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	color: var(--theme-color);
 	margin: 0;
 	min-height: 100vh;
-	// min-height: -webkit-fill-available; // iOS <16
 	min-height: 100svh;
 	display: grid;
 	grid-template: auto 1fr auto / auto 1fr;
@@ -112,8 +111,6 @@ $mobile_breakpoint: 800px;
 		grid-row: 1/-1;
 		background-color: #F4F5F6;
 		overflow: auto;
-		// max-height: 100vh;
-		// max-height: 100dvh;
 		top: 0;
 		position: sticky;
 		padding-top: 1rem;
@@ -121,18 +118,7 @@ $mobile_breakpoint: 800px;
 
 		.logo {
 			order: -1;
-			// text-align: center;
-			// display: block;
-			// display: grid;
-			// overflow: hidden;
-			// transform: translate3d(0, 0, 0);
-			// transform: translateZ(0);
-			// will-change: background-image;
 			background: var(--logo-url) no-repeat 0 0 / auto var(--logo-height);
-			// margin: 0 .8rem;
-			// position: relative;
-
-			// clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 			width: var(--logo-width-shrunk);
 			height: var(--logo-height);
 			margin: auto;
@@ -522,11 +508,6 @@ $mobile_breakpoint: 800px;
 		line-height: 1.5;
 		width: 0;
 		color: var(--theme-color);
-		// background-color: #000000a3;
-		// -webkit-mask: url(favicon.svg) center no-repeat;
-		// -webkit-mask-size: contain;
-		// mask: url(favicon.svg) center no-repeat;
-		// mask-size: contain;
 		margin-inline-end: 3.25rem;
 
 		@media (min-width: $mobile_breakpoint) {
@@ -658,23 +639,13 @@ $mobile_breakpoint: 800px;
 
 	}
 
-
 	header {
 		display: flex;
-		// position: sticky;
-		// top: 0;
 		background: white;
 		align-items: center;
-		// gap: 1rem;
 		padding: 0.25rem 1rem;
 		border-inline-end: env(safe-area-inset-right) solid transparent;
 		justify-content: flex-end;
-		// overflow: auto;
-
-		// &:before {
-		// 	content: "";
-		// 	flex-grow: 1;
-		// }
 
 		button {
 			height: 2.5rem;
@@ -740,7 +711,7 @@ $mobile_breakpoint: 800px;
 				background: white;
 				box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, .12);
 				border-radius: 1rem;
-				padding: 1rem;
+				padding: .75rem;
 				margin-top: 0.25rem; // Don't cover the summary focus ring
 				max-width: calc(100vw - 4rem);
 				overflow-wrap: break-word;
@@ -766,32 +737,43 @@ $mobile_breakpoint: 800px;
 			.btn {
 				white-space: nowrap;
 				width: 100%;
-				// margin: 0;
 				margin-bottom: 0;
 				font-weight: 600;
 			}
 
-			.header__profile-status {
-				border-radius: 0.5rem;
-				background: rgba(0, 0, 0, 0.1);
-				border-radius: .3rem;
+			progress {
+				appearance: none;
+				width: 100%;
+				height: 0.25rem;
+				display: block;
+				border: none;
+				border-radius: 0.25rem;
+			}
 
-				&:before {
-					content: "";
-					display: block;
-					height: .3rem;
-					border-radius: .3rem;
-					width: calc((var(--status-sum) / var(--status-sum-max)) * 100%);
-					min-width: 0.3rem;
-					background: var(--theme-accent-color, #000);
-					transition: width var(--transition-duration, 0) ease-out;
-				}
+			::-webkit-progress-bar {
+				// Full bar
+				background-color: rgba(0, 0, 0, 0.1);
+				border-radius: 0.25rem;
+			}
+
+			::-moz-progress-bar {
+				// Filled bar
+				background: var(--theme-accent-color, #000);
+				border-radius: 0.25rem;
+			}
+
+			::-webkit-progress-value {
+				// Filled bar
+				border-radius: 0.25rem;
+				background: transparent linear-gradient(var(--theme-accent-color, #000), var(--theme-accent-color, #000)) no-repeat;
+				background-size: 0;
+				transition: all var(--transition-duration, 0) ease-out;
 
 			}
 
-			&:not([open]) {
-				.header__profile-status:before {
-					width: .3rem;
+			&[open] {
+				::-webkit-progress-value {
+					background-size: 100%;
 				}
 			}
 
@@ -832,9 +814,9 @@ $mobile_breakpoint: 800px;
 		header > :not(:last-child) {
 			padding-inline-end: 0.5rem;
 		}
-		
-		header > .header__profile {
-			padding-inline-end: 1rem;
+
+		header > .header__profile summary {
+			padding-inline-end: .5rem;
 		}
 
 		header dl:hover {
@@ -887,7 +869,6 @@ $mobile_breakpoint: 800px;
 		box-sizing: border-box;
 		color: var(--theme-color);
 		scroll-margin-top: 10rem; // Don't hide the header after Skip to content
-		// justify-self: auto;
 	}
 
 	footer {
@@ -1041,7 +1022,6 @@ $mobile_breakpoint: 800px;
 			display: contents;
 
 			.logo {
-				// width: 8rem;
 				grid-row: 1;
 				grid-column: 2;
 				align-self: center;
@@ -1083,7 +1063,6 @@ $mobile_breakpoint: 800px;
 			input#mobile-menu-trigger:not(:checked),
 			button#mobile-menu-trigger:not([aria-expanded="true"]) {
 				~ input[type="reset"] {
-					// display: none;
 					visibility: hidden;
 					background: transparent;
 				}
@@ -1178,7 +1157,6 @@ $mobile_breakpoint: 800px;
 		}
 
 		footer {
-			// grid-row: -2/-1;
 			display: none;
 		}
 	}
@@ -1213,10 +1191,3 @@ $mobile_breakpoint: 800px;
 	}
 
 }
-
-// Disable logo transition on mobile Safari, because it flickers with PayPal
-// @media (min-width: 800px) {
-// 	.account aside .logo {
-// 		--transition-duration: 0;
-// 	}
-// }
