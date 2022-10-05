@@ -259,11 +259,15 @@
   font-display: block;
 }
 .account {
+  --theme-bg: #fff;
   --theme-color: #222;
   --theme-color-light: #555;
   --theme-link-color: #000;
   --theme-accent-color: #253b80;
   --theme-button-hover-background: #d7def8;
+  --theme-aside-bg: #F4F5F6;
+  --theme-aside-highlight: #EAEBEC;
+  --theme-shadow: rgba(0, 0, 0, .12);
   --logo-width: 124px;
   --logo-height: 33px;
   --logo-height-shrunk: 2rem;
@@ -275,12 +279,26 @@
   font-family: "Source Sans Pro";
   font-size: 16px;
   color: var(--theme-color);
+  background-color: var(--theme-bg);
   margin: 0;
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
   grid-template: auto 1fr auto/auto 1fr;
   -webkit-text-size-adjust: none;
+}
+.account.account--dark {
+  --theme-bg: #0f0f0f;
+  --theme-color: #a4a3a3;
+  --theme-link-color: #bfbfbf;
+  --theme-accent-color: #5a7be1;
+  --theme-aside-bg: #242424;
+  --theme-aside-highlight: #2c2c2c;
+  --theme-shadow: rgba(255, 255, 255, .12);
+  --theme-button-hover-background: #222328;
+}
+.account.account--dark header .header__profile-level {
+  background: #212626;
 }
 @media (prefers-reduced-motion: no-preference) {
   .account[data-ready] {
@@ -342,7 +360,7 @@
   flex-direction: column;
   font-size: 0.875rem;
   grid-row: 1/-1;
-  background-color: #F4F5F6;
+  background-color: var(--theme-aside-bg);
   overflow: auto;
   top: 0;
   position: sticky;
@@ -397,11 +415,11 @@
   -webkit-font-smoothing: antialiased;
 }
 .account aside .account__trigger:focus-visible:before {
-  background-color: #EAEBEC;
+  background-color: var(--theme-aside-highlight);
 }
 @media (hover: hover) {
   .account aside .account__trigger:hover:before {
-    background-color: #EAEBEC;
+    background-color: var(--theme-aside-highlight);
   }
 }
 .account aside #expand-desktop-menu {
@@ -449,7 +467,7 @@
   }
   .account aside nav [aria-current] a:after,
 .account aside nav [aria-current] button:after {
-    background-color: #EAEBEC;
+    background-color: var(--theme-aside-highlight);
   }
   .account aside nav li a:before,
 .account aside nav li button:before {
@@ -579,11 +597,11 @@
   background-color: var(--theme-accent-color, #333);
 }
 .account aside nav li[aria-current] {
-  background-color: #EAEBEC;
+  background-color: var(--theme-aside-highlight);
 }
 @media (hover: hover) {
   .account aside nav li:hover {
-    background-color: #EAEBEC;
+    background-color: var(--theme-aside-highlight);
   }
 }
 .account aside nav a,
@@ -695,7 +713,7 @@
 }
 .account header {
   display: flex;
-  background: white;
+  background-color: var(--theme-bg);
   align-items: center;
   padding: 0.25rem 1rem;
   border-inline-end: env(safe-area-inset-right) solid transparent;
@@ -737,7 +755,8 @@
 .account header dt {
   font-size: 0.875rem;
   align-self: end;
-  color: rgba(0, 0, 0, 0.6392156863);
+  opacity: 0.8;
+  font-weight: normal;
 }
 .account header dd {
   font-weight: 600;
@@ -746,13 +765,13 @@
   margin: 0;
   color: var(--theme-color);
 }
-.account header details {
+.account header .header__profile {
   position: relative;
 }
-.account header details > :not(summary) {
+.account header .header__profile-card {
   position: absolute;
-  background: white;
-  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.12);
+  background: var(--theme-bg);
+  box-shadow: 0 0.125rem 0.75rem var(--theme-shadow);
   border-radius: 1rem;
   padding: 0.75rem;
   margin-top: 0.25rem;
@@ -760,26 +779,19 @@
   overflow-wrap: break-word;
   min-width: 14rem;
 }
-.account header details > :not(summary) p:first-of-type {
+.account header .header__profile-card p:first-of-type {
   margin-top: 0;
 }
-.account header details > :not(summary) p:last-of-type {
+.account header .header__profile-card p:last-of-type {
   margin-bottom: 0;
 }
-.account header details > :not(summary) .header__profile--level {
-  font-size: 0.8rem;
-  background: lightcyan;
-  border-radius: 0.75rem;
-  padding: 0 0.75rem;
-  line-height: 1.8;
-}
-.account header details .btn {
+.account header .header__profile .btn {
   white-space: nowrap;
   width: 100%;
   margin-bottom: 0;
   font-weight: 600;
 }
-.account header details progress {
+.account header .header__profile progress {
   appearance: none;
   width: 100%;
   height: 0.25rem;
@@ -787,32 +799,39 @@
   border: none;
   border-radius: 0.25rem;
 }
-.account header details ::-webkit-progress-bar {
+.account header .header__profile ::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
 }
-.account header details ::-moz-progress-bar {
+.account header .header__profile ::-moz-progress-bar {
   background: var(--theme-accent-color, #000);
   border-radius: 0.25rem;
 }
-.account header details ::-webkit-progress-value {
+.account header .header__profile ::-webkit-progress-value {
   border-radius: 0.25rem;
   background: transparent linear-gradient(var(--theme-accent-color, #000), var(--theme-accent-color, #000)) no-repeat;
   background-size: 0;
   transition: all var(--transition-duration, 0) ease-out;
 }
-.account header details[open] ::-webkit-progress-value {
+.account header .header__profile[open] ::-webkit-progress-value {
   background-size: 100%;
 }
-.account header details p {
+.account header .header__profile p {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
   word-break: break-word;
 }
-.account header details hr {
+.account header .header__profile hr {
   opacity: 0;
   margin: 0.25rem 0;
+}
+.account header .header__profile-level {
+  font-size: 0.8rem;
+  background: lightcyan;
+  border-radius: 0.75rem;
+  padding: 0 0.75rem;
+  line-height: 1.8;
 }
 .account header summary {
   list-style: none;
@@ -997,9 +1016,9 @@
     grid-column: 1/4;
     grid-row: 2/-1;
     z-index: 0;
-    background-color: #F4F5F6;
+    background-color: var(--theme-aside-bg);
     max-width: 13.75rem;
-    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2392156863);
+    box-shadow: 0 0.25rem 1.25rem var(--theme-shadow);
     clip-path: inset(0 -1.5rem -1.5rem 0);
     transition: var(--transition-duration, 0) ease-in-out;
     transition-property: clip-path, visibility;

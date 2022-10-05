@@ -3,17 +3,37 @@ $mobile_breakpoint: 800px;
 
 .account {
 
+	--theme-bg: #fff;
 	--theme-color: #222;
 	--theme-color-light: #555;
 	--theme-link-color: #000;
 	--theme-accent-color: #253b80;
 	--theme-button-hover-background: #d7def8;
+	--theme-aside-bg: #F4F5F6;
+	--theme-aside-highlight: #EAEBEC;
+	--theme-shadow: rgba(0, 0, 0, .12);
 	--logo-width: 124px;
 	--logo-height: 33px;
 	--logo-height-shrunk: 2rem;
 	--logo-width-shrunk: 1.6rem;
 	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
+
+	&.account--dark {
+		--theme-bg: #0f0f0f;
+		--theme-color: #a4a3a3;
+		--theme-link-color: #bfbfbf;
+		--theme-accent-color: #5a7be1;
+		--theme-aside-bg: #242424;
+		--theme-aside-highlight: #2c2c2c;
+		--theme-shadow: rgba(255, 255, 255, .12);
+		--theme-button-hover-background: #222328;
+
+		header .header__profile-level {
+			background: #212626;
+		}
+
+	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		&[data-ready] {
@@ -37,6 +57,7 @@ $mobile_breakpoint: 800px;
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	color: var(--theme-color);
+	background-color: var(--theme-bg);
 	margin: 0;
 	min-height: 100vh;
 	min-height: 100svh;
@@ -109,7 +130,7 @@ $mobile_breakpoint: 800px;
 		flex-direction: column;
 		font-size: .875rem;
 		grid-row: 1/-1;
-		background-color: #F4F5F6;
+		background-color: var(--theme-aside-bg);
 		overflow: auto;
 		top: 0;
 		position: sticky;
@@ -169,13 +190,13 @@ $mobile_breakpoint: 800px;
 			}
 
 			&:focus-visible:before {
-				background-color: #EAEBEC;
+				background-color: var(--theme-aside-highlight);
 			}
 
 			@media (hover: hover) {
 
 				&:hover:before {
-					background-color: #EAEBEC;
+					background-color: var(--theme-aside-highlight);
 				}
 
 			}
@@ -250,7 +271,7 @@ $mobile_breakpoint: 800px;
 					a,
 					button {
 						&:after {
-							background-color: #EAEBEC;
+							background-color: var(--theme-aside-highlight);
 						}
 					}
 				}
@@ -433,13 +454,13 @@ $mobile_breakpoint: 800px;
 				}
 
 				&[aria-current] {
-					background-color: #EAEBEC;
+					background-color: var(--theme-aside-highlight);
 				}
 
 				@media (hover: hover) {
 
 					&:hover {
-						background-color: #EAEBEC;
+						background-color: var(--theme-aside-highlight);
 					}
 
 				}
@@ -641,7 +662,7 @@ $mobile_breakpoint: 800px;
 
 	header {
 		display: flex;
-		background: white;
+		background-color: var(--theme-bg);
 		align-items: center;
 		padding: 0.25rem 1rem;
 		border-inline-end: env(safe-area-inset-right) solid transparent;
@@ -692,7 +713,8 @@ $mobile_breakpoint: 800px;
 		dt {
 			font-size: .875rem;
 			align-self: end;
-			color: #000000a3;
+			opacity: .8;
+			font-weight: normal;
 		}
 
 		dd {
@@ -703,13 +725,13 @@ $mobile_breakpoint: 800px;
 			color: var(--theme-color);
 		}
 
-		details {
+		.header__profile {
 			position: relative;
 
-			> :not(summary) {
+			&-card {
 				position: absolute;
-				background: white;
-				box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, .12);
+				background: var(--theme-bg);
+				box-shadow: 0 0.125rem 0.75rem var(--theme-shadow);
 				border-radius: 1rem;
 				padding: .75rem;
 				margin-top: 0.25rem; // Don't cover the summary focus ring
@@ -725,13 +747,6 @@ $mobile_breakpoint: 800px;
 					margin-bottom: 0;
 				}
 
-				.header__profile--level {
-					font-size: .8rem;
-					background: lightcyan;
-					border-radius: 0.75rem;
-					padding: 0 0.75rem;
-					line-height: 1.8;
-				}
 			}
 
 			.btn {
@@ -787,6 +802,14 @@ $mobile_breakpoint: 800px;
 			hr {
 				opacity: 0;
 				margin: 0.25rem 0;
+			}
+
+			&-level {
+				font-size: .8rem;
+				background: lightcyan;
+				border-radius: 0.75rem;
+				padding: 0 0.75rem;
+				line-height: 1.8;
 			}
 		}
 
@@ -1034,9 +1057,9 @@ $mobile_breakpoint: 800px;
 				grid-column: 1/4;
 				grid-row: 2/-1;
 				z-index: 0;
-				background-color: #F4F5F6;
+				background-color: var(--theme-aside-bg);
 				max-width: 13.75rem;
-				box-shadow: 0 0.25rem 1.25rem #0000003d;
+				box-shadow: 0 0.25rem 1.25rem var(--theme-shadow);
 				clip-path: inset(0 -1.5rem -1.5rem 0);
 				transition: var(--transition-duration, 0) ease-in-out;
 				transition-property: clip-path, visibility;

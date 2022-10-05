@@ -48,7 +48,8 @@
 	 "one-day-left":"1 day left",
 	 "spent":"spent",
 	 "left":"left",
-	 "explore-account-levels":"Explore account levels"
+	 "explore-account-levels":"Explore account levels",
+	 "toggle-dark-mode": "Toggle dark mode"
   },
   "fr":{
 	 "dashboard":"Tableau de bord",
@@ -99,7 +100,9 @@
 	 "one-day-left":"1 jour restant",
 	 "spent":"dépensé",
 	 "left":"restant",
-	 "explore-account-levels":"Explorer les niveaux de compte"
+	 "explore-account-levels":"Explorer les niveaux de compte",
+	 "toggle-dark-mode": "Basculer en mode sombre"
+
   },
   "ar":{
 	 "_direction": "rtl",
@@ -151,6 +154,8 @@
 	 "one-day-left":"1 يوم غادر",
 	 "spent":"أنفق",
 	 "left":"متبقي",
-	 "explore-account-levels":"اكتشف مستويات الحساب"
+	 "explore-account-levels":"اكتشف مستويات الحساب",
+	 "toggle-dark-mode": "تبديل الوضع الداكن"
+
   }
 }
