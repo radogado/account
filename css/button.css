@@ -1,0 +1,59 @@
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  user-select: none;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  cursor: pointer;
+  color: var(--theme-accent-color, #333);
+  border: 2px solid var(--theme-accent-color, #333);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.9375rem;
+  min-width: 7.5rem;
+  outline-offset: 0.25rem;
+  min-height: 2.5rem;
+  height: auto;
+  margin: 0.5rem 0;
+  line-height: 1;
+  word-break: break-word;
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover, .btn:active {
+  background-color: var(--theme-button-hover-background);
+  border-color: var(--theme-accent-color, #333);
+  color: var(--theme-accent-color, #333);
+}
+.btn.btn--secondary {
+  background-color: var(--theme-accent-color, #333);
+  color: var(--theme-bg);
+}
+
+.btn,
+aside nav li {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat var(--ripple-x) var(--ripple-y)/0 0;
+  transition: 0.15s ease-out;
+  transition-property: background-size, background-position;
+}
+.btn:active,
+aside nav li:active {
+  background-position: calc(var(--ripple-x) - var(--ripple-radius)) calc(var(--ripple-y) - var(--ripple-radius));
+  background-size: calc(2 * var(--ripple-radius)) calc(2 * var(--ripple-radius));
+}
+
+.account__trigger:before {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat center/0 0;
+  transition: var(--transition-duration, 0) ease-out;
+  transition-property: background-size, transform;
+}
+.account__trigger:active:before {
+  background-size: 100% 100%;
+}
+
+/*# sourceMappingURL=button.css.map */

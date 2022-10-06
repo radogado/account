@@ -1,0 +1,14 @@
+[dir=rtl] .account aside #expand-desktop-menu:before {
+  transform: rotateZ(-180deg);
+}
+[dir=rtl] .account aside #expand-desktop-menu:checked:before, [dir=rtl] .account aside #expand-desktop-menu[aria-expanded=true]:before {
+  transform: none;
+}
+@media not screen and (min-width: 800px) {
+  [dir=rtl] .account aside input#mobile-menu-trigger:not(:checked) ~ nav,
+[dir=rtl] .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+/*# sourceMappingURL=rtl.css.map */

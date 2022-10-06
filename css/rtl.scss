@@ -1,0 +1,30 @@
+$mobile_breakpoint: 800px;
+
+[dir="rtl"] {
+	.account aside {
+
+		#expand-desktop-menu {
+			&:before {
+				transform: rotateZ(-180deg);
+			}
+
+			&:checked,
+			&[aria-expanded="true"] {
+				&:before {
+					transform: none;
+				}
+			}
+		}
+
+		@media not screen and (min-width: $mobile_breakpoint) {
+
+			input#mobile-menu-trigger:not(:checked),
+			button#mobile-menu-trigger:not([aria-expanded="true"]) {
+				~ nav {
+					clip-path: inset(0 0 0 100%);
+				}
+			}
+		}
+	}
+
+}

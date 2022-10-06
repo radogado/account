@@ -1,0 +1,157 @@
+$mobile_breakpoint: 800px;
+
+#mobile-menu-trigger {
+	&:before {
+		content: "menu";
+		overflow: hidden;
+	}
+
+	&:checked:before,
+	&[aria-expanded="true"]:before {
+		content: "close";
+		overflow: hidden;
+	}
+
+}
+
+.header__profile dl:before {
+	content: "user";
+}
+
+.header__loyalty dl:before {
+	content: "loyalty";
+}
+
+.header__balance dl:before {
+	content: "multicurrency";
+}
+
+.account__nav-dashboard {
+
+	a,
+	button {
+		&:before {
+			content: "\e932";
+		}
+	}
+}
+
+.account__nav-deposit {
+
+	a,
+	button {
+		&:before {
+			content: "\e941";
+		}
+	}
+}
+
+.account__nav-button {
+
+	a,
+	button {
+		&:before {
+			content: "\e941";
+		}
+	}
+}
+
+.account__nav-withdraw {
+
+	a,
+	button {
+		&:before {
+			content: "\e946";
+		}
+	}
+}
+
+.account__nav-prepaid-card {
+
+	a,
+	button {
+		&:before {
+			content: "\e93c";
+		}
+	}
+}
+
+.account__nav-promotions {
+
+	a,
+	button {
+		&:before {
+			content: "\e959";
+		}
+	}
+}
+
+.account__nav-transactions {
+
+	a,
+	button {
+		&:before {
+			content: "\e962";
+		}
+	}
+}
+
+.account__nav-exchange {
+
+	a,
+	button {
+		&:before {
+			content: "\e939";
+		}
+	}
+}
+
+.account__nav-statement {
+
+	a,
+	button {
+		&:before {
+			content: "\e93c";
+		}
+	}
+}
+
+.account__nav-settings {
+
+	a,
+	button {
+		&:before {
+			content: "\e961";
+		}
+	}
+}
+
+.account__nav-faq {
+
+	a,
+	button {
+		&:before {
+			content: "\e95a";
+		}
+	}
+}
+
+.account__nav-help {
+
+	a,
+	button {
+		&:before {
+			content: "\e95a";
+		}
+	}
+}
+
+.account__nav-contact {
+
+	a,
+	button {
+		&:before {
+			content: "\e92b";
+		}
+	}
+}

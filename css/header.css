@@ -1,0 +1,167 @@
+header {
+  display: flex;
+  background-color: var(--theme-bg);
+  align-items: center;
+  padding: 0.25rem 1rem;
+  border-inline-end: env(safe-area-inset-right) solid transparent;
+  justify-content: flex-end;
+}
+header button {
+  height: 2.5rem;
+}
+header dl {
+  margin: 0;
+  display: grid;
+  grid-template: 1fr 1fr/auto;
+  line-height: 1.25;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: background-color;
+  user-select: none;
+}
+header dl:before {
+  content: "";
+  grid-row: 1/3;
+  margin-inline-end: 2.5rem;
+  margin-inline-start: 0.5rem;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: margin-block-start;
+  color: var(--theme-color);
+  text-align: center;
+}
+header .header__loyalty {
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: background-color;
+}
+header .header__loyalty:hover {
+  background-color: var(--theme-aside-bg);
+}
+header dt {
+  font-size: 0.875rem;
+  align-self: end;
+  opacity: 0.8;
+  font-weight: normal;
+  color: var(--theme-color);
+}
+header dd {
+  font-weight: 600;
+  grid-column: 2/3;
+  align-self: normal;
+  margin: 0;
+  color: var(--theme-color);
+}
+header .header__profile {
+  position: relative;
+}
+header .header__profile-card {
+  position: absolute;
+  background: var(--theme-bg);
+  box-shadow: 0 0.125rem 0.75rem var(--theme-shadow);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  max-width: calc(100vw - 4rem);
+  overflow-wrap: break-word;
+  min-width: 14rem;
+}
+header .header__profile-card p:first-of-type {
+  margin-top: 0;
+}
+header .header__profile-card p:last-of-type {
+  margin-bottom: 0;
+}
+header .header__profile .btn {
+  white-space: nowrap;
+  width: 100%;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+header .header__profile progress {
+  appearance: none;
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--theme-aside-bg);
+}
+header .header__profile ::-webkit-progress-bar {
+  background-color: var(--theme-aside-bg);
+  border-radius: 0.25rem;
+}
+header .header__profile ::-moz-progress-bar {
+  background: var(--theme-accent-color, #000);
+  border-radius: 0.25rem;
+}
+header .header__profile ::-webkit-progress-value {
+  border-radius: 0.25rem;
+  background: transparent linear-gradient(var(--theme-accent-color, #000), var(--theme-accent-color, #000)) no-repeat;
+  background-size: 0;
+  transition: all var(--transition-duration, 0) ease-out;
+}
+header .header__profile[open] ::-webkit-progress-value {
+  background-size: 100%;
+}
+header .header__profile p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  word-break: break-word;
+}
+header .header__profile hr {
+  opacity: 0;
+  margin: 0.25rem 0;
+}
+header .header__profile-level {
+  font-size: 0.8rem;
+  background: lightcyan;
+  border-radius: 0.75rem;
+  padding: 0 0.75rem;
+  line-height: 1.8;
+}
+header summary {
+  list-style: none;
+}
+header summary::marker, header summary::-webkit-details-marker {
+  display: none;
+}
+@media (min-width: 800px) {
+  header details.header__profile:not([open]) [data-text=my-profile] {
+    display: none;
+  }
+  header summary {
+    outline-offset: -3px;
+    cursor: zoom-in;
+  }
+  header details.header__profile[open] summary {
+    cursor: zoom-out;
+  }
+  header details.header__profile[open] summary span,
+header details.header__profile[open] summary dd {
+    opacity: 0;
+  }
+  header details.header__profile[open] [data-text=my-profile] {
+    opacity: 1;
+  }
+  header details.header__profile[open] dt {
+    display: grid;
+  }
+  header details.header__profile[open] dt span {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  header > :not(.btn) {
+    padding-inline-end: 0.5rem;
+    padding-inline-end: 0.5rem;
+    outline-offset: -3px;
+  }
+  header > .header__profile summary {
+    padding-inline-end: 0.5rem;
+  }
+  header dl:hover:before {
+    margin-block-start: -0.25rem;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,69 @@
+.account {
+	--theme-bg: #fff;
+	--theme-color: #222;
+	--theme-color-light: #555;
+	--theme-link-color: #000;
+	--theme-accent-color: #253b80;
+	--theme-button-hover-background: #d7def8;
+	--theme-aside-bg: #F4F5F6;
+	--theme-aside-highlight: #EAEBEC;
+	--theme-shadow: rgba(0, 0, 0, .12);
+	--logo-width: 124px;
+	--logo-height: 33px;
+	--logo-height-shrunk: 2rem;
+	--logo-width-shrunk: 1.6rem;
+	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg); // Full GitHub URL, because of a real-device mobileSafari bug
+	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
+
+	&.account--dark {
+		--theme-bg: #0f0f0f;
+		--theme-color: #a8a7a7;
+		--theme-color-light: #919191;
+		--theme-link-color: #bfbfbf;
+		--theme-accent-color: #5a7be1;
+		--theme-aside-bg: #242424;
+		--theme-aside-highlight: #2c2c2c;
+		--theme-shadow: rgba(255, 255, 255, .12);
+		--theme-button-hover-background: #222328;
+
+		header .header__profile-level {
+			background: #212626;
+		}
+
+		&.theme-purple,
+		&:has(#theme-purple:checked) {
+			--theme-accent-color: #d240b1;
+			--theme-button-hover-background: #2f252c;
+		}
+
+		&.theme-green,
+		&:has(#theme-green:checked) {
+			--theme-accent-color: #5e920e;
+			--theme-button-hover-background: #2b382a;
+		}
+	}
+
+	&.theme-purple,
+	&:has(#theme-purple:checked) {
+		--theme-accent-color: #70215e;
+		--logo-url: url(../Skrill-Logo.svg);
+		--theme-button-hover-background: #f5c9e8;
+		--logo-width: 5.875rem;
+		--logo-height: 2.0625rem;
+		--logo-width-shrunk: 1.5rem;
+		--logo-height-shrunk: 2.0625rem;
+	}
+
+	&.theme-green,
+	&:has(#theme-green:checked) {
+		--theme-accent-color: #538309;
+		--logo-url: url(../Neteller.svg);
+		--logo-width: 8.7rem;
+		--logo-height: 1.5rem;
+		--logo-height-shrunk: 2rem;
+		--logo-width-shrunk: 2.3rem;
+		--logo-clip-path: polygon(0 0, calc(var(--logo-width-shrunk) + .00625rem) 0, calc(var(--logo-width-shrunk) - .3125rem) 100%, 0% 100%);
+		--theme-button-hover-background: #c6ffbf;
+	}
+
+}

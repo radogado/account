@@ -1,0 +1,88 @@
+@charset "UTF-8";
+#mobile-menu-trigger:before {
+  content: "menu";
+  overflow: hidden;
+}
+#mobile-menu-trigger:checked:before, #mobile-menu-trigger[aria-expanded=true]:before {
+  content: "close";
+  overflow: hidden;
+}
+
+.header__profile dl:before {
+  content: "user";
+}
+
+.header__loyalty dl:before {
+  content: "loyalty";
+}
+
+.header__balance dl:before {
+  content: "multicurrency";
+}
+
+.account__nav-dashboard a:before,
+.account__nav-dashboard button:before {
+  content: "";
+}
+
+.account__nav-deposit a:before,
+.account__nav-deposit button:before {
+  content: "";
+}
+
+.account__nav-button a:before,
+.account__nav-button button:before {
+  content: "";
+}
+
+.account__nav-withdraw a:before,
+.account__nav-withdraw button:before {
+  content: "";
+}
+
+.account__nav-prepaid-card a:before,
+.account__nav-prepaid-card button:before {
+  content: "";
+}
+
+.account__nav-promotions a:before,
+.account__nav-promotions button:before {
+  content: "";
+}
+
+.account__nav-transactions a:before,
+.account__nav-transactions button:before {
+  content: "";
+}
+
+.account__nav-exchange a:before,
+.account__nav-exchange button:before {
+  content: "";
+}
+
+.account__nav-statement a:before,
+.account__nav-statement button:before {
+  content: "";
+}
+
+.account__nav-settings a:before,
+.account__nav-settings button:before {
+  content: "";
+}
+
+.account__nav-faq a:before,
+.account__nav-faq button:before {
+  content: "";
+}
+
+.account__nav-help a:before,
+.account__nav-help button:before {
+  content: "";
+}
+
+.account__nav-contact a:before,
+.account__nav-contact button:before {
+  content: "";
+}
+
+/*# sourceMappingURL=icons.css.map */
