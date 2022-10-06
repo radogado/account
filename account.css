@@ -271,7 +271,7 @@
   --logo-height: 33px;
   --logo-height-shrunk: 2rem;
   --logo-width-shrunk: 1.6rem;
-  --logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
+  --logo-url: url(PayPal-2.svg);
   --logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
   line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -752,7 +752,6 @@
 }
 .account header dl:before {
   content: "user";
-  overflow: hidden;
   grid-row: 1/3;
   margin-inline-end: 2.5rem;
   margin-inline-start: 0.5rem;
@@ -1156,5 +1155,3 @@
     clip-path: inset(0 0 0 100%);
   }
 }
-
-/*# sourceMappingURL=account.css.map */

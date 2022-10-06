@@ -16,7 +16,7 @@ $mobile_breakpoint: 800px;
 	--logo-height: 33px;
 	--logo-height-shrunk: 2rem;
 	--logo-width-shrunk: 1.6rem;
-	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
+	--logo-url: url(PayPal-2.svg);
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 
 	&.account--dark {
@@ -706,7 +706,6 @@ $mobile_breakpoint: 800px;
 
 			&:before {
 				content: "user";
-				overflow: hidden;
 				grid-row: 1/3;
 				margin-inline-end: 2.5rem;
 				margin-inline-start: .5rem;
