@@ -715,6 +715,8 @@ $mobile_breakpoint: 800px;
 			align-self: end;
 			opacity: .8;
 			font-weight: normal;
+			color: var(--theme-color);
+
 		}
 
 		dd {
@@ -763,11 +765,12 @@ $mobile_breakpoint: 800px;
 				display: block;
 				border: none;
 				border-radius: 0.25rem;
+				background-color: var(--theme-aside-bg);
 			}
 
 			::-webkit-progress-bar {
 				// Full bar
-				background-color: rgba(0, 0, 0, 0.1);
+				background-color: var(--theme-aside-bg);
 				border-radius: 0.25rem;
 			}
 

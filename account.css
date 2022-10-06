@@ -757,6 +757,7 @@
   align-self: end;
   opacity: 0.8;
   font-weight: normal;
+  color: var(--theme-color);
 }
 .account header dd {
   font-weight: 600;
@@ -798,9 +799,10 @@
   display: block;
   border: none;
   border-radius: 0.25rem;
+  background-color: var(--theme-aside-bg);
 }
 .account header .header__profile ::-webkit-progress-bar {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--theme-aside-bg);
   border-radius: 0.25rem;
 }
 .account header .header__profile ::-moz-progress-bar {
