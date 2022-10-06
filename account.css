@@ -335,6 +335,7 @@
   z-index: -9;
   opacity: 0;
   padding: 0.5rem 0.75rem;
+  font-weight: normal;
 }
 .account .skip-link:focus-visible {
   z-index: 9;
@@ -343,17 +344,10 @@
 .account a,
 .account aside nav li button {
   text-decoration: none;
-}
-.account a[href],
-.account aside nav li button[href] {
   font-weight: 600;
 }
 .account a {
   color: var(--theme-link-color);
-}
-.account aside nav li button,
-.account aside nav li a {
-  color: var(--theme-color-light);
 }
 .account aside {
   display: flex;
@@ -461,7 +455,7 @@
     position: absolute;
     inset: 0;
     inset-inline-start: 3rem;
-    background-color: #F4F5F6;
+    background-color: var(--theme-aside-bg);
     opacity: 1;
     transition: opacity var(--transition-duration, 0) ease-out;
   }
@@ -606,6 +600,7 @@
 }
 .account aside nav a,
 .account aside nav button {
+  color: var(--theme-color-light);
   position: relative;
   display: flex;
   width: 100%;
@@ -663,52 +658,52 @@
     transition: margin var(--transition-duration, 0) ease-in-out;
   }
 }
-.account aside nav .account__nav-deposit a:before,
-.account aside nav .account__nav-deposit button:before {
+.account .account__nav-deposit a:before,
+.account .account__nav-deposit button:before {
   content: "\e941";
 }
-.account aside nav .account__nav-button a:before,
-.account aside nav .account__nav-button button:before {
+.account .account__nav-button a:before,
+.account .account__nav-button button:before {
   content: "\e941";
 }
-.account aside nav .account__nav-withdraw a:before,
-.account aside nav .account__nav-withdraw button:before {
+.account .account__nav-withdraw a:before,
+.account .account__nav-withdraw button:before {
   content: "\e946";
 }
-.account aside nav .account__nav-prepaid-card a:before,
-.account aside nav .account__nav-prepaid-card button:before {
+.account .account__nav-prepaid-card a:before,
+.account .account__nav-prepaid-card button:before {
   content: "\e93c";
 }
-.account aside nav .account__nav-promotions a:before,
-.account aside nav .account__nav-promotions button:before {
+.account .account__nav-promotions a:before,
+.account .account__nav-promotions button:before {
   content: "\e959";
 }
-.account aside nav .account__nav-transactions a:before,
-.account aside nav .account__nav-transactions button:before {
+.account .account__nav-transactions a:before,
+.account .account__nav-transactions button:before {
   content: "\e962";
 }
-.account aside nav .account__nav-exchange a:before,
-.account aside nav .account__nav-exchange button:before {
+.account .account__nav-exchange a:before,
+.account .account__nav-exchange button:before {
   content: "\e939";
 }
-.account aside nav .account__nav-statement a:before,
-.account aside nav .account__nav-statement button:before {
+.account .account__nav-statement a:before,
+.account .account__nav-statement button:before {
   content: "\e93c";
 }
-.account aside nav .account__nav-settings a:before,
-.account aside nav .account__nav-settings button:before {
+.account .account__nav-settings a:before,
+.account .account__nav-settings button:before {
   content: "\e961";
 }
-.account aside nav .account__nav-faq a:before,
-.account aside nav .account__nav-faq button:before {
+.account .account__nav-faq a:before,
+.account .account__nav-faq button:before {
   content: "\e95a";
 }
-.account aside nav .account__nav-help a:before,
-.account aside nav .account__nav-help button:before {
+.account .account__nav-help a:before,
+.account .account__nav-help button:before {
   content: "\e95a";
 }
-.account aside nav .account__nav-contact a:before,
-.account aside nav .account__nav-contact button:before {
+.account .account__nav-contact a:before,
+.account .account__nav-contact button:before {
   content: "\e92b";
 }
 .account header {
@@ -750,7 +745,7 @@
   content: "multicurrency";
 }
 .account header a[href] dl:hover {
-  background-color: #F4F5F6;
+  background-color: var(--theme-aside-bg);
 }
 .account header dt {
   font-size: 0.875rem;
@@ -975,12 +970,12 @@
   background-position: calc(var(--ripple-x) - var(--ripple-radius)) calc(var(--ripple-y) - var(--ripple-radius));
   background-size: calc(2 * var(--ripple-radius)) calc(2 * var(--ripple-radius));
 }
-.account aside .account__trigger:before {
+.account .account__trigger:before {
   background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 70%, rgba(0, 0, 0, 0) 0) no-repeat center/0 0;
   transition: var(--transition-duration, 0) ease-out;
   transition-property: background-size, transform;
 }
-.account aside .account__trigger:active:before {
+.account .account__trigger:active:before {
   background-size: 100% 100%;
 }
 .account fieldset {
@@ -998,7 +993,6 @@
   font-size: 0.875rem;
   font-weight: 600;
 }
-
 @media not screen and (min-width: 800px) {
   .account {
     grid-template-columns: 3.1rem auto 1fr;
@@ -1112,6 +1106,7 @@
     display: none;
   }
 }
+
 [dir=rtl] .account aside #expand-desktop-menu:before {
   transform: rotateZ(-180deg);
 }

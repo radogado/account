@@ -100,6 +100,7 @@ $mobile_breakpoint: 800px;
 		z-index: -9;
 		opacity: 0;
 		padding: 0.5rem 0.75rem;
+		font-weight: normal;
 
 		&:focus-visible {
 			z-index: 9;
@@ -110,19 +111,11 @@ $mobile_breakpoint: 800px;
 	a,
 	aside nav li button {
 		text-decoration: none;
-
-		&[href] {
-			font-weight: 600;
-		}
+		font-weight: 600;
 	}
 
 	a {
 		color: var(--theme-link-color);
-	}
-
-	aside nav li button,
-	aside nav li a {
-		color: var(--theme-color-light);
 	}
 
 	aside {
@@ -260,7 +253,7 @@ $mobile_breakpoint: 800px;
 						position: absolute;
 						inset: 0;
 						inset-inline-start: 3rem;
-						background-color: #F4F5F6;
+						background-color: var(--theme-aside-bg);
 						opacity: 1;
 						transition: opacity var(--transition-duration, 0) ease-out;
 					}
@@ -469,6 +462,7 @@ $mobile_breakpoint: 800px;
 
 			a,
 			button {
+				color: var(--theme-color-light);
 				position: relative;
 				display: flex;
 				width: 100%;
@@ -536,128 +530,124 @@ $mobile_breakpoint: 800px;
 		}
 	}
 
-	aside nav {
+	.account__nav-deposit {
 
-		.account__nav-deposit {
-
-			a,
-			button {
-				&:before {
-					content: "\e941";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e941";
 			}
 		}
+	}
 
-		.account__nav-button {
+	.account__nav-button {
 
-			a,
-			button {
-				&:before {
-					content: "\e941";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e941";
 			}
 		}
+	}
 
-		.account__nav-withdraw {
+	.account__nav-withdraw {
 
-			a,
-			button {
-				&:before {
-					content: "\e946";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e946";
 			}
 		}
+	}
 
-		.account__nav-prepaid-card {
+	.account__nav-prepaid-card {
 
-			a,
-			button {
-				&:before {
-					content: "\e93c";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e93c";
 			}
 		}
+	}
 
-		.account__nav-promotions {
+	.account__nav-promotions {
 
-			a,
-			button {
-				&:before {
-					content: "\e959";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e959";
 			}
 		}
+	}
 
-		.account__nav-transactions {
+	.account__nav-transactions {
 
-			a,
-			button {
-				&:before {
-					content: "\e962";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e962";
 			}
 		}
+	}
 
-		.account__nav-exchange {
+	.account__nav-exchange {
 
-			a,
-			button {
-				&:before {
-					content: "\e939";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e939";
 			}
 		}
+	}
 
-		.account__nav-statement {
+	.account__nav-statement {
 
-			a,
-			button {
-				&:before {
-					content: "\e93c";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e93c";
 			}
 		}
+	}
 
-		.account__nav-settings {
+	.account__nav-settings {
 
-			a,
-			button {
-				&:before {
-					content: "\e961";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e961";
 			}
 		}
+	}
 
-		.account__nav-faq {
+	.account__nav-faq {
 
-			a,
-			button {
-				&:before {
-					content: "\e95a";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e95a";
 			}
 		}
+	}
 
-		.account__nav-help {
+	.account__nav-help {
 
-			a,
-			button {
-				&:before {
-					content: "\e95a";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e95a";
 			}
 		}
+	}
 
-		.account__nav-contact {
+	.account__nav-contact {
 
-			a,
-			button {
-				&:before {
-					content: "\e92b";
-				}
+		a,
+		button {
+			&:before {
+				content: "\e92b";
 			}
 		}
-
 	}
 
 	header {
@@ -706,7 +696,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		a[href] dl:hover {
-			background-color: #F4F5F6;
+			background-color: var(--theme-aside-bg);
 
 		}
 
@@ -895,10 +885,11 @@ $mobile_breakpoint: 800px;
 		box-sizing: border-box;
 		color: var(--theme-color);
 		scroll-margin-top: 10rem; // Don't hide the header after Skip to content
+
 		.btn {
 			margin-inline-end: .75rem;
 		}
-		
+
 	}
 
 	footer {
@@ -1003,7 +994,7 @@ $mobile_breakpoint: 800px;
 
 	}
 
-	aside .account__trigger {
+	.account__trigger {
 
 		&:before {
 
@@ -1037,10 +1028,7 @@ $mobile_breakpoint: 800px;
 		font-weight: 600;
 	}
 
-}
-
-@media not screen and (min-width: $mobile_breakpoint) {
-	.account {
+	@media not screen and (min-width: $mobile_breakpoint) {
 
 		grid-template-columns: 3.1rem auto 1fr;
 
@@ -1186,7 +1174,6 @@ $mobile_breakpoint: 800px;
 			display: none;
 		}
 	}
-
 }
 
 [dir="rtl"] {
@@ -1205,7 +1192,7 @@ $mobile_breakpoint: 800px;
 			}
 		}
 
-		@media not screen and (min-width: 800px) {
+		@media not screen and (min-width: $mobile_breakpoint) {
 
 			input#mobile-menu-trigger:not(:checked),
 			button#mobile-menu-trigger:not([aria-expanded="true"]) {
