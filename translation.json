@@ -49,7 +49,8 @@
 	 "spent":"spent",
 	 "left":"left",
 	 "explore-account-levels":"Explore account levels",
-	 "toggle-dark-mode": "Toggle dark mode"
+	 "toggle-dark-mode": "Toggle dark mode",
+	 "source-code": "Source code"
   },
   "fr":{
 	 "dashboard":"Tableau de bord",
@@ -101,7 +102,8 @@
 	 "spent":"dépensé",
 	 "left":"restant",
 	 "explore-account-levels":"Explorer les niveaux de compte",
-	 "toggle-dark-mode": "Basculer en mode sombre"
+	 "toggle-dark-mode": "Basculer en mode sombre",
+	 "source-code": "Code source"
 
   },
   "ar":{
@@ -155,7 +157,8 @@
 	 "spent":"أنفق",
 	 "left":"متبقي",
 	 "explore-account-levels":"اكتشف مستويات الحساب",
-	 "toggle-dark-mode": "تبديل الوضع الداكن"
+	 "toggle-dark-mode": "تبديل الوضع الداكن",
+	 "source-code": "مصدر الرمز"
 
   }
 }

@@ -444,7 +444,7 @@ $mobile_breakpoint: 800px;
 		}
 
 		nav {
-			overflow: hidden;
+			// overflow: hidden;
 			transition: max-width var(--transition-duration, 0) ease-in-out;
 			font-weight: 600;
 			flex-grow: 1;
@@ -854,8 +854,10 @@ $mobile_breakpoint: 800px;
 			border-inline-end: env(safe-area-inset-right) solid transparent;
 		}
 
-		header > :not(:last-child) {
+		header > :not(.btn) {
 			padding-inline-end: 0.5rem;
+			padding-inline-end: 0.5rem;
+			outline-offset: -3px;
 		}
 
 		header > .header__profile summary {
@@ -875,6 +877,10 @@ $mobile_breakpoint: 800px;
 				[data-text="my-profile"] {
 					display: none;
 				}
+			}
+
+			summary {
+				outline-offset: -3px;
 			}
 
 			details.header__profile[open] {

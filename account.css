@@ -586,7 +586,6 @@
   }
 }
 .account aside nav {
-  overflow: hidden;
   transition: max-width var(--transition-duration, 0) ease-in-out;
   font-weight: 600;
   flex-grow: 1;
@@ -866,8 +865,10 @@
 .account footer {
     border-inline-end: env(safe-area-inset-right) solid transparent;
   }
-  .account header > :not(:last-child) {
+  .account header > :not(.btn) {
     padding-inline-end: 0.5rem;
+    padding-inline-end: 0.5rem;
+    outline-offset: -3px;
   }
   .account header > .header__profile summary {
     padding-inline-end: 0.5rem;
@@ -877,6 +878,9 @@
   }
   .account header details.header__profile:not([open]) [data-text=my-profile] {
     display: none;
+  }
+  .account header summary {
+    outline-offset: -3px;
   }
   .account header details.header__profile[open] summary span,
 .account header details.header__profile[open] summary dd {
