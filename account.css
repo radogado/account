@@ -765,7 +765,11 @@
 .account header .header__balance dl:before {
   content: "multicurrency";
 }
-.account header a[href] dl:hover {
+.account header .header__loyalty {
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: background-color;
+}
+.account header .header__loyalty:hover {
   background-color: var(--theme-aside-bg);
 }
 .account header dt {
@@ -881,6 +885,10 @@
   }
   .account header summary {
     outline-offset: -3px;
+    cursor: zoom-in;
+  }
+  .account header details.header__profile[open] summary {
+    cursor: zoom-out;
   }
   .account header details.header__profile[open] summary span,
 .account header details.header__profile[open] summary dd {

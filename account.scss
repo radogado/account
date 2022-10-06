@@ -722,9 +722,13 @@ $mobile_breakpoint: 800px;
 			content: "multicurrency";
 		}
 
-		a[href] dl:hover {
+		.header__loyalty {
+			transition: var(--transition-duration, 0) ease-in-out;
+			transition-property: background-color;
+		}
+		
+		.header__loyalty:hover {
 			background-color: var(--theme-aside-bg);
-
 		}
 
 		dt {
@@ -881,10 +885,12 @@ $mobile_breakpoint: 800px;
 
 			summary {
 				outline-offset: -3px;
+				cursor: zoom-in;
 			}
 
 			details.header__profile[open] {
 				summary {
+					cursor: zoom-out;
 
 					span,
 					dd {
