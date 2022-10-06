@@ -885,6 +885,9 @@
   color: var(--theme-color);
   scroll-margin-top: 10rem;
 }
+.account main .btn {
+  margin-inline-end: 0.75rem;
+}
 .account footer {
   padding: 1rem;
   padding-bottom: 0;
@@ -951,9 +954,6 @@
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-}
-.account .btn:has(+ .btn) {
-  margin-inline-end: 0.75rem;
 }
 .account .btn:hover, .account .btn:active {
   background-color: var(--theme-button-hover-background);
