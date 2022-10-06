@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* cyrillic-ext */
 @font-face {
   font-family: "Source Sans Pro";
@@ -414,7 +413,6 @@
 .account aside .account__trigger:before {
   cursor: pointer;
   padding: 0;
-  content: "≪";
   width: 2.5rem;
   height: 2.5rem;
   display: block;
@@ -425,7 +423,8 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
+  overflow: hidden;
   line-height: 1.7;
   color: var(--theme-color-light);
   -webkit-font-smoothing: antialiased;
@@ -445,7 +444,7 @@
   margin: 0.5rem 0.25rem;
   padding: 0.25rem 0;
   box-sizing: content-box;
-  width: calc(100% - .5rem);
+  width: calc(100% - 0.5rem);
 }
 .account aside #expand-desktop-menu:checked:before, .account aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: rotateZ(-180deg);
@@ -458,9 +457,11 @@
 }
 .account aside #mobile-menu-trigger:before {
   content: "menu";
+  overflow: hidden;
 }
 .account aside #mobile-menu-trigger:checked:before, .account aside #mobile-menu-trigger[aria-expanded=true]:before {
   content: "close";
+  overflow: hidden;
 }
 @media not screen and (min-width: 800px) {
   .account aside #expand-desktop-menu {
@@ -542,7 +543,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
     background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
-    transition-delay: calc(var(--transition-duration, .2s) / 2);
+    transition-delay: calc(var(--transition-duration, 0.2s) / 2);
   }
   .account aside #mobile-menu-trigger,
 .account aside input[type=reset] {
@@ -661,7 +662,7 @@
   font-family: "Icons";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "\e932";
   width: 1.5em;
   height: 1.5em;
   flex-shrink: 0;
@@ -681,51 +682,51 @@
 }
 .account .account__nav-deposit a:before,
 .account .account__nav-deposit button:before {
-  content: "";
+  content: "\e941";
 }
 .account .account__nav-button a:before,
 .account .account__nav-button button:before {
-  content: "";
+  content: "\e941";
 }
 .account .account__nav-withdraw a:before,
 .account .account__nav-withdraw button:before {
-  content: "";
+  content: "\e946";
 }
 .account .account__nav-prepaid-card a:before,
 .account .account__nav-prepaid-card button:before {
-  content: "";
+  content: "\e93c";
 }
 .account .account__nav-promotions a:before,
 .account .account__nav-promotions button:before {
-  content: "";
+  content: "\e959";
 }
 .account .account__nav-transactions a:before,
 .account .account__nav-transactions button:before {
-  content: "";
+  content: "\e962";
 }
 .account .account__nav-exchange a:before,
 .account .account__nav-exchange button:before {
-  content: "";
+  content: "\e939";
 }
 .account .account__nav-statement a:before,
 .account .account__nav-statement button:before {
-  content: "";
+  content: "\e93c";
 }
 .account .account__nav-settings a:before,
 .account .account__nav-settings button:before {
-  content: "";
+  content: "\e961";
 }
 .account .account__nav-faq a:before,
 .account .account__nav-faq button:before {
-  content: "";
+  content: "\e95a";
 }
 .account .account__nav-help a:before,
 .account .account__nav-help button:before {
-  content: "";
+  content: "\e95a";
 }
 .account .account__nav-contact a:before,
 .account .account__nav-contact button:before {
-  content: "";
+  content: "\e92b";
 }
 .account header {
   display: flex;
@@ -751,6 +752,7 @@
 }
 .account header dl:before {
   content: "user";
+  overflow: hidden;
   grid-row: 1/3;
   margin-inline-end: 2.5rem;
   margin-inline-start: 0.5rem;
@@ -1094,6 +1096,7 @@
     margin-inline-end: 0;
     width: 2.5rem;
     margin: 0;
+    overflow: hidden;
   }
   .account header .header__profile dl > *,
 .account header .header__loyalty dl > * {
