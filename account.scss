@@ -37,12 +37,13 @@ $mobile_breakpoint: 800px;
 		&.theme-purple,
 		&:has(#theme-purple:checked) {
 			--theme-accent-color: #d240b1;
-
+			--theme-button-hover-background: #2f252c;
 		}
 
 		&.theme-green,
 		&:has(#theme-green:checked) {
 			--theme-accent-color: #5e920e;
+			--theme-button-hover-background: #2b382a;
 		}
 	}
 
@@ -1002,7 +1003,7 @@ $mobile_breakpoint: 800px;
 
 		&.btn--secondary {
 			background-color: var(--theme-accent-color, #333);
-			color: white;
+			color: var(--theme-bg);
 		}
 	}
 
