@@ -707,7 +707,7 @@ $mobile_breakpoint: 800px;
 				margin-inline-end: 2.5rem;
 				margin-inline-start: .5rem;
 				transition: var(--transition-duration, 0) ease-in-out;
-				transition-property: margin;
+				transition-property: margin-block-start;
 				color: var(--theme-color);
 				text-align: center;
 			}

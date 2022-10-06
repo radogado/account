@@ -34,6 +34,7 @@
 			// Add aria-expanded toggle event on click
 			el.addEventListener('click', e => {
 				let el = e.target.closest('button');
+				// document.querySelector('.account aside nav').scrollTop = 0;
 				el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
 			});
 		});

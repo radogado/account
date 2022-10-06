@@ -50,7 +50,8 @@
 	 "left":"left",
 	 "explore-account-levels":"Explore account levels",
 	 "toggle-dark-mode": "Toggle dark mode",
-	 "source-code": "Source code"
+	 "source-code": "Source code",
+	 "user-name": "John Davidson"
   },
   "fr":{
 	 "dashboard":"Tableau de bord",
@@ -103,7 +104,8 @@
 	 "left":"restant",
 	 "explore-account-levels":"Explorer les niveaux de compte",
 	 "toggle-dark-mode": "Basculer en mode sombre",
-	 "source-code": "Code source"
+	 "source-code": "Code source",
+	 "user-name": "John Davidson"
 
   },
   "ar":{
@@ -158,7 +160,8 @@
 	 "left":"متبقي",
 	 "explore-account-levels":"اكتشف مستويات الحساب",
 	 "toggle-dark-mode": "تبديل الوضع الداكن",
-	 "source-code": "مصدر الرمز"
+	 "source-code": "مصدر الرمز",
+	 "user-name": "John Davidson"
 
   }
 }
