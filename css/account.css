@@ -1047,7 +1047,7 @@
   line-height: 1.5;
   width: 0;
   color: var(--theme-color);
-  margin-inline-end: 3.25rem;
+  margin-inline-end: 2.25rem;
 }
 @media (min-width: 800px) {
   .account aside nav a:before,

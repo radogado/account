@@ -97,7 +97,7 @@ $mobile_breakpoint: 800px;
 		line-height: 1.5;
 		width: 0;
 		color: var(--theme-color);
-		margin-inline-end: 3.25rem;
+		margin-inline-end: 2.25rem;
 
 		@media (min-width: $mobile_breakpoint) {
 			transition: margin var(--transition-duration, 0) ease-in-out;
