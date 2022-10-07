@@ -20,68 +20,43 @@
   content: "multicurrency";
 }
 
-.account__nav-dashboard a:before,
-.account__nav-dashboard button:before {
+.account__nav-dashboard:before {
   content: "";
 }
-
-.account__nav-deposit a:before,
-.account__nav-deposit button:before {
+.account__nav-deposit:before {
   content: "";
 }
-
-.account__nav-button a:before,
-.account__nav-button button:before {
+.account__nav-button:before {
   content: "";
 }
-
-.account__nav-withdraw a:before,
-.account__nav-withdraw button:before {
+.account__nav-withdraw:before {
   content: "";
 }
-
-.account__nav-prepaid-card a:before,
-.account__nav-prepaid-card button:before {
+.account__nav-prepaid-card:before {
   content: "";
 }
-
-.account__nav-promotions a:before,
-.account__nav-promotions button:before {
+.account__nav-promotions:before {
   content: "";
 }
-
-.account__nav-transactions a:before,
-.account__nav-transactions button:before {
+.account__nav-transactions:before {
   content: "";
 }
-
-.account__nav-exchange a:before,
-.account__nav-exchange button:before {
+.account__nav-exchange:before {
   content: "";
 }
-
-.account__nav-statement a:before,
-.account__nav-statement button:before {
+.account__nav-statement:before {
   content: "";
 }
-
-.account__nav-settings a:before,
-.account__nav-settings button:before {
+.account__nav-settings:before {
   content: "";
 }
-
-.account__nav-faq a:before,
-.account__nav-faq button:before {
+.account__nav-faq:before {
   content: "";
 }
-
-.account__nav-help a:before,
-.account__nav-help button:before {
+.account__nav-help:before {
   content: "";
 }
-
-.account__nav-contact a:before,
-.account__nav-contact button:before {
+.account__nav-contact:before {
   content: "";
 }
 

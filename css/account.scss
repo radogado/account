@@ -152,73 +152,6 @@ $mobile_breakpoint: 800px;
 	@media not screen and (min-width: $mobile_breakpoint) {
 
 		grid-template-columns: 3.1rem auto 1fr;
-		
-	}
-	
-	@media not screen and (min-width: $mobile_breakpoint) {
-
-		header {
-			gap: 0;
-			padding: 0;
-			padding-inline-end: 0.4rem;
-
-			dl {
-				&:before {
-					margin-inline-end: 0;
-					width: 2.5rem;
-					margin: 0;
-					overflow: hidden;
-				}
-
-			}
-
-			.header__profile,
-			.header__loyalty {
-				dl > * {
-					display: none;
-				}
-			}
-
-			details > :not(summary) {
-				inset-inline-end: .6rem;
-			}
-
-			div > dl {
-				display: block;
-
-				&:before,
-				dt {
-					display: none;
-				}
-			}
-
-			&:before {
-				content: "";
-				flex-basis: min(var(--logo-width), 3rem);
-			}
-
-			> div {
-				order: -1;
-
-				dd {
-					white-space: nowrap;
-				}
-			}
-
-			.btn--logout {
-				display: none;
-			}
-
-			.header__balance {
-				flex-grow: 1;
-				text-align: center;
-			}
-
-			:focus-visible {
-				outline-offset: -3px;
-			}
-
-		}
 
 		main,
 		footer {
@@ -235,4 +168,4 @@ $mobile_breakpoint: 800px;
 	}
 }
 
-@import "rtl"
+@import "rtl";

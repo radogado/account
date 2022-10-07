@@ -346,56 +346,43 @@
 .account .header__balance dl:before {
   content: "multicurrency";
 }
-.account .account__nav-dashboard a:before,
-.account .account__nav-dashboard button:before {
+.account .account__nav-dashboard:before {
   content: "\e932";
 }
-.account .account__nav-deposit a:before,
-.account .account__nav-deposit button:before {
+.account .account__nav-deposit:before {
   content: "\e941";
 }
-.account .account__nav-button a:before,
-.account .account__nav-button button:before {
+.account .account__nav-button:before {
   content: "\e941";
 }
-.account .account__nav-withdraw a:before,
-.account .account__nav-withdraw button:before {
+.account .account__nav-withdraw:before {
   content: "\e946";
 }
-.account .account__nav-prepaid-card a:before,
-.account .account__nav-prepaid-card button:before {
+.account .account__nav-prepaid-card:before {
   content: "\e93c";
 }
-.account .account__nav-promotions a:before,
-.account .account__nav-promotions button:before {
+.account .account__nav-promotions:before {
   content: "\e959";
 }
-.account .account__nav-transactions a:before,
-.account .account__nav-transactions button:before {
+.account .account__nav-transactions:before {
   content: "\e962";
 }
-.account .account__nav-exchange a:before,
-.account .account__nav-exchange button:before {
+.account .account__nav-exchange:before {
   content: "\e939";
 }
-.account .account__nav-statement a:before,
-.account .account__nav-statement button:before {
+.account .account__nav-statement:before {
   content: "\e93c";
 }
-.account .account__nav-settings a:before,
-.account .account__nav-settings button:before {
+.account .account__nav-settings:before {
   content: "\e961";
 }
-.account .account__nav-faq a:before,
-.account .account__nav-faq button:before {
+.account .account__nav-faq:before {
   content: "\e95a";
 }
-.account .account__nav-help a:before,
-.account .account__nav-help button:before {
+.account .account__nav-help:before {
   content: "\e95a";
 }
-.account .account__nav-contact a:before,
-.account .account__nav-contact button:before {
+.account .account__nav-contact:before {
   content: "\e92b";
 }
 .account header {
@@ -553,7 +540,6 @@
   }
   .account header > :not(.btn) {
     padding-inline-end: 0.5rem;
-    padding-inline-end: 0.5rem;
     outline-offset: -3px;
   }
   .account header > .header__profile summary {
@@ -561,6 +547,54 @@
   }
   .account header dl:hover:before {
     margin-block-start: -0.25rem;
+  }
+}
+@media not screen and (min-width: 800px) {
+  .account header {
+    gap: 0;
+    padding: 0;
+    padding-inline-end: 0.4rem;
+  }
+  .account header .header__profile dl > *,
+.account header .header__loyalty dl > * {
+    display: none;
+  }
+  .account header dl:first-of-type:before {
+    margin-inline-end: 0;
+    width: 2.5rem;
+    margin: 0;
+    overflow: hidden;
+  }
+  .account header details > :not(summary) {
+    inset-inline-end: 0.6rem;
+  }
+  .account header div > dl {
+    display: block;
+  }
+  .account header div > dl:before,
+.account header div > dl dt {
+    display: none;
+  }
+  .account header:before {
+    content: "";
+    flex-basis: min(var(--logo-width), 3rem);
+  }
+  .account header > div {
+    order: -1;
+  }
+  .account header > div dd {
+    white-space: nowrap;
+    margin: 0 0.5rem;
+  }
+  .account header .btn--logout {
+    display: none;
+  }
+  .account header .header__balance {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .account header :focus-visible {
+    outline-offset: -3px;
   }
 }
 .account .btn {
@@ -1095,53 +1129,6 @@
 @media not screen and (min-width: 800px) {
   .account {
     grid-template-columns: 3.1rem auto 1fr;
-  }
-}
-@media not screen and (min-width: 800px) {
-  .account header {
-    gap: 0;
-    padding: 0;
-    padding-inline-end: 0.4rem;
-  }
-  .account header dl:before {
-    margin-inline-end: 0;
-    width: 2.5rem;
-    margin: 0;
-    overflow: hidden;
-  }
-  .account header .header__profile dl > *,
-.account header .header__loyalty dl > * {
-    display: none;
-  }
-  .account header details > :not(summary) {
-    inset-inline-end: 0.6rem;
-  }
-  .account header div > dl {
-    display: block;
-  }
-  .account header div > dl:before,
-.account header div > dl dt {
-    display: none;
-  }
-  .account header:before {
-    content: "";
-    flex-basis: min(var(--logo-width), 3rem);
-  }
-  .account header > div {
-    order: -1;
-  }
-  .account header > div dd {
-    white-space: nowrap;
-  }
-  .account header .btn--logout {
-    display: none;
-  }
-  .account header .header__balance {
-    flex-grow: 1;
-    text-align: center;
-  }
-  .account header :focus-visible {
-    outline-offset: -3px;
   }
   .account main,
 .account footer {

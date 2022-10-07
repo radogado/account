@@ -51,7 +51,8 @@
 	 "explore-account-levels":"Explore account levels",
 	 "toggle-dark-mode": "Toggle dark mode",
 	 "source-code": "Source code",
-	 "user-name": "John Davidson"
+	 "user-name": "John Davidson",
+	 "repository": "Repository"
   },
   "fr":{
 	 "dashboard":"Tableau de bord",
@@ -105,7 +106,8 @@
 	 "explore-account-levels":"Explorer les niveaux de compte",
 	 "toggle-dark-mode": "Basculer en mode sombre",
 	 "source-code": "Code source",
-	 "user-name": "John Davidson"
+	 "user-name": "John Davidson",
+	 "repository": "Dépôt"
 
   },
   "ar":{
@@ -161,7 +163,8 @@
 	 "explore-account-levels":"اكتشف مستويات الحساب",
 	 "toggle-dark-mode": "تبديل الوضع الداكن",
 	 "source-code": "مصدر الرمز",
-	 "user-name": "John Davidson"
+	 "user-name": "John Davidson",
+	 "repository": "مخزن"
 
   }
 }
