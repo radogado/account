@@ -297,7 +297,7 @@ aside {
 		li {
 			display: flex;
 			align-items: center;
-			transition: background-color var(--transition-duration, 0) ease-in-out;
+			// transition: background-color var(--transition-duration, 0) ease-in-out;
 			user-select: none;
 
 			&:before {

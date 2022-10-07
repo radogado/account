@@ -215,7 +215,6 @@ aside nav {
 aside nav li {
   display: flex;
   align-items: center;
-  transition: background-color var(--transition-duration, 0) ease-in-out;
   user-select: none;
 }
 aside nav li:before {

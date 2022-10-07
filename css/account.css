@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* cyrillic-ext */
 @font-face {
   font-family: "Source Sans Pro";
@@ -347,43 +348,43 @@
   content: "multicurrency";
 }
 .account .account__nav-dashboard:before {
-  content: "\e932";
+  content: "";
 }
 .account .account__nav-deposit:before {
-  content: "\e941";
+  content: "";
 }
 .account .account__nav-button:before {
-  content: "\e941";
+  content: "";
 }
 .account .account__nav-withdraw:before {
-  content: "\e946";
+  content: "";
 }
 .account .account__nav-prepaid-card:before {
-  content: "\e93c";
+  content: "";
 }
 .account .account__nav-promotions:before {
-  content: "\e959";
+  content: "";
 }
 .account .account__nav-transactions:before {
-  content: "\e962";
+  content: "";
 }
 .account .account__nav-exchange:before {
-  content: "\e939";
+  content: "";
 }
 .account .account__nav-statement:before {
-  content: "\e93c";
+  content: "";
 }
 .account .account__nav-settings:before {
-  content: "\e961";
+  content: "";
 }
 .account .account__nav-faq:before {
-  content: "\e95a";
+  content: "";
 }
 .account .account__nav-help:before {
-  content: "\e95a";
+  content: "";
 }
 .account .account__nav-contact:before {
-  content: "\e92b";
+  content: "";
 }
 .account header {
   display: flex;
@@ -745,7 +746,7 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
+  content: "";
   overflow: hidden;
   line-height: 1.7;
   color: var(--theme-color-light);
@@ -766,7 +767,7 @@
   margin: 0.5rem 0.25rem;
   padding: 0.25rem 0;
   box-sizing: content-box;
-  width: calc(100% - 0.5rem);
+  width: calc(100% - .5rem);
 }
 .account aside #expand-desktop-menu:checked:before, .account aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: rotateZ(-180deg);
@@ -857,7 +858,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
     background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
-    transition-delay: calc(var(--transition-duration, 0.2s) / 2);
+    transition-delay: calc(var(--transition-duration, .2s) / 2);
   }
   .account aside #mobile-menu-trigger,
 .account aside input[type=reset] {
@@ -908,7 +909,6 @@
 .account aside nav li {
   display: flex;
   align-items: center;
-  transition: background-color var(--transition-duration, 0) ease-in-out;
   user-select: none;
 }
 .account aside nav li:before {
@@ -1054,7 +1054,7 @@
   line-height: 1.5;
   width: 0;
   color: var(--theme-color);
-  margin-inline-end: 2.25rem;
+  margin-inline-end: 3.25rem;
 }
 @media (min-width: 800px) {
   .account aside nav a:before,
@@ -1062,6 +1062,9 @@
 .account header dl:before {
     transition: margin var(--transition-duration, 0) ease-in-out;
   }
+}
+.account header dl:before {
+  margin-inline-end: 2.25rem;
 }
 @media (min-width: 800px) {
   .account h1 {
@@ -1154,3 +1157,5 @@
     clip-path: inset(0 0 0 100%);
   }
 }
+
+/*# sourceMappingURL=account.css.map */
