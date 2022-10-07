@@ -72,7 +72,6 @@ header .header__profile-card p:last-of-type {
   margin-bottom: 0;
 }
 header .header__profile .btn {
-  white-space: nowrap;
   width: 100%;
   margin-bottom: 0;
   font-weight: 600;

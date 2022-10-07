@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #mobile-menu-trigger:before {
   content: "menu";
   overflow: hidden;
@@ -21,43 +20,43 @@
 }
 
 .account__nav-dashboard:before {
-  content: "";
+  content: "\e932";
 }
 .account__nav-deposit:before {
-  content: "";
+  content: "\e941";
 }
 .account__nav-button:before {
-  content: "";
+  content: "\e941";
 }
 .account__nav-withdraw:before {
-  content: "";
+  content: "\e946";
 }
 .account__nav-prepaid-card:before {
-  content: "";
+  content: "\e93c";
 }
 .account__nav-promotions:before {
-  content: "";
+  content: "\e959";
 }
 .account__nav-transactions:before {
-  content: "";
+  content: "\e962";
 }
 .account__nav-exchange:before {
-  content: "";
+  content: "\e939";
 }
 .account__nav-statement:before {
-  content: "";
+  content: "\e93c";
 }
 .account__nav-settings:before {
-  content: "";
+  content: "\e961";
 }
 .account__nav-faq:before {
-  content: "";
+  content: "\e95a";
 }
 .account__nav-help:before {
-  content: "";
+  content: "\e95a";
 }
 .account__nav-contact:before {
-  content: "";
+  content: "\e92b";
 }
 
 /*# sourceMappingURL=icons.css.map */

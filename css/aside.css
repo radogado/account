@@ -1,4 +1,3 @@
-@charset "UTF-8";
 aside {
   display: flex;
   flex-direction: column;
@@ -52,7 +51,7 @@ aside .account__trigger:before {
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "";
+  content: "\e93a";
   overflow: hidden;
   line-height: 1.7;
   color: var(--theme-color-light);
@@ -73,7 +72,7 @@ aside #expand-desktop-menu {
   margin: 0.5rem 0.25rem;
   padding: 0.25rem 0;
   box-sizing: content-box;
-  width: calc(100% - .5rem);
+  width: calc(100% - 0.5rem);
 }
 aside #expand-desktop-menu:checked:before, aside #expand-desktop-menu[aria-expanded=true]:before {
   transform: rotateZ(-180deg);
@@ -164,7 +163,7 @@ aside #expand-desktop-menu[aria-expanded=true] ~ .logo {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
     background: var(--logo-url) no-repeat 0 center/auto var(--logo-height);
-    transition-delay: calc(var(--transition-duration, .2s) / 2);
+    transition-delay: calc(var(--transition-duration, 0.2s) / 2);
   }
   aside #mobile-menu-trigger,
 aside input[type=reset] {
