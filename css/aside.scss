@@ -161,6 +161,8 @@ aside {
 				a,
 				button {
 
+					padding-inline-end: 0.5rem;
+
 					&:before {
 						margin-inline-end: 2.333rem;
 						padding-inline-end: 0;
@@ -246,6 +248,7 @@ aside {
 				a,
 				button {
 					color: var(--theme-color-light);
+					padding-inline-end: 0.5rem;
 
 				}
 
@@ -350,8 +353,9 @@ aside {
 			user-select: none;
 			padding: 0;
 			// padding-inline-end: 1.5em;
-			min-width: 13.25rem;
-			transition: color var(--transition-duration, 0) ease-in-out;
+			width: 13.25rem;
+			transition: var(--transition-duration, 0) ease-in-out;
+			transition-property: color, padding-inline-end;
 			min-height: 3.5rem;
 			align-items: center;
 			text-align: start;

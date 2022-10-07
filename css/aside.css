@@ -111,6 +111,12 @@ aside nav li button:before {
     margin: 0 0.6rem;
     margin-inline-end: 2.333rem;
   }
+  aside #mobile-menu-trigger:checked ~ nav a,
+aside #mobile-menu-trigger:checked ~ nav button,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
+    padding-inline-end: 0.5rem;
+  }
   aside #mobile-menu-trigger:checked ~ nav a:before,
 aside #mobile-menu-trigger:checked ~ nav button:before,
 aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
@@ -178,6 +184,7 @@ aside #expand-desktop-menu:checked ~ nav button,
 aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
 aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
     color: var(--theme-color-light);
+    padding-inline-end: 0.5rem;
   }
   aside #expand-desktop-menu:checked ~ nav [aria-current] a,
 aside #expand-desktop-menu:checked ~ nav [aria-current] button,
@@ -256,8 +263,9 @@ aside nav button {
   box-sizing: content-box;
   user-select: none;
   padding: 0;
-  min-width: 13.25rem;
-  transition: color var(--transition-duration, 0) ease-in-out;
+  width: 13.25rem;
+  transition: var(--transition-duration, 0) ease-in-out;
+  transition-property: color, padding-inline-end;
   min-height: 3.5rem;
   align-items: center;
   text-align: start;
