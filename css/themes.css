@@ -22,7 +22,7 @@
   --theme-link-color: #bfbfbf;
   --theme-accent-color: #5a7be1;
   --theme-aside-bg: #242424;
-  --theme-aside-highlight: #2c2c2c;
+  --theme-aside-highlight: #181818;
   --theme-shadow: rgba(255, 255, 255, .12);
   --theme-button-hover-background: #222328;
 }
@@ -30,7 +30,7 @@
   background: #212626;
 }
 .account.account--dark.theme-purple, .account.account--dark:has(#theme-purple:checked) {
-  --theme-accent-color: #d240b1;
+  --theme-accent-color: #e549c2;
   --theme-button-hover-background: #2f252c;
 }
 .account.account--dark.theme-green, .account.account--dark:has(#theme-green:checked) {

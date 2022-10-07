@@ -281,7 +281,7 @@
   --theme-link-color: #bfbfbf;
   --theme-accent-color: #5a7be1;
   --theme-aside-bg: #242424;
-  --theme-aside-highlight: #2c2c2c;
+  --theme-aside-highlight: #181818;
   --theme-shadow: rgba(255, 255, 255, .12);
   --theme-button-hover-background: #222328;
 }
@@ -289,7 +289,7 @@
   background: #212626;
 }
 .account.account--dark.theme-purple, .account.account--dark:has(#theme-purple:checked) {
-  --theme-accent-color: #d240b1;
+  --theme-accent-color: #e549c2;
   --theme-button-hover-background: #2f252c;
 }
 .account.account--dark.theme-green, .account.account--dark:has(#theme-green:checked) {
@@ -1031,33 +1031,6 @@
     --transition-duration: .2s;
   }
 }
-.account input[type=radio] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0.75rem;
-  height: 0.75rem;
-  margin: 0;
-  border-radius: 50%;
-  border: 1px solid var(--theme-accent-color);
-  box-shadow: inset 0 0 0 1px var(--theme-bg);
-}
-.account input[type=radio]:checked {
-  background: var(--theme-accent-color);
-}
-.account .skip-link {
-  margin: 0.25rem;
-  position: fixed;
-  background: white;
-  white-space: nowrap;
-  z-index: -9;
-  opacity: 0;
-  padding: 0.5rem 0.75rem;
-  font-weight: normal;
-}
-.account .skip-link:focus-visible {
-  z-index: 9;
-  opacity: 1;
-}
 .account a,
 .account aside nav li button {
   text-decoration: none;
@@ -1140,6 +1113,33 @@
   .account footer {
     display: none;
   }
+}
+.account input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0;
+  border-radius: 50%;
+  border: 1px solid var(--theme-accent-color);
+  box-shadow: inset 0 0 0 1px var(--theme-bg);
+}
+.account input[type=radio]:checked {
+  background: var(--theme-accent-color);
+}
+.account .skip-link {
+  margin: 0.25rem;
+  position: fixed;
+  background: white;
+  white-space: nowrap;
+  z-index: -9;
+  opacity: 0;
+  padding: 0.5rem 0.75rem;
+  font-weight: normal;
+}
+.account .skip-link:focus-visible {
+  z-index: 9;
+  opacity: 1;
 }
 
 [dir=rtl] .account aside #expand-desktop-menu:before {
