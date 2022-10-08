@@ -87,6 +87,17 @@
 				setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));
 			});
 		});
+		document.querySelectorAll('input[type="radio"][name="theme"]').forEach(el => {
+			el.addEventListener('change', e => {
+				if (e.target.checked) {
+					document.querySelector('.account')?.classList.forEach(el => {
+						if (el.match(/theme-/)) {
+							document.querySelector('.account').classList.replace(el, e.target.id);
+						}
+					});
+				}
+			});
+		});
 	};
 	if (document.readyState !== "loading") {
 		init();

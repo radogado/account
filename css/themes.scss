@@ -12,7 +12,7 @@
 	--logo-height: 33px;
 	--logo-height-shrunk: 2rem;
 	--logo-width-shrunk: 1.6rem;
-	--logo-url: url(https://radogado.github.io/account/PayPal-2.svg); // Full GitHub URL, because of a real-device mobileSafari bug
+	// --logo-url: url(https://radogado.github.io/account/PayPal-2.svg); // Full GitHub URL, because of a real-device mobileSafari bug
 	--logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 
 	&.account--dark {
@@ -30,21 +30,18 @@
 			background: #212626;
 		}
 
-		&.theme-purple,
-		&:has(#theme-purple:checked) {
+		&.theme-purple {
 			--theme-accent-color: #e549c2;
 			--theme-button-hover-background: #2f252c;
 		}
 
-		&.theme-green,
-		&:has(#theme-green:checked) {
+		&.theme-green {
 			--theme-accent-color: #5e920e;
 			--theme-button-hover-background: #2b382a;
 		}
 	}
 
-	&.theme-purple,
-	&:has(#theme-purple:checked) {
+	&.theme-purple {
 		--theme-accent-color: #70215e;
 		--logo-url: url(../Skrill-Logo.svg);
 		--theme-button-hover-background: #f5c9e8;
@@ -54,8 +51,7 @@
 		--logo-height-shrunk: 2.0625rem;
 	}
 
-	&.theme-green,
-	&:has(#theme-green:checked) {
+	&.theme-green {
 		--theme-accent-color: #538309;
 		--logo-url: url(../Neteller.svg);
 		--logo-width: 8.7rem;

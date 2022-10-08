@@ -12,7 +12,6 @@
   --logo-height: 33px;
   --logo-height-shrunk: 2rem;
   --logo-width-shrunk: 1.6rem;
-  --logo-url: url(https://radogado.github.io/account/PayPal-2.svg);
   --logo-clip-path: polygon(0 0, var(--logo-width-shrunk) 0, var(--logo-width-shrunk) 100%, 0% 100%);
 }
 .account.account--dark {
@@ -29,15 +28,15 @@
 .account.account--dark header .header__profile-level {
   background: #212626;
 }
-.account.account--dark.theme-purple, .account.account--dark:has(#theme-purple:checked) {
+.account.account--dark.theme-purple {
   --theme-accent-color: #e549c2;
   --theme-button-hover-background: #2f252c;
 }
-.account.account--dark.theme-green, .account.account--dark:has(#theme-green:checked) {
+.account.account--dark.theme-green {
   --theme-accent-color: #5e920e;
   --theme-button-hover-background: #2b382a;
 }
-.account.theme-purple, .account:has(#theme-purple:checked) {
+.account.theme-purple {
   --theme-accent-color: #70215e;
   --logo-url: url(../Skrill-Logo.svg);
   --theme-button-hover-background: #f5c9e8;
@@ -46,7 +45,7 @@
   --logo-width-shrunk: 1.5rem;
   --logo-height-shrunk: 2.0625rem;
 }
-.account.theme-green, .account:has(#theme-green:checked) {
+.account.theme-green {
   --theme-accent-color: #538309;
   --logo-url: url(../Neteller.svg);
   --logo-width: 8.7rem;
