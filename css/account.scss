@@ -103,6 +103,14 @@ $mobile_breakpoint: 800px;
 			margin-inline-end: .75rem;
 		}
 
+		ul {
+			padding-inline-start: 1rem;
+		}
+		
+		li::marker {
+			color: var(--theme-accent-color);
+		}
+
 	}
 
 	fieldset {

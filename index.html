@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<!-- <meta name="robots" content="noindex"> -->
-	<meta charset="utf-8">
-	<title>My Account</title>
-	<link rel="icon" href="./favicon.svg">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
-	<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
+	<head>
+		<!-- <meta name="robots" content="noindex"> -->
+		<meta charset="utf-8">
+		<title>My Account</title>
+		<link rel="icon" href="./favicon.svg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
+		<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
 
-	<link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
 
-	<link href="css/account.css" rel="styleSheet">
-	<script src="account.js" type="module"></script>
-</head>
+		<link href="css/account.css" rel="styleSheet">
+		<script src="account.js" type="module"></script>
+	</head>
 
-<body class="account theme-purple">
-	<a href="#main" class="skip-link" data-text="skip-link">Skip to main content</a>
-	<aside>
-		<form id="nav-reset-form"></form>
-		<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form" class="account__trigger">
-		<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
-		<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu" class="account__trigger">
-		<div class="logo"></div>
-		<nav title="Main navigation">
-			<ul>
-				<li aria-current="page"><a class="account__nav-dashboard" href="#" data-text="dashboard">Dashboard</a></li>
-				<!-- <li><a class="account__nav-deposit" href="/deposit/" data-text="deposit">Deposit</a></li> -->
-				<li><button class="account__nav-button" data-text="button-long-text">Item as button with long text</button></li>
-				<!-- <li aria-current="page"><button class="account__nav-button" data-text="active-button">Active button</button></li> -->
-				<li><a class="account__nav-withdraw" href="/withdraw/" data-text="withdraw">Withdraw</a></li>
-				<li><a class="account__nav-prepaid-card" href="/prepaid-card/" data-text="prepaid-card">Prepaid card</a></li>
-				<li><a class="account__nav-promotions" href="/promotions/" data-text="promotions">Promotions</a></li>
-				<li><a class="account__nav-transactions" href="/transactions/" data-text="transactions">Transactions</a></li>
-				<li><a class="account__nav-exchange" href="/exchange/" data-text="exchange">Exchange</a></li>
-				<li><a class="account__nav-statement" href="/statement/" data-text="account-statement">Get an account statement</a></li>
-				<li><a class="account__nav-settings" href="/settings/" data-text="settings">Settings</a></li>
-				<li><a class="account__nav-faq" href="/faq/" data-text="faq">FAQ</a></li>
-				<li><a class="account__nav-help" href="/help/" data-text="help-centre">Help centre</a></li>
-				<li><a class="account__nav-contact" href="/contact/" data-text="contact-us">Contact us</a></li>
-			</ul>
-		</nav>
-	</aside>
-	<header>
-		<a href="/loyalty" title="Loyalty" class="header__loyalty">
-			<dl>
-				<dt data-text="loyalty-points">Loyalty points</dt>
-				<dd>4959</dd>
-			</dl>
-		</a>
-
-		<div class="header__balance">
-			<dl>
-				<dt data-text="main-balance">Main balance</dt>
-				<dd>EUR 1.43</dd>
-			</dl>
-		</div>
-
-		<details class="header__profile">
-			<summary>
-				<!-- <a href="/profile"" title=" Profile" class="header__profile"> -->
+	<body class="account theme-purple">
+		<a href="#main" class="skip-link" data-text="skip-link">Skip to main content</a>
+		<aside>
+			<form id="nav-reset-form"></form>
+			<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form" class="account__trigger">
+			<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
+			<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu" class="account__trigger">
+			<div class="logo"></div>
+			<nav title="Main navigation">
+				<ul>
+					<li aria-current="page"><a class="account__nav-dashboard" href="#" data-text="dashboard">Dashboard</a></li>
+					<!-- <li><a class="account__nav-deposit" href="/deposit/" data-text="deposit">Deposit</a></li> -->
+					<li><button class="account__nav-button" data-text="button-long-text">Item as button with long text</button></li>
+					<!-- <li aria-current="page"><button class="account__nav-button" data-text="active-button">Active button</button></li> -->
+					<li><a class="account__nav-withdraw" href="/withdraw/" data-text="withdraw">Withdraw</a></li>
+					<li><a class="account__nav-prepaid-card" href="/prepaid-card/" data-text="prepaid-card">Prepaid card</a></li>
+					<li><a class="account__nav-promotions" href="/promotions/" data-text="promotions">Promotions</a></li>
+					<li><a class="account__nav-transactions" href="/transactions/" data-text="transactions">Transactions</a></li>
+					<li><a class="account__nav-exchange" href="/exchange/" data-text="exchange">Exchange</a></li>
+					<li><a class="account__nav-statement" href="/statement/" data-text="account-statement">Get an account statement</a></li>
+					<li><a class="account__nav-settings" href="/settings/" data-text="settings">Settings</a></li>
+					<li><a class="account__nav-faq" href="/faq/" data-text="faq">FAQ</a></li>
+					<li><a class="account__nav-help" href="/help/" data-text="help-centre">Help centre</a></li>
+					<li><a class="account__nav-contact" href="/contact/" data-text="contact-us">Contact us</a></li>
+				</ul>
+			</nav>
+		</aside>
+		<header>
+			<a href="/loyalty" title="Loyalty" class="header__loyalty">
 				<dl>
-					<dt><span data-text="my-profile">My profile</span><span data-text="user-name">John Davidson</span></dt>
-					<dd data-text="profile-level">Beginner Level</dd>
+					<dt data-text="loyalty-points">Loyalty points</dt>
+					<dd>4959</dd>
 				</dl>
-				<!-- </a> -->
-			</summary>
-			<div class="header__profile-card">
-				<p><b data-text="user-name">John Davidson</b></p>
-				<p><span data-text="profile-level" class="header__profile-level">Beginner Level</span></p>
-				<p><span>john.davidson@me.com</span></p>
-				<p><span data-text="customer-id">Customer ID</span> 2931541</p>
+			</a>
 
-				<p><a href="#/profile" class="btn" data-text="go-profile-details">Go to profile details</a></p>
-				<hr>
-				<p><b data-text="become-vip">Become VIP</b></p>
+			<div class="header__balance">
+				<dl>
+					<dt data-text="main-balance">Main balance</dt>
+					<dd>EUR 1.43</dd>
+				</dl>
+			</div>
 
-				<p><b data-text="silver">Silver</b><span data-text="one-day-left">1 day left</span></p>
+			<details class="header__profile">
+				<summary>
+					<!-- <a href="/profile"" title=" Profile" class="header__profile"> -->
+					<dl>
+						<dt><span data-text="my-profile">My profile</span><span data-text="user-name">John Davidson</span></dt>
+						<dd data-text="profile-level">Beginner Level</dd>
+					</dl>
+					<!-- </a> -->
+				</summary>
+				<div class="header__profile-card">
+					<p><b data-text="user-name">John Davidson</b></p>
+					<p><span data-text="profile-level" class="header__profile-level">Beginner Level</span></p>
+					<p><span>john.davidson@me.com</span></p>
+					<p><span data-text="customer-id">Customer ID</span> 2931541</p>
 
-				<progress max="15000" value="7000" aria-label="Status progress"> 7000 </progress>
+					<p><a href="#/profile" class="btn" data-text="go-profile-details">Go to profile details</a></p>
+					<hr>
+					<p><b data-text="become-vip">Become VIP</b></p>
 
-				<!-- The above single line replaces the following 13 lines from the current site:
+					<p><b data-text="silver">Silver</b><span data-text="one-day-left">1 day left</span></p>
+
+					<progress max="15000" value="7000" aria-label="Status progress"> 7000 </progress>
+
+					<!-- The above single line replaces the following 13 lines from the current site:
 					<section class="ps-progress-bar" mode="determinate">
 						<svg width="100%" height="4" focusable="false" class="ps-progress-bar-background ps-progress-bar-element">
 							<defs>
@@ -102,74 +102,99 @@
 						<div class="ps-progress-bar-secondary ps-progress-bar-fill ps-progress-bar-element"></div>
 					</section> -->
 
-				<p><small>7000 EUR <span data-text="spent">spent</span></small><small>15,000 EUR <span data-text="left">left</span></small></p>
-				<hr>
-				<a href="/levels" class="btn btn--secondary" data-text="explore-account-levels">Explore account levels</a>
+					<p><small>7000 EUR <span data-text="spent">spent</span></small><small>15,000 EUR <span data-text="left">left</span></small></p>
+					<hr>
+					<a href="/levels" class="btn btn--secondary" data-text="explore-account-levels">Explore account levels</a>
 
-			</div>
+				</div>
 
-		</details>
+			</details>
 
-		<button class="btn btn--logout" data-text="logout">Logout</button>
+			<button class="btn btn--logout" data-text="logout">Logout</button>
 
-	</header>
-	<main id="main">
-		<h1 data-text="account-overview">Account overview</h1>
-		<!-- <h1 data-text="account-overview">Account overview</h1>
+		</header>
+		<main id="main">
+			<h1 data-text="account-overview">Account overview</h1>
+			<!-- <h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1>
 			<h1 data-text="account-overview">Account overview</h1> -->
-		<p><span data-text="text-paragraph">Text paragraph with a</span> <a href="#" data-text="demo-link">demo link</a>.</p>
-		<p><button class="btn" onclick="document.querySelector('.account').classList.toggle('account--dark');" data-text="toggle-dark-mode">Toggle dark mode</button>
-			<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));" data-text="toggle-rtl">Toggle RTL</button>
-		</p>
-		<form>
-			<fieldset>
-				<legend data-text="theme">Theme</legend>
-				<label><input type="radio" name="theme" checked data-theme="purple"> <span data-text="purple">Purple</span></label>
-				<label><input type="radio" name="theme" data-theme="green"> <span data-text="green">Green</span></label>
-				<label><input type="radio" name="theme" data-theme="blue"> <span data-text="blue">Blue</span></label>
-			</fieldset>
-		</form>
-		<p>
-			<button class="btn" data-translate-to="en">English</button>
-			<button class="btn" data-translate-to="fr">Français (French)</button>
-			<button class="btn" data-translate-to="ar">عربي (Arabic)</button>
-			<button class="btn" data-translate-to="bg">Български (Bulgarian)</button>
-			<button class="btn" data-translate-to="gr">Ελληνικά (Greek)</button>
-			<button class="btn" data-translate-to="cn">中文 (Chinese)</button>
-			<button class="btn" data-translate-to="jp">日本 (Japanese)</button>
-			<button class="btn" data-translate-to="kr">한국인 (Korean)</button>
-		</p>
-
-		<h2 data-text="source-code">Source code</h2>
-		<p><a href="https://github.com/radogado/account/tree/gh-pages" data-text="repository">Repository</a></a>
-			<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
-	</main>
-	<footer>
-		<nav title="Footer navigation">
+			<p><span data-text="text-paragraph">Text paragraph with a</span> <a href="#" data-text="demo-link">demo link</a>.</p>
+			<p><button class="btn" onclick="document.querySelector('.account').classList.toggle('account--dark');" data-text="toggle-dark-mode">Toggle dark mode</button>
+				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));" data-text="toggle-rtl">Toggle RTL</button>
+			</p>
+			<form>
+				<fieldset>
+					<legend data-text="theme">Theme</legend>
+					<label><input type="radio" name="theme" checked data-theme="purple"> <span data-text="purple">Purple</span></label>
+					<label><input type="radio" name="theme" data-theme="green"> <span data-text="green">Green</span></label>
+					<label><input type="radio" name="theme" data-theme="blue"> <span data-text="blue">Blue</span></label>
+				</fieldset>
+			</form>
+			<p>
+				<button class="btn" data-translate-to="en">English</button>
+				<button class="btn" data-translate-to="fr">Français (French)</button>
+				<button class="btn" data-translate-to="ar">عربي (Arabic)</button>
+				<button class="btn" data-translate-to="bg">Български (Bulgarian)</button>
+				<button class="btn" data-translate-to="gr">Ελληνικά (Greek)</button>
+				<button class="btn" data-translate-to="cn">中文 (Chinese)</button>
+				<button class="btn" data-translate-to="jp">日本 (Japanese)</button>
+				<button class="btn" data-translate-to="kr">한국인 (Korean)</button>
+			</p>
+			<h2>Features</h2>
 			<ul>
-				<li><a href="/en/siteinformation/fees/" rel="noopener" data-text="fees"> Fees </a></li>
-				<li><a href="/en/support/" rel="noopener" data-text="support"> Support </a></li>
-				<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener" data-text="terms-conditions"> Terms &amp; conditions </a></li>
-				<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener" data-text="privacy-policy"> Privacy Policy </a></li>
-				<li><a href="/en/footer/apis/" target=_top rel="noopener" data-text="api"> API </a></li>
-				<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener" data-text="modern-slavery-act"> Modern slavery act transparency statement </a></li>
-				<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener" data-text="cookies-notice"> Cookies notice </a></li>
-				<li><a href="/en/footer/careers/" target=_blank rel="noopener" data-text="careers"> Careers </a></li>
-				<li><a href="/en/footer/prepaid-card/" target=_blank rel="noopener" data-text="my-prepaid-card"> My Prepaid Card </a></li>
-				<li><a href="/en/footer/affiliates/" target=_blank rel="noopener" data-text="affiliates"> Affiliates </a></li>
-				<li><a href="/en/footer/laundering/" target=_blank rel="noopener" data-text="money-laundering"> Money Laundering </a></li>
-				<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener" data-text="ecommerce"> eCommerce </a></li>
-				<li><a href="/en/footer/consumer/" target=_blank rel="noopener" data-text="consumer-protection"> Consumer Protection </a></li>
+				<li>Keyboard accessible, with skip to main content button</li>
+				<li>Respects the OS disable animation preference</li>
+				<li>Screen reader support</li>
+				<li>Strict UI alignment</li>
+				<li>Seamless loading and switching between Desktop and Mobile</li>
+				<li>No JavaScript for layout and UI functionality</li>
+				<li>Right to left writing support</li>
+				<li>Ample link hit area</li>
+				<li>Phone notch support</li>
+				<li>Apple Watch support</li>
+				<li>Proper footer links separator (doesn’t appear at end of line)</li>
+				<li>Buttons ripple effect</li>
+				<li>Unbreakable layout with any amount of content</li>
+				<li>Dynamic translation</li>
+				<li>Themes with dark option</li>
+				<li>Semantic simple clean HTML</li>
+				<li>Local fonts to avoid privacy hazard by accessing Google Fonts</li>
+				<li>Following best practices taught by the world’s top specialists</li>
+				<li>No dependencies</li>
+				<li>0 issues in <a href="https://wave.webaim.org">Wave</a></li>
+				<li>0 issues in <a href="https://www.deque.com/axe/">axe®</a></li>
+				<li>100% <a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a> score</li>
 			</ul>
-		</nav>
 
-		<p data-text="footer">This Agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this Agreement contain hyperlinks to further information. For "Money Transfer" transactions, this Agreement applies individually to each transaction and is not a Framework Contract. Additionally, when paying for a Money Transfer transaction in a currency other than the Great Britain pound (GBP), you may be doing business with a <a href="/different">different entity</a>. In those cases, your money will be held in accordance with the regulations and <a href="/licenses">licenses applicable to such entity</a>.</p>
-	</footer>
-</body>
+			<h2 data-text="source-code">Source code</h2>
+			<p><a href="https://github.com/radogado/account/tree/gh-pages" data-text="repository">Repository</a></a>
+				<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
+		</main>
+		<footer>
+			<nav title="Footer navigation">
+				<ul>
+					<li><a href="/en/siteinformation/fees/" rel="noopener" data-text="fees"> Fees </a></li>
+					<li><a href="/en/support/" rel="noopener" data-text="support"> Support </a></li>
+					<li><a href="/en/footer/terms-conditions/" target=_top rel="noopener" data-text="terms-conditions"> Terms &amp; conditions </a></li>
+					<li><a href="/en/footer/privacypolicy/" target=_top rel="noopener" data-text="privacy-policy"> Privacy Policy </a></li>
+					<li><a href="/en/footer/apis/" target=_top rel="noopener" data-text="api"> API </a></li>
+					<li><a href="/modern-slavery-act-transparency-statement/" rel="noopener" data-text="modern-slavery-act"> Modern slavery act transparency statement </a></li>
+					<li><a href="/en/footer/cookies-notice/" target=_blank rel="noopener" data-text="cookies-notice"> Cookies notice </a></li>
+					<li><a href="/en/footer/careers/" target=_blank rel="noopener" data-text="careers"> Careers </a></li>
+					<li><a href="/en/footer/prepaid-card/" target=_blank rel="noopener" data-text="my-prepaid-card"> My Prepaid Card </a></li>
+					<li><a href="/en/footer/affiliates/" target=_blank rel="noopener" data-text="affiliates"> Affiliates </a></li>
+					<li><a href="/en/footer/laundering/" target=_blank rel="noopener" data-text="money-laundering"> Money Laundering </a></li>
+					<li><a href="/en/footer/ecommerce/" target=_blank rel="noopener" data-text="ecommerce"> eCommerce </a></li>
+					<li><a href="/en/footer/consumer/" target=_blank rel="noopener" data-text="consumer-protection"> Consumer Protection </a></li>
+				</ul>
+			</nav>
+
+			<p data-text="footer">This Agreement contains 29 sections. You may go directly to any section by selecting the appropriate link provided. The headings are for reference only. Some capitalised terms have specific definitions in section 3. Underlined words in this Agreement contain hyperlinks to further information. For "Money Transfer" transactions, this Agreement applies individually to each transaction and is not a Framework Contract. Additionally, when paying for a Money Transfer transaction in a currency other than the Great Britain pound (GBP), you may be doing business with a <a href="/different">different entity</a>. In those cases, your money will be held in accordance with the regulations and <a href="/licenses">licenses applicable to such entity</a>.</p>
+		</footer>
+	</body>
 
 </html>

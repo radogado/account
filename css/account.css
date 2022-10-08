@@ -1107,6 +1107,12 @@
 .account main .btn {
   margin-inline-end: 0.75rem;
 }
+.account main ul {
+  padding-inline-start: 1rem;
+}
+.account main li::marker {
+  color: var(--theme-accent-color);
+}
 .account fieldset {
   border-radius: 0.5rem;
   border: 2px solid var(--theme-accent-color);
