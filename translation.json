@@ -53,7 +53,8 @@
 		"source-code": "Source code",
 		"user-name": "John Davidson",
 		"repository": "Repository",
-		"my-profile": "My profile"
+		"my-profile": "My profile",
+		"language": "Language"
 	},
 	"fr": {
 		"dashboard": "Tableau de bord",
@@ -109,7 +110,8 @@
 		"source-code": "Code source",
 		"user-name": "John Davidson",
 		"repository": "Dépôt",
-		"my-profile": "Mon profil"
+		"my-profile": "Mon profil",
+		"language": "Langue"
 
 	},
 	"ar": {
@@ -167,7 +169,9 @@
 		"source-code": "مصدر الرمز",
 		"user-name": "John Davidson",
 		"repository": "مخزن",
-		"my-profile": "ملفي"
+		"my-profile": "ملفي",
+		"language": "لغة"
+
 
 	},
 	"bg": {
@@ -224,7 +228,9 @@
 		"source-code": "Изходен код",
 		"user-name": "Джон Дейвидсън",
 		"repository": "Хранилище",
-		"my-profile": "Моят профил"
+		"my-profile": "Моят профил",
+		"language": "Eзик"
+
 	},
 	"gr": {
 		"dashboard": "Πίνακας ελέγχου",
@@ -280,7 +286,8 @@
 		"source-code": "Πηγαίος κώδικας",
 		"user-name": "John Davidson",
 		"repository": "Αποθήκη",
-		"my-profile": "Το ΠΡΟΦΙΛ μου"
+		"my-profile": "Το ΠΡΟΦΙΛ μου",
+		"language": "Γλώσσα"
 
 	},
 	"cn": {
@@ -337,7 +344,8 @@
 		"source-code": "源代码",
 		"user-name": "约翰戴维森",
 		"repository": "存储库",
-		"my-profile": "我的简历"
+		"my-profile": "我的简历",
+		"language": "语"
 
 	},
 	"jp": {
@@ -394,7 +402,8 @@
 		"source-code": "ソースコード",
 		"user-name": "ジョン デビッドソン",
 		"repository": "リポジトリ",
-		"my-profile": "私のプロフィール"
+		"my-profile": "私のプロフィール",
+		"language": "言語"
 
 	},
 	"kr": {
@@ -451,6 +460,8 @@
 		"source-code": "소스 코드",
 		"user-name": "존 데이비슨",
 		"repository": "저장소",
-		"my-profile": "내 프로필"
+		"my-profile": "내 프로필",
+		"language": "언어"
+
 	}
 }

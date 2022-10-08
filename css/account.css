@@ -1120,6 +1120,7 @@
 }
 .account fieldset label {
   margin-inline-end: 0.5rem;
+  display: inline-block;
 }
 .account legend {
   color: var(--theme-accent-color);
@@ -1186,5 +1187,3 @@
     clip-path: inset(0 0 0 100%);
   }
 }
-
-/*# sourceMappingURL=account.css.map */

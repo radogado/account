@@ -75,15 +75,27 @@
 		});
 		let translation;
 		fetch('translation.json').then(response => response.json()).then(response => { translation = response; });
-		document.querySelectorAll('button[data-translate-to]').forEach(el => {
-			el.addEventListener('click', e => {
-				let button = e.target.closest('button');
+		// document.querySelectorAll('button[data-translate-to]').forEach(el => {
+		// 	el.addEventListener('click', e => {
+		// 		let button = e.target.closest('button');
+		// 		document.querySelector('.account').style.setProperty('--transition-duration', 0);
+		// 		document.querySelectorAll('[data-text]').forEach(el => {
+		// 			el.innerText = translation[button.dataset.translateTo][el.dataset.text] || el.innerText;
+		// 		});
+		// 		document.documentElement.dir = translation[button.dataset.translateTo]._direction || 'ltr';
+		// 		document.documentElement.lang = button.dataset.translateTo;
+		// 		setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));
+		// 	});
+		// });
+		document.querySelectorAll('input[type="radio"][name="language"]').forEach(el => {
+			el.addEventListener('change', e => {
+				let button = e.target;
 				document.querySelector('.account').style.setProperty('--transition-duration', 0);
 				document.querySelectorAll('[data-text]').forEach(el => {
-					el.innerText = translation[button.dataset.translateTo][el.dataset.text] || el.innerText;
+					el.innerText = translation[button.dataset.language][el.dataset.text] || el.innerText;
 				});
-				document.documentElement.dir = translation[button.dataset.translateTo]._direction || 'ltr';
-				document.documentElement.lang = button.dataset.translateTo;
+				document.documentElement.dir = translation[button.dataset.language]._direction || 'ltr';
+				document.documentElement.lang = button.dataset.language;
 				setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));
 			});
 		});
