@@ -1140,12 +1140,15 @@
 .account .skip-link {
   margin: 0.25rem;
   position: fixed;
-  background: white;
   white-space: nowrap;
   z-index: -9;
   opacity: 0;
   padding: 0.5rem 0.75rem;
   font-weight: normal;
+  background: var(--theme-bg);
+  border: 2px solid var(--theme-accent-color);
+  border-radius: 0.45rem;
+  color: var(--theme-accent-color);
 }
 .account .skip-link:focus-visible {
   z-index: 9;
