@@ -92,7 +92,7 @@
 				if (e.target.checked) {
 					document.querySelector('.account')?.classList.forEach(el => {
 						if (el.match(/theme-/)) {
-							document.querySelector('.account').classList.replace(el, e.target.id);
+							document.querySelector('.account').classList.replace(el, `theme-${e.target.dataset.theme}`);
 						}
 					});
 				}
