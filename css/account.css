@@ -1120,7 +1120,7 @@
 }
 .account fieldset label {
   margin-inline-end: 0.5rem;
-  display: inline-block;
+  display: block;
 }
 .account legend {
   color: var(--theme-accent-color);
