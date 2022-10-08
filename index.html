@@ -2,7 +2,6 @@
 <html lang="en">
 
 	<head>
-		<!-- <meta name="robots" content="noindex"> -->
 		<meta charset="utf-8">
 		<title>My Account</title>
 		<link rel="icon" href="./favicon.svg">
@@ -33,9 +32,7 @@
 			<nav title="Main navigation">
 				<ul>
 					<li aria-current="page"><a class="account__nav-dashboard" href="#" data-text="dashboard">Dashboard</a></li>
-					<!-- <li><a class="account__nav-deposit" href="/deposit/" data-text="deposit">Deposit</a></li> -->
 					<li><button class="account__nav-button" data-text="button-long-text">Item as button with long text</button></li>
-					<!-- <li aria-current="page"><button class="account__nav-button" data-text="active-button">Active button</button></li> -->
 					<li><a class="account__nav-withdraw" href="/withdraw/" data-text="withdraw">Withdraw</a></li>
 					<li><a class="account__nav-prepaid-card" href="/prepaid-card/" data-text="prepaid-card">Prepaid card</a></li>
 					<li><a class="account__nav-promotions" href="/promotions/" data-text="promotions">Promotions</a></li>
@@ -66,12 +63,10 @@
 
 			<details class="header__profile">
 				<summary>
-					<!-- <a href="/profile"" title=" Profile" class="header__profile"> -->
 					<dl>
 						<dt><span data-text="my-profile">My profile</span><span data-text="user-name">John Davidson</span></dt>
 						<dd data-text="profile-level">Beginner Level</dd>
 					</dl>
-					<!-- </a> -->
 				</summary>
 				<div class="header__profile-card">
 					<p><b data-text="user-name">John Davidson</b></p>
@@ -87,7 +82,7 @@
 
 					<progress max="15000" value="7000" aria-label="Status progress"> 7000 </progress>
 
-					<!-- The above single line replaces the following 13 lines from the current site:
+					<!-- The above line replaces the following 13 lines from the current site:
 					<section class="ps-progress-bar" mode="determinate">
 						<svg width="100%" height="4" focusable="false" class="ps-progress-bar-background ps-progress-bar-element">
 							<defs>
@@ -115,13 +110,6 @@
 		</header>
 		<main id="main">
 			<h1 data-text="account-overview">Account overview</h1>
-			<!-- <h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1>
-			<h1 data-text="account-overview">Account overview</h1> -->
 			<p><span data-text="text-paragraph">Text paragraph with a</span> <a href="#" data-text="demo-link">demo link</a>.</p>
 			<p><button class="btn" onclick="document.querySelector('.account').classList.toggle('account--dark');" data-text="toggle-dark-mode">Toggle dark mode</button>
 				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));" data-text="toggle-rtl">Toggle RTL</button>
@@ -137,55 +125,20 @@
 				<fieldset>
 					<legend data-text="language">Language</legend>
 					<label><input type="radio" name="language" checked data-language="en"> English </label>
-					<label><input type="radio" name="language" checked data-language="fr"> Français (French) </label>
-					<label><input type="radio" name="language" checked data-language="ar"> عربي (Arabic) </label>
-					<label><input type="radio" name="language" checked data-language="bg"> Български (Bulgarian) </label>
-					<label><input type="radio" name="language" checked data-language="gr"> Ελληνικά (Greek) </label>
-					<label><input type="radio" name="language" checked data-language="cn"> 中文 (Chinese) </label>
-					<label><input type="radio" name="language" checked data-language="jp"> 日本 (Japanese) </label>
-					<label><input type="radio" name="language" checked data-language="kr"> 한국인 (Korean) </label>
+					<label><input type="radio" name="language" data-language="fr"> Français (French) </label>
+					<label><input type="radio" name="language" data-language="ar"> عربي (Arabic) </label>
+					<label><input type="radio" name="language" data-language="bg"> Български (Bulgarian) </label>
+					<label><input type="radio" name="language" data-language="gr"> Ελληνικά (Greek) </label>
+					<label><input type="radio" name="language" data-language="cn"> 中文 (Chinese) </label>
+					<label><input type="radio" name="language" data-language="jp"> 日本 (Japanese) </label>
+					<label><input type="radio" name="language" data-language="kr"> 한국인 (Korean) </label>
 				</fieldset>
 
 			</form>
-			<!-- <p>
-				<button class="btn" data-translate-to="en">English</button>
-				<button class="btn" data-translate-to="fr">Français (French)</button>
-				<button class="btn" data-translate-to="ar">عربي (Arabic)</button>
-				<button class="btn" data-translate-to="bg">Български (Bulgarian)</button>
-				<button class="btn" data-translate-to="gr">Ελληνικά (Greek)</button>
-				<button class="btn" data-translate-to="cn">中文 (Chinese)</button>
-				<button class="btn" data-translate-to="jp">日本 (Japanese)</button>
-				<button class="btn" data-translate-to="kr">한국인 (Korean)</button>
-			</p> -->
-			<!-- <h2>Features</h2>
-			<ul>
-				<li>Keyboard-accessible, with skip to main content button</li>
-				<li>Respects the no-animation preference</li>
-				<li>Screen reader support</li>
-				<li>More UI alignment</li>
-				<li>Seamless loading and switching between Desktop and Mobile</li>
-				<li>Semantic simple clean HTML</li>
-				<li>Usable without CSS and JavaScript</li>
-				<li>Ample link hit area</li>
-				<li>Phone notch support</li>
-				<li>Apple Watch support</li>
-				<li>Proper footer links separator (doesn’t appear at end of line)</li>
-				<li>Buttons ripple effect</li>
-				<li>Unbreakable layout with any amount of content</li>
-				<li>Dynamic translation</li>
-				<li>Right to left writing support</li>
-				<li>Themes with dark option</li>
-				<li>Local fonts, avoiding the Google Fonts privacy hazard</li>
-				<li>No dependencies</li>
-				<li>0 issues in <a href="https://wave.webaim.org/report#/account.rado.bg">Wave</a></li>
-				<li>0 issues in <a href="https://www.deque.com/axe/">axe®</a></li>
-				<li>100% <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F">Lighthouse</a> score</li>
-				<li>Following best practices taught by the world’s top specialists</li>
-			</ul> -->
 
 			<h2 data-text="source-code">Source code</h2>
 			<p><a href="https://github.com/radogado/account/tree/gh-pages" data-text="repository">Repository</a></a>
-				<!-- <p><button class="btn" style="width: 300px; height: 200px;">Ripple test</button> -->
+
 		</main>
 		<footer>
 			<nav title="Footer navigation">
