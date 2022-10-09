@@ -1183,6 +1183,15 @@
   z-index: 9;
   opacity: 1;
 }
+.account h1,
+.account h2,
+.account h3,
+.account h4,
+.account h5,
+.account h6,
+.account p {
+  word-break: break-all;
+}
 
 [dir=rtl] .account aside #expand-desktop-menu:before {
   transform: rotateZ(-180deg);
