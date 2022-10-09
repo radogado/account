@@ -18,7 +18,6 @@ header dl {
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color;
   user-select: none;
-  will-change: height;
 }
 header dl:before {
   content: "";
@@ -162,6 +161,10 @@ header details.header__profile[open] summary dd {
   }
   header dl:hover:before {
     margin-block-start: -0.25rem;
+  }
+  header dl,
+header dt {
+    margin-inline-end: -1%;
   }
 }
 @media not screen and (min-width: 800px) {

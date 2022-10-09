@@ -418,7 +418,6 @@
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color;
   user-select: none;
-  will-change: height;
 }
 .account header dl:before {
   content: "";
@@ -562,6 +561,10 @@
   }
   .account header dl:hover:before {
     margin-block-start: -0.25rem;
+  }
+  .account header dl,
+.account header dt {
+    margin-inline-end: -1%;
   }
 }
 @media not screen and (min-width: 800px) {

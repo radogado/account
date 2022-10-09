@@ -23,7 +23,6 @@ header {
 		transition: var(--transition-duration, 0) ease-in-out;
 		transition-property: background-color;
 		user-select: none;
-		will-change: height;
 
 		&:before {
 			content: "";
@@ -213,6 +212,11 @@ header {
 			&:before {
 				margin-block-start: -0.25rem;
 			}
+		}
+
+		dl,
+		dt {
+			margin-inline-end: -1%; // Weird Safari bug where the height is miscalculated on first load
 		}
 
 	}
