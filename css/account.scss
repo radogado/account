@@ -75,9 +75,9 @@ $mobile_breakpoint: 800px;
 
 	header dl:before {
 		margin-inline-end: 2.25rem;
-
+		margin-inline-start: 0.5rem;
 	}
-
+	
 	@media (min-width: $mobile_breakpoint) {
 		h1 {
 			margin-top: 2.333rem;

@@ -17,6 +17,8 @@ aside {
 		background: var(--logo-url) no-repeat 0 0 / auto var(--logo-height);
 		width: var(--logo-width-shrunk);
 		height: var(--logo-height);
+		max-width: 30vw;
+		background-position-y: center;
 		margin: auto;
 
 	}

@@ -14,11 +14,11 @@ header dl {
   display: grid;
   grid-template: 1fr 1fr/auto;
   line-height: 1.25;
-  align-items: center;
   padding: 0.5rem 0;
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: background-color;
   user-select: none;
+  will-change: height;
 }
 header dl:before {
   content: "";
@@ -29,6 +29,8 @@ header dl:before {
   transition-property: margin-block-start;
   color: var(--theme-color);
   text-align: center;
+  margin-inline-end: 2.25rem;
+  align-self: center;
 }
 header .header__loyalty {
   transition: var(--transition-duration, 0) ease-in-out;
@@ -152,7 +154,7 @@ header details.header__profile[open] summary dd {
     grid-column: 1;
   }
   header > :not(.btn) {
-    padding-inline-end: 0.5rem;
+    padding-inline-end: 1rem;
     outline-offset: -3px;
   }
   header > .header__profile summary {
@@ -190,7 +192,7 @@ header div > dl dt {
   }
   header:before {
     content: "";
-    flex-basis: min(var(--logo-width), 3rem);
+    flex-basis: min(var(--logo-width), 2rem);
   }
   header > div {
     order: -1;

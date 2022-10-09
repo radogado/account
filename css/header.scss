@@ -18,11 +18,12 @@ header {
 		grid-template: 1fr 1fr / auto;
 		line-height: 1.25;
 		// row-gap: 0.25rem;
-		align-items: center;
+		// align-items: center;
 		padding: 0.5rem 0;
 		transition: var(--transition-duration, 0) ease-in-out;
 		transition-property: background-color;
 		user-select: none;
+		will-change: height;
 
 		&:before {
 			content: "";
@@ -33,6 +34,8 @@ header {
 			transition-property: margin-block-start;
 			color: var(--theme-color);
 			text-align: center;
+			margin-inline-end: 2.25rem;
+			align-self: center;
 		}
 
 	}
@@ -52,7 +55,6 @@ header {
 		opacity: .8;
 		font-weight: normal;
 		color: var(--theme-color);
-
 	}
 
 	dd {
@@ -198,7 +200,7 @@ header {
 		}
 
 		> :not(.btn) {
-			padding-inline-end: 0.5rem;
+			padding-inline-end: 1rem;
 			outline-offset: -3px;
 		}
 
@@ -250,7 +252,7 @@ header {
 
 		&:before {
 			content: "";
-			flex-basis: min(var(--logo-width), 3rem);
+			flex-basis: min(var(--logo-width), 2rem);
 		}
 
 		> div {
