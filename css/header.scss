@@ -252,7 +252,7 @@ header {
 
 		&:before {
 			content: "";
-			flex-basis: min(var(--logo-width), 2rem);
+			flex-basis: min(calc(var(--logo-width)/1.5), calc(20vw - 4rem));
 		}
 
 		> div {
