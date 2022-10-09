@@ -92,7 +92,7 @@
 				let button = e.target;
 				document.querySelector('.account').style.setProperty('--transition-duration', 0);
 				document.querySelectorAll('[data-text]').forEach(el => {
-					el.innerText = translation[button.dataset.language][el.dataset.text] || el.innerText;
+					el.innerHTML = translation[button.dataset.language][el.dataset.text] || el.innerHTML;
 				});
 				document.documentElement.dir = translation[button.dataset.language]._direction || 'ltr';
 				document.documentElement.lang = button.dataset.language;

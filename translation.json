@@ -54,7 +54,11 @@
 		"user-name": "John Davidson",
 		"repository": "Repository",
 		"my-profile": "My profile",
-		"language": "Language"
+		"language": "Language",
+		"about": "About",
+		"about-1": "A fintech dashboard template built on web standards and native HTML, which makes it fully accessible, and compliant. The page consists of sensible landmarks like \"aside\", \"header\", \"nav\" and \"main\", which help screen readers describe it properly. It uses CSS for styling, animation, and unbreakable layout. A minimal amount of JavaScript is used for enhancement.",
+		"about-2": "The menu supports both \"a\" and \"button\" elements as navigation items. On menu shrink, the logo transitions smoothly to an initial letter version. Its dimensions are defined by the theme, which also specifies the accent colour and supports dark mode. The user profile pop-up uses the standard \"details\" element for native disclosure functionality. The dynamic translation uses a JSON file as dictionary and data attributes as bridge between the app and the UI.",
+		"about-3": "This template achieves perfect score in the most important performance/accessibility benchmarks like <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a>, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> and <a href=https://www.deque.com/axe/>axe®</a>."
 	},
 	"fr": {
 		"dashboard": "Tableau de bord",
@@ -111,8 +115,10 @@
 		"user-name": "John Davidson",
 		"repository": "Dépôt",
 		"my-profile": "Mon profil",
-		"language": "Langue"
-
+		"language": "Langue",
+		"about-1": "Un modèle de tableau de bord fintech basé sur les normes Web et HTML natif, ce qui le rend entièrement accessible et conforme. La page se compose de points de repère sensibles tels que \"aside\", \"header\", \"nav\" et \"main\", qui aident les lecteurs d'écran à la décrire correctement. Il utilise CSS pour le style, l'animation et la mise en page incassable. Une quantité minimale de JavaScript est utilisée pour l'amélioration.",
+		"about-2": "Le menu prend en charge les éléments \"a\" et \"bouton\" comme éléments de navigation. Lors de la réduction du menu, le logo passe en douceur à une version initiale. Ses dimensions sont définies par le thème, qui spécifie également la couleur d'accentuation et prend en charge le mode sombre. La fenêtre contextuelle du profil utilisateur utilise l'élément standard \"détails\" pour la fonctionnalité de divulgation native. La traduction dynamique utilise un fichier JSON comme dictionnaire et des attributs de données comme pont entre l'application et l'interface utilisateur.",
+		"about-3": "Ce modèle obtient un score parfait dans les tests de performances/d'accessibilité les plus importants tels que <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a >, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> et <a href=https://www.deque.com/axe/>axe® </a>."
 	},
 	"ar": {
 		"_direction": "rtl",
@@ -170,8 +176,11 @@
 		"user-name": "John Davidson",
 		"repository": "مخزن",
 		"my-profile": "ملفي",
-		"language": "لغة"
-
+		"language": "لغة",
+		"about": "حول",
+		"about-1": "قالب لوحة معلومات التكنولوجيا المالية مبني على معايير الويب و HTML الأصلي ، مما يجعله متوافقًا تمامًا مع معايير الويب. تتكون الصفحة من معالم منطقية مثل 'جانبًا ' و 'رأس ' و 'تنقل ' و 'رئيسي ' ، والتي تساعد برامج قراءة الشاشة على وصفها بشكل صحيح. يستخدم CSS للتصميم والرسوم المتحركة والتخطيط غير القابل للكسر. يتم استخدام أقل قدر ممكن من JavaScript للتحسين.",
+		"about-2": "تدعم القائمة عنصري 'a ' و 'الزر ' كعناصر تنقل. عند تقليص القائمة ، ينتقل الشعار بسلاسة إلى إصدار الحرف الأولي. يتم تحديد أبعادها بواسطة السمة ، والتي تحدد أيضًا لون التمييز وتدعم الوضع الداكن. تستخدم نافذة ملف تعريف المستخدم المنبثقة عنصر 'تفاصيل' لوظيفة الكشف الأصلية. تستخدم الترجمة الديناميكية ملف JSON كقاموس وسمات بيانات كجسر بين التطبيق وواجهة المستخدم.",
+		"about-3": "يحقق هذا النموذج الدرجة المثالية في أهم معايير الأداء / إمكانية الوصول مثل <a href=https://pagespeed.web.dev/report؟url=https٪3A٪2F٪2Faccount.rado.bg٪2F> Lighthouse </ a > و <a href=https://wave.webaim.org/report#/account.rado.bg> Wave </a> و <a href=https://www.deque.com/axe/> axe® </a>."
 
 	},
 	"bg": {
@@ -229,8 +238,11 @@
 		"user-name": "Джон Дейвидсън",
 		"repository": "Хранилище",
 		"my-profile": "Моят профил",
-		"language": "Eзик"
-
+		"language": "Eзик",
+		"about": "Oтносно",
+		"about-1": "Шаблон за табло за управление на fintech, изграден на базата на уеб стандарти и естествен HTML, което го прави напълно достъпен и съвместим. Страницата се състои от разумни ориентири като \"отстрани\", \"заглавка\", \"навигация\" и \"главна\", които помагат на екранните четци да я опишат правилно. Той използва CSS за стилизиране, анимация и нечупливо оформление. За подобряване се използва минимално количество JavaScript.",
+		"about-2": "Менюто поддържа елементи \"a\" и \"button\" като елементи за навигация. При свиване на менюто логото преминава плавно към версия с начална буква. Размерите му се определят от темата, която също така определя цвета на акцента и поддържа тъмен режим. Изскачащият прозорец на потребителския профил използва стандартния елемент \"подробности\" за собствена функционалност за разкриване. Динамичният превод използва JSON файл като речник и атрибути на данни като мост между приложението и потребителския интерфейс.",
+		"about-3": "Този шаблон постига перфектен резултат в най-важните показатели за ефективност/достъпност като <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a >, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> и <a href=https://www.deque.com/axe/>axe® </a>."
 	},
 	"gr": {
 		"dashboard": "Πίνακας ελέγχου",
@@ -287,8 +299,11 @@
 		"user-name": "John Davidson",
 		"repository": "Αποθήκη",
 		"my-profile": "Το ΠΡΟΦΙΛ μου",
-		"language": "Γλώσσα"
-
+		"language": "Γλώσσα",
+		"about": "Σχετικά με",
+		"about-1": "Ένα πρότυπο πίνακα ελέγχου fintech βασισμένο σε πρότυπα ιστού και εγγενές HTML, που το καθιστά πλήρως προσβάσιμο και συμβατό. Η σελίδα αποτελείται από λογικά ορόσημα όπως \"aside\", \"header\", \"nav\" και \"main\", που βοηθούν τους αναγνώστες οθόνης να την περιγράψουν σωστά. Χρησιμοποιεί CSS για στυλ, κινούμενα σχέδια και άθραυστη διάταξη. Χρησιμοποιείται ελάχιστη ποσότητα JavaScript για βελτίωση.",
+		"about-2": "Το μενού υποστηρίζει στοιχεία \"a\" και \"button\" ως στοιχεία πλοήγησης. Κατά τη συρρίκνωση του μενού, το λογότυπο μεταβαίνει ομαλά σε μια αρχική έκδοση με γράμματα. Οι διαστάσεις του καθορίζονται από το θέμα, το οποίο καθορίζει επίσης το χρώμα έμφασης και υποστηρίζει τη σκοτεινή λειτουργία. Το αναδυόμενο παράθυρο προφίλ χρήστη χρησιμοποιεί το τυπικό στοιχείο \"λεπτομέρειες\" για τη λειτουργία εγγενούς αποκάλυψης. Η δυναμική μετάφραση χρησιμοποιεί ένα αρχείο JSON ως λεξικό και χαρακτηριστικά δεδομένων ως γέφυρα μεταξύ της εφαρμογής και της διεπαφής χρήστη.",
+		"about-3": "Αυτό το πρότυπο επιτυγχάνει τέλεια βαθμολογία στα πιο σημαντικά σημεία αναφοράς απόδοσης/προσβασιμότητας, όπως <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a >, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> και <a href=https://www.deque.com/axe/>axe® </a>."
 	},
 	"cn": {
 		"dashboard": "仪表板",
@@ -345,8 +360,11 @@
 		"user-name": "约翰戴维森",
 		"repository": "存储库",
 		"my-profile": "我的简历",
-		"language": "语"
-
+		"language": "语",
+		"about": "关于",
+		"about-1": "基于 Web 标准和原生 HTML 构建的金融科技仪表板模板，使其完全可访问且合规。 该页面由“aside”、“header”、“nav”和“main”等合理的地标组成，有助于屏幕阅读器正确描述它。 它使用 CSS 进行样式设置、动画和牢不可破的布局。 使用最少量的 JavaScript 进行增强。",
+		"about-2": "该菜单支持将 \"a\" 和 \"button\" 元素作为导航项。 在菜单缩小时，徽标会平滑过渡到首字母版本。 其尺寸由主题定义，主题还指定强调色并支持深色模式。 用户配置文件弹出窗口使用标准的“详细信息”元素来实现本机披露功能。 动态翻译使用 JSON 文件作为字典和数据属性作为应用程序和 UI 之间的桥梁。",
+		"about-3": "此模板在 <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a 等最重要的性能/可访问性基准测试中获得满分 >、<a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> 和 <a href=https://www.deque.com/axe/>axe® </a>。"
 	},
 	"jp": {
 		"dashboard": "ダッシュボード",
@@ -403,8 +421,11 @@
 		"user-name": "ジョン デビッドソン",
 		"repository": "リポジトリ",
 		"my-profile": "私のプロフィール",
-		"language": "言語"
-
+		"language": "言語",
+		"about": "約",
+		"about-1": "Web 標準とネイティブ HTML に基づいて構築されたフィンテック ダッシュボード テンプレートで、完全にアクセス可能で準拠しています。 ページは、\"aside\"、\"header\"、\"nav\"、\"main\" などの適切なランドマークで構成されており、スクリーン リーダーがページを適切に説明するのに役立ちます。 スタイル、アニメーション、および壊れないレイアウトに CSS を使用します。 拡張のために最小限の JavaScript が使用されます。",
+		"about-2": "メニューは、\"a\" 要素と \"button\" 要素の両方をナビゲーション項目としてサポートします。 メニューを縮小すると、ロゴが最初の文字バージョンにスムーズに移行します。 そのサイズはテーマによって定義され、アクセント カラーも指定され、ダーク モードがサポートされます。 ユーザー プロファイル ポップアップは、標準の「詳細」要素を使用して、ネイティブの開示機能を提供します。 動的変換では、JSON ファイルを辞書として使用し、データ属性をアプリと UI 間のブリッジとして使用します。",
+		"about-3": "このテンプレートは、<a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a などの最も重要なパフォーマンス/アクセシビリティ ベンチマークで完璧なスコアを達成しています。 >、<a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a>、<a href=https://www.deque.com/axe/>axe® </a>。"
 	},
 	"kr": {
 		"dashboard": "계기반",
@@ -461,7 +482,10 @@
 		"user-name": "존 데이비슨",
 		"repository": "저장소",
 		"my-profile": "내 프로필",
-		"language": "언어"
-
+		"language": "언어",
+		"about": "에 대한",
+		"about-1": "웹 표준 및 기본 HTML을 기반으로 구축된 핀테크 대시보드 템플릿으로 완벽하게 액세스할 수 있고 규정을 준수합니다. 페이지는 \"aside\", \"header\", \"nav\" 및 \"main\"과 같은 감각적인 랜드마크로 구성되어 있어 화면 판독기가 올바르게 설명하는 데 도움이 됩니다. 스타일, 애니메이션 및 깨지지 않는 레이아웃에 CSS를 사용합니다. 향상을 위해 최소한의 JavaScript가 사용됩니다.",
+		"about-2": "메뉴는 탐색 항목으로 \"a\" 및 \"button\" 요소를 모두 지원합니다. 메뉴 축소 시 로고가 초기 문자 버전으로 부드럽게 전환됩니다. 치수는 강조 색상을 지정하고 어두운 모드를 지원하는 테마에 의해 정의됩니다. 사용자 프로필 팝업은 기본 공개 기능을 위해 표준 \"details\" 요소를 사용합니다. 동적 번역은 JSON 파일을 사전으로 사용하고 데이터 속성을 앱과 UI 사이의 다리로 사용합니다.",
+		"about-3": "이 템플릿은 <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a>와 같은 가장 중요한 성능/접근성 벤치마크에서 만점을 받았습니다. >, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> 및 <a href=https://www.deque.com/axe/>axe® </a>."
 	}
 }

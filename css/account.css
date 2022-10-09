@@ -1121,6 +1121,9 @@
 .account main li::marker {
   color: var(--theme-accent-color);
 }
+.account main a {
+  color: var(--theme-accent-color);
+}
 .account fieldset {
   border-radius: 0.5rem;
   border: 2px solid var(--theme-accent-color);
@@ -1188,8 +1191,7 @@
 .account h3,
 .account h4,
 .account h5,
-.account h6,
-.account p {
+.account h6 {
   word-break: break-all;
 }
 

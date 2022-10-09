@@ -110,6 +110,10 @@ $mobile_breakpoint: 800px;
 		li::marker {
 			color: var(--theme-accent-color);
 		}
+		
+		a {
+			color: var(--theme-accent-color);
+		}
 
 	}
 
@@ -191,8 +195,7 @@ $mobile_breakpoint: 800px;
 	h3,
 	h4,
 	h5,
-	h6,
-	p {
+	h6{
 		word-break: break-all;
 	}
 
