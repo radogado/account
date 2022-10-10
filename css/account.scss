@@ -74,6 +74,10 @@ $mobile_breakpoint: 800px;
 	}
 
 	header dl:before {
+		color: var(--theme-color);
+	}
+	
+	header dl:before {
 		margin-inline-end: 2.25rem;
 		margin-inline-start: 0.5rem;
 	}
