@@ -50,6 +50,7 @@ aside {
 			cursor: pointer;
 			padding: 0;
 			// content: "≪";
+			content: "\e93a";
 			width: 2.5rem;
 			height: 2.5rem;
 			display: block;
@@ -60,7 +61,6 @@ aside {
 			font-family: "Icons";
 			font-weight: 400;
 			font-size: 1.5rem;
-			content: "\e93a";
 			overflow: hidden;
 			line-height: 1.7;
 			color: var(--theme-color-light);
@@ -106,6 +106,33 @@ aside {
 	}
 
 	@media not screen and (min-width: $mobile_breakpoint) {
+
+		#mobile-menu-trigger:checked,
+		#mobile-menu-trigger[aria-expanded="true"] {
+			~ nav {
+
+				a,
+				button {
+					color: var(--theme-color-light);
+					padding-inline-end: 0.5rem;
+
+					&:before {
+						margin-inline-end: 2.3rem;
+					}
+				}
+
+				[aria-current] {
+
+					a,
+					button {
+						color: var(--theme-accent-color, #333);
+					}
+				}
+
+			}
+
+		}
+
 		#expand-desktop-menu {
 			display: none;
 		}
@@ -116,96 +143,50 @@ aside {
 				clip-path: inset(0 100% 0 0);
 				visibility: hidden;
 
+				li {
+
+					button,
+					a {
+						color: transparent;
+
+						&:before {
+							margin-inline-end: 2.8rem;
+						}
+					}
+				}
+
 			}
 		}
 
-		nav {
+	}
 
-			a,
-			button {
+	@media (min-width: $mobile_breakpoint) {
 
-				&:after {
-					content: "";
-					position: absolute;
-					inset: 0;
-					inset-inline-start: 3rem;
-					background-color: var(--theme-aside-bg);
-					opacity: 1;
-					transition: opacity var(--transition-duration, 0) ease-out;
-				}
-			}
-
-			[aria-current] {
-
-				a,
-				button {
-					&:after {
-						background-color: var(--theme-aside-highlight);
-					}
-				}
-			}
-
-			li {
-
-				a,
-				button {
-					&:before {
-						margin: 0 0.6rem;
-						margin-inline-end: 2.333rem;
-					}
-				}
-			}
-		}
-
-		#mobile-menu-trigger:checked,
-		#mobile-menu-trigger[aria-expanded="true"] {
+		#expand-desktop-menu:checked,
+		#expand-desktop-menu[aria-expanded="true"] {
 			~ nav {
 
 				a,
 				button {
-
+					color: var(--theme-color-light);
 					padding-inline-end: 0.5rem;
 
 					&:before {
-						margin-inline-end: 2.333rem;
-						padding-inline-end: 0;
-					}
-
-					&:after {
-						opacity: 0;
-					}
-				}
-			}
-		}
-
-		a,
-		button {
-			&:before {
-				padding-inline-end: .5rem;
-				transition: padding var(--transition-duration, 0) ease-out;
-			}
-		}
-
-	}
-
-	#expand-desktop-menu:checked,
-	#expand-desktop-menu[aria-expanded="true"] {
-		~ nav {
-
-			a,
-			button {
-				&:before {
-					@media (min-width: $mobile_breakpoint) {
 						margin-inline-end: 2.75rem;
 					}
-
-					background: none;
 				}
-			}
-		}
-	}
 
-	@media (min-width: $mobile_breakpoint) {
+				[aria-current] {
+
+					a,
+					button {
+						color: var(--theme-accent-color, #333);
+					}
+				}
+
+			}
+
+		}
 
 		input#expand-desktop-menu:not(:checked),
 		button#expand-desktop-menu:not([aria-expanded="true"]) {
@@ -248,51 +229,41 @@ aside {
 			~ nav {
 				max-width: var(--aside-width);
 
-				a,
-				button {
-					color: var(--theme-color-light);
-					padding-inline-end: 0.5rem;
-
-				}
-
-				[aria-current] {
-
-					a,
-					button {
-						color: var(--theme-accent-color, #333);
-					}
-				}
-
 			}
 		}
 
 		nav {
 			max-width: 4rem;
 
+		}
+	}
+
+	nav {
+		max-width: 4rem;
+
+		a,
+		button {
+			color: transparent;
+
+			&:before {
+				color: initial;
+				margin-inline-end: 3rem;
+			}
+		}
+
+		[aria-current] {
+
 			a,
 			button {
 				color: transparent;
 
 				&:before {
-					color: initial;
-					margin-inline-end: 3rem;
+					color: var(--theme-accent-color, #333);
 				}
 			}
-
-			[aria-current] {
-
-				a,
-				button {
-					color: transparent;
-
-					&:before {
-						color: var(--theme-accent-color, #333);
-					}
-				}
-			}
-
-
 		}
+
+
 	}
 
 	nav {

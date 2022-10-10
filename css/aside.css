@@ -44,6 +44,7 @@ aside .account__trigger {
 aside .account__trigger:before {
   cursor: pointer;
   padding: 0;
+  content: "\e93a";
   width: 2.5rem;
   height: 2.5rem;
   display: block;
@@ -54,7 +55,6 @@ aside .account__trigger:before {
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
   overflow: hidden;
   line-height: 1.7;
   color: var(--theme-color-light);
@@ -87,6 +87,25 @@ aside #mobile-menu-trigger {
   outline-offset: -1px;
 }
 @media not screen and (min-width: 800px) {
+  aside #mobile-menu-trigger:checked ~ nav a,
+aside #mobile-menu-trigger:checked ~ nav button,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
+    color: var(--theme-color-light);
+    padding-inline-end: 0.5rem;
+  }
+  aside #mobile-menu-trigger:checked ~ nav a:before,
+aside #mobile-menu-trigger:checked ~ nav button:before,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
+    margin-inline-end: 2.3rem;
+  }
+  aside #mobile-menu-trigger:checked ~ nav [aria-current] a,
+aside #mobile-menu-trigger:checked ~ nav [aria-current] button,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] a,
+aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] button {
+    color: var(--theme-accent-color, #333);
+  }
   aside #expand-desktop-menu {
     display: none;
   }
@@ -95,65 +114,39 @@ aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
-  aside nav a:after,
-aside nav button:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    inset-inline-start: 3rem;
-    background-color: var(--theme-aside-bg);
-    opacity: 1;
-    transition: opacity var(--transition-duration, 0) ease-out;
+  aside input#mobile-menu-trigger:not(:checked) ~ nav li button,
+aside input#mobile-menu-trigger:not(:checked) ~ nav li a,
+aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button,
+aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a {
+    color: transparent;
   }
-  aside nav [aria-current] a:after,
-aside nav [aria-current] button:after {
-    background-color: var(--theme-aside-highlight);
+  aside input#mobile-menu-trigger:not(:checked) ~ nav li button:before,
+aside input#mobile-menu-trigger:not(:checked) ~ nav li a:before,
+aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button:before,
+aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a:before {
+    margin-inline-end: 2.8rem;
   }
-  aside nav li a:before,
-aside nav li button:before {
-    margin: 0 0.6rem;
-    margin-inline-end: 2.333rem;
-  }
-  aside #mobile-menu-trigger:checked ~ nav a,
-aside #mobile-menu-trigger:checked ~ nav button,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
-    padding-inline-end: 0.5rem;
-  }
-  aside #mobile-menu-trigger:checked ~ nav a:before,
-aside #mobile-menu-trigger:checked ~ nav button:before,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
-    margin-inline-end: 2.333rem;
-    padding-inline-end: 0;
-  }
-  aside #mobile-menu-trigger:checked ~ nav a:after,
-aside #mobile-menu-trigger:checked ~ nav button:after,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:after,
-aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:after {
-    opacity: 0;
-  }
-  aside a:before,
-aside button:before {
-    padding-inline-end: 0.5rem;
-    transition: padding var(--transition-duration, 0) ease-out;
-  }
-}
-aside #expand-desktop-menu:checked ~ nav a:before,
-aside #expand-desktop-menu:checked ~ nav button:before,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
-  background: none;
 }
 @media (min-width: 800px) {
+  aside #expand-desktop-menu:checked ~ nav a,
+aside #expand-desktop-menu:checked ~ nav button,
+aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
+aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
+    color: var(--theme-color-light);
+    padding-inline-end: 0.5rem;
+  }
   aside #expand-desktop-menu:checked ~ nav a:before,
 aside #expand-desktop-menu:checked ~ nav button:before,
 aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
 aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
     margin-inline-end: 2.75rem;
   }
-}
-@media (min-width: 800px) {
+  aside #expand-desktop-menu:checked ~ nav [aria-current] a,
+aside #expand-desktop-menu:checked ~ nav [aria-current] button,
+aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
+aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
+    color: var(--theme-accent-color, #333);
+  }
   aside input#expand-desktop-menu:not(:checked) ~ nav li button,
 aside input#expand-desktop-menu:not(:checked) ~ nav li a,
 aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li button,
@@ -182,39 +175,29 @@ aside input[type=reset] {
 aside #expand-desktop-menu[aria-expanded=true] ~ nav {
     max-width: var(--aside-width);
   }
-  aside #expand-desktop-menu:checked ~ nav a,
-aside #expand-desktop-menu:checked ~ nav button,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
-    color: var(--theme-color-light);
-    padding-inline-end: 0.5rem;
-  }
-  aside #expand-desktop-menu:checked ~ nav [aria-current] a,
-aside #expand-desktop-menu:checked ~ nav [aria-current] button,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
-aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
-    color: var(--theme-accent-color, #333);
-  }
   aside nav {
     max-width: 4rem;
   }
-  aside nav a,
+}
+aside nav {
+  max-width: 4rem;
+}
+aside nav a,
 aside nav button {
-    color: transparent;
-  }
-  aside nav a:before,
+  color: transparent;
+}
+aside nav a:before,
 aside nav button:before {
-    color: initial;
-    margin-inline-end: 3rem;
-  }
-  aside nav [aria-current] a,
+  color: initial;
+  margin-inline-end: 3rem;
+}
+aside nav [aria-current] a,
 aside nav [aria-current] button {
-    color: transparent;
-  }
-  aside nav [aria-current] a:before,
+  color: transparent;
+}
+aside nav [aria-current] a:before,
 aside nav [aria-current] button:before {
-    color: var(--theme-accent-color, #333);
-  }
+  color: var(--theme-accent-color, #333);
 }
 aside nav {
   transition: max-width var(--transition-duration, 0) ease-in-out;

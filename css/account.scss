@@ -67,16 +67,13 @@ $mobile_breakpoint: 800px;
 		width: 0;
 		color: var(--theme-color-light);
 		margin-inline-end: 3.25rem;
-
-		@media (min-width: $mobile_breakpoint) {
-			transition: margin var(--transition-duration, 0) ease-in-out;
-		}
+		transition: margin var(--transition-duration, 0) ease-in-out;
 	}
 
 	header dl:before {
 		color: var(--theme-color);
 	}
-	
+
 	header dl:before {
 		margin-inline-end: 2.25rem;
 		margin-inline-start: 0.5rem;
@@ -114,7 +111,7 @@ $mobile_breakpoint: 800px;
 		li::marker {
 			color: var(--theme-accent-color);
 		}
-		
+
 		a {
 			color: var(--theme-accent-color);
 		}
@@ -144,6 +141,12 @@ $mobile_breakpoint: 800px;
 	@media not screen and (min-width: $mobile_breakpoint) {
 
 		grid-template-columns: 3.2rem auto 1fr;
+
+		aside nav a:before,
+		aside nav button:before,
+		header dl:before {
+			margin: 0 .65rem;
+		}
 
 		main,
 		footer {
@@ -199,7 +202,7 @@ $mobile_breakpoint: 800px;
 	h3,
 	h4,
 	h5,
-	h6{
+	h6 {
 		word-break: break-all;
 	}
 

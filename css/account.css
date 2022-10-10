@@ -755,6 +755,7 @@
 .account aside .account__trigger:before {
   cursor: pointer;
   padding: 0;
+  content: "\e93a";
   width: 2.5rem;
   height: 2.5rem;
   display: block;
@@ -765,7 +766,6 @@
   font-family: "Icons";
   font-weight: 400;
   font-size: 1.5rem;
-  content: "\e93a";
   overflow: hidden;
   line-height: 1.7;
   color: var(--theme-color-light);
@@ -798,6 +798,25 @@
   outline-offset: -1px;
 }
 @media not screen and (min-width: 800px) {
+  .account aside #mobile-menu-trigger:checked ~ nav a,
+.account aside #mobile-menu-trigger:checked ~ nav button,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
+    color: var(--theme-color-light);
+    padding-inline-end: 0.5rem;
+  }
+  .account aside #mobile-menu-trigger:checked ~ nav a:before,
+.account aside #mobile-menu-trigger:checked ~ nav button:before,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
+    margin-inline-end: 2.3rem;
+  }
+  .account aside #mobile-menu-trigger:checked ~ nav [aria-current] a,
+.account aside #mobile-menu-trigger:checked ~ nav [aria-current] button,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] a,
+.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] button {
+    color: var(--theme-accent-color, #333);
+  }
   .account aside #expand-desktop-menu {
     display: none;
   }
@@ -806,65 +825,39 @@
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
-  .account aside nav a:after,
-.account aside nav button:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    inset-inline-start: 3rem;
-    background-color: var(--theme-aside-bg);
-    opacity: 1;
-    transition: opacity var(--transition-duration, 0) ease-out;
+  .account aside input#mobile-menu-trigger:not(:checked) ~ nav li button,
+.account aside input#mobile-menu-trigger:not(:checked) ~ nav li a,
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button,
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a {
+    color: transparent;
   }
-  .account aside nav [aria-current] a:after,
-.account aside nav [aria-current] button:after {
-    background-color: var(--theme-aside-highlight);
+  .account aside input#mobile-menu-trigger:not(:checked) ~ nav li button:before,
+.account aside input#mobile-menu-trigger:not(:checked) ~ nav li a:before,
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button:before,
+.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a:before {
+    margin-inline-end: 2.8rem;
   }
-  .account aside nav li a:before,
-.account aside nav li button:before {
-    margin: 0 0.6rem;
-    margin-inline-end: 2.333rem;
-  }
-  .account aside #mobile-menu-trigger:checked ~ nav a,
-.account aside #mobile-menu-trigger:checked ~ nav button,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
-    padding-inline-end: 0.5rem;
-  }
-  .account aside #mobile-menu-trigger:checked ~ nav a:before,
-.account aside #mobile-menu-trigger:checked ~ nav button:before,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
-    margin-inline-end: 2.333rem;
-    padding-inline-end: 0;
-  }
-  .account aside #mobile-menu-trigger:checked ~ nav a:after,
-.account aside #mobile-menu-trigger:checked ~ nav button:after,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:after,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:after {
-    opacity: 0;
-  }
-  .account aside a:before,
-.account aside button:before {
-    padding-inline-end: 0.5rem;
-    transition: padding var(--transition-duration, 0) ease-out;
-  }
-}
-.account aside #expand-desktop-menu:checked ~ nav a:before,
-.account aside #expand-desktop-menu:checked ~ nav button:before,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
-  background: none;
 }
 @media (min-width: 800px) {
+  .account aside #expand-desktop-menu:checked ~ nav a,
+.account aside #expand-desktop-menu:checked ~ nav button,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
+    color: var(--theme-color-light);
+    padding-inline-end: 0.5rem;
+  }
   .account aside #expand-desktop-menu:checked ~ nav a:before,
 .account aside #expand-desktop-menu:checked ~ nav button:before,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
     margin-inline-end: 2.75rem;
   }
-}
-@media (min-width: 800px) {
+  .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
+.account aside #expand-desktop-menu:checked ~ nav [aria-current] button,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
+.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
+    color: var(--theme-accent-color, #333);
+  }
   .account aside input#expand-desktop-menu:not(:checked) ~ nav li button,
 .account aside input#expand-desktop-menu:not(:checked) ~ nav li a,
 .account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li button,
@@ -893,39 +886,29 @@
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav {
     max-width: var(--aside-width);
   }
-  .account aside #expand-desktop-menu:checked ~ nav a,
-.account aside #expand-desktop-menu:checked ~ nav button,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
-    color: var(--theme-color-light);
-    padding-inline-end: 0.5rem;
-  }
-  .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
-.account aside #expand-desktop-menu:checked ~ nav [aria-current] button,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
-    color: var(--theme-accent-color, #333);
-  }
   .account aside nav {
     max-width: 4rem;
   }
-  .account aside nav a,
+}
+.account aside nav {
+  max-width: 4rem;
+}
+.account aside nav a,
 .account aside nav button {
-    color: transparent;
-  }
-  .account aside nav a:before,
+  color: transparent;
+}
+.account aside nav a:before,
 .account aside nav button:before {
-    color: initial;
-    margin-inline-end: 3rem;
-  }
-  .account aside nav [aria-current] a,
+  color: initial;
+  margin-inline-end: 3rem;
+}
+.account aside nav [aria-current] a,
 .account aside nav [aria-current] button {
-    color: transparent;
-  }
-  .account aside nav [aria-current] a:before,
+  color: transparent;
+}
+.account aside nav [aria-current] a:before,
 .account aside nav [aria-current] button:before {
-    color: var(--theme-accent-color, #333);
-  }
+  color: var(--theme-accent-color, #333);
 }
 .account aside nav {
   transition: max-width var(--transition-duration, 0) ease-in-out;
@@ -1097,13 +1080,7 @@
   width: 0;
   color: var(--theme-color-light);
   margin-inline-end: 3.25rem;
-}
-@media (min-width: 800px) {
-  .account aside nav a:before,
-.account aside nav button:before,
-.account header dl:before {
-    transition: margin var(--transition-duration, 0) ease-in-out;
-  }
+  transition: margin var(--transition-duration, 0) ease-in-out;
 }
 .account header dl:before {
   color: var(--theme-color);
@@ -1162,6 +1139,11 @@
 @media not screen and (min-width: 800px) {
   .account {
     grid-template-columns: 3.2rem auto 1fr;
+  }
+  .account aside nav a:before,
+.account aside nav button:before,
+.account header dl:before {
+    margin: 0 0.65rem;
   }
   .account main,
 .account footer {
@@ -1225,5 +1207,3 @@
     clip-path: inset(0 0 0 100%);
   }
 }
-
-/*# sourceMappingURL=account.css.map */
