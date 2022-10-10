@@ -720,6 +720,7 @@
   position: sticky;
   padding-top: 1rem;
   border-inline-start: env(safe-area-inset-left) solid transparent;
+  --aside-width: 13.75rem;
 }
 .account aside .logo {
   order: -1;
@@ -734,7 +735,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 13.75rem;
+  width: var(--aside-width);
 }
 .account aside .account__trigger {
   -webkit-appearance: none;
@@ -890,7 +891,7 @@
   }
   .account aside #expand-desktop-menu:checked ~ nav,
 .account aside #expand-desktop-menu[aria-expanded=true] ~ nav {
-    max-width: 13.75rem;
+    max-width: var(--aside-width);
   }
   .account aside #expand-desktop-menu:checked ~ nav a,
 .account aside #expand-desktop-menu:checked ~ nav button,
@@ -976,7 +977,7 @@
   box-sizing: content-box;
   user-select: none;
   padding: 0;
-  width: 13.25rem;
+  width: calc(var(--aside-width) - 0.5rem);
   transition: var(--transition-duration, 0) ease-in-out;
   transition-property: color, padding-inline-end;
   min-height: 3.5rem;
@@ -984,6 +985,8 @@
   text-align: start;
   font-weight: 600;
   outline-offset: -6px;
+  width: var(--aside-width);
+  box-sizing: border-box;
 }
 .account aside .account__trigger:checked ~ nav [aria-current] button,
 .account aside .account__trigger[aria-expanded=true] ~ nav [aria-current] button {
@@ -1009,7 +1012,7 @@
     grid-row: 2/-1;
     z-index: 0;
     background-color: var(--theme-aside-bg);
-    max-width: 13.75rem;
+    max-width: var(--aside-width);
     box-shadow: 0 0.25rem 1.25rem var(--theme-shadow);
     clip-path: inset(0 -1.5rem -1.5rem 0);
     transition: var(--transition-duration, 0) ease-in-out;
@@ -1019,10 +1022,27 @@
     max-height: calc(100svh - 3.25rem);
     overflow: auto;
     overscroll-behavior-block: contain;
+    scrollbar-gutter: stable;
+    overflow-x: clip;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #aaaaaa #fcffff;
+    /* Chrome, Edge, and Safari */
   }
   .account aside nav [aria-current] a,
 .account aside nav [aria-current] a:before {
     color: var(--theme-accent-color, #333);
+  }
+  .account aside nav::-webkit-scrollbar {
+    width: 0;
+  }
+  .account aside nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .account aside nav::-webkit-scrollbar-thumb {
+    background-color: #aaaaaa;
+    border-radius: 0;
+    border: none;
   }
   .account aside ul {
     margin: 0;
@@ -1141,7 +1161,7 @@
 }
 @media not screen and (min-width: 800px) {
   .account {
-    grid-template-columns: 3.1rem auto 1fr;
+    grid-template-columns: 3.2rem auto 1fr;
   }
   .account main,
 .account footer {
@@ -1205,3 +1225,5 @@
     clip-path: inset(0 0 0 100%);
   }
 }
+
+/*# sourceMappingURL=account.css.map */

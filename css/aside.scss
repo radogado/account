@@ -11,6 +11,7 @@ aside {
 	position: sticky;
 	padding-top: 1rem;
 	border-inline-start: env(safe-area-inset-left) solid transparent;
+	--aside-width: 13.75rem;
 
 	.logo {
 		order: -1;
@@ -27,7 +28,7 @@ aside {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
-		width: 13.75rem;
+		width: var(--aside-width);
 	}
 
 	.account__trigger {
@@ -245,7 +246,7 @@ aside {
 		#expand-desktop-menu:checked,
 		#expand-desktop-menu[aria-expanded="true"] {
 			~ nav {
-				max-width: 13.75rem;
+				max-width: var(--aside-width);
 
 				a,
 				button {
@@ -353,15 +354,16 @@ aside {
 			box-sizing: content-box;
 			user-select: none;
 			padding: 0;
-			width: 13.25rem;
+			width: calc(var(--aside-width) - .5rem);
 			transition: var(--transition-duration, 0) ease-in-out;
 			transition-property: color, padding-inline-end;
 			min-height: 3.5rem;
 			align-items: center;
 			text-align: start;
-
 			font-weight: 600;
 			outline-offset: -6px;
+			width: var(--aside-width);
+			box-sizing: border-box;
 
 		}
 
@@ -396,7 +398,7 @@ aside {
 			grid-row: 2/-1;
 			z-index: 0;
 			background-color: var(--theme-aside-bg);
-			max-width: 13.75rem;
+			max-width: var(--aside-width);
 			box-shadow: 0 0.25rem 1.25rem var(--theme-shadow);
 			clip-path: inset(0 -1.5rem -1.5rem 0);
 			transition: var(--transition-duration, 0) ease-in-out;
@@ -406,6 +408,8 @@ aside {
 			max-height: calc(100svh - 3.25rem);
 			overflow: auto;
 			overscroll-behavior-block: contain;
+			scrollbar-gutter: stable;
+			overflow-x: clip;
 
 			[aria-current] {
 
@@ -413,6 +417,26 @@ aside {
 				a:before {
 					color: var(--theme-accent-color, #333);
 				}
+			}
+
+			/* Firefox */
+
+			scrollbar-width: thin;
+			scrollbar-color: #aaaaaa #fcffff;
+
+			/* Chrome, Edge, and Safari */
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: #aaaaaa;
+				border-radius: 0;
+				border: none;
 			}
 
 		}
