@@ -162,9 +162,8 @@ header details.header__profile[open] summary dd {
   header dl:hover:before {
     margin-block-start: -0.25rem;
   }
-  header dl,
-header dt {
-    margin-inline-end: -1%;
+  header dl > * {
+    margin-inline-end: -0.1%;
   }
 }
 @media not screen and (min-width: 800px) {

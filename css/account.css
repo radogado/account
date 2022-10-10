@@ -562,9 +562,8 @@
   .account header dl:hover:before {
     margin-block-start: -0.25rem;
   }
-  .account header dl,
-.account header dt {
-    margin-inline-end: -1%;
+  .account header dl > * {
+    margin-inline-end: -0.1%;
   }
 }
 @media not screen and (min-width: 800px) {
@@ -983,12 +982,8 @@
   min-height: 3.5rem;
   align-items: center;
   text-align: start;
-}
-.account aside nav a, .account aside nav a[href],
-.account aside nav button,
-.account aside nav button[href] {
   font-weight: 600;
-  outline-offset: -2px;
+  outline-offset: -6px;
 }
 .account aside .account__trigger:checked ~ nav [aria-current] button,
 .account aside .account__trigger[aria-expanded=true] ~ nav [aria-current] button {

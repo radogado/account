@@ -17,8 +17,6 @@ header {
 		display: grid;
 		grid-template: 1fr 1fr / auto;
 		line-height: 1.25;
-		// row-gap: 0.25rem;
-		// align-items: center;
 		padding: 0.5rem 0;
 		transition: var(--transition-duration, 0) ease-in-out;
 		transition-property: background-color;
@@ -214,9 +212,8 @@ header {
 			}
 		}
 
-		dl,
-		dt {
-			margin-inline-end: -1%; // Weird Safari bug where the height is miscalculated on first load
+		dl > * {
+			margin-inline-end: -.1%; // Weird Safari bug where the height is miscalculated on first load
 		}
 
 	}

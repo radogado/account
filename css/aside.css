@@ -271,12 +271,8 @@ aside nav button {
   min-height: 3.5rem;
   align-items: center;
   text-align: start;
-}
-aside nav a, aside nav a[href],
-aside nav button,
-aside nav button[href] {
   font-weight: 600;
-  outline-offset: -2px;
+  outline-offset: -6px;
 }
 aside .account__trigger:checked ~ nav [aria-current] button,
 aside .account__trigger[aria-expanded=true] ~ nav [aria-current] button {

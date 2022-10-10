@@ -302,7 +302,6 @@ aside {
 		li {
 			display: flex;
 			align-items: center;
-			// transition: background-color var(--transition-duration, 0) ease-in-out;
 			user-select: none;
 
 			&:before {
@@ -354,7 +353,6 @@ aside {
 			box-sizing: content-box;
 			user-select: none;
 			padding: 0;
-			// padding-inline-end: 1.5em;
 			width: 13.25rem;
 			transition: var(--transition-duration, 0) ease-in-out;
 			transition-property: color, padding-inline-end;
@@ -362,12 +360,8 @@ aside {
 			align-items: center;
 			text-align: start;
 
-			&,
-			&[href] {
-				font-weight: 600;
-				// width: calc(100% - .5rem);
-				outline-offset: -2px;
-			}
+			font-weight: 600;
+			outline-offset: -6px;
 
 		}
 
