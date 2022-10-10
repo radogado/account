@@ -65,7 +65,7 @@ $mobile_breakpoint: 800px;
 		font-size: 1.5rem;
 		line-height: 1.5;
 		width: 0;
-		color: var(--theme-color);
+		color: var(--theme-color-light);
 		margin-inline-end: 3.25rem;
 
 		@media (min-width: $mobile_breakpoint) {
