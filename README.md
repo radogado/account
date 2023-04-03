@@ -22,4 +22,4 @@ Fintech Dashboard Site Template
 - 0 issues in [Wave](https://wave.webaim.org/report#/account.rado.bg)
 - 0 issues in [axe®](https://www.deque.com/axe/)
 - 100% [Lighthouse](https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F) score
-- Following best practices taught by the world’s web top specialists
+- Following best practices taught by the world’s top web specialists
