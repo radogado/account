@@ -270,6 +270,7 @@ aside {
 		transition: max-width var(--transition-duration, 0) ease-in-out;
 		font-weight: 600;
 		flex-grow: 1;
+		overflow-x: hidden;
 
 		li {
 			display: flex;

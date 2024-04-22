@@ -539,7 +539,7 @@
     cursor: zoom-out;
   }
   .account header details.header__profile[open] summary span,
-.account header details.header__profile[open] summary dd {
+  .account header details.header__profile[open] summary dd {
     opacity: 0;
   }
   .account header details.header__profile[open] [data-text=my-profile] {
@@ -573,7 +573,7 @@
     padding-inline-end: 0.4rem;
   }
   .account header .header__profile dl > *,
-.account header .header__loyalty dl > * {
+  .account header .header__loyalty dl > * {
     display: none;
   }
   .account header dl:first-of-type:before {
@@ -589,7 +589,7 @@
     display: block;
   }
   .account header div > dl:before,
-.account header div > dl dt {
+  .account header div > dl dt {
     display: none;
   }
   .account header:before {
@@ -799,69 +799,69 @@
 }
 @media not screen and (min-width: 800px) {
   .account aside #mobile-menu-trigger:checked ~ nav a,
-.account aside #mobile-menu-trigger:checked ~ nav button,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
+  .account aside #mobile-menu-trigger:checked ~ nav button,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button {
     color: var(--theme-color-light);
     padding-inline-end: 0.5rem;
   }
   .account aside #mobile-menu-trigger:checked ~ nav a:before,
-.account aside #mobile-menu-trigger:checked ~ nav button:before,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
+  .account aside #mobile-menu-trigger:checked ~ nav button:before,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav a:before,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav button:before {
     margin-inline-end: 2.3rem;
   }
   .account aside #mobile-menu-trigger:checked ~ nav [aria-current] a,
-.account aside #mobile-menu-trigger:checked ~ nav [aria-current] button,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] a,
-.account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] button {
+  .account aside #mobile-menu-trigger:checked ~ nav [aria-current] button,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] a,
+  .account aside #mobile-menu-trigger[aria-expanded=true] ~ nav [aria-current] button {
     color: var(--theme-accent-color, #333);
   }
   .account aside #expand-desktop-menu {
     display: none;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ nav,
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
     clip-path: inset(0 100% 0 0);
     visibility: hidden;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ nav li button,
-.account aside input#mobile-menu-trigger:not(:checked) ~ nav li a,
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button,
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a {
+  .account aside input#mobile-menu-trigger:not(:checked) ~ nav li a,
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button,
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a {
     color: transparent;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ nav li button:before,
-.account aside input#mobile-menu-trigger:not(:checked) ~ nav li a:before,
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button:before,
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a:before {
+  .account aside input#mobile-menu-trigger:not(:checked) ~ nav li a:before,
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li button:before,
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav li a:before {
     margin-inline-end: 2.8rem;
   }
 }
 @media (min-width: 800px) {
   .account aside #expand-desktop-menu:checked ~ nav a,
-.account aside #expand-desktop-menu:checked ~ nav button,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
+  .account aside #expand-desktop-menu:checked ~ nav button,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav a,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav button {
     color: var(--theme-color-light);
     padding-inline-end: 0.5rem;
   }
   .account aside #expand-desktop-menu:checked ~ nav a:before,
-.account aside #expand-desktop-menu:checked ~ nav button:before,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
+  .account aside #expand-desktop-menu:checked ~ nav button:before,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav a:before,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav button:before {
     margin-inline-end: 2.75rem;
   }
   .account aside #expand-desktop-menu:checked ~ nav [aria-current] a,
-.account aside #expand-desktop-menu:checked ~ nav [aria-current] button,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
+  .account aside #expand-desktop-menu:checked ~ nav [aria-current] button,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] a,
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav [aria-current] button {
     color: var(--theme-accent-color, #333);
   }
   .account aside input#expand-desktop-menu:not(:checked) ~ nav li button,
-.account aside input#expand-desktop-menu:not(:checked) ~ nav li a,
-.account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li button,
-.account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li a {
+  .account aside input#expand-desktop-menu:not(:checked) ~ nav li a,
+  .account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li button,
+  .account aside button#expand-desktop-menu:not([aria-expanded=true]) ~ nav li a {
     color: transparent;
   }
   .account aside .logo {
@@ -871,7 +871,7 @@
     height: var(--logo-height-shrunk);
   }
   .account aside #expand-desktop-menu:checked ~ .logo,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ .logo {
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ .logo {
     width: var(--logo-width);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: var(--logo-height-shrunk);
@@ -879,11 +879,11 @@
     transition-delay: calc(var(--transition-duration, 0.2s) / 2);
   }
   .account aside #mobile-menu-trigger,
-.account aside input[type=reset] {
+  .account aside input[type=reset] {
     display: none;
   }
   .account aside #expand-desktop-menu:checked ~ nav,
-.account aside #expand-desktop-menu[aria-expanded=true] ~ nav {
+  .account aside #expand-desktop-menu[aria-expanded=true] ~ nav {
     max-width: var(--aside-width);
   }
   .account aside nav {
@@ -914,6 +914,7 @@
   transition: max-width var(--transition-duration, 0) ease-in-out;
   font-weight: 600;
   flex-grow: 1;
+  overflow-x: hidden;
 }
 .account aside nav li {
   display: flex;
@@ -1013,7 +1014,7 @@
     /* Chrome, Edge, and Safari */
   }
   .account aside nav [aria-current] a,
-.account aside nav [aria-current] a:before {
+  .account aside nav [aria-current] a:before {
     color: var(--theme-accent-color, #333);
   }
   .account aside nav::-webkit-scrollbar {
@@ -1031,7 +1032,7 @@
     margin: 0;
   }
   .account aside input#mobile-menu-trigger:not(:checked) ~ input[type=reset],
-.account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ input[type=reset] {
+  .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ input[type=reset] {
     visibility: hidden;
     background: transparent;
   }
@@ -1094,7 +1095,7 @@
     margin-top: 2.333rem;
   }
   .account main,
-.account footer {
+  .account footer {
     border-inline-end: env(safe-area-inset-right) solid transparent;
   }
 }
@@ -1141,12 +1142,12 @@
     grid-template-columns: 3.2rem auto 1fr;
   }
   .account aside nav a:before,
-.account aside nav button:before,
-.account header dl:before {
+  .account aside nav button:before,
+  .account header dl:before {
     margin: 0 0.65rem;
   }
   .account main,
-.account footer {
+  .account footer {
     grid-column: 1/-1;
   }
   .account main {
@@ -1203,7 +1204,7 @@
 }
 @media not screen and (min-width: 800px) {
   [dir=rtl] .account aside input#mobile-menu-trigger:not(:checked) ~ nav,
-[dir=rtl] .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
+  [dir=rtl] .account aside button#mobile-menu-trigger:not([aria-expanded=true]) ~ nav {
     clip-path: inset(0 0 0 100%);
   }
 }
