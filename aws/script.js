@@ -1,4 +1,4 @@
-const apiUrl = "https://bi4l9ty4wh.execute-api.us-east-1.amazonaws.com/"; // Replace with your API Gateway URL
+const apiUrl = "https://bi4l9ty4wh.execute-api.us-east-1.amazonaws.com"; // Replace with your API Gateway URL
 
 // Initialize AWS Cognito
 const poolData = {
