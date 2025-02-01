@@ -10,7 +10,7 @@ export const handler = async (event) => {
 
   const params = {
     AuthFlow: "USER_PASSWORD_AUTH",
-    ClientId: "XXXXXXXXXXXXXXXXXXXXXX", // Replace with your Cognito App Client ID
+    ClientId: "7oqjkjq50p78fnok123eed3sto", // Replace with your Cognito App Client ID
     AuthParameters: {
       USERNAME: email,
       PASSWORD: password,

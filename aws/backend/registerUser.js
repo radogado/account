@@ -13,7 +13,7 @@ const cognitoClient = new CognitoIdentityProviderClient({
   region: "us-east-1",
 });
 
-const USER_POOL_ID = "us-east-1_XXXXXXX"; // Replace with your User Pool ID
+const USER_POOL_ID = "us-east-1_mbySN2btL"; // Replace with your User Pool ID
 const MAX_USERS = 10; // Set maximum number of users
 
 export const handler = async (event) => {
