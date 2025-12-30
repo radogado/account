@@ -1,5 +1,5 @@
 import { $, $$, setStatus } from './lib/dom.js';
-import { api } from './lib/api.js';
+import { api, setCsrfToken } from './lib/api.js';
 import { state } from './state.js';
 
 import { renderMe } from './features/me.js';
@@ -46,17 +46,6 @@ function init() {
 		sendToInput,
 	});
 
-	const transactions = initTransactions({
-		api,
-		state,
-		transactionsBody,
-		transactionsEmpty,
-		transactionsStatus,
-		transactionsTableWrap,
-		setStatus,
-		onSessionExpired: () => setAuthed(false),
-	});
-
 	let router;
 	const i18n = initI18n({
 		state,
@@ -64,6 +53,18 @@ function init() {
 			renderMe(state, { $$ });
 			router?.applyRoute?.();
 		},
+	});
+
+	const transactions = initTransactions({
+		api,
+		state,
+		t: i18n.t,
+		transactionsBody,
+		transactionsEmpty,
+		transactionsStatus,
+		transactionsTableWrap,
+		setStatus,
+		onSessionExpired: () => setAuthed(false),
 	});
 
 	router = initRouter({
@@ -82,12 +83,14 @@ function init() {
 	const loadMe = async () => {
 		try {
 			state.me = await api('/api/me');
+			setCsrfToken(state.me?.csrfToken || null);
 			setAuthed(true);
 			renderMe(state, { $$ });
 			recents.renderRecents();
 			setStatus(authStatus, '');
 		} catch {
 			state.me = null;
+			setCsrfToken(null);
 			setAuthed(false);
 			renderMe(state, { $$ });
 		}
@@ -96,7 +99,19 @@ function init() {
 	initUiEnhancements();
 	i18n.bindLanguageControls();
 	i18n.bindThemeControls();
-	i18n.loadTranslation(); // async; UI falls back to existing text until loaded
+	i18n.loadTranslation() // async; UI falls back to existing text until loaded
+		.then(() => {
+			// If a language was saved (or a radio is already checked), prefer it.
+			let saved = null;
+			try { saved = localStorage.getItem('language'); } catch {}
+			const preferred =
+				saved ||
+				document.querySelector('input[type="radio"][name="language"]:checked')?.dataset?.language ||
+				document.documentElement.lang ||
+				'en';
+			return i18n.applyLanguage(preferred);
+		})
+		.catch(() => {});
 	initDetailsAnimation();
 
 	initAuth({

@@ -3,23 +3,17 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>My Account</title>
+		<title>Account Dashboard (Local Demo)</title>
 		<link rel="icon" href="./favicon.svg">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
-		<meta name="description" content="Author: A.N. Author,	Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
+		<meta name="description" content="Minimal local fintech-style account dashboard demo with authentication, points transfers, and transaction history.">
+		<meta name="theme-color" content="#70215e">
 
 		<link rel="preload" href="fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lujVj9_mf.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBdu3cOWxy40.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
 
 		<link href="dist/account.min.css?6" rel="styleSheet">
 		<!-- <link href="css/account.css" rel="styleSheet"> -->
-<script src="dist/account.min.js?4" type="module"></script>
+		<script src="dist/account.min.js?4" type="module"></script>
 	</head>
 
 	<body class="account theme-purple">
@@ -207,40 +201,40 @@
 
 			<section id="view-withdraw" data-view="withdraw" hidden>
 				<h2 data-text="withdraw">Withdraw</h2>
-				<p>Send funds to a verified destination. This is demo content.</p>
+				<p data-text="withdraw-intro">Send funds to a verified destination. This is demo content.</p>
 				<form>
 					<fieldset class="form-grid">
-						<legend>Withdrawal details</legend>
-						<label>
-							<span>Amount</span>
-							<input required type="number" name="withdraw_amount" min="1" step="1" inputmode="decimal">
+						<legend data-text="withdraw-details">Withdrawal details</legend>
+						<label for="withdraw-amount">
+							<span data-text="amount">Amount</span>
+							<input id="withdraw-amount" required type="number" name="withdraw_amount" min="1" step="1" inputmode="decimal">
 						</label>
-						<label>
-							<span>Destination</span>
-							<select name="withdraw_destination" required>
-								<option value="" selected disabled>Select destination</option>
-								<option value="bank">Bank account (IBAN)</option>
-								<option value="card">Debit card</option>
-								<option value="wallet">External wallet</option>
+						<label for="withdraw-destination">
+							<span data-text="withdraw-destination">Destination</span>
+							<select id="withdraw-destination" name="withdraw_destination" required>
+								<option value="" selected disabled data-text="withdraw-select-destination">Select destination</option>
+								<option value="bank" data-text="withdraw-destination-bank">Bank account (IBAN)</option>
+								<option value="card" data-text="withdraw-destination-card">Debit card</option>
+								<option value="wallet" data-text="withdraw-destination-wallet">External wallet</option>
 							</select>
 						</label>
-						<label>
-							<span>Reference (optional)</span>
-							<input type="text" name="withdraw_reference" autocomplete="off" inputmode="text" maxlength="140">
+						<label for="withdraw-reference">
+							<span data-text="withdraw-reference">Reference (optional)</span>
+							<input id="withdraw-reference" type="text" name="withdraw_reference" autocomplete="off" inputmode="text" maxlength="140">
 						</label>
 						<div class="form-actions">
-							<button class="btn" type="button">Continue</button>
+							<button class="btn" type="button" data-text="continue">Continue</button>
 						</div>
 					</fieldset>
 				</form>
 				<br>
 				<details>
-					<summary>Fees & processing times</summary>
+					<summary data-text="withdraw-fees-summary">Fees & processing times</summary>
 					<div class="details__content">
 						<ul>
-							<li>Bank transfer: 0–1 business day</li>
-							<li>Card withdrawal: usually instant</li>
-							<li>External wallet: depends on provider</li>
+							<li data-text="withdraw-fee-bank">Bank transfer: 0–1 business day</li>
+							<li data-text="withdraw-fee-card">Card withdrawal: usually instant</li>
+							<li data-text="withdraw-fee-wallet">External wallet: depends on provider</li>
 						</ul>
 					</div>
 				</details>
@@ -249,28 +243,32 @@
 			<section id="view-prepaid-card" data-view="prepaid-card" hidden>
 				<h2 data-text="prepaid-card">Prepaid card</h2>
 				<dl>
-					<dt>Card status</dt>
-					<dd>Active</dd>
-					<dt>Available to spend</dt>
+					<dt data-text="card-status">Card status</dt>
+					<dd data-text="status-active">Active</dd>
+					<dt data-text="card-available">Available to spend</dt>
 					<dd>EUR 120.00</dd>
-					<dt>Card ending</dt>
+					<dt data-text="card-ending">Card ending</dt>
 					<dd>•••• 1234</dd>
 				</dl>
 				<p>
-					<button class="btn" type="button">Freeze card</button>
-					<button class="btn btn--secondary" type="button">Show PIN</button>
+					<button class="btn" type="button" data-text="card-freeze">Freeze card</button>
+					<button class="btn btn--secondary" type="button" data-text="card-show-pin">Show PIN</button>
 				</p>
 				<details>
-					<summary>Limits</summary>
+					<summary data-text="limits">Limits</summary>
 					<div class="details__content">
 						<div class="table-wrap">
 							<table class="table">
 								<thead>
-									<tr><th scope="col">Limit</th><th scope="col">Used</th><th scope="col">Remaining</th></tr>
+									<tr>
+										<th scope="col" data-text="limit">Limit</th>
+										<th scope="col" data-text="used">Used</th>
+										<th scope="col" data-text="remaining">Remaining</th>
+									</tr>
 								</thead>
 								<tbody>
-									<tr><td>Daily spend</td><td>EUR 80</td><td>EUR 420</td></tr>
-									<tr><td>ATM withdrawals</td><td>EUR 0</td><td>EUR 200</td></tr>
+									<tr><td data-text="card-limit-daily-spend">Daily spend</td><td>EUR 80</td><td>EUR 420</td></tr>
+									<tr><td data-text="card-limit-atm">ATM withdrawals</td><td>EUR 0</td><td>EUR 200</td></tr>
 								</tbody>
 							</table>
 						</div>
@@ -282,45 +280,49 @@
 				<h2 data-text="exchange">Exchange</h2>
 				<form>
 					<fieldset class="form-grid">
-						<legend>Convert funds</legend>
-						<label>
-							<span>From</span>
-							<select name="fx_from" required>
+						<legend data-text="exchange-convert">Convert funds</legend>
+						<label for="fx-from">
+							<span data-text="from">From</span>
+							<select id="fx-from" name="fx_from" required>
 								<option value="EUR" selected>EUR</option>
 								<option value="USD">USD</option>
 								<option value="GBP">GBP</option>
 							</select>
 						</label>
-						<label>
-							<span>To</span>
-							<select name="fx_to" required>
+						<label for="fx-to">
+							<span data-text="to-label">To</span>
+							<select id="fx-to" name="fx_to" required>
 								<option value="USD" selected>USD</option>
 								<option value="EUR">EUR</option>
 								<option value="GBP">GBP</option>
 							</select>
 						</label>
-						<label>
-							<span>Amount</span>
-							<input required type="number" name="fx_amount" min="1" step="0.01" inputmode="decimal">
+						<label for="fx-amount">
+							<span data-text="amount">Amount</span>
+							<input id="fx-amount" required type="number" name="fx_amount" min="1" step="0.01" inputmode="decimal">
 						</label>
 						<div class="form-actions">
-							<button class="btn" type="button">Preview</button>
+							<button class="btn" type="button" data-text="preview">Preview</button>
 						</div>
 					</fieldset>
 				</form>
 				<br>
 				<details>
-					<summary>Indicative rates</summary>
+					<summary data-text="exchange-rates">Indicative rates</summary>
 					<div class="details__content">
 						<div class="table-wrap">
 							<table class="table">
 								<thead>
-									<tr><th scope="col">Pair</th><th scope="col">Rate</th><th scope="col">Updated</th></tr>
+									<tr>
+										<th scope="col" data-text="pair">Pair</th>
+										<th scope="col" data-text="rate">Rate</th>
+										<th scope="col" data-text="updated">Updated</th>
+									</tr>
 								</thead>
 								<tbody>
-									<tr><td>EUR → USD</td><td>1.09</td><td>Just now</td></tr>
-									<tr><td>EUR → GBP</td><td>0.85</td><td>Just now</td></tr>
-									<tr><td>USD → EUR</td><td>0.92</td><td>Just now</td></tr>
+									<tr><td>EUR → USD</td><td>1.09</td><td data-text="just-now">Just now</td></tr>
+									<tr><td>EUR → GBP</td><td>0.85</td><td data-text="just-now">Just now</td></tr>
+									<tr><td>USD → EUR</td><td>0.92</td><td data-text="just-now">Just now</td></tr>
 								</tbody>
 							</table>
 						</div>
@@ -332,24 +334,24 @@
 				<h2 data-text="account-statement">Get an account statement</h2>
 				<form>
 					<fieldset class="form-grid">
-						<legend>Filters</legend>
-						<label>
-							<span>From</span>
-							<input type="date" name="stmt_from">
+						<legend data-text="filters">Filters</legend>
+						<label for="stmt-from">
+							<span data-text="from">From</span>
+							<input id="stmt-from" type="date" name="stmt_from">
 						</label>
-						<label>
-							<span>To</span>
-							<input type="date" name="stmt_to">
+						<label for="stmt-to">
+							<span data-text="to-label">To</span>
+							<input id="stmt-to" type="date" name="stmt_to">
 						</label>
-						<label>
-							<span>Format</span>
-							<select name="stmt_format">
+						<label for="stmt-format">
+							<span data-text="format">Format</span>
+							<select id="stmt-format" name="stmt_format">
 								<option value="pdf" selected>PDF</option>
 								<option value="csv">CSV</option>
 							</select>
 						</label>
 						<div class="form-actions">
-							<button class="btn" type="button">Generate</button>
+							<button class="btn" type="button" data-text="generate">Generate</button>
 						</div>
 					</fieldset>
 				</form>
@@ -357,12 +359,17 @@
 				<div class="table-wrap">
 					<table class="table" aria-label="Example statement rows">
 						<thead>
-							<tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Currency</th></tr>
+							<tr>
+								<th scope="col" data-text="statement-date">Date</th>
+								<th scope="col" data-text="statement-description">Description</th>
+								<th scope="col" data-text="statement-amount">Amount</th>
+								<th scope="col" data-text="statement-currency">Currency</th>
+							</tr>
 						</thead>
 						<tbody>
-							<tr><td>2025-12-30</td><td>Points transfer</td><td>-123</td><td>PTS</td></tr>
-							<tr><td>2025-12-28</td><td>Card purchase</td><td>-19.99</td><td>EUR</td></tr>
-							<tr><td>2025-12-25</td><td>Top-up</td><td>+50.00</td><td>EUR</td></tr>
+							<tr><td>2025-12-30</td><td data-text="statement-points-transfer">Points transfer</td><td>-123</td><td>PTS</td></tr>
+							<tr><td>2025-12-28</td><td data-text="statement-card-purchase">Card purchase</td><td>-19.99</td><td>EUR</td></tr>
+							<tr><td>2025-12-25</td><td data-text="statement-top-up">Top-up</td><td>+50.00</td><td>EUR</td></tr>
 						</tbody>
 					</table>
 				</div>
@@ -372,28 +379,28 @@
 				<h2 data-text="settings">Settings</h2>
 				<form>
 					<fieldset>
-						<legend>Security</legend>
-						<label class="check"><input type="checkbox" name="set_2fa"><span>Enable two‑factor authentication</span></label>
-						<label class="check"><input type="checkbox" name="set_device"><span>Remember this device</span></label>
-						<label class="check"><input type="checkbox" name="set_alerts" checked><span>Login alerts</span></label>
-						<button class="btn" type="button">Save</button>
+						<legend data-text="security">Security</legend>
+						<label class="check"><input type="checkbox" name="set_2fa"><span data-text="enable-2fa">Enable two‑factor authentication</span></label>
+						<label class="check"><input type="checkbox" name="set_device"><span data-text="remember-device">Remember this device</span></label>
+						<label class="check"><input type="checkbox" name="set_alerts" checked><span data-text="login-alerts">Login alerts</span></label>
+						<button class="btn" type="button" data-text="save">Save</button>
 					</fieldset>
 				</form>
 				<br>
 				<form>
 					<fieldset>
-						<legend>Notifications</legend>
-						<label class="check"><input type="checkbox" name="n_email" checked><span>Email</span></label>
-						<label class="check"><input type="checkbox" name="n_push"><span>Push</span></label>
-						<label class="check"><input type="checkbox" name="n_sms"><span>SMS</span></label>
+						<legend data-text="notifications">Notifications</legend>
+						<label class="check"><input type="checkbox" name="n_email" checked><span data-text="email">Email</span></label>
+						<label class="check"><input type="checkbox" name="n_push"><span data-text="push">Push</span></label>
+						<label class="check"><input type="checkbox" name="n_sms"><span data-text="sms">SMS</span></label>
 					</fieldset>
 				</form>
 				<br>
 				<details>
-					<summary>Data & privacy</summary>
+					<summary data-text="data-privacy">Data & privacy</summary>
 					<div class="details__content">
-						<p>You can export your data or request deletion. (Demo)</p>
-						<p><button class="btn btn--secondary" type="button">Export data</button></p>
+						<p data-text="data-privacy-desc">You can export your data or request deletion. (Demo)</p>
+						<p><button class="btn btn--secondary" type="button" data-text="export-data">Export data</button></p>
 					</div>
 				</details>
 			</section>
@@ -401,27 +408,27 @@
 			<section id="view-faq" data-view="faq" hidden>
 				<h2 data-text="faq">FAQ</h2>
 				<details>
-					<summary>How do points work?</summary>
+					<summary data-text="faq-q1">How do points work?</summary>
 					<div class="details__content">
-						<p>Points are a simple ledger balance. Sending points moves value between users.</p>
+						<p data-text="faq-a1">Points are a simple ledger balance. Sending points moves value between users.</p>
 					</div>
 				</details>
 				<details>
-					<summary>Why can’t I send points?</summary>
+					<summary data-text="faq-q2">Why can’t I send points?</summary>
 					<div class="details__content">
-						<p>The recipient must be registered, the amount must be a positive whole number, and you must have enough balance.</p>
+						<p data-text="faq-a2">The recipient must be registered, the amount must be a positive whole number, and you must have enough balance.</p>
 					</div>
 				</details>
 				<details>
-					<summary>Where is my password stored?</summary>
+					<summary data-text="faq-q3">Where is my password stored?</summary>
 					<div class="details__content">
-						<p>In local demo mode, passwords are hashed with a per-user salt. For production, use a real auth provider.</p>
+						<p data-text="faq-a3">In local demo mode, passwords are hashed with a per-user salt. For production, use a real auth provider.</p>
 					</div>
 				</details>
 				<details>
-					<summary>Does this support multi-currency?</summary>
+					<summary data-text="faq-q4">Does this support multi-currency?</summary>
 					<div class="details__content">
-						<p>The exchange view is demo-only, but the UI is designed to support multiple balances.</p>
+						<p data-text="faq-a4">The exchange view is demo-only, but the UI is designed to support multiple balances.</p>
 					</div>
 				</details>
 			</section>
@@ -429,30 +436,30 @@
 			<section id="view-contact" data-view="contact" hidden>
 				<h2 data-text="contact-us">Contact us</h2>
 				<dl>
-					<dt>Email</dt>
+					<dt data-text="email">Email</dt>
 					<dd>support@example.test</dd>
-					<dt>Hours</dt>
-					<dd>Mon–Fri, 09:00–18:00</dd>
+					<dt data-text="hours">Hours</dt>
+					<dd data-text="hours-value">Mon–Fri, 09:00–18:00</dd>
 				</dl>
 				<form>
 					<fieldset class="form-grid">
-						<legend>Message</legend>
-						<label>
-							<span>Subject</span>
-							<select name="contact_subject" required>
-								<option value="" selected disabled>Select</option>
-								<option>Account</option>
-								<option>Card</option>
-								<option>Transactions</option>
-								<option>Other</option>
+						<legend data-text="message">Message</legend>
+						<label for="contact-subject">
+							<span data-text="subject">Subject</span>
+							<select id="contact-subject" name="contact_subject" required>
+								<option value="" selected disabled data-text="select">Select</option>
+								<option data-text="topic-account">Account</option>
+								<option data-text="topic-card">Card</option>
+								<option data-text="topic-transactions">Transactions</option>
+								<option data-text="topic-other">Other</option>
 							</select>
 						</label>
-						<label>
-							<span>Your message</span>
-							<textarea name="contact_message" rows="4" required></textarea>
+						<label for="contact-message">
+							<span data-text="your-message">Your message</span>
+							<textarea id="contact-message" name="contact_message" rows="4" required></textarea>
 						</label>
 						<div class="form-actions">
-							<button class="btn" type="button">Send</button>
+							<button class="btn" type="button" data-text="send">Send</button>
 						</div>
 					</fieldset>
 				</form>
@@ -461,22 +468,22 @@
 			<section id="view-promotions" data-view="promotions" hidden>
 				<h2 data-text="promotions">Promotions</h2>
 				<details open>
-					<summary>Welcome bonus</summary>
+					<summary data-text="promo-welcome">Welcome bonus</summary>
 					<div class="details__content">
-						<p>Get 250 points after your first transfer.</p>
-						<p><small>Demo only. Terms apply.</small></p>
+						<p data-text="promo-welcome-desc">Get 250 points after your first transfer.</p>
+						<p><small data-text="promo-demo-terms">Demo only. Terms apply.</small></p>
 					</div>
 				</details>
 				<details>
-					<summary>Referral</summary>
+					<summary data-text="promo-referral">Referral</summary>
 					<div class="details__content">
-						<p>Invite a friend. When they register and send points, you both earn 100 points.</p>
+						<p data-text="promo-referral-desc">Invite a friend. When they register and send points, you both earn 100 points.</p>
 					</div>
 				</details>
 				<details>
-					<summary>Card cashback</summary>
+					<summary data-text="promo-cashback">Card cashback</summary>
 					<div class="details__content">
-						<p>Earn points back on eligible prepaid card purchases.</p>
+						<p data-text="promo-cashback-desc">Earn points back on eligible prepaid card purchases.</p>
 					</div>
 				</details>
 			</section>

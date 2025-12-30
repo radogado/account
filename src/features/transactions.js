@@ -7,6 +7,7 @@ const formatTxDate = (iso) => {
 export function initTransactions({
 	api,
 	state,
+	t,
 	transactionsBody,
 	transactionsEmpty,
 	transactionsStatus,
@@ -14,12 +15,14 @@ export function initTransactions({
 	setStatus,
 	onSessionExpired,
 }) {
+	const tt = (key, fallbackText) => (typeof t === 'function' ? t(key, fallbackText) : fallbackText);
+
 	const clear = () => {
 		if (transactionsBody) transactionsBody.innerHTML = '';
 	};
 
 	const showSignedOut = (msg) => {
-		setStatus(transactionsStatus, msg || 'Please sign in to view transactions.');
+		setStatus(transactionsStatus, msg || tt('transactions-signin', 'Please sign in to view transactions.'));
 		clear();
 		if (transactionsTableWrap) transactionsTableWrap.hidden = true;
 		if (transactionsEmpty) transactionsEmpty.hidden = false;
@@ -39,7 +42,7 @@ export function initTransactions({
 				return;
 			}
 			list.forEach(tx => {
-				const tr = document.createElement('tr');
+				const row = document.createElement('tr');
 				const direction = tx.direction === 'in' ? 'in' : 'out';
 				const sign = direction === 'in' ? '+' : '−';
 				const other = direction === 'in' ? tx.from : tx.to;
@@ -49,7 +52,9 @@ export function initTransactions({
 				tdDate.className = 'tx__date';
 
 				const tdType = document.createElement('td');
-				tdType.textContent = direction === 'in' ? 'In' : 'Out';
+				tdType.textContent = direction === 'in'
+					? tt('tx-in', 'In')
+					: tt('tx-out', 'Out');
 				tdType.className = `tx__type tx__type--${direction}`;
 
 				const tdPoints = document.createElement('td');
@@ -60,21 +65,21 @@ export function initTransactions({
 				tdOther.textContent = other || '';
 				tdOther.className = 'tx__other';
 
-				tr.appendChild(tdDate);
-				tr.appendChild(tdType);
-				tr.appendChild(tdPoints);
-				tr.appendChild(tdOther);
-				transactionsBody.appendChild(tr);
+				row.appendChild(tdDate);
+				row.appendChild(tdType);
+				row.appendChild(tdPoints);
+				row.appendChild(tdOther);
+				transactionsBody.appendChild(row);
 			});
 		} catch (err) {
 			if (err?.status === 401) {
-				setStatus(transactionsStatus, 'Session expired. Please log in again.');
+				setStatus(transactionsStatus, tt('session-expired', 'Session expired. Please log in again.'));
 				state.me = null;
 				if (typeof onSessionExpired === 'function') onSessionExpired();
 				if (transactionsTableWrap) transactionsTableWrap.hidden = true;
 				if (transactionsEmpty) transactionsEmpty.hidden = false;
 			} else {
-				setStatus(transactionsStatus, err?.message || 'Failed to load transactions');
+				setStatus(transactionsStatus, err?.message || tt('transactions-load-failed', 'Failed to load transactions'));
 			}
 		}
 	};

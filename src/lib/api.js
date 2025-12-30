@@ -1,8 +1,22 @@
+let csrfToken = null;
+
+export function setCsrfToken(token) {
+	csrfToken = token ? String(token) : null;
+}
+
 export async function api(path, { method = 'GET', body } = {}) {
 	const res = await fetch(path, {
 		method,
 		credentials: 'same-origin',
-		headers: body ? { 'Content-Type': 'application/json' } : undefined,
+		headers: (() => {
+			const h = {};
+			if (body) h['Content-Type'] = 'application/json';
+			const m = String(method || 'GET').toUpperCase();
+			if (csrfToken && m !== 'GET' && m !== 'HEAD' && m !== 'OPTIONS' && String(path).startsWith('/api/')) {
+				h['X-CSRF-Token'] = csrfToken;
+			}
+			return Object.keys(h).length ? h : undefined;
+		})(),
 		body: body ? JSON.stringify(body) : undefined,
 	});
 
