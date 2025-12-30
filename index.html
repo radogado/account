@@ -19,7 +19,7 @@
 
 		<link href="dist/account.min.css?1" rel="styleSheet">
 		<!-- <link href="css/account.css" rel="styleSheet"> -->
-		<script src="dist/account.min.js" type="module"></script>
+<script src="dist/account.min.js?2" type="module"></script>
 	</head>
 
 	<body class="account theme-purple">
@@ -29,21 +29,21 @@
 			<input type="checkbox" aria-label="Show mobile menu" id="mobile-menu-trigger" form="nav-reset-form" class="account__trigger">
 			<input type="reset" form="nav-reset-form" aria-label="Close menu" tabindex="-1">
 			<input type="checkbox" aria-label="Expand menu" checked id="expand-desktop-menu" class="account__trigger">
-			<div class="logo"></div>
+			<a class="logo" href="/" aria-label="Home"></a>
 			<nav title="Main navigation">
 				<ul>
-					<li aria-current="page"><a class="account__nav-dashboard" href="#" data-text="dashboard">Dashboard</a></li>
-					<li><button class="account__nav-button" data-text="button-long-text">Deposit as button with long text</button></li>
-					<li><a class="account__nav-withdraw" href="/withdraw/" data-text="withdraw">Withdraw</a></li>
-					<li><a class="account__nav-prepaid-card" href="/prepaid-card/" data-text="prepaid-card">Prepaid card</a></li>
-					<li><a class="account__nav-transactions" href="/transactions/" data-text="transactions">Transactions</a></li>
-					<li><a class="account__nav-exchange" href="/exchange/" data-text="exchange">Exchange</a></li>
-					<li><a class="account__nav-statement" href="/statement/" data-text="account-statement">Get an account statement</a></li>
-					<li><a class="account__nav-settings" href="/settings/" data-text="settings">Settings</a></li>
-					<li><a class="account__nav-faq" href="/faq/" data-text="faq">FAQ</a></li>
+					<li aria-current="page"><a class="account__nav-dashboard" href="/dashboard" data-text="dashboard">Dashboard</a></li>
+					<!-- <li><button class="account__nav-button" data-text="button-long-text">Deposit as button with long text</button></li> -->
+					<li><a class="account__nav-withdraw" href="/withdraw" data-text="withdraw">Withdraw</a></li>
+					<li><a class="account__nav-prepaid-card" href="/prepaid-card" data-text="prepaid-card">Prepaid card</a></li>
+					<li><a class="account__nav-transactions" href="/transactions" data-text="transactions">Transactions</a></li>
+					<li><a class="account__nav-exchange" href="/exchange" data-text="exchange">Exchange</a></li>
+					<li><a class="account__nav-statement" href="/statement" data-text="account-statement">Get an account statement</a></li>
+					<li><a class="account__nav-settings" href="/settings" data-text="settings">Settings</a></li>
+					<li><a class="account__nav-faq" href="/faq" data-text="faq">FAQ</a></li>
 					<!-- <li><a class="account__nav-help" href="/help/" data-text="help-centre">Help centre</a></li> -->
-					<li><a class="account__nav-contact" href="/contact/" data-text="contact-us">Contact us</a></li>
-					<li><a class="account__nav-promotions" href="/promotions/" data-text="promotions">Promotions</a></li>
+					<li><a class="account__nav-contact" href="/contact" data-text="contact-us">Contact us</a></li>
+					<li><a class="account__nav-promotions" href="/promotions" data-text="promotions">Promotions</a></li>
 				</ul>
 			</nav>
 		</aside>
@@ -51,28 +51,28 @@
 			<a href="/loyalty" title="Loyalty" class="header__loyalty">
 				<dl>
 					<dt data-text="loyalty-points">Loyalty points</dt>
-					<dd>4959</dd>
+					<dd data-bind="loyalty-points">4959</dd>
 				</dl>
 			</a>
 
 			<div class="header__balance">
 				<dl>
 					<dt data-text="main-balance">Main balance</dt>
-					<dd>EUR 1.43</dd>
+					<dd data-bind="main-balance">EUR 1.43</dd>
 				</dl>
 			</div>
 
 			<details class="header__profile">
 				<summary>
 					<dl>
-						<dt><span data-text="my-profile">My profile</span><span data-text="user-name">John Davidson</span></dt>
+						<dt><span data-text="my-profile">My profile</span><span data-text="user-name" data-bind="user-name">John Davidson</span></dt>
 						<dd data-text="profile-level">Beginner Level</dd>
 					</dl>
 				</summary>
 				<div class="header__profile-card">
-					<p><b data-text="user-name">John Davidson</b></p>
+					<p><b data-text="user-name" data-bind="user-name">John Davidson</b></p>
 					<p><span data-text="profile-level" class="header__profile-level">Beginner Level</span></p>
-					<p><span>john.davidson@me.com</span></p>
+					<p><span data-bind="user-email">john.davidson@me.com</span></p>
 					<p><span data-text="customer-id">Customer ID</span> 2931541</p>
 
 					<p><a href="#/profile" class="btn" data-text="go-profile-details">Go to profile details</a></p>
@@ -110,43 +110,373 @@
 
 		</header>
 		<main id="main">
-			<h1 data-text="account-overview">Account overview</h1>
+			<h1 data-text="account-overview" data-bind="page-title">Account overview</h1>
 
-			<p><button class="btn" onclick="document.querySelector('.account').classList.toggle('account--dark');" data-text="toggle-dark-mode">Toggle dark mode</button>
-				<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));" data-text="toggle-rtl">Toggle RTL</button>
-			</p>
-			<form>
-				<fieldset>
-					<legend data-text="theme">Theme</legend>
-					<label><input type="radio" name="theme" checked data-theme="purple"> <span data-text="purple">Purple</span></label>
-					<label><input type="radio" name="theme" data-theme="green"> <span data-text="green">Green</span></label>
-					<label><input type="radio" name="theme" data-theme="blue"> <span data-text="blue">Blue</span></label>
-				</fieldset>
+			<section id="view-home" data-view="home">
+				<p><button class="btn" onclick="document.querySelector('.account').classList.toggle('account--dark');" data-text="toggle-dark-mode">Toggle dark mode</button>
+					<button class="btn" onclick="document.querySelector('.account').style.setProperty('--transition-duration', 0); document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; setTimeout(() => document.querySelector('.account').style.removeProperty('--transition-duration'));" data-text="toggle-rtl">Toggle RTL</button>
+				</p>
+				<form>
+					<fieldset>
+						<legend data-text="theme">Theme</legend>
+						<label><input type="radio" name="theme" checked data-theme="purple"> <span data-text="purple">Purple</span></label>
+						<label><input type="radio" name="theme" data-theme="green"> <span data-text="green">Green</span></label>
+						<label><input type="radio" name="theme" data-theme="blue"> <span data-text="blue">Blue</span></label>
+					</fieldset>
+					<br>
+					<fieldset>
+						<legend data-text="language">Language</legend>
+						<label><input type="radio" name="language" checked data-language="en"> English </label>
+						<label><input type="radio" name="language" data-language="fr"> Français (French) </label>
+						<label><input type="radio" name="language" data-language="ar"> عربي (Arabic) </label>
+						<label><input type="radio" name="language" data-language="bg"> Български (Bulgarian) </label>
+						<label><input type="radio" name="language" data-language="gr"> Ελληνικά (Greek) </label>
+						<label><input type="radio" name="language" data-language="cn"> 中文 (Chinese) </label>
+						<label><input type="radio" name="language" data-language="jp"> 日本 (Japanese) </label>
+						<label><input type="radio" name="language" data-language="kr"> 한국인 (Korean) </label>
+					</fieldset>
+
+				</form>
+				
+				<h2 data-text="about">About</h2>
+
+				<p data-text="about-1">A fintech dashboard template built on web standards and native HTML, which makes it fully accessible, and compliant. The page consists of sensible landmarks like "aside", "header", "nav" and "main", which help screen readers describe it properly. It uses CSS for styling, animation, and unbreakable layout. A minimal amount of JavaScript is used for enhancement.</p>
+				
+				<p data-text="about-2">The menu supports both "a" and "button" elements as navigation items. On menu shrink, the logo transitions smoothly to an initial letter version. Its dimensions are defined by the theme, which also specifies the accent colour and supports dark mode. The user profile pop-up uses the standard "details" element for native disclosure functionality. The dynamic translation uses a JSON file as dictionary and data attributes as bridge between the app and the UI.</p>
+
+				<p data-text="about-3">This template achieves perfect score in the most important performance/accessibility benchmarks like <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a>, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> and <a href=https://www.deque.com/axe/>axe®</a>.</p>
+
+				<h2 data-text="source-code">Source code</h2>
+				<p><a href="https://github.com/radogado/account/tree/gh-pages" data-text="repository">Repository</a></a>
+			</section>
+
+			<section id="view-dashboard" data-view="dashboard" hidden>
+			<section id="auth" hidden>
+				<form id="login-form">
+					<fieldset>
+						<legend data-text="auth">Sign in</legend>
+						<label>
+							<span data-text="email">Email</span>
+							<input required type="email" name="email" autocomplete="email">
+						</label>
+						<label>
+							<span data-text="password">Password</span>
+							<input required type="password" name="password" autocomplete="current-password" minlength="8">
+						</label>
+						<button class="btn" type="submit" data-text="login">Login</button>
+					</fieldset>
+				</form>
 				<br>
-				<fieldset>
-					<legend data-text="language">Language</legend>
-					<label><input type="radio" name="language" checked data-language="en"> English </label>
-					<label><input type="radio" name="language" data-language="fr"> Français (French) </label>
-					<label><input type="radio" name="language" data-language="ar"> عربي (Arabic) </label>
-					<label><input type="radio" name="language" data-language="bg"> Български (Bulgarian) </label>
-					<label><input type="radio" name="language" data-language="gr"> Ελληνικά (Greek) </label>
-					<label><input type="radio" name="language" data-language="cn"> 中文 (Chinese) </label>
-					<label><input type="radio" name="language" data-language="jp"> 日本 (Japanese) </label>
-					<label><input type="radio" name="language" data-language="kr"> 한국인 (Korean) </label>
-				</fieldset>
+				<form id="register-form">
+					<fieldset>
+						<legend data-text="register">Register</legend>
+						<label>
+							<span data-text="email">Email</span>
+							<input required type="email" name="email" autocomplete="email">
+						</label>
+						<label>
+							<span data-text="password">Password</span>
+							<input required type="password" name="password" autocomplete="new-password" minlength="8">
+						</label>
+						<button class="btn btn--secondary" type="submit" data-text="register">Register</button>
+					</fieldset>
+				</form>
+				<p id="auth-status" role="status" aria-live="polite"></p>
+			</section>
 
-			</form>
-			
-			<h2 data-text="about">About</h2>
+			<section id="points" hidden>
+				<form id="send-points-form">
+					<fieldset>
+						<legend data-text="points">Points</legend>
+						<label>
+							<span data-text="to">To (email)</span><br>
+							<input required type="email" name="to" autocomplete="email" list="recent-recipients">
+						</label>
+						<datalist id="recent-recipients"></datalist>
+						<label>
+							<span data-text="amount">Amount</span><br>
+							<input required type="number" name="points" min="1" step="1" inputmode="numeric">
+						</label>
+						<button class="btn" type="submit" data-text="send-points">Send points</button>
+					</fieldset>
+				</form>
+				<p id="points-status" role="status" aria-live="polite"></p>
+			</section>
 
-			<p data-text="about-1">A fintech dashboard template built on web standards and native HTML, which makes it fully accessible, and compliant. The page consists of sensible landmarks like "aside", "header", "nav" and "main", which help screen readers describe it properly. It uses CSS for styling, animation, and unbreakable layout. A minimal amount of JavaScript is used for enhancement.</p>
-			
-			<p data-text="about-2">The menu supports both "a" and "button" elements as navigation items. On menu shrink, the logo transitions smoothly to an initial letter version. Its dimensions are defined by the theme, which also specifies the accent colour and supports dark mode. The user profile pop-up uses the standard "details" element for native disclosure functionality. The dynamic translation uses a JSON file as dictionary and data attributes as bridge between the app and the UI.</p>
+			</section>
 
-			<p data-text="about-3">This template achieves perfect score in the most important performance/accessibility benchmarks like <a href=https://pagespeed.web.dev/report?url=https%3A%2F%2Faccount.rado.bg%2F>Lighthouse</a>, <a href=https://wave.webaim.org/report#/account.rado.bg>Wave</a> and <a href=https://www.deque.com/axe/>axe®</a>.</p>
+			<section id="view-withdraw" data-view="withdraw" hidden>
+				<h2 data-text="withdraw">Withdraw</h2>
+				<p>Send funds to a verified destination. This is demo content.</p>
+				<form>
+					<fieldset class="form-grid">
+						<legend>Withdrawal details</legend>
+						<label>
+							<span>Amount</span>
+							<input required type="number" name="withdraw_amount" min="1" step="1" inputmode="decimal">
+						</label>
+						<label>
+							<span>Destination</span>
+							<select name="withdraw_destination" required>
+								<option value="" selected disabled>Select destination</option>
+								<option value="bank">Bank account (IBAN)</option>
+								<option value="card">Debit card</option>
+								<option value="wallet">External wallet</option>
+							</select>
+						</label>
+						<label>
+							<span>Reference (optional)</span>
+							<input type="text" name="withdraw_reference" autocomplete="off" inputmode="text" maxlength="140">
+						</label>
+						<div class="form-actions">
+							<button class="btn" type="button">Continue</button>
+						</div>
+					</fieldset>
+				</form>
+				<br>
+				<details>
+					<summary>Fees & processing times</summary>
+					<ul>
+						<li>Bank transfer: 0–1 business day</li>
+						<li>Card withdrawal: usually instant</li>
+						<li>External wallet: depends on provider</li>
+					</ul>
+				</details>
+			</section>
 
-			<h2 data-text="source-code">Source code</h2>
-			<p><a href="https://github.com/radogado/account/tree/gh-pages" data-text="repository">Repository</a></a>
+			<section id="view-prepaid-card" data-view="prepaid-card" hidden>
+				<h2 data-text="prepaid-card">Prepaid card</h2>
+				<dl>
+					<dt>Card status</dt>
+					<dd>Active</dd>
+					<dt>Available to spend</dt>
+					<dd>EUR 120.00</dd>
+					<dt>Card ending</dt>
+					<dd>•••• 1234</dd>
+				</dl>
+				<p>
+					<button class="btn" type="button">Freeze card</button>
+					<button class="btn btn--secondary" type="button">Show PIN</button>
+				</p>
+				<details>
+					<summary>Limits</summary>
+					<div class="table-wrap">
+						<table class="table">
+							<thead>
+								<tr><th scope="col">Limit</th><th scope="col">Used</th><th scope="col">Remaining</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>Daily spend</td><td>EUR 80</td><td>EUR 420</td></tr>
+								<tr><td>ATM withdrawals</td><td>EUR 0</td><td>EUR 200</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</details>
+			</section>
+
+			<section id="view-exchange" data-view="exchange" hidden>
+				<h2 data-text="exchange">Exchange</h2>
+				<form>
+					<fieldset class="form-grid">
+						<legend>Convert funds</legend>
+						<label>
+							<span>From</span>
+							<select name="fx_from" required>
+								<option value="EUR" selected>EUR</option>
+								<option value="USD">USD</option>
+								<option value="GBP">GBP</option>
+							</select>
+						</label>
+						<label>
+							<span>To</span>
+							<select name="fx_to" required>
+								<option value="USD" selected>USD</option>
+								<option value="EUR">EUR</option>
+								<option value="GBP">GBP</option>
+							</select>
+						</label>
+						<label>
+							<span>Amount</span>
+							<input required type="number" name="fx_amount" min="1" step="0.01" inputmode="decimal">
+						</label>
+						<div class="form-actions">
+							<button class="btn" type="button">Preview</button>
+						</div>
+					</fieldset>
+				</form>
+				<br>
+				<details>
+					<summary>Indicative rates</summary>
+					<div class="table-wrap">
+						<table class="table">
+							<thead>
+								<tr><th scope="col">Pair</th><th scope="col">Rate</th><th scope="col">Updated</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>EUR → USD</td><td>1.09</td><td>Just now</td></tr>
+								<tr><td>EUR → GBP</td><td>0.85</td><td>Just now</td></tr>
+								<tr><td>USD → EUR</td><td>0.92</td><td>Just now</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</details>
+			</section>
+
+			<section id="view-statement" data-view="statement" hidden>
+				<h2 data-text="account-statement">Get an account statement</h2>
+				<form>
+					<fieldset class="form-grid">
+						<legend>Filters</legend>
+						<label>
+							<span>From</span>
+							<input type="date" name="stmt_from">
+						</label>
+						<label>
+							<span>To</span>
+							<input type="date" name="stmt_to">
+						</label>
+						<label>
+							<span>Format</span>
+							<select name="stmt_format">
+								<option value="pdf" selected>PDF</option>
+								<option value="csv">CSV</option>
+							</select>
+						</label>
+						<div class="form-actions">
+							<button class="btn" type="button">Generate</button>
+						</div>
+					</fieldset>
+				</form>
+				<br>
+				<div class="table-wrap">
+					<table class="table" aria-label="Example statement rows">
+						<thead>
+							<tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Currency</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>2025-12-30</td><td>Points transfer</td><td>-123</td><td>PTS</td></tr>
+							<tr><td>2025-12-28</td><td>Card purchase</td><td>-19.99</td><td>EUR</td></tr>
+							<tr><td>2025-12-25</td><td>Top-up</td><td>+50.00</td><td>EUR</td></tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="view-settings" data-view="settings" hidden>
+				<h2 data-text="settings">Settings</h2>
+				<form>
+					<fieldset>
+						<legend>Security</legend>
+						<label><input type="checkbox" name="set_2fa"> Enable two‑factor authentication</label>
+						<label><input type="checkbox" name="set_device"> Remember this device</label>
+						<label><input type="checkbox" name="set_alerts" checked> Login alerts</label>
+						<button class="btn" type="button">Save</button>
+					</fieldset>
+				</form>
+				<br>
+				<form>
+					<fieldset>
+						<legend>Notifications</legend>
+						<label><input type="checkbox" name="n_email" checked> Email</label>
+						<label><input type="checkbox" name="n_push"> Push</label>
+						<label><input type="checkbox" name="n_sms"> SMS</label>
+					</fieldset>
+				</form>
+				<br>
+				<details>
+					<summary>Data & privacy</summary>
+					<p>You can export your data or request deletion. (Demo)</p>
+					<p><button class="btn btn--secondary" type="button">Export data</button></p>
+				</details>
+			</section>
+
+			<section id="view-faq" data-view="faq" hidden>
+				<h2 data-text="faq">FAQ</h2>
+				<details>
+					<summary>How do points work?</summary>
+					<p>Points are a simple ledger balance. Sending points moves value between users.</p>
+				</details>
+				<details>
+					<summary>Why can’t I send points?</summary>
+					<p>The recipient must be registered, the amount must be a positive whole number, and you must have enough balance.</p>
+				</details>
+				<details>
+					<summary>Where is my password stored?</summary>
+					<p>In local demo mode, passwords are hashed with a per-user salt. For production, use a real auth provider.</p>
+				</details>
+				<details>
+					<summary>Does this support multi-currency?</summary>
+					<p>The exchange view is demo-only, but the UI is designed to support multiple balances.</p>
+				</details>
+			</section>
+
+			<section id="view-contact" data-view="contact" hidden>
+				<h2 data-text="contact-us">Contact us</h2>
+				<dl>
+					<dt>Email</dt>
+					<dd>support@example.test</dd>
+					<dt>Hours</dt>
+					<dd>Mon–Fri, 09:00–18:00</dd>
+				</dl>
+				<form>
+					<fieldset class="form-grid">
+						<legend>Message</legend>
+						<label>
+							<span>Subject</span>
+							<select name="contact_subject" required>
+								<option value="" selected disabled>Select</option>
+								<option>Account</option>
+								<option>Card</option>
+								<option>Transactions</option>
+								<option>Other</option>
+							</select>
+						</label>
+						<label>
+							<span>Your message</span>
+							<textarea name="contact_message" rows="4" required></textarea>
+						</label>
+						<div class="form-actions">
+							<button class="btn" type="button">Send</button>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+
+			<section id="view-promotions" data-view="promotions" hidden>
+				<h2 data-text="promotions">Promotions</h2>
+				<details open>
+					<summary>Welcome bonus</summary>
+					<p>Get 250 points after your first transfer.</p>
+					<p><small>Demo only. Terms apply.</small></p>
+				</details>
+				<details>
+					<summary>Referral</summary>
+					<p>Invite a friend. When they register and send points, you both earn 100 points.</p>
+				</details>
+				<details>
+					<summary>Card cashback</summary>
+					<p>Earn points back on eligible prepaid card purchases.</p>
+				</details>
+			</section>
+
+			<section id="view-transactions" data-view="transactions" hidden>
+				<h2 data-text="transactions-title">Transactions</h2>
+				<div class="table-wrap">
+					<table class="table table--transactions" aria-describedby="transactions-empty">
+						<thead>
+							<tr>
+								<th scope="col" data-text="tx-date">Date</th>
+								<th scope="col" data-text="tx-direction">Type</th>
+								<th scope="col" data-text="tx-points">Points</th>
+								<th scope="col" data-text="tx-counterparty">Counterparty</th>
+							</tr>
+						</thead>
+						<tbody id="transactions-body"></tbody>
+					</table>
+				</div>
+				<p id="transactions-empty" data-text="transactions-empty">No transactions yet.</p>
+				<p id="transactions-status" role="status" aria-live="polite"></p>
+			</section>
 
 		</main>
 		<footer>

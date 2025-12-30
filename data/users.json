@@ -1,0 +1,70 @@
+{
+  "users": {
+    "radoslav.sharapanov@paysafe.com": {
+      "email": "radoslav.sharapanov@paysafe.com",
+      "salt": "x6dzwTp+XtchZXlR5Ke2YQ==",
+      "hash": "FYWbqKul2m90EtjjBalnL/waXiJMKEsNraHgyzAjehT7IOIK4C9yxoNG5+CwXIf3K2O25Pqt/sviQg/u2DLHpA==",
+      "points": 4792,
+      "createdAt": "2025-12-30T15:12:24.985Z",
+      "transactions": [
+        {
+          "id": "fe0fc873-8f0f-4184-bff0-452af65bfd2b",
+          "ts": "2025-12-30T15:41:23.970Z",
+          "direction": "in",
+          "from": "radobox@hotmail.com",
+          "to": "radoslav.sharapanov@paysafe.com",
+          "points": 123
+        },
+        {
+          "id": "d8f6ac96-19bd-4045-baea-e8a503933016",
+          "ts": "2025-12-30T15:50:19.551Z",
+          "direction": "in",
+          "from": "radobox@hotmail.com",
+          "to": "radoslav.sharapanov@paysafe.com",
+          "points": 1
+        },
+        {
+          "id": "77691020-7509-4bb3-b0e6-b461fd2203dc",
+          "ts": "2025-12-30T15:58:12.659Z",
+          "direction": "out",
+          "from": "radoslav.sharapanov@paysafe.com",
+          "to": "radobox@hotmail.com",
+          "points": 324
+        }
+      ]
+    },
+    "radobox@hotmail.com": {
+      "email": "radobox@hotmail.com",
+      "salt": "gra6qUpZLuAODBenLlAYMQ==",
+      "hash": "8M8QeuKCUnVQMb/Esrm/8+Db6SmK827EHN8F56caQJZc9d+VtFmGD/t1X90QQJ6mwnr2/dKqATuMLOJGVBMXWA==",
+      "points": 5208,
+      "createdAt": "2025-12-30T15:13:32.382Z",
+      "transactions": [
+        {
+          "id": "fe0fc873-8f0f-4184-bff0-452af65bfd2b",
+          "ts": "2025-12-30T15:41:23.970Z",
+          "direction": "out",
+          "from": "radobox@hotmail.com",
+          "to": "radoslav.sharapanov@paysafe.com",
+          "points": 123
+        },
+        {
+          "id": "d8f6ac96-19bd-4045-baea-e8a503933016",
+          "ts": "2025-12-30T15:50:19.551Z",
+          "direction": "out",
+          "from": "radobox@hotmail.com",
+          "to": "radoslav.sharapanov@paysafe.com",
+          "points": 1
+        },
+        {
+          "id": "77691020-7509-4bb3-b0e6-b461fd2203dc",
+          "ts": "2025-12-30T15:58:12.659Z",
+          "direction": "in",
+          "from": "radoslav.sharapanov@paysafe.com",
+          "to": "radobox@hotmail.com",
+          "points": 324
+        }
+      ]
+    }
+  }
+}

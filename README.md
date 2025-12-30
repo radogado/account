@@ -1,5 +1,25 @@
 # account
 Fintech Dashboard Site Template
+
+## Local demo backend (register/login/send points)
+This repo includes a **tiny local Node.js server** (no dependencies) that serves the static UI and provides minimal APIs for:
+- Register
+- Login / logout (cookie session)
+- Check “me” (email + points)
+- Send points to another registered user
+
+Run:
+
+```bash
+cd /Users/radoslav.sharapanov/account
+npm run dev
+```
+
+Then open `http://127.0.0.1:8787`.
+
+Local data is stored in `data/users.json` (created on first run).
+
+Note: this is **for local/dev only**, not production-grade security.
 ## Features
 - Keyboard-accessible, with skip to main content button
 - Respects the no-animation preference

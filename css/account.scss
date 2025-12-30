@@ -128,6 +128,84 @@ $mobile_breakpoint: 800px;
 			display: block;
 			padding: 0.25rem 0;
 		}
+
+		// Text-like controls inside fieldsets (match the "native/custom/minimal" look).
+		input:not([type="radio"]),
+		select,
+		textarea {
+			margin-top: 0.25rem;
+			width: min(28rem, 100%);
+			padding: 0.5rem 0.6rem;
+			border-radius: 0.45rem;
+			border: 2px solid color-mix(in oklab, var(--theme-accent-color) 35%, var(--theme-bg));
+			background: var(--theme-bg);
+			color: var(--theme-text);
+		}
+
+		input:not([type="radio"]):focus-visible,
+		select:focus-visible,
+		textarea:focus-visible {
+			outline: none;
+			border-color: var(--theme-accent-color);
+			box-shadow: 0 0 0 3px color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
+		}
+
+		button.btn {
+			margin-top: 0.5rem;
+		}
+	}
+
+	// Optional aligned label/value layout for text-like forms.
+	// Opt-in via <fieldset class="form-grid"> to avoid impacting checkbox/radio layouts.
+	fieldset.form-grid {
+		--label-col: minmax(10ch, 10rem);
+
+		label {
+			display: grid;
+			grid-template-columns: var(--label-col) 1fr;
+			gap: 0.25rem 0.75rem;
+			align-items: center;
+			margin-inline-end: 0;
+		}
+
+		label > span {
+			font-size: 0.95rem;
+		}
+
+		input:not([type="radio"]),
+		select,
+		textarea {
+			margin-top: 0; // override the default input spacing inside fieldset
+			width: min(28rem, 100%);
+		}
+
+		@media not screen and (min-width: $mobile_breakpoint) {
+			label {
+				grid-template-columns: 1fr;
+				gap: 0.25rem;
+				align-items: start;
+			}
+		}
+
+		// Align buttons with the input column
+		.form-actions {
+			display: grid;
+			grid-template-columns: var(--label-col) 1fr;
+			gap: 0.25rem 0.75rem;
+			margin-top: 0.25rem;
+		}
+		.form-actions > * {
+			grid-column: 2;
+			justify-self: start;
+		}
+		@media not screen and (min-width: $mobile_breakpoint) {
+			.form-actions {
+				grid-template-columns: 1fr;
+			}
+			.form-actions > * {
+				grid-column: 1;
+			}
+		}
 	}
 
 	legend {
@@ -177,6 +255,112 @@ $mobile_breakpoint: 800px;
 		}
 	}
 
+	// Themed details/summary blocks (scoped to main content so header profile <details> keeps its own styling)
+	main details {
+		border-radius: 0.5rem;
+		border: 2px solid var(--theme-accent-color);
+		background: color-mix(in oklab, var(--theme-bg) 96%, var(--theme-accent-color));
+		padding: 0.25rem 0.75rem;
+		margin: 0 0 0.75rem 0;
+	}
+
+	main details > summary {
+		cursor: pointer;
+		padding: 0.5rem 0;
+		color: var(--theme-accent-color);
+		font-weight: 700;
+		list-style: none;
+	}
+
+	main details > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	main details > summary::before {
+		content: '+';
+		display: inline-block;
+		width: 1.25rem;
+		margin-inline-end: 0.25rem;
+		color: var(--theme-accent-color);
+	}
+
+	main details[open] > summary::before {
+		content: '–';
+	}
+
+	main details > summary:focus-visible {
+		outline: none;
+		border-radius: 0.35rem;
+		box-shadow: 0 0 0 3px color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
+	}
+
+	main details[open] {
+		background: color-mix(in oklab, var(--theme-bg) 92%, var(--theme-accent-color));
+	}
+
+	main details > *:not(summary) {
+		padding: 0.25rem 0 0.75rem 0;
+	}
+
+	.table-wrap {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		border-radius: 0.5rem;
+		border: 2px solid var(--theme-accent-color);
+	}
+
+	table.table {
+		width: 100%;
+		border-collapse: collapse;
+		background: var(--theme-bg);
+	}
+
+	table.table th,
+	table.table td {
+		padding: 0.6rem 0.75rem;
+		vertical-align: top;
+		border-bottom: 1px solid color-mix(in oklab, var(--theme-accent-color) 25%, transparent);
+		white-space: nowrap;
+	}
+
+	table.table thead th {
+		position: sticky;
+		top: 0;
+		background: color-mix(in oklab, var(--theme-bg) 92%, var(--theme-accent-color));
+		color: var(--theme-accent-color);
+		text-align: left;
+		font-size: 0.875rem;
+		font-weight: 700;
+		z-index: 1;
+	}
+
+	table.table tbody tr:nth-child(2n) {
+		background: color-mix(in oklab, var(--theme-bg) 94%, var(--theme-accent-color));
+	}
+
+	// Transactions-specific tuning
+	.table--transactions .tx__date {
+		min-width: 14rem;
+		white-space: nowrap;
+	}
+	.table--transactions .tx__other {
+		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
+	}
+	.table--transactions .tx__points {
+		font-variant-numeric: tabular-nums;
+		text-align: right;
+	}
+	.table--transactions .tx__points--in {
+		color: color-mix(in oklab, var(--theme-accent-color) 70%, var(--theme-text));
+	}
+	.table--transactions .tx__points--out {
+		color: color-mix(in oklab, var(--theme-text) 85%, var(--theme-accent-color));
+	}
+	.table--transactions .tx__type {
+		font-weight: 600;
+	}
+
 	.skip-link {
 		margin: .25rem;
 		position: fixed;
@@ -187,6 +371,7 @@ $mobile_breakpoint: 800px;
 		font-weight: normal;
 
 		background: var(--theme-bg);
+		background-image: linear-gradient(transparent, transparent);
 		border: 2px solid var(--theme-accent-color);
 		border-radius: 0.45rem;
 		color: var(--theme-accent-color);
