@@ -17,9 +17,9 @@
 		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
 		<link rel="preload" href="fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2" as="font" type="font/woff2" crossorigin>
 
-		<link href="dist/account.min.css?1" rel="styleSheet">
+		<link href="dist/account.min.css?6" rel="styleSheet">
 		<!-- <link href="css/account.css" rel="styleSheet"> -->
-<script src="dist/account.min.js?2" type="module"></script>
+<script src="dist/account.min.js?4" type="module"></script>
 	</head>
 
 	<body class="account theme-purple">
@@ -236,11 +236,13 @@
 				<br>
 				<details>
 					<summary>Fees & processing times</summary>
-					<ul>
-						<li>Bank transfer: 0–1 business day</li>
-						<li>Card withdrawal: usually instant</li>
-						<li>External wallet: depends on provider</li>
-					</ul>
+					<div class="details__content">
+						<ul>
+							<li>Bank transfer: 0–1 business day</li>
+							<li>Card withdrawal: usually instant</li>
+							<li>External wallet: depends on provider</li>
+						</ul>
+					</div>
 				</details>
 			</section>
 
@@ -260,16 +262,18 @@
 				</p>
 				<details>
 					<summary>Limits</summary>
-					<div class="table-wrap">
-						<table class="table">
-							<thead>
-								<tr><th scope="col">Limit</th><th scope="col">Used</th><th scope="col">Remaining</th></tr>
-							</thead>
-							<tbody>
-								<tr><td>Daily spend</td><td>EUR 80</td><td>EUR 420</td></tr>
-								<tr><td>ATM withdrawals</td><td>EUR 0</td><td>EUR 200</td></tr>
-							</tbody>
-						</table>
+					<div class="details__content">
+						<div class="table-wrap">
+							<table class="table">
+								<thead>
+									<tr><th scope="col">Limit</th><th scope="col">Used</th><th scope="col">Remaining</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>Daily spend</td><td>EUR 80</td><td>EUR 420</td></tr>
+									<tr><td>ATM withdrawals</td><td>EUR 0</td><td>EUR 200</td></tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</details>
 			</section>
@@ -307,17 +311,19 @@
 				<br>
 				<details>
 					<summary>Indicative rates</summary>
-					<div class="table-wrap">
-						<table class="table">
-							<thead>
-								<tr><th scope="col">Pair</th><th scope="col">Rate</th><th scope="col">Updated</th></tr>
-							</thead>
-							<tbody>
-								<tr><td>EUR → USD</td><td>1.09</td><td>Just now</td></tr>
-								<tr><td>EUR → GBP</td><td>0.85</td><td>Just now</td></tr>
-								<tr><td>USD → EUR</td><td>0.92</td><td>Just now</td></tr>
-							</tbody>
-						</table>
+					<div class="details__content">
+						<div class="table-wrap">
+							<table class="table">
+								<thead>
+									<tr><th scope="col">Pair</th><th scope="col">Rate</th><th scope="col">Updated</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>EUR → USD</td><td>1.09</td><td>Just now</td></tr>
+									<tr><td>EUR → GBP</td><td>0.85</td><td>Just now</td></tr>
+									<tr><td>USD → EUR</td><td>0.92</td><td>Just now</td></tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</details>
 			</section>
@@ -367,9 +373,9 @@
 				<form>
 					<fieldset>
 						<legend>Security</legend>
-						<label><input type="checkbox" name="set_2fa"> Enable two‑factor authentication</label>
-						<label><input type="checkbox" name="set_device"> Remember this device</label>
-						<label><input type="checkbox" name="set_alerts" checked> Login alerts</label>
+						<label class="check"><input type="checkbox" name="set_2fa"><span>Enable two‑factor authentication</span></label>
+						<label class="check"><input type="checkbox" name="set_device"><span>Remember this device</span></label>
+						<label class="check"><input type="checkbox" name="set_alerts" checked><span>Login alerts</span></label>
 						<button class="btn" type="button">Save</button>
 					</fieldset>
 				</form>
@@ -377,16 +383,18 @@
 				<form>
 					<fieldset>
 						<legend>Notifications</legend>
-						<label><input type="checkbox" name="n_email" checked> Email</label>
-						<label><input type="checkbox" name="n_push"> Push</label>
-						<label><input type="checkbox" name="n_sms"> SMS</label>
+						<label class="check"><input type="checkbox" name="n_email" checked><span>Email</span></label>
+						<label class="check"><input type="checkbox" name="n_push"><span>Push</span></label>
+						<label class="check"><input type="checkbox" name="n_sms"><span>SMS</span></label>
 					</fieldset>
 				</form>
 				<br>
 				<details>
 					<summary>Data & privacy</summary>
-					<p>You can export your data or request deletion. (Demo)</p>
-					<p><button class="btn btn--secondary" type="button">Export data</button></p>
+					<div class="details__content">
+						<p>You can export your data or request deletion. (Demo)</p>
+						<p><button class="btn btn--secondary" type="button">Export data</button></p>
+					</div>
 				</details>
 			</section>
 
@@ -394,19 +402,27 @@
 				<h2 data-text="faq">FAQ</h2>
 				<details>
 					<summary>How do points work?</summary>
-					<p>Points are a simple ledger balance. Sending points moves value between users.</p>
+					<div class="details__content">
+						<p>Points are a simple ledger balance. Sending points moves value between users.</p>
+					</div>
 				</details>
 				<details>
 					<summary>Why can’t I send points?</summary>
-					<p>The recipient must be registered, the amount must be a positive whole number, and you must have enough balance.</p>
+					<div class="details__content">
+						<p>The recipient must be registered, the amount must be a positive whole number, and you must have enough balance.</p>
+					</div>
 				</details>
 				<details>
 					<summary>Where is my password stored?</summary>
-					<p>In local demo mode, passwords are hashed with a per-user salt. For production, use a real auth provider.</p>
+					<div class="details__content">
+						<p>In local demo mode, passwords are hashed with a per-user salt. For production, use a real auth provider.</p>
+					</div>
 				</details>
 				<details>
 					<summary>Does this support multi-currency?</summary>
-					<p>The exchange view is demo-only, but the UI is designed to support multiple balances.</p>
+					<div class="details__content">
+						<p>The exchange view is demo-only, but the UI is designed to support multiple balances.</p>
+					</div>
 				</details>
 			</section>
 
@@ -446,16 +462,22 @@
 				<h2 data-text="promotions">Promotions</h2>
 				<details open>
 					<summary>Welcome bonus</summary>
-					<p>Get 250 points after your first transfer.</p>
-					<p><small>Demo only. Terms apply.</small></p>
+					<div class="details__content">
+						<p>Get 250 points after your first transfer.</p>
+						<p><small>Demo only. Terms apply.</small></p>
+					</div>
 				</details>
 				<details>
 					<summary>Referral</summary>
-					<p>Invite a friend. When they register and send points, you both earn 100 points.</p>
+					<div class="details__content">
+						<p>Invite a friend. When they register and send points, you both earn 100 points.</p>
+					</div>
 				</details>
 				<details>
 					<summary>Card cashback</summary>
-					<p>Earn points back on eligible prepaid card purchases.</p>
+					<div class="details__content">
+						<p>Earn points back on eligible prepaid card purchases.</p>
+					</div>
 				</details>
 			</section>
 

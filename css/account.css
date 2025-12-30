@@ -931,9 +931,6 @@
   flex-shrink: 0;
   height: 3rem;
 }
-.account aside nav li[aria-current] {
-  line-height: 1.5rem;
-}
 .account aside nav li[aria-current]:before {
   background-color: var(--theme-accent-color, #333);
 }
@@ -1055,7 +1052,7 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .account[data-ready] {
-    --transition-duration: .2s;
+    --transition-duration: 0.2s;
   }
 }
 .account a,
@@ -1131,16 +1128,20 @@
   display: block;
   padding: 0.25rem 0;
 }
-.account fieldset input:not([type=radio]),
+.account fieldset input:not([type=radio]):not([type=checkbox]),
 .account fieldset select,
 .account fieldset textarea {
   margin-top: 0.25rem;
-  width: min(28rem, 100%);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 28rem;
   padding: 0.5rem 0.6rem;
   border-radius: 0.45rem;
   border: 2px solid color-mix(in oklab, var(--theme-accent-color) 35%, var(--theme-bg));
   background: var(--theme-bg);
   color: var(--theme-text);
+  min-width: 0;
 }
 .account fieldset input:not([type=radio]):focus-visible,
 .account fieldset select:focus-visible,
@@ -1165,11 +1166,15 @@
 .account fieldset.form-grid label > span {
   font-size: 0.95rem;
 }
-.account fieldset.form-grid input:not([type=radio]),
+.account fieldset.form-grid input:not([type=radio]):not([type=checkbox]),
 .account fieldset.form-grid select,
 .account fieldset.form-grid textarea {
   margin-top: 0;
-  width: min(28rem, 100%);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 28rem;
+  min-width: 0;
 }
 @media not screen and (min-width: 800px) {
   .account fieldset.form-grid label {
@@ -1235,6 +1240,47 @@
 }
 .account input[type=radio]:checked {
   background: var(--theme-accent-color);
+  box-shadow: none;
+}
+.account main fieldset label.check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-inline-end: 0;
+}
+.account input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin: 0;
+  border-radius: 0.3rem;
+  border: 2px solid var(--theme-accent-color);
+  box-shadow: inset 0 0 0 1px var(--theme-bg);
+  background: var(--theme-bg);
+  display: inline-grid;
+  place-content: center;
+}
+.account input[type=checkbox]::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.6rem;
+  border-right: 2px solid var(--theme-bg);
+  border-bottom: 2px solid var(--theme-bg);
+  transform: rotate(45deg) scale(0);
+  transform-origin: center;
+}
+.account input[type=checkbox]:checked {
+  background: var(--theme-accent-color);
+  box-shadow: none;
+}
+.account input[type=checkbox]:checked::before {
+  transform: rotate(45deg) scale(0.75);
+  margin-top: -0.125rem;
+}
+.account input[type=checkbox]:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--theme-bg), 0 0 0 3px color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
 }
 .account main details {
   border-radius: 0.5rem;
@@ -1249,6 +1295,7 @@
   color: var(--theme-accent-color);
   font-weight: 700;
   list-style: none;
+  user-select: none;
 }
 .account main details > summary::-webkit-details-marker {
   display: none;
@@ -1271,8 +1318,22 @@
 .account main details[open] {
   background: color-mix(in oklab, var(--theme-bg) 92%, var(--theme-accent-color));
 }
-.account main details > *:not(summary) {
-  padding: 0.25rem 0 0.75rem 0;
+.account main details > .details__content {
+  min-height: 0;
+  padding: 0;
+  display: flow-root;
+}
+.account main details > .details__content > * {
+  margin: 0;
+}
+.account main details > .details__content > * + * {
+  margin-top: 0.5rem;
+}
+.account main details > .details__content > :first-child {
+  margin-top: 0.25rem;
+}
+.account main details > .details__content > :last-child {
+  margin-bottom: 0.75rem;
 }
 .account .table-wrap {
   overflow: auto;

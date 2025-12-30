@@ -3,394 +3,496 @@ $mobile_breakpoint: 800px;
 @import "themes";
 
 .account {
+  @import "icons";
+  @import "header";
+  @import "button";
+  @import "footer";
+  @import "aside";
 
-	@import "icons";
-	@import "header";
-	@import "button";
-	@import "footer";
-	@import "aside";
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-ready] {
+      --transition-duration: 0.2s;
+    }
+  }
 
-	@media (prefers-reduced-motion: no-preference) {
-		&[data-ready] {
-			--transition-duration: .2s;
-		}
-	}
+  line-height: 1.5;
+  // font-family: system-ui,
+  // -apple-system,
+  // BlinkMacSystemFont,
+  // "Segoe UI",
+  // Roboto,
+  // Oxygen,
+  // Ubuntu,
+  // Cantarell,
+  // "Fira Sans",
+  // "Droid Sans",
+  // "Helvetica Neue",
+  // sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: var(--theme-color);
+  background-color: var(--theme-bg);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr;
+  -webkit-text-size-adjust: none; // Landscape iPhone text size
 
-	line-height: 1.5;
-	// font-family: system-ui,
-	// -apple-system,
-	// BlinkMacSystemFont,
-	// "Segoe UI",
-	// Roboto,
-	// Oxygen,
-	// Ubuntu,
-	// Cantarell,
-	// "Fira Sans",
-	// "Droid Sans",
-	// "Helvetica Neue",
-	// sans-serif;
-	font-family: "Source Sans Pro",
-	sans-serif;
-	font-size: 16px;
-	color: var(--theme-color);
-	background-color: var(--theme-bg);
-	margin: 0;
-	min-height: 100vh;
-	min-height: 100svh;
-	display: grid;
-	grid-template: auto 1fr auto / auto 1fr;
-	-webkit-text-size-adjust: none; // Landscape iPhone text size
+  a,
+  aside nav li button {
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-	a,
-	aside nav li button {
-		text-decoration: none;
-		font-weight: 600;
-	}
+  a {
+    color: var(--theme-link-color);
+  }
 
-	a {
-		color: var(--theme-link-color);
-	}
+  aside nav a:before,
+  aside nav button:before,
+  header dl:before {
+    font-family: "Icons";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    flex-shrink: 0;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    width: 0;
+    color: var(--theme-color-light);
+    margin-inline-end: 3.25rem;
+    transition: margin var(--transition-duration, 0) ease-in-out;
+  }
 
-	aside nav a:before,
-	aside nav button:before,
-	header dl:before {
-		font-family: "Icons";
-		font-weight: 400;
-		-webkit-font-smoothing: antialiased;
-		content: "";
-		width: 1.5em;
-		height: 1.5em;
-		flex-shrink: 0;
-		margin: 0 1rem;
-		font-size: 1.5rem;
-		line-height: 1.5;
-		width: 0;
-		color: var(--theme-color-light);
-		margin-inline-end: 3.25rem;
-		transition: margin var(--transition-duration, 0) ease-in-out;
-	}
+  header dl:before {
+    color: var(--theme-color);
+  }
 
-	header dl:before {
-		color: var(--theme-color);
-	}
+  header dl:before {
+    margin-inline-end: 2.25rem;
+    margin-inline-start: 0.5rem;
+  }
 
-	header dl:before {
-		margin-inline-end: 2.25rem;
-		margin-inline-start: 0.5rem;
-	}
+  @media (min-width: $mobile_breakpoint) {
+    h1 {
+      margin-top: 2.333rem;
+    }
 
-	@media (min-width: $mobile_breakpoint) {
-		h1 {
-			margin-top: 2.333rem;
-		}
+    main,
+    footer {
+      border-inline-end: env(safe-area-inset-right) solid transparent;
+    }
+  }
 
-		main,
-		footer {
-			border-inline-end: env(safe-area-inset-right) solid transparent;
-		}
+  main {
+    width: 100%;
+    justify-self: center;
+    max-width: 45rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--theme-color);
+    scroll-margin-top: 10rem; // Don't hide the header after Skip to content
 
-	}
+    .btn {
+      margin-inline-end: 0.75rem;
+    }
 
-	main {
-		width: 100%;
-		justify-self: center;
-		max-width: 45rem;
-		padding: 1rem;
-		box-sizing: border-box;
-		color: var(--theme-color);
-		scroll-margin-top: 10rem; // Don't hide the header after Skip to content
+    ul {
+      padding-inline-start: 1rem;
+    }
 
-		.btn {
-			margin-inline-end: .75rem;
-		}
+    li::marker {
+      color: var(--theme-accent-color);
+    }
 
-		ul {
-			padding-inline-start: 1rem;
-		}
+    a {
+      color: var(--theme-accent-color);
+    }
+  }
 
-		li::marker {
-			color: var(--theme-accent-color);
-		}
+  fieldset {
+    border-radius: 0.5rem;
+    border: 2px solid var(--theme-accent-color);
+    margin: 0;
 
-		a {
-			color: var(--theme-accent-color);
-		}
+    label {
+      margin-inline-end: 0.5rem;
+      display: block;
+      padding: 0.25rem 0;
+    }
 
-	}
+    // Text-like controls inside fieldsets (match the "native/custom/minimal" look).
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+      margin-top: 0.25rem;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 28rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.45rem;
+      border: 2px solid
+        color-mix(in oklab, var(--theme-accent-color) 35%, var(--theme-bg));
+      background: var(--theme-bg);
+      color: var(--theme-text);
+      min-width: 0;
+    }
 
-	fieldset {
-		border-radius: 0.5rem;
-		border: 2px solid var(--theme-accent-color);
-		margin: 0;
+    input:not([type="radio"]):focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: none;
+      border-color: var(--theme-accent-color);
+      box-shadow: 0 0 0 3px
+        color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
+    }
 
-		label {
-			margin-inline-end: 0.5rem;
-			display: block;
-			padding: 0.25rem 0;
-		}
+    button.btn {
+      margin-top: 0.5rem;
+    }
+  }
 
-		// Text-like controls inside fieldsets (match the "native/custom/minimal" look).
-		input:not([type="radio"]),
-		select,
-		textarea {
-			margin-top: 0.25rem;
-			width: min(28rem, 100%);
-			padding: 0.5rem 0.6rem;
-			border-radius: 0.45rem;
-			border: 2px solid color-mix(in oklab, var(--theme-accent-color) 35%, var(--theme-bg));
-			background: var(--theme-bg);
-			color: var(--theme-text);
-		}
+  // Optional aligned label/value layout for text-like forms.
+  // Opt-in via <fieldset class="form-grid"> to avoid impacting checkbox/radio layouts.
+  fieldset.form-grid {
+    --label-col: minmax(10ch, 10rem);
 
-		input:not([type="radio"]):focus-visible,
-		select:focus-visible,
-		textarea:focus-visible {
-			outline: none;
-			border-color: var(--theme-accent-color);
-			box-shadow: 0 0 0 3px color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
-		}
+    label {
+      display: grid;
+      grid-template-columns: var(--label-col) 1fr;
+      gap: 0.25rem 0.75rem;
+      align-items: center;
+      margin-inline-end: 0;
+    }
 
-		button.btn {
-			margin-top: 0.5rem;
-		}
-	}
+    label > span {
+      font-size: 0.95rem;
+    }
 
-	// Optional aligned label/value layout for text-like forms.
-	// Opt-in via <fieldset class="form-grid"> to avoid impacting checkbox/radio layouts.
-	fieldset.form-grid {
-		--label-col: minmax(10ch, 10rem);
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+      margin-top: 0; // override the default input spacing inside fieldset
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 28rem;
+      min-width: 0;
+    }
 
-		label {
-			display: grid;
-			grid-template-columns: var(--label-col) 1fr;
-			gap: 0.25rem 0.75rem;
-			align-items: center;
-			margin-inline-end: 0;
-		}
+    @media not screen and (min-width: $mobile_breakpoint) {
+      label {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+        align-items: start;
+      }
+    }
 
-		label > span {
-			font-size: 0.95rem;
-		}
+    // Align buttons with the input column
+    .form-actions {
+      display: grid;
+      grid-template-columns: var(--label-col) 1fr;
+      gap: 0.25rem 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .form-actions > * {
+      grid-column: 2;
+      justify-self: start;
+    }
+    @media not screen and (min-width: $mobile_breakpoint) {
+      .form-actions {
+        grid-template-columns: 1fr;
+      }
+      .form-actions > * {
+        grid-column: 1;
+      }
+    }
+  }
 
-		input:not([type="radio"]),
-		select,
-		textarea {
-			margin-top: 0; // override the default input spacing inside fieldset
-			width: min(28rem, 100%);
-		}
+  legend {
+    color: var(--theme-accent-color);
+    padding: 0 0.5ch;
+    margin-bottom: -0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
 
-		@media not screen and (min-width: $mobile_breakpoint) {
-			label {
-				grid-template-columns: 1fr;
-				gap: 0.25rem;
-				align-items: start;
-			}
-		}
+  @media not screen and (min-width: $mobile_breakpoint) {
+    grid-template-columns: 3.2rem auto 1fr;
 
-		// Align buttons with the input column
-		.form-actions {
-			display: grid;
-			grid-template-columns: var(--label-col) 1fr;
-			gap: 0.25rem 0.75rem;
-			margin-top: 0.25rem;
-		}
-		.form-actions > * {
-			grid-column: 2;
-			justify-self: start;
-		}
-		@media not screen and (min-width: $mobile_breakpoint) {
-			.form-actions {
-				grid-template-columns: 1fr;
-			}
-			.form-actions > * {
-				grid-column: 1;
-			}
-		}
-	}
+    aside nav a:before,
+    aside nav button:before,
+    header dl:before {
+      margin: 0 0.65rem;
+    }
 
-	legend {
-		color: var(--theme-accent-color);
-		padding: 0 0.5ch;
-		margin-bottom: -0.25rem;
-		font-size: 0.875rem;
-		font-weight: 600;
-	}
+    main,
+    footer {
+      grid-column: 1/-1;
+    }
 
-	@media not screen and (min-width: $mobile_breakpoint) {
+    main {
+      grid-row: -3/-2;
+    }
 
-		grid-template-columns: 3.2rem auto 1fr;
+    footer {
+      display: none;
+    }
+  }
 
-		aside nav a:before,
-		aside nav button:before,
-		header dl:before {
-			margin: 0 .65rem;
-		}
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0;
+    border-radius: 50%;
+    border: 2px solid var(--theme-accent-color);
+    box-shadow: inset 0 0 0 1px var(--theme-bg);
 
-		main,
-		footer {
-			grid-column: 1/-1;
-		}
+    &:checked {
+      background: var(--theme-accent-color);
+      box-shadow: none;
+    }
+  }
 
-		main {
-			grid-row: -3/-2;
-		}
+  // Themed checkboxes (match radio theme, but square + checkmark).
+  // Style the checkbox input directly (like radios) so it's reliably visible everywhere.
+  main fieldset label.check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-inline-end: 0;
+  }
 
-		footer {
-			display: none;
-		}
-	}
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.95rem;
+    height: 0.95rem;
+    margin: 0;
+    border-radius: 0.3rem;
+    border: 2px solid var(--theme-accent-color);
+    box-shadow: inset 0 0 0 1px var(--theme-bg);
+    background: var(--theme-bg);
+    display: inline-grid;
+    place-content: center;
 
-	input[type="radio"] {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 0.75rem;
-		height: 0.75rem;
-		margin: 0;
-		border-radius: 50%;
-		border: 2px solid var(--theme-accent-color);
-		box-shadow: inset 0 0 0 1px var(--theme-bg);
+    &::before {
+      content: "";
+      width: 0.35rem;
+      height: 0.6rem;
+      border-right: 2px solid var(--theme-bg);
+      border-bottom: 2px solid var(--theme-bg);
+      transform: rotate(45deg) scale(0);
+      transform-origin: center;
+    }
 
-		&:checked {
-			background: var(--theme-accent-color);
-		}
-	}
+    &:checked {
+      background: var(--theme-accent-color);
+      box-shadow: none;
+    }
 
-	// Themed details/summary blocks (scoped to main content so header profile <details> keeps its own styling)
-	main details {
-		border-radius: 0.5rem;
-		border: 2px solid var(--theme-accent-color);
-		background: color-mix(in oklab, var(--theme-bg) 96%, var(--theme-accent-color));
-		padding: 0.25rem 0.75rem;
-		margin: 0 0 0.75rem 0;
-	}
+    &:checked::before {
+      transform: rotate(45deg) scale(.75);
+	  margin-top: -.125rem;
+    }
 
-	main details > summary {
-		cursor: pointer;
-		padding: 0.5rem 0;
-		color: var(--theme-accent-color);
-		font-weight: 700;
-		list-style: none;
-	}
+    &:focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 1px var(--theme-bg),
+        0 0 0 3px
+          color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
+    }
+  }
 
-	main details > summary::-webkit-details-marker {
-		display: none;
-	}
+  // Themed details/summary blocks (scoped to main content so header profile <details> keeps its own styling)
+  main details {
+    border-radius: 0.5rem;
+    border: 2px solid var(--theme-accent-color);
+    background: color-mix(
+      in oklab,
+      var(--theme-bg) 96%,
+      var(--theme-accent-color)
+    );
+    padding: 0.25rem 0.75rem;
+    margin: 0 0 0.75rem 0;
+  }
 
-	main details > summary::before {
-		content: '+';
-		display: inline-block;
-		width: 1.25rem;
-		margin-inline-end: 0.25rem;
-		color: var(--theme-accent-color);
-	}
+  main details > summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: var(--theme-accent-color);
+    font-weight: 700;
+    list-style: none;
+    user-select: none;
+  }
 
-	main details[open] > summary::before {
-		content: '–';
-	}
+  main details > summary::-webkit-details-marker {
+    display: none;
+  }
 
-	main details > summary:focus-visible {
-		outline: none;
-		border-radius: 0.35rem;
-		box-shadow: 0 0 0 3px color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
-	}
+  main details > summary::before {
+    content: "+";
+    display: inline-block;
+    width: 1.25rem;
+    margin-inline-end: 0.25rem;
+    color: var(--theme-accent-color);
+  }
 
-	main details[open] {
-		background: color-mix(in oklab, var(--theme-bg) 92%, var(--theme-accent-color));
-	}
+  main details[open] > summary::before {
+    content: "–";
+  }
 
-	main details > *:not(summary) {
-		padding: 0.25rem 0 0.75rem 0;
-	}
+  main details > summary:focus-visible {
+    outline: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0 0 3px
+      color-mix(in oklab, var(--theme-accent-color) 30%, transparent);
+  }
 
-	.table-wrap {
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
-		border-radius: 0.5rem;
-		border: 2px solid var(--theme-accent-color);
-	}
+  main details[open] {
+    background: color-mix(
+      in oklab,
+      var(--theme-bg) 92%,
+      var(--theme-accent-color)
+    );
+  }
 
-	table.table {
-		width: 100%;
-		border-collapse: collapse;
-		background: var(--theme-bg);
-	}
+  main details > .details__content {
+    min-height: 0;
+    padding: 0;
+    // Prevent margin-collapsing (which can cause a snap when JS resets height back to auto)
+    display: flow-root;
+  }
 
-	table.table th,
-	table.table td {
-		padding: 0.6rem 0.75rem;
-		vertical-align: top;
-		border-bottom: 1px solid color-mix(in oklab, var(--theme-accent-color) 25%, transparent);
-		white-space: nowrap;
-	}
+  // Replace padding with internal spacing that doesn't interfere with height animation.
+  main details > .details__content > * {
+    margin: 0;
+  }
 
-	table.table thead th {
-		position: sticky;
-		top: 0;
-		background: color-mix(in oklab, var(--theme-bg) 92%, var(--theme-accent-color));
-		color: var(--theme-accent-color);
-		text-align: left;
-		font-size: 0.875rem;
-		font-weight: 700;
-		z-index: 1;
-	}
+  main details > .details__content > * + * {
+    margin-top: 0.5rem;
+  }
 
-	table.table tbody tr:nth-child(2n) {
-		background: color-mix(in oklab, var(--theme-bg) 94%, var(--theme-accent-color));
-	}
+  main details > .details__content > :first-child {
+    margin-top: 0.25rem;
+  }
 
-	// Transactions-specific tuning
-	.table--transactions .tx__date {
-		min-width: 14rem;
-		white-space: nowrap;
-	}
-	.table--transactions .tx__other {
-		white-space: nowrap;
-		font-variant-numeric: tabular-nums;
-	}
-	.table--transactions .tx__points {
-		font-variant-numeric: tabular-nums;
-		text-align: right;
-	}
-	.table--transactions .tx__points--in {
-		color: color-mix(in oklab, var(--theme-accent-color) 70%, var(--theme-text));
-	}
-	.table--transactions .tx__points--out {
-		color: color-mix(in oklab, var(--theme-text) 85%, var(--theme-accent-color));
-	}
-	.table--transactions .tx__type {
-		font-weight: 600;
-	}
+  main details > .details__content > :last-child {
+    margin-bottom: 0.75rem;
+  }
 
-	.skip-link {
-		margin: .25rem;
-		position: fixed;
-		white-space: nowrap;
-		z-index: -9;
-		opacity: 0;
-		padding: 0.5rem 0.75rem;
-		font-weight: normal;
+  .table-wrap {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.5rem;
+    border: 2px solid var(--theme-accent-color);
+  }
 
-		background: var(--theme-bg);
-		background-image: linear-gradient(transparent, transparent);
-		border: 2px solid var(--theme-accent-color);
-		border-radius: 0.45rem;
-		color: var(--theme-accent-color);
+  table.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--theme-bg);
+  }
 
-		&:focus-visible {
-			z-index: 9;
-			opacity: 1;
-		}
-	}
+  table.table th,
+  table.table td {
+    padding: 0.6rem 0.75rem;
+    vertical-align: top;
+    border-bottom: 1px solid
+      color-mix(in oklab, var(--theme-accent-color) 25%, transparent);
+    white-space: nowrap;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		word-break: break-all;
-	}
+  table.table thead th {
+    position: sticky;
+    top: 0;
+    background: color-mix(
+      in oklab,
+      var(--theme-bg) 92%,
+      var(--theme-accent-color)
+    );
+    color: var(--theme-accent-color);
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 700;
+    z-index: 1;
+  }
 
+  table.table tbody tr:nth-child(2n) {
+    background: color-mix(
+      in oklab,
+      var(--theme-bg) 94%,
+      var(--theme-accent-color)
+    );
+  }
+
+  // Transactions-specific tuning
+  .table--transactions .tx__date {
+    min-width: 14rem;
+    white-space: nowrap;
+  }
+  .table--transactions .tx__other {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .table--transactions .tx__points {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .table--transactions .tx__points--in {
+    color: color-mix(
+      in oklab,
+      var(--theme-accent-color) 70%,
+      var(--theme-text)
+    );
+  }
+  .table--transactions .tx__points--out {
+    color: color-mix(
+      in oklab,
+      var(--theme-text) 85%,
+      var(--theme-accent-color)
+    );
+  }
+  .table--transactions .tx__type {
+    font-weight: 600;
+  }
+
+  .skip-link {
+    margin: 0.25rem;
+    position: fixed;
+    white-space: nowrap;
+    z-index: -9;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    font-weight: normal;
+
+    background: var(--theme-bg);
+    background-image: linear-gradient(transparent, transparent);
+    border: 2px solid var(--theme-accent-color);
+    border-radius: 0.45rem;
+    color: var(--theme-accent-color);
+
+    &:focus-visible {
+      z-index: 9;
+      opacity: 1;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: break-all;
+  }
 }
 
 @import "rtl";
