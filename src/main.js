@@ -5,6 +5,7 @@ import { state } from './state.js';
 import { renderMe } from './features/me.js';
 import { initRecents } from './features/recents.js';
 import { initTransactions } from './features/transactions.js';
+import { initStatement } from './features/statement.js';
 import { initI18n } from './features/i18n.js';
 import { initDetailsAnimation } from './features/details.js';
 import { initUiEnhancements } from './features/uiEnhancements.js';
@@ -26,6 +27,15 @@ function init() {
 	const transactionsBody = $('#transactions-body');
 	const transactionsEmpty = $('#transactions-empty');
 	const transactionsTableWrap = document.querySelector('.table--transactions')?.closest('.table-wrap') || null;
+	const statementStatus = $('#statement-status');
+	const statementBody = $('#statement-body');
+	const statementEmpty = $('#statement-empty');
+	const statementTableWrap = document.querySelector('.table--statement')?.closest('.table-wrap') || null;
+	const statementForm = $('#statement-form');
+	const statementFrom = $('#stmt-from');
+	const statementTo = $('#stmt-to');
+	const statementFormat = $('#stmt-format');
+	const statementDownload = $('#statement-download');
 	const recentRecipientsDatalist = $('#recent-recipients');
 	const pageTitle = document.querySelector('[data-bind="page-title"]');
 	const viewSections = $$('main [data-view]');
@@ -67,6 +77,23 @@ function init() {
 		onSessionExpired: () => setAuthed(false),
 	});
 
+	const statement = initStatement({
+		api,
+		state,
+		t: i18n.t,
+		statementForm,
+		statementFrom,
+		statementTo,
+		statementFormat,
+		statementBody,
+		statementEmpty,
+		statementStatus,
+		statementTableWrap,
+		statementDownload,
+		setStatus,
+		onSessionExpired: () => setAuthed(false),
+	});
+
 	router = initRouter({
 		state,
 		i18n,
@@ -77,6 +104,10 @@ function init() {
 		transactionsStatus,
 		transactionsTableWrap,
 		transactionsEmpty,
+		statement,
+		statementStatus,
+		statementTableWrap,
+		statementEmpty,
 		setStatus,
 	});
 
@@ -97,6 +128,7 @@ function init() {
 	};
 
 	initUiEnhancements();
+	statement.bind();
 	i18n.bindLanguageControls();
 	i18n.bindThemeControls();
 	i18n.loadTranslation() // async; UI falls back to existing text until loaded

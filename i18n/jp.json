@@ -160,5 +160,9 @@
   "tx-out": "送付",
   "transactions-signin": "取引を表示するにはログインしてください。",
   "session-expired": "セッションの有効期限が切れました。再度ログインしてください。",
-  "transactions-load-failed": "取引の読み込みに失敗しました"
+  "transactions-load-failed": "取引の読み込みに失敗しました",
+  "download-csv": "CSV をダウンロード",
+  "statement-empty": "明細行はまだありません。",
+  "statement-signin": "明細を表示するにはログインしてください。",
+  "statement-load-failed": "明細の読み込みに失敗しました"
 }

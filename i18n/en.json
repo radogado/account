@@ -160,5 +160,9 @@
   "tx-out": "Outgoing",
   "transactions-signin": "Please sign in to view transactions.",
   "session-expired": "Session expired. Please log in again.",
-  "transactions-load-failed": "Failed to load transactions"
+  "transactions-load-failed": "Failed to load transactions",
+  "download-csv": "Download CSV",
+  "statement-empty": "No statement rows yet.",
+  "statement-signin": "Please sign in to view your statement.",
+  "statement-load-failed": "Failed to load statement"
 }

@@ -8,6 +8,10 @@ export function initRouter({
 	transactionsStatus,
 	transactionsTableWrap,
 	transactionsEmpty,
+	statement,
+	statementStatus,
+	statementTableWrap,
+	statementEmpty,
 	setStatus,
 }) {
 	const routeFromLocation = () => {
@@ -73,7 +77,7 @@ export function initRouter({
 		// Route-specific behaviors
 		if (route === 'transactions') {
 			if (!state.me) {
-				setStatus(transactionsStatus, 'Please sign in to view transactions.');
+				setStatus(transactionsStatus, i18n?.t ? i18n.t('transactions-signin', 'Please sign in to view transactions.') : 'Please sign in to view transactions.');
 				transactions?.clear?.();
 				if (transactionsTableWrap) transactionsTableWrap.hidden = true;
 				if (transactionsEmpty) transactionsEmpty.hidden = false;
@@ -82,8 +86,20 @@ export function initRouter({
 			setStatus(transactionsStatus, '');
 			if (transactionsTableWrap) transactionsTableWrap.hidden = false;
 			await transactions?.loadTransactions?.();
+		} else if (route === 'statement') {
+			if (!state.me) {
+				setStatus(statementStatus, i18n?.t ? i18n.t('statement-signin', 'Please sign in to view your statement.') : 'Please sign in to view your statement.');
+				statement?.clear?.();
+				if (statementTableWrap) statementTableWrap.hidden = true;
+				if (statementEmpty) statementEmpty.hidden = false;
+				return;
+			}
+			setStatus(statementStatus, '');
+			if (statementTableWrap) statementTableWrap.hidden = false;
+			await statement?.loadStatement?.();
 		} else {
 			setStatus(transactionsStatus, '');
+			setStatus(statementStatus, '');
 		}
 	};
 

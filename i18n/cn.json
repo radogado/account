@@ -160,5 +160,9 @@
   "tx-out": "支出",
   "transactions-signin": "请登录以查看交易记录。",
   "session-expired": "会话已过期。请重新登录。",
-  "transactions-load-failed": "加载交易记录失败"
+  "transactions-load-failed": "加载交易记录失败",
+  "download-csv": "下载 CSV",
+  "statement-empty": "暂无对账单记录。",
+  "statement-signin": "请登录以查看对账单。",
+  "statement-load-failed": "加载对账单失败"
 }

@@ -782,8 +782,44 @@ async function handleApi(req, res, url) {
     const email = session.sub;
     const user = getUser(email);
     if (!user) return sendJson(req, res, 401, { error: "Unauthenticated" }, extraHeaders);
-    const transactions = listTransactions(email, 50);
+    const q = url.searchParams;
+    const limit = Number(q.get("limit") || 50);
+    const since = q.get("since") ? String(q.get("since")) : null;
+    const until = q.get("until") ? String(q.get("until")) : null;
+    const transactions = listTransactions(email, { limit, since, until });
     return sendJson(req, res, 200, { ok: true, transactions }, extraHeaders);
+  }
+
+  if (route === "GET /api/statement.csv") {
+    if (!session) return sendJson(req, res, 401, { error: "Unauthenticated" }, extraHeaders);
+    const email = session.sub;
+    const user = getUser(email);
+    if (!user) return sendJson(req, res, 401, { error: "Unauthenticated" }, extraHeaders);
+
+    const q = url.searchParams;
+    const since = q.get("since") ? String(q.get("since")) : null;
+    const until = q.get("until") ? String(q.get("until")) : null;
+
+    const txs = listTransactions(email, { limit: 1000, since, until });
+    const lines = ["date,type,points,counterparty"];
+    for (const tx of txs || []) {
+      const dir = tx.direction === "in" ? "in" : "out";
+      const other = dir === "in" ? (tx.from || "") : (tx.to || "");
+      const date = String(tx.ts || "");
+      const points = String(tx.points ?? "");
+      // Basic CSV escaping for values with quotes/commas/newlines
+      const esc = (v) => {
+        const s = String(v ?? "");
+        return /[\",\n\r]/.test(s) ? `"${s.replaceAll("\"", "\"\"")}"` : s;
+      };
+      lines.push([esc(date), esc(dir), esc(points), esc(other)].join(","));
+    }
+    const body = lines.join("\n") + "\n";
+    return send(req, res, 200, body, {
+      ...extraHeaders,
+      "Content-Type": "text/csv; charset=utf-8",
+      "Content-Disposition": 'attachment; filename="statement.csv"',
+    });
   }
 
   if (route === "POST /api/send-points") {

@@ -104,3 +104,10 @@ typings/
 
 .DS_Store
 node_modules
+
+# Local IDE / editor
+.vscode/
+
+# SQLite runtime artifacts (WAL mode)
+*.db-wal
+*.db-shm

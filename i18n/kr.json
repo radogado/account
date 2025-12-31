@@ -160,5 +160,9 @@
   "tx-out": "송신",
   "transactions-signin": "거래 내역을 보려면 로그인하세요.",
   "session-expired": "세션이 만료되었습니다. 다시 로그인하세요.",
-  "transactions-load-failed": "거래 내역을 불러오지 못했습니다"
+  "transactions-load-failed": "거래 내역을 불러오지 못했습니다",
+  "download-csv": "CSV 다운로드",
+  "statement-empty": "아직 명세서 항목이 없습니다.",
+  "statement-signin": "명세서를 보려면 로그인하세요.",
+  "statement-load-failed": "명세서를 불러오지 못했습니다"
 }

@@ -160,5 +160,9 @@
   "tx-out": "Изходяща",
   "transactions-signin": "Моля, влезте, за да видите транзакциите.",
   "session-expired": "Сесията изтече. Моля, влезте отново.",
-  "transactions-load-failed": "Неуспешно зареждане на транзакциите"
+  "transactions-load-failed": "Неуспешно зареждане на транзакциите",
+  "download-csv": "Изтегли CSV",
+  "statement-empty": "Все още няма редове в извлечението.",
+  "statement-signin": "Моля, влезте, за да видите извлечението.",
+  "statement-load-failed": "Неуспешно зареждане на извлечението"
 }

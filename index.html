@@ -332,7 +332,7 @@
 
 			<section id="view-statement" data-view="statement" hidden>
 				<h2 data-text="account-statement">Get an account statement</h2>
-				<form>
+				<form id="statement-form">
 					<fieldset class="form-grid">
 						<legend data-text="filters">Filters</legend>
 						<label for="stmt-from">
@@ -351,28 +351,27 @@
 							</select>
 						</label>
 						<div class="form-actions">
-							<button class="btn" type="button" data-text="generate">Generate</button>
+							<button class="btn" type="submit" data-text="generate">Generate</button>
+							<a class="btn btn--secondary" id="statement-download" href="#" hidden data-text="download-csv">Download CSV</a>
 						</div>
 					</fieldset>
 				</form>
 				<br>
 				<div class="table-wrap">
-					<table class="table" aria-label="Example statement rows">
+					<table class="table table--statement" aria-describedby="statement-empty">
 						<thead>
 							<tr>
-								<th scope="col" data-text="statement-date">Date</th>
-								<th scope="col" data-text="statement-description">Description</th>
-								<th scope="col" data-text="statement-amount">Amount</th>
-								<th scope="col" data-text="statement-currency">Currency</th>
+								<th scope="col" data-text="tx-date">Date</th>
+								<th scope="col" data-text="tx-direction">Type</th>
+								<th scope="col" data-text="tx-points">Points</th>
+								<th scope="col" data-text="tx-counterparty">Counterparty</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr><td>2025-12-30</td><td data-text="statement-points-transfer">Points transfer</td><td>-123</td><td>PTS</td></tr>
-							<tr><td>2025-12-28</td><td data-text="statement-card-purchase">Card purchase</td><td>-19.99</td><td>EUR</td></tr>
-							<tr><td>2025-12-25</td><td data-text="statement-top-up">Top-up</td><td>+50.00</td><td>EUR</td></tr>
-						</tbody>
+						<tbody id="statement-body"></tbody>
 					</table>
 				</div>
+				<p id="statement-empty" data-text="statement-empty">No statement rows yet.</p>
+				<p id="statement-status" role="status" aria-live="polite"></p>
 			</section>
 
 			<section id="view-settings" data-view="settings" hidden>

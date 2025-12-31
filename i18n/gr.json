@@ -161,5 +161,9 @@
   "tx-out": "Εξερχόμενη",
   "transactions-signin": "Συνδεθείτε για να δείτε τις συναλλαγές.",
   "session-expired": "Η συνεδρία έληξε. Συνδεθείτε ξανά.",
-  "transactions-load-failed": "Αποτυχία φόρτωσης συναλλαγών"
+  "transactions-load-failed": "Αποτυχία φόρτωσης συναλλαγών",
+  "download-csv": "Λήψη CSV",
+  "statement-empty": "Δεν υπάρχουν γραμμές στο αντίγραφο ακόμη.",
+  "statement-signin": "Συνδεθείτε για να δείτε το αντίγραφό σας.",
+  "statement-load-failed": "Αποτυχία φόρτωσης αντιγράφου"
 }

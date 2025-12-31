@@ -160,5 +160,9 @@
   "tx-out": "Sortant",
   "transactions-signin": "Veuillez vous connecter pour voir les transactions.",
   "session-expired": "Session expirée. Veuillez vous reconnecter.",
-  "transactions-load-failed": "Impossible de charger les transactions"
+  "transactions-load-failed": "Impossible de charger les transactions",
+  "download-csv": "Télécharger le CSV",
+  "statement-empty": "Aucune ligne de relevé pour le moment.",
+  "statement-signin": "Veuillez vous connecter pour voir votre relevé.",
+  "statement-load-failed": "Impossible de charger le relevé"
 }

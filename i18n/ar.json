@@ -161,5 +161,9 @@
   "tx-out": "صادر",
   "transactions-signin": "يرجى تسجيل الدخول لعرض المعاملات.",
   "session-expired": "انتهت الجلسة. يرجى تسجيل الدخول مرة أخرى.",
-  "transactions-load-failed": "فشل تحميل المعاملات"
+  "transactions-load-failed": "فشل تحميل المعاملات",
+  "download-csv": "تنزيل CSV",
+  "statement-empty": "لا توجد صفوف كشف حساب بعد.",
+  "statement-signin": "يرجى تسجيل الدخول لعرض كشف الحساب.",
+  "statement-load-failed": "فشل تحميل كشف الحساب"
 }

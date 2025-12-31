@@ -236,11 +236,21 @@ function createUser({ email, salt, hash, points, createdAt }) {
   ).run(email, salt, hash, points, createdAt);
 }
 
-function listTransactions(email, limit = 50) {
+function listTransactions(email, { limit = 50, since = null, until = null } = {}) {
   const db = getDb();
-  return db.prepare(
-    "SELECT id, ts, direction, from_email AS 'from', to_email AS 'to', points FROM transactions WHERE user_email = ? ORDER BY ts DESC LIMIT ?"
-  ).all(email, limit);
+  const n = Number.isFinite(limit) ? Math.trunc(limit) : 50;
+  const safeLimit = Math.min(Math.max(n, 1), 1000);
+
+  const where = ["user_email = ?"];
+  const params = [email];
+  if (since) { where.push("ts >= ?"); params.push(String(since)); }
+  if (until) { where.push("ts <= ?"); params.push(String(until)); }
+
+  const sql =
+    "SELECT id, ts, direction, from_email AS 'from', to_email AS 'to', points " +
+    "FROM transactions WHERE " + where.join(" AND ") + " ORDER BY ts DESC LIMIT ?";
+
+  return db.prepare(sql).all(...params, safeLimit);
 }
 
 function transferPoints({ id, ts, from, to, points }) {
