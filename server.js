@@ -790,7 +790,7 @@ async function handleApi(req, res, url) {
     return sendJson(req, res, 200, { ok: true, transactions }, extraHeaders);
   }
 
-  if (route === "GET /api/statement.csv") {
+  if ((req.method === "GET" || req.method === "HEAD") && url.pathname === "/api/statement.csv") {
     if (!session) return sendJson(req, res, 401, { error: "Unauthenticated" }, extraHeaders);
     const email = session.sub;
     const user = getUser(email);
@@ -814,12 +814,12 @@ async function handleApi(req, res, url) {
       };
       lines.push([esc(date), esc(dir), esc(points), esc(other)].join(","));
     }
-    const body = lines.join("\n") + "\n";
-    return send(req, res, 200, body, {
+    const body = req.method === "HEAD" ? "" : (lines.join("\n") + "\n");
+    return sendMaybeGzip(req, res, 200, {
       ...extraHeaders,
       "Content-Type": "text/csv; charset=utf-8",
       "Content-Disposition": 'attachment; filename="statement.csv"',
-    });
+    }, body);
   }
 
   if (route === "POST /api/send-points") {
